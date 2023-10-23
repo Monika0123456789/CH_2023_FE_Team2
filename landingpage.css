@@ -53,3 +53,148 @@
 }
 
 /* Styles for Section 01 in Landing page ---------Ends Here------------------ */
+
+
+/* Styles for whole section2 container --------------Starts Here-----------------*/
+.section2{
+    display: flex;
+    margin: 3%;
+
+}
+
+/* left and right divisions of section2 */
+.section2-div{
+    width: 50%;
+    margin: 10px;
+}
+.right-content >h1:first-child{
+    font-size: var(--secondary-heading-web);
+}
+.left-image{
+    padding-right: 10%;
+}
+/* styles to obtain the likes and ratings over the left side of section two */
+/* Likes and Ratings styles-------------------------- start here ------------ */
+.left-image{
+    position: relative;
+}
+
+.likes-display{
+    box-sizing: border-box;
+    position: absolute;
+    background-color:aliceblue;
+    width: 50%;
+    height: 18%;
+    bottom: 4%;
+    left: 6%;
+    border-radius: 10px;
+}
+.outer-image{
+    position: relative;
+}
+
+.outer-image>img{
+    width: 18%;
+    position: absolute;
+    left : -10%;
+    top: -25px;
+}
+
+.client-rating-display{
+    display: flex;
+}
+.client-rating-display>div:nth-child(1){
+    box-sizing: border-box;
+    padding-left: 10%;
+    width: 75%;
+    position: relative;
+}
+.ratings{
+    padding-right: 5%;
+    width:25%;
+}
+.ratings i{
+    color: #fff700;
+}
+.inner-images{
+    position: relative;
+}
+.inner-images>img{
+    border-radius: 100%;
+    width: 20%;
+    position: absolute;
+
+}
+/* positioning of images in client rating display ------- */
+.inner-images>img:nth-child(1){
+    top:0;
+    left:0px;
+    z-index: 1;
+}
+.inner-images>img:nth-child(2){
+    top:0px;
+    left:14%;
+    z-index: 2;
+}
+.inner-images>img:nth-child(3){
+    top:0px;
+    left:28%;
+    z-index: 3;
+}
+.inner-images>img:nth-child(4){
+    top:0px;
+    left:42%;
+    z-index: 4;
+}
+/* --------------Likes and Rating Styles end here ---------------*/
+
+/* Right division of the section */
+.adImage{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+/* to display the highlighting services in grid format */
+.inner-grid-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row: inherit;
+    gap: 5px;
+    /* margin: 5% 0; */
+}
+/* to have a circular background for icons displayed*/
+.grid-content>.fa-solid{
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-top: 8%;
+}
+
+/* to change the color of icons and faded background for icons Starts here ----------- */
+.fa-utensils{
+    color: rgb(51, 225, 222);
+    background-color: rgba(51, 225, 222,0.2);
+}
+.fa-stopwatch{
+    color : rgb(223, 58, 82);
+    background-color: rgba(223, 58, 82,0.2);;
+
+}
+.fa-shield{
+    color:rgb(226, 81, 3);
+    background-color: rgba(226, 81, 3,0.2);
+
+}
+.fa-bolt{
+    color : rgb(48, 253, 185);
+    background-color: rgba(48, 253, 185,0.2);;
+}
+/* icons with fadded background style ends here */
+
+
+
+/* Section 2 Styling --------------------------Ends Here--------------------------------------- */

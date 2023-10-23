@@ -40,4 +40,18 @@
     }
     /* Media Queries for Section 1 (for devices with 760px or lesser screen size) - Landing page ---------Ends here ---------  */
 
+/* adding media queries for screen widths equal or less than 760px */
+
+    .section2,.inner-grid-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .section2-div{
+        width: 100%;
+    }
+    .right-content >h1:first-child{
+        font-size: var(--secondary-heading-mobile);
+    }
+
 }
+
