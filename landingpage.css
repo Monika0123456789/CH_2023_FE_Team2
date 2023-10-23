@@ -198,3 +198,90 @@
 
 
 /* Section 2 Styling --------------------------Ends Here--------------------------------------- */
+/* Section 3 Styling --------------------------Starts Here--------------------------------------- */
+
+/* style for destop version */
+.section-3{
+    height: auto;
+    text-align: center;
+    padding: 1% 0;
+  }
+  
+  /* container contains all the images */
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1% auto;
+  }
+  
+  h2{
+    font-size: 2rem;
+  }
+  
+  /* style for the image container*/
+  .card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 23%;
+    margin: 1%;
+  }
+  
+  .card img{
+    max-width: 100%;
+    max-height: auto;
+    border-radius: 4%;
+  }
+  
+  .hotel-img{
+    position: relative;
+  }
+  
+  /* style for the button inside the img */
+  .location-btn{
+    position: absolute;
+    padding: 2% 4%;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    bottom: 5%;
+    left: 2%;
+  }
+  
+  .card h3{
+    margin: 5px 0 0 0;
+    color: black;
+    text-align: left;
+  }
+  
+  h4{
+    margin: 0;
+  }
+  
+  /* style for figure caption */
+  .fig-caption{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+  }
+  
+  .fig-caption>h4:first-child{
+    color: aquamarine;
+  }
+  
+  .fig-caption .rate{
+    color: aqua;
+  }
+  
+  .fig-caption .rating{
+    color: black;
+    margin-right: 1em; 
+  }
+  
+  .star{
+    width: 13px;
+  }
+/* Section 3 Styling --------------------------Ends Here--------------------------------------- */
+  
