@@ -114,6 +114,9 @@
     color: white;
     background-color: black;
   }
+  .location-btn i{
+    margin-right: 5px;
+  }
   .card h3{
     margin: 10px 0 0;
     color: black;

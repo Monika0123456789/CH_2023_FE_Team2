@@ -248,7 +248,9 @@
     bottom: 5%;
     left: 2%;
   }
-  
+  .location-btn i{
+    margin-right: 5px;
+  }
   .card h3{
     margin: 5px 0 0 0;
     color: black;
