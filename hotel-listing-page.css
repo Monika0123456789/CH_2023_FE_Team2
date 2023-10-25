@@ -1,0 +1,85 @@
+.hotel-list-maincontainer {
+    /* width: 1320px; */
+    margin-bottom: 1%;
+    height: 400px;
+    border: 2px solid #ccc;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    padding: 1%;
+    border-radius: 10px;
+    
+}
+.hotel-list-leftcontainer{
+    width: 40%;
+    padding: 1%;
+}
+.container-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.hotel-list-rightcontainer{
+    width: 60%;
+    padding: 1%;
+    
+}
+.rightcontainer-section1{
+    display: flex;
+    height: 10%;
+    justify-content: space-between;
+}
+.rightcontainer-section1>article:nth-child(1){
+    width: 80%;
+}
+.rightcontainer-section1>article:nth-child(2){
+    width: 20%;
+    
+}
+.iconcontainer-main{
+    display: flex;
+    justify-content: space-evenly;
+    width:100% ;
+    height:100% ;
+    
+}
+
+.iconcontainer{
+    width: 35%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(192, 192, 192, 0.5);
+
+}
+.rating-like-share{
+    display: flex;
+    justify-content: space-between;
+}
+.rightcontainer-section2 ul{
+    display: flex;
+    gap: 5%;
+    padding-left: 2%;
+}
+.green-text{
+    color: green;
+}
+.red-text{
+    color: red;
+}
+.rightcontainer-section3{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+}
+.Select-room-button{
+    border-radius: 10px;
+    width: 20%;
+    font-size: large;
+    background-color: black;
+    color: white;
+}
+
+
+
+
