@@ -319,12 +319,18 @@
     position:relative;
 }
 
-/* left division sub image styling */
-.section4_left_sub_img{
+/* left division sub image div styling */
+.section4_left_sub_img_div{
     width:35px;
-    position: absolute;
-    left: 22.3%;
-    top:12%;
+    height:35px;
+    position: relative;
+    left: 1.5rem;
+    top:2rem;
+    border:none;
+    z-index:2;
+    border-radius:5px;
+    padding:1%;
+    background-color: orange;
 }
 
 

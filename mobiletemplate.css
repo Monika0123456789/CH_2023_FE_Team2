@@ -163,21 +163,31 @@
   margin:20x auto;
 }
 
+/* styling the parent of the left images */
+.section4_left_img_div{
+  position: relative;
+}
+
 /* testimonial image styling */
 .section4_left_img{
   width: 100%;
   height:100%;
   border-radius: 5%;    
-  position:relative;
   margin-left:0.5rem;
 }
 
-/* left division sub image styling */
-.section4_left_sub_img{
-  width:35px;
+/* left division sub image div styling */
+.section4_left_sub_img_div{
+  width:3rem;
+  height:3rem;
   position: absolute;
-  left:82%;
-  top:20%;
+  left: -2rem;
+  top:2rem;
+  border:none;
+  z-index:2;
+  border-radius:5px;
+  padding:1%;
+  background-color: orange;
 }
 
 /* testimonial right div element styling */
