@@ -1,6 +1,6 @@
 /* Styles for Section - 01 in landing page --------Starts Here---------- */
 .section-1 {
-    height: 600px;
+    /* height: 600px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -195,9 +195,9 @@
 }
 /* icons with fadded background style ends here */
 
-
-
 /* Section 2 Styling --------------------------Ends Here--------------------------------------- */
+
+
 /* Section 3 Styling --------------------------Starts Here--------------------------------------- */
 
 /* style for destop version */
@@ -208,15 +208,15 @@
   }
   
   /* container contains all the images */
-  .container{
+  .section3-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1% auto;
   }
   
-  h2{
-    font-size: 2rem;
+  .section-3>h2:first-child{
+    font-size: var(--secondary-heading-web);
   }
   
   /* style for the image container*/
@@ -255,7 +255,7 @@
     text-align: left;
   }
   
-  h4{
+  .fig-caption>h4{
     margin: 0;
   }
   
@@ -295,8 +295,8 @@
 .section4_section{
     box-sizing: border-box;
     display: flex;
+    width: 100%;
     flex-basis: 50%;
-    width:1320px;
     margin:50px auto;
     align-items: center;
     gap:5%;

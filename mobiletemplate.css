@@ -40,7 +40,7 @@
     }
     /* Media Queries for Section 1 (for devices with 760px or lesser screen size) - Landing page ---------Ends here ---------  */
 
-/* adding media queries for screen widths equal or less than 760px */
+/* adding media queries for screen widths equal or less than 760px -----------Section 2-----------------Starts here-----------------*/
 
     .section2,.inner-grid-container{
         display: flex;
@@ -54,21 +54,23 @@
     }
 
 
+  /* Section 2 mobile view styles ------------------------------End------------------------------------- */
+
+
     /* Section 3 mobile view styles --------------start----------------------- */
 
 
     /* style for mobile version */
 .section-3{
     width: 100%;
-    height: 600px;
     text-align: center;
     margin: auto;
     padding-top: 0.5%;
   }
-  h2{
-    font-size: 2rem;
+  .section-3>h2:first-child{
+    font-size: var(--secondary-heading-mobile);
   }
-  .container{
+  .section3-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,21 +78,29 @@
     margin: 1px auto 1px auto;
   }
   .card{
-    width: 50%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: start;
     text-align: left;
     position: relative;
-    margin: 1%;
+    box-sizing: border-box;
+    padding: 1%;
   }
   .card img{
     max-width: 100%;
     max-height: 100%;
-    border-radius: 4%;
   }
+
+
   .hotel-img{
+    width: 100%;
     position: relative;
+  }
+
+  .hotel-img img{
+    border-radius: 4%;
+    width: 100%;
   }
   .location-btn{
     position: absolute;
@@ -146,7 +156,8 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin:10px auto;
+  width: 100%;
+  margin:20x auto;
 }
 
 /* testimonial image styling */
@@ -202,7 +213,7 @@
 /* testimonial right div element paragraph styling */
 .section4_right_text_div_p{
   /* line-height: 90%; */
-  font-size: 1.5rem;
+  font-size: 1rem;
   width:100%;
 }
 /* section4 testimonial-1 ends */
@@ -253,7 +264,7 @@ footer{
   flex-direction: column;
 }
 
-ul{
+footer ul{
   padding:0rem;
 }
 
