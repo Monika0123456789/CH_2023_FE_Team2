@@ -91,7 +91,6 @@
     background-color: rgba(230, 227, 227, 0.5);
     padding:15%;
     cursor: pointer;
-
 }
 .rating-like-share{
     display: flex;
@@ -146,6 +145,11 @@
     bottom:0px;
     width:90%;
     margin-bottom: 2%;
+}
+
+/* styling the hotel pricing */
+.hotel-price{
+    color:black;
 }
 
 /* styling the select room button in the last section of the right container */
