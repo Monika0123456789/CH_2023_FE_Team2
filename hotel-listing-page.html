@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdn to include font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- links to include css files -->
+    <!-- css file for hotel-listing-page -->
     <link rel="stylesheet" href="hotel-listing-page.css">
+    <!-- css file for styling footer -->
+    <link rel="stylesheet" href="landingpage.css">
+    <!-- css file for footer mobile -->
+    <link rel="stylesheet" href="mobiletemplate.css">
     <link rel="stylesheet" href="common.css">
+
+    <!-- cdn to include jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- including script -->
+    <script src="./js/listingpage.js"></script>
+
     <title>Hotel Booking | Hotels List</title>
 
     
@@ -20,6 +35,503 @@
 
 
 
+        <!-- listing content starts here-------------- -->
+        <!-- page 1 container begins here -->
+        <div id="page1-container">
+            <!-- section-1 begins here -->
+            <div class="hotel-list-maincontainer">
+
+                <!-- container in the left containing image -->
+                <div class="hotel-list-leftcontainer">
+                    <img class="container-image" src="assets/images/04(2).jpg" alt="room1">
+                    <div class="offer-div">
+                        30% Off
+                    </div>
+                </div>    
+            
+                <!-- container in the right containing the text -->
+                <div class="hotel-list-rightcontainer">
+
+                    <!-- section1 representing ratings and two other icons -->
+                    <div class="rightcontainer-section1">
+                        <article>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                        </article>
+                        <article>
+                            <!-- two icons called like and share -->
+                            <div class="iconcontainer-main">
+                                <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- section2 containing name of the hotel, location and offerings -->
+                    <div class="rightcontainer-section2">
+                        <h3>Courtyard by Marriot New York</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 5855 W Century Blvd, Los Angeles - 9D045</p>
+                        <ul>
+                            <li>Air Conditioning</li>
+                            <li>Wifi</li>
+                            <li>Kitchen</li>
+                            <li><a href="#">More+</a></li>
+                        </ul>
+                        <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022 <br> <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
+                    </div>
+
+                    <!-- section3 containing pricing related info -->
+                    <div class="rightcontainer-section3">
+                        <p><b>$750</b>/day &nbsp<s>$1000</s></p>
+                        <button class="Select-room-button" onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- 2nd section -->
+            <div class="hotel-list-maincontainer">
+                <div class="hotel-list-leftcontainer">
+                    <img class="container-image" src="assets/images/10.jpg" alt="room2">
+                </div>    
+            
+                <div class="hotel-list-rightcontainer">
+                    <div class="rightcontainer-section1">
+                        <article>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                            <i class="fa-regular fa-star fa-sm" style="color: yellow;"></i>
+                        </article>
+                        <article>
+                            <div class="iconcontainer-main">
+                                <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="rightcontainer-section2">
+                        <h3>Pride moon Village Resort & Spa</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 31J W Spark Street, California - 24578</p>
+                        <ul>
+                            <li>Air Conditioning</li>
+                            <li>Wifi</li>
+                            <li>Kitchen</li>
+                            <li>Pool</li>
+                        </ul>
+                        <p><i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Non refundable</p>
+                    </div>
+
+                    <div class="rightcontainer-section3">
+                        <p><b>$980</b>/day</p>
+                        <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                    </div>
+                </div>   
+            </div>
+
+
+            <!-- 3rd section -->
+            <div class="hotel-list-maincontainer">
+                <div class="hotel-list-leftcontainer">
+                    <img class="container-image" src="assets/images/11.jpg" alt="room3">
+                </div>    
+
+                <div class="hotel-list-rightcontainer">
+                    <div class="rightcontainer-section1">
+                        <article>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                            
+                        </article>
+                        <article>
+                            <div class="iconcontainer-main">
+                                <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                            </div>
+
+                        </article>
+
+                    </div>
+                    <div class="rightcontainer-section2">
+                        <h3>Royal Beach Resort</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Manhattan street London - 24578</p>
+                        <ul>
+                            <li>Air Conditioning</li>
+                            <li>Wifi</li>
+                            <li>Kitchen</li>
+                            <li>Pool</li>
+                            <li><a href="#">More+</a></li>
+                        </ul>
+                        <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022 </p>
+                        
+                    </div>
+
+                    <div class="rightcontainer-section3">
+                        <p><b>$540</b>/day</p>
+                        <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4th Section -->
+            <div class="hotel-list-maincontainer">
+                <div class="hotel-list-leftcontainer">
+                    <img class="container-image" src="assets/images/08.jpg" alt="room4">
+                </div>    
+
+                <div class="hotel-list-rightcontainer">
+                    <div class="rightcontainer-section1">
+                        <article>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                            <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>               
+                            
+                        </article>
+                        <article>
+                            <div class="iconcontainer-main">
+                                <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                            </div>
+
+                        </article>
+
+                    </div>
+                    <div class="rightcontainer-section2">
+                        <h3>Park Plaza Lodge Hotel</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 5855 W Century Blvd, los angeles - 90045</p>
+                        <ul>
+                            <li>Air Conditioning</li>
+                            <li>Wifi</li>
+                            <li>Kitchen</li>
+                            <li>Pool</li>
+                        </ul>
+                        <p><i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Free Cancellation till 7 jan 2022 <br> <i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Free Breakfast</p> 
+                    </div>
+
+                    <div class="rightcontainer-section3">
+                        <p><b>$845</b>/day</p>
+                        <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5th section -->
+        <div class="hotel-list-maincontainer">
+            <div class="hotel-list-leftcontainer">
+                <img class="container-image" src="assets/images/10.jpg" alt="room5">
+            </div>    
+
+            <div class="hotel-list-rightcontainer">
+                <div class="rightcontainer-section1">
+                    <article>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                        <i class="fa-regular fa-star fa-sm" style="color: yellow;"></i>
+                    </article>
+                    <article>
+                        <div class="iconcontainer-main">
+                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="rightcontainer-section2">
+                    <h3>Beverly Hills Marriot</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 31J W Spark Street, California - 24578</p>
+                    <ul>
+                        <li>Air Conditioning</li>
+                        <li>Wifi</li>
+                        <li>Kitchen</li>
+                        <li>Pool</li>
+                    </ul>
+                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Non refundable</p>
+                    
+                    
+                </div>
+
+                <div class="rightcontainer-section3">
+                    <p><b>$645</b>/day</p>
+                    <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- container containing the toggle buttons -->
+        <div class="toggle-button-container">
+            <button id="toggle-page1-button1" class="toggle-buttons">1</button>
+            <button id="toggle-page1-button2" class="toggle-buttons">2</button>
+        </div>
+    </div>
+    <!-- page 1 container ends here -->
+
+
+    <!-- page 2 container begins here -->
+    <div id="page2-container">
+        <!-- section-1 part2 begins here -->
+        <div class="hotel-list-maincontainer">
+
+            <!-- container in the left containing image -->
+            <div class="hotel-list-leftcontainer">
+                <img class="container-image" src="assets/images/10.jpg" alt="room6">
+                <div class="offer-div">
+                    25% Off
+                </div>
+            </div>    
+        
+
+            <!-- container in the right containing the text -->
+            <div class="hotel-list-rightcontainer">
+
+                <!-- section1 representing ratings and two other icons -->
+                <div class="rightcontainer-section1">
+                    <article>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                        <i class="fa-regular fa-star fa-sm" style="color: yellow;"></i>
+                    </article>
+                    <article>
+
+                        <!-- two icons called like and share -->
+                        <div class="iconcontainer-main">
+                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- section2 containing name of the hotel, location and offerings -->
+                <div class="rightcontainer-section2">
+                    <h3>Pride moon Village Resort & Spa</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 31J W Spark Street, California - 24578</p>
+                    <ul>
+                        <li>Air Conditioning</li>
+                        <li>Wifi</li>
+                        <li>Kitchen</li>
+                        <li>Pool</li>
+                    </ul>
+                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Non refundable</p>
+                </div>
+
+                <!-- section3 containing pricing related info -->
+                <div class="rightcontainer-section3">
+                    <p><b>$980</b>/day</p>
+                    <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                </div>
+            </div>   
+        </div>
+
+
+        <!-- 2nd section -->
+        <div class="hotel-list-maincontainer">
+
+            <!-- container in the left containing image -->
+            <div class="hotel-list-leftcontainer">
+                <img class="container-image" src="assets/images/04(2).jpg" alt="room7">
+            </div>    
+        
+            <!-- container in the right containing the text -->
+            <div class="hotel-list-rightcontainer">
+
+                <!-- section1 representing ratings and two other icons -->
+                <div class="rightcontainer-section1">
+                    <article>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                    </article>
+                    <article>
+                        <!-- two icons called like and share -->
+                        <div class="iconcontainer-main">
+                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- section2 containing name of the hotel, location and offerings -->
+                <div class="rightcontainer-section2">
+                    <h3>Courtyard by Marriot New York</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 5855 W Century Blvd, Los Angeles - 9D045</p>
+                    <ul>
+                        <li>Air Conditioning</li>
+                        <li>Wifi</li>
+                        <li>Kitchen</li>
+                        <li><a href="#">More+</a></li>
+                    </ul>
+                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022 <br> <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
+                </div>
+
+                <!-- section3 containing pricing related info -->
+                <div class="rightcontainer-section3">
+                    <p><b>$750</b>/day &nbsp<s>$1000</s></p>
+                    <button class="Select-room-button" onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd section -->
+        <div class="hotel-list-maincontainer">
+            <div class="hotel-list-leftcontainer">
+                <img class="container-image" src="assets/images/08.jpg" alt="room8">
+            </div>    
+
+            <div class="hotel-list-rightcontainer">
+                <div class="rightcontainer-section1">
+                    <article>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>                
+                        
+                    </article>
+                    <article>
+                        <div class="iconcontainer-main">
+                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                        </div>
+
+                    </article>
+
+                </div>
+                <div class="rightcontainer-section2">
+                    <h3>Park Plaza Lodge Hotel</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 5855 W Century Blvd, los angeles - 90045</p>
+                    <ul>
+                        <li>Air Conditioning</li>
+                        <li>Wifi</li>
+                        <li>Kitchen</li>
+                        <li>Pool</li>
+                    </ul>
+                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Free Cancellation till 7 jan 2022 <br> <i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Free Breakfast</p> 
+                </div>
+
+                <div class="rightcontainer-section3">
+                    <p><b>$845</b>/day</p>
+                    <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                </div>
+            </div>   
+        </div>
+        
+
+        <!-- 4th Section -->
+        <div class="hotel-list-maincontainer">
+            <div class="hotel-list-leftcontainer">
+                <img class="container-image" src="assets/images/10.jpg" alt="room9">
+            </div>    
+
+            <div class="hotel-list-rightcontainer">
+                <div class="rightcontainer-section1">
+                    <article>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>
+                        <i class="fa-regular fa-star fa-sm" style="color: yellow;"></i>
+                        
+                        
+                    </article>
+                    <article>
+                        <div class="iconcontainer-main">
+                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="rightcontainer-section2">
+                    <h3>Beverly Hills Marriot</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 31J W Spark Street, California - 24578</p>
+                    <ul>
+                        <li>Air Conditioning</li>
+                        <li>Wifi</li>
+                        <li>Kitchen</li>
+                        <li>Pool</li>
+                    </ul>
+                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: red;"></i>&nbsp Non refundable</p>
+                </div>
+
+                <div class="rightcontainer-section3">
+                    <p><b>$645</b>/day</p>
+                    <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 5th section -->
+        <div class="hotel-list-maincontainer">
+            <div class="hotel-list-leftcontainer">
+                <img class="container-image" src="assets/images/11.jpg" alt="room10">
+            </div>    
+
+            <div class="hotel-list-rightcontainer">
+                <div class="rightcontainer-section1">
+                    <article>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star-half-stroke fa-sm" style="color: yellow;"></i>                
+                        
+                    </article>
+                    <article>
+                        <div class="iconcontainer-main">
+                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                        </div>
+
+                    </article>
+
+                </div>
+                <div class="rightcontainer-section2">
+                    <h3>Royal Beach Resort</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Manhattan street London - 24578</p>
+                    <ul>
+                        <li>Air Conditioning</li>
+                        <li>Wifi</li>
+                        <li>Kitchen</li>
+                        <li>Pool</li>
+                        <li><a href="#">More+</a></li>
+                    </ul>
+                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022 </p>
+                    
+                </div>
+
+                <div class="rightcontainer-section3">
+                    <p><b>$540</b>/day</p>
+                    <button class="Select-room-button"  onclick=" window.location.href='hotel-details.html' ">Select Room</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- container containing the toggle buttons -->
+        <div class="toggle-button-container">
+            <button id="toggle-page2-button1" class="toggle-buttons">1</button>
+            <button id="toggle-page2-button2" class="toggle-buttons">2</button>
+        </div>
+    </div>
+    <!-- page 2 container ends here -->
+
+    <!-- listing content ends here---------------- -->
         
 
         <!-- Footer -------------------------Start------------------------------------- -->
