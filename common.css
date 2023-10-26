@@ -11,6 +11,7 @@
 .container{
     max-width: 1320px;
     margin: auto;
+    margin-top: 40px;
 }
 p{
     color: slategray;
