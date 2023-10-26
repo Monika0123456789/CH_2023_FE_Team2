@@ -1,0 +1,190 @@
+/* styling the main container */
+.hotel-list-maincontainer {
+    /* width: 1320px; */
+    height: auto;
+    /* border: 2px solid #ccc; */
+    box-shadow: 5px 5px 5px 5px rgba(116, 115, 115, 0.5);
+    display: flex;
+    border-radius: 10px;   
+    margin:2%;
+}
+
+/* styling the container containing the image in the left */
+.hotel-list-leftcontainer{
+    width: 40%;
+    box-sizing: border-box;
+    padding:0.5%;
+    position:relative
+}
+
+/* styling the first leftcontainer image */
+/* #first-leftcontainer-image{
+    position: relative;
+} */
+
+/* styling the offerdiv div */
+.offer-div{
+    position: absolute;
+    width:20%;
+    background-color: red;
+    color: white;
+    top:25px;
+    left:20px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    text-align: center;
+    padding:8px;
+}
+
+/* styling the image in the left */
+.container-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* styling the container in the right containing the text */
+.hotel-list-rightcontainer{
+    width: 60%;
+    box-sizing: border-box;
+    padding: 2%;
+    position: relative;
+}
+
+/* styling section1 of the right container containing ratings and two other icons */
+.rightcontainer-section1{
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    margin-bottom:0px;
+}
+
+/* styling the ratings in section1 */
+.rightcontainer-section1>article:nth-child(1){
+    width: 80%;
+}
+
+/* styling the two icons in section1 */
+.rightcontainer-section1>article:nth-child(2){
+    width: 20%;
+}
+
+/* styling the container containing the two icons in the section1 of right container */
+.iconcontainer-main{
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap:12%;
+    width:100% ;
+    height:100% ;
+}
+
+/* styling each of the two icons in the section1 of right container */
+.iconcontainer{
+    width: 4%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(230, 227, 227, 0.5);
+    padding:15%;
+    cursor: pointer;
+
+}
+.rating-like-share{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* styling the h3 inside the section 2 of the right container */
+.rightcontainer-section2 h3{
+    margin-top:0rem;
+    margin-bottom: 0rem;
+}
+
+/* styling the right container's a tag */
+.rightcontainer-section2 ul li a{
+    text-decoration: none;
+}
+
+.rightcontainer-section2{
+    padding-left:0%;
+    margin-left:0%;
+    margin-bottom: 30%;
+}
+
+/* styling the p inside the section 2 of the right container */
+.rightcontainer-section2 p{
+    margin-top:0.2rem;
+    margin-bottom: 0rem;
+}
+
+/* styling the first li of ul inside section2 of right container */
+.rightcontainer-section2 ul li:first-child{
+    list-style: none;
+}
+
+/* styling the ul tag inside the right container */
+.rightcontainer-section2 ul{
+    display: flex;
+    gap: 7%;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    text-align:start;
+    margin-top:1.5rem;
+    margin-bottom:0.5rem;
+    width:100%;
+}
+
+/* styling the container containing the price and button in the last section of the right container*/
+.rightcontainer-section3{
+    display: flex;
+    justify-content: space-between;
+    position:absolute;
+    bottom:0px;
+    width:90%;
+    margin-bottom: 2%;
+}
+
+/* styling the select room button in the last section of the right container */
+.Select-room-button{
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 20%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding:1%;
+}
+
+/* 
+styling the container containg the toggle buttons */
+.toggle-button-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:0.5%;
+    margin:3%;
+}
+
+/* styling the toggle buttons */
+.toggle-buttons{
+    border-radius: 5px;
+    padding:1%;
+    border:none;
+    cursor: pointer;
+    background-color: rgb(216, 204, 189);
+}
+
+/* styling the toggle button1 */
+/* #toggle-button1{
+    background-color: blue;
+    color:white;
+}*/
+
+/* styling the toggle button2 */
+/* #toggle-button2{
+    background-color: rgb(216, 204, 189);
+} */
