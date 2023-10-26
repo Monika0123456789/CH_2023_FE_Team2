@@ -17,9 +17,16 @@
 }
 
 #section1_image {
+    position: relative;
     border-radius: 10px;
     height: 100%;
     width: 100%;
+}
+.leaves-image{
+    position: absolute;
+    width: 50%;
+    right: 0;
+    bottom: 0;
 }
 .section1_parent-div {
     width: 45%;
@@ -38,18 +45,18 @@
     border: 2px solid white;
 }
 .section1-innerimage > img:nth-child(1) {
-    width: 50px;
-    height: 50px;
+    width: 10%;
+    height: 8%;
     border-radius: 100%;
-    top: 40px;
-    left: -25px;
+    top: 10%;
+    left: -5%;
 }
 .section1-innerimage > img:nth-child(2) {
-    width: 80px;
-    height: 80px;
+    width: 20%;
+    height: 16%;
     border-radius: 100%;
-    top: 140px;
-    left: -40px;
+    top: 25%;
+    left: -10%;
 }
 
 /* Styles for Section 01 in Landing page ---------Ends Here------------------ */
@@ -79,14 +86,17 @@
     position: relative;
 }
 /* star on top left corner of image present in section 2 */
+.adImage{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 .star-top{
     position: absolute;
-    /* width: 50%; */
-    top: -2rem;
-    left: -2rem;
-}
-.star-top img{
-    width: 40%;
+    width: 20%;
+    height: 20%;
+    top: -10%;
+    left: -10%;
 }
 
 .likes-display{
@@ -94,11 +104,12 @@
     position: absolute;
     background-color:aliceblue;
     width: 50%;
-    height: 18%;
+    /* height: 18%; */
     bottom: 4%;
     left: 6%;
     border-radius: 10px;
 }
+
 .outer-image{
     position: absolute;
     width: 100%;
@@ -120,12 +131,12 @@
 .client-rating-display>div:nth-child(1){
     box-sizing: border-box;
     padding-left: 10%;
-    width: 75%;
+    width: 70%;
     position: relative;
 }
 .ratings{
     padding-right: 5%;
-    width:25%;
+    width:30%;
 }
 .ratings i{
     color: #fff700;
