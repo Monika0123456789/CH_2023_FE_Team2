@@ -1,3 +1,4 @@
+
 .image-section{
     display: grid;
     grid-template-columns: repeat(autofill, minmax(4,1fr)); 
@@ -42,35 +43,158 @@
 .overlay-container:hover{
     opacity: 1;
 }
-
-/* map popup */
-
-.popup {
-    display: none;
-    position: fixed;
-    color: whitesmoke;
-    text-align: center;
-    width: 100%;
-    height: 100%;
+/* Map PopUP Starts here */
+.map-container1{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  overflow: auto;
+}
+#mapContainer{
+    width: 500px;
+    height: 450px;
+}
+.popup{
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    transform: translate(-50%,-50%);
+    z-index: 3;
     border: 1px solid #ccc;
-    padding: 20px;
-    box-sizing: border-box;
-   
+    border-radius: 2%;
+    background-color: white;
 }
-
-.close {
+.popup h2{
+  margin-left: 10px;
+}
+.close{
     position: absolute;
-    top: 20px;
-    right: 5px;
     cursor: pointer;
+    right: 10px;
 }
-
-#mapContainer {
+.view-map{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width:180px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 300px;
+    margin-right: 5px;
+    color: white;
+    background-color: rgb(98, 98, 207);
+    text-align: center;
+}
+/* Map PopUP Ends here */
+.section-about{
     width: 100%;
-    height: 100%;
-}
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    padding: 20px;
+  }
+  
+  .section-about h5{
+    margin-top: 0px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  h5::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #d0c1c1;
+    margin-top: 10px;
+  }
+  
+  .icons{
+    display: flex;
+    margin-top: 15px;
+  }
+  .image-box{
+    display: inline-block;
+    width: 25px;
+    padding: 15px;
+    margin-right: 15px;
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  .icons img{
+    width: 25px;
+    height: auto;
+  }
+  p{
+    margin-bottom: 10px;
+    color: #898484;
+  }
+  .section-about h1{
+  font-size: 1.4rem;
+  margin: 5px 0;
+  }
+  .advantages{
+    margin: 10px 0;
+    color: #898484;
+  }
+  .advantages img{
+    margin-right: 5px;
+    size: 12px;
+  }
+  .section-amenities{
+    width: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    padding: 20px;
+  }
+  .section-amenities h5{
+    margin-top: 0px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  h5::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #d0c1c1;
+    margin-top: 10px;
+  }
+  .full-content{
+    display: flex;
+  }
+  .right-content{
+    margin-left: 40%;
+  }
+  .activity-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #898484;
+  }
+  .activity-content img{
+    margin-right: 5px;
+  }
+  .full-content h1 img{
+    margin-right: 5px;
+  }
+  .full-content h1{
+    margin-bottom:5px;
+  }
+  .left-content h1,
+  .right-content h1{
+   font-size: 1.3rem;
+   margin-top: 0px;
+  }
+  .left-content>div:nth-child(2){
+    margin-top: 10px;
+  }
+  .right-content>div:nth-child(2){
+    margin-top: 25px;
+  }
+  .right-content>div:last-child{
+    margin-top: 25px;
+  }
