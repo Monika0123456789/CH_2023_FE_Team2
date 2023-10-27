@@ -245,64 +245,6 @@
 
 
 
-/* footer section styling begins here ------------------------------------*/
-
-footer{
-  width: 100%;
-  background-color: rgb(32, 31, 31);
-  box-sizing: border-box;
-  padding:25px;
-  
-}
-
-/* styling the div containing the logo and sub texts */
-.first-footer-div{
-  width: 100%;
-}
-
-/* styling the div containing set of lists */
-.list-div{
-  display:flex;
-  flex-wrap: wrap;
-  width:100%;
-}
-
-.list-footer{
-  width:40%;
-}
-
-.footersection{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-footer ul{
-  padding:0rem;
-}
-
-/* styling the top links div */
-.footer-top-links-div{
-  padding-right: 10px;
-}
-
-/* styling the a tag inside top links div */
-.footer-top-links-a{
-  margin-right:15px;
-  line-height: 30px;
-}
-
-/* styling the div containg payment and follow us part */
-.footer-bottom-div{
-  display: flex;
-  flex-direction: column;
-}
-
-/* styling the h3 tag inside follow us */
-#footer-follow-us-h3{
-  padding-left:0%;
-}
-/* footer section styling ends here ---------------------------------*/
 
 }
 

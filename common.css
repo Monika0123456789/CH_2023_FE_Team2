@@ -57,7 +57,7 @@ footer{
     padding-left:25px;
     padding-top:25px;
     padding-bottom:25px;
-    padding-right:35px;
+    padding-right:25px;
  }
 
 
@@ -140,17 +140,17 @@ footer{
 
 /* styling the div containg payment and follow us part */
 .footer-bottom-div{
+    width: 100%;
     display: flex;
-    gap:65%;
-    margin-bottom:30px;
+    justify-content: space-between;
+    padding: 40px 0px;
 }
 
 /* styling the payment and security div */
 .footer-payment-and-security-div{
     display: flex;
-    gap:15px;
+    gap:3%;
     flex-direction: column;
-    margin-top:2rem;
     width:100%;
     flex-wrap: wrap;
 }
@@ -158,22 +158,15 @@ footer{
 /* styling the payment and security icons div */
 .ps-icons{
     display: flex;
-    /* flex-wrap: wrap; */
-    gap:8%;
-}
-
-/* styling the h3 tag inside follow us */
-#footer-follow-us-h3{
-    width: 100%;
-    padding-left:40%;
+    gap:4%;
 }
 
 /* styling the follow us div */
 .footer-follow-us-div{
     display: flex;
-    gap: 15px;
+    gap: 2%;
     flex-direction: column;
-    margin-top:2rem;
+    align-items: flex-end;
     width:100%;
     flex-wrap: wrap;
 }
@@ -181,8 +174,11 @@ footer{
 /* styling the follow us icons div */
 .fu-icons{
     display: flex;
-    /* flex-wrap: wrap; */
-    gap:8%;
+    width: 100%;
+    gap: 4%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
 }
 
 /* styling footer copyright text */
@@ -190,3 +186,83 @@ footer{
     text-align: center;
 }
 /* footer section styling ends here */
+
+/* footer styles for--------------- screen width less or equal to 760px ------------ */
+
+@media screen  and (max-width : 760px){
+    /* footer section styling begins here ------------------------------------*/
+
+footer{
+    width: 100%;
+    background-color: rgb(32, 31, 31);
+    box-sizing: border-box;
+    padding:25px;
+    
+  }
+  
+  /* styling the div containing the logo and sub texts */
+  .first-footer-div{
+    width: 100%;
+  }
+  
+  /* styling the div containing set of lists */
+  .list-div{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+  }
+  
+  .list-footer{
+    width:40%;
+  }
+  
+  .footersection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer ul{
+    padding:0rem;
+  }
+  
+  /* styling the top links div */
+  .footer-top-links-div{
+    padding-right: 10px;
+  }
+  
+  /* styling the a tag inside top links div */
+  .footer-top-links-a{
+    margin-right:15px;
+    line-height: 30px;
+  }
+  
+  /* styling the div containg payment and follow us part */
+  .footer-bottom-div{
+    display: flex;
+    gap: 10%;
+    flex-direction: column;
+  }
+
+  .footer-follow-us-div{
+    display: flex;
+    gap: 2%;
+    flex-direction: column;
+    align-items: flex-start;
+    width:100%;
+    flex-wrap: wrap;
+}
+
+.fu-icons{
+    display: flex;
+    width: 100%;
+    gap: 4%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
+
+  /* footer section styling ends here ---------------------------------*/
+  
+    
+}
