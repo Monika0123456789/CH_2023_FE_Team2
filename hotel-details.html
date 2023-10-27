@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/hotel-details.js"></script>
+
+    <link rel="stylesheet" href="./hotel-details.css">
+    <link rel="stylesheet" href="./common.css">
+    <script src="https://kit.fontawesome.com/595ecf8277.js" crossorigin="anonymous"></script>
+
+    <title>Hotel Website App | Hotel Details</title>
+</head>
+
+<body>
+    <!-- Header --------------Start------------- -->
+    <header class="main-header">
+        <img class="headerimage logo" src="./assets/images/logo.svg" alt="logo">
+        <img class="headerimage profile" src="./assets/images/01.jpg" alt="profile">
+    </header>
+    <!-- Header -------------End ---------------- -->
+
+    <div class="container">
+        <section>
+            <h1>Courtyard by Marriott New York</h1>
+            <p><i class="fa-solid fa-location-dot"></i>5855 W Century Blvd, Los Angeles - 90045 <a id="openMap"><i
+                        class="fa-solid fa-eye" style="color: #1558f4;"></i>View On Map.</a></p>
+            <div class="image-section">
+                <div class="grid-content image-01"><img src="./assets/images/16.jpg" alt="hotel images"></div>
+                <div class="grid-content image-02"><img src="./assets/images/13.jpg" alt="hotel images"></div>
+                <div class="grid-content image-03"><img src="./assets/images/12.jpg" alt="hotel images"></div>
+                <div class="grid-content image-04">
+                    <img src="./assets/images/01(2).jpg" alt="hotel images">
+                    <a href="#" class="overlay-container">View all</a>
+                </div>
+            </div>
+        </section>
+
+
+<div class="map-container">
+        <div id="mapPopup" class="popup">
+            <h2>Hotel location <span class="close" id="closeMap">X</span> </h2>
+             
+             <div id="mapContainer">
+                 <!-- Embedded Google Map will go here -->
+             </div>
+             
+         </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
