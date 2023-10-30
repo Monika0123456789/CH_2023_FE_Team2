@@ -1,9 +1,9 @@
 
 .image-section{
     display: grid;
-    grid-template-columns: repeat(autofill, minmax(4,1fr)); 
+    grid-template-columns: repeat(4,1fr); 
     max-width: 1320px;
-    grid-template-rows: repeat(2,25%);
+    grid-template-rows: repeat(2,250px);
     grid-gap: 0.5em;
     
 }
