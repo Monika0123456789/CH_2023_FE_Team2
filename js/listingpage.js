@@ -20,7 +20,7 @@ $(document).ready(function () {
           facilitiesList += `<li>${facilities[i]}</li>`;
         }
         facilitiesList+=`<li><a href="#" onclick="openPopup(${hotelId})" title="More details about the Hotel">More+</a></li>`
-        facilitiesList += "</ul>";
+        facilitiesList += '</ul>';
 
 
         // variable to render page1 data
