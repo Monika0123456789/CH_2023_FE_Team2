@@ -139,6 +139,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    
 }
 
 .outer-image>img{
@@ -147,6 +148,7 @@
     position: absolute;
     top: -15%;
     left : -10%;
+    
 }
 
 .client-rating-display{
@@ -489,4 +491,23 @@
     animation-name: image-movement;
     animation-duration: 5s;
     animation-iteration-count: 1;
+}
+
+@keyframes like-button {
+    0% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -150%) rotate(-90deg);
+    }
+    100% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+}
+
+.outer-image>img{
+    
+    animation: like-button 1s 1;
+    animation-delay: 3s;
+    
 }
