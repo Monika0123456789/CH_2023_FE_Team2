@@ -17,10 +17,11 @@
     position:relative
 }
 
-/* styling the first leftcontainer image */
-/* #first-leftcontainer-image{
+/* 
+styling the first leftcontainer image  */
+ #first-leftcontainer-image{
     position: relative;
-} */
+}
 
 /* styling the offerdiv div */
 .offer-div{
@@ -180,6 +181,11 @@ styling the container containg the toggle buttons */
     border:none;
     cursor: pointer;
     background-color: rgb(216, 204, 189);
+}
+
+/* styling the hotel pricing */
+.hotel-pricing{
+    color:black;
 }
 
 /* styling the toggle button1 */

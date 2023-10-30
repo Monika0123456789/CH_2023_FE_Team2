@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Hotel Listing Page</title>
-  <link rel="shortcut icon" href="assets/images/valtech.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="hotel-listing-page.css" />
-  <link rel="stylesheet" href="common.css" />
-  <link rel="shortcut icon" href="assets/images/valtech.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".main-header").load("header.html");
+  <head>
+    <title>Hotel Listing Page</title>
+
+    <!-- link to include favicon -->
+    <link rel="shortcut icon" href="assets/images/valtech.ico" type="image/x-icon"/>
+
+    <!-- links to include css -->
+    <link rel="stylesheet" href="hotel-listing-page.css" />
+    <link rel="stylesheet" href="common.css" />
+
+    <!-- link to include font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+    <!-- link to include jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- link to include toggle script -->
+    <script src="./js/listingpage.js"></script>
+
+
+    <script>
+      $(document).ready(function () {
+              $(".main-header").load("header.html");
       $(".footer-container").load("footer.html");
-      
-      $.getJSON("hotels.json", function (data) {
-        data.items.forEach(function (hotelData) {
-          var hotelName = hotelData.name;
-          var hotelLocation = "Bengaluru";
-          var hotelImage = hotelData.img;
-          var hotelDiscount = "30%";
-          var hotelPrice = hotelData.price;
-          var facilities = hotelData.Facilities;
+        $.getJSON("hotels.json", function (data) {
 
-          var facilitiesList = "<ul>";
-          for (var i = 0; i < Math.min(facilities.length, 3); i++) {
-            facilitiesList += `<li>${facilities[i]}</li>`;
-          }
-          facilitiesList += `<li><a href="">More+</a></li>`
-          facilitiesList += "</ul>";
+          // looping through the array of objects
+          data.items.forEach(function (hotelData) {
 
-          var hotelsList = `
+            // obtaining the attributes of each object
+            var hotelId = hotelData.id;
+            var hotelName = hotelData.name;
+            var hotelLocation = "Bengaluru";
+            var hotelImage = hotelData.img;
+            var hotelDiscount = "30%";
+            var hotelPrice = hotelData.price;
+            var facilities = hotelData.Facilities;
+
+            // code block to display facilities
+            var facilitiesList = "<ul>";
+            for (var i = 0; i < Math.min(facilities.length, 3); i++) {
+              facilitiesList += `<li>${facilities[i]}</li>`;
+            }
+            facilitiesList+=`<li><a href="">More+</a></li>`
+            facilitiesList += "</ul>";
+
+
+            // variable to render page1 data
+            var hotelList1;
+
+            // code block to render page1 of hotel lists
+            if(hotelId===1){
+              hotelsList1 = `
+
                         <div class="hotel-list-maincontainer">
                             <div class="hotel-list-leftcontainer">
                                 <img class="container-image" src="${hotelImage}" alt="roomimage">
@@ -60,30 +85,196 @@
                                     <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                                 </div>
                                 <div class="rightcontainer-section3">
-                                    <p><b>$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                     <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                                 </div>
                             </div>
                         </div>`;
 
-          $("#page1-container").append(hotelsList);
-        });
-      });
-    });
-  </script>
-</head>
+              $("#page1-container").append(hotelsList1);
+            }
+            else{
+              hotelsList1 = `
+                        <div class="hotel-list-maincontainer">
+                            <div class="hotel-list-leftcontainer">
+                                <img class="container-image" src="${hotelImage}" alt="roomimage">
+                                
+                            </div>
+                            <div class="hotel-list-rightcontainer">
+                                <div class="rightcontainer-section1">
+                                    <article>
+                                        ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
+                                          4.5
+                                        )}
+                                    </article>
+                                    <article>
+                                        <div class="iconcontainer-main">
+                                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="rightcontainer-section2">
+                                    <h3>${hotelName}</h3>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="location" style="display: inline;">${hotelLocation}</div>
 
-<body>
-  <!-- Header --------------Start------------- -->
+                                    ${facilitiesList}
+                                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022<br>
+                                    <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
+                                </div>
+                                <div class="rightcontainer-section3">
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+
+                                    <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
+                                </div>
+                            </div>
+                        </div>`;
+              $("#page1-container").append(hotelsList1);
+            }
+          });
+
+        });
+
+        $.getJSON("hotels.json", (data) => {
+
+          // reverse the items array
+          var revData = data.items.reverse();
+          
+          // looping through the array of objects
+          revData.forEach((hotelData) => {
+
+            // obtaining the attributes of each object
+            var hotelName = hotelData.name,
+            hotelId = hotelData.id,
+            hotelLocation = "Bangalore",
+            hotelImage = hotelData.img,
+            hotelDiscount = "25%",
+            hotelPrice = hotelData.price,
+            facilities = hotelData.Facilities;
+
+            // console.log(hotelName)
+
+            // code block to display facilities
+            var facilitiesList = "<ul>";
+            for (var i = 0; i < Math.min(facilities.length, 3); i++) {
+              facilitiesList += `<li>${facilities[i]}</li>`;
+            }
+            facilitiesList+=`<li><a href="">More+</a></li>`
+            facilitiesList += "</ul>";
+
+            // variable to render page2 data
+            var hotelsList2;
+
+            // code block to render page2 of hotel lists
+            if(hotelId===5){
+              hotelsList2 = `
+                        <div class="hotel-list-maincontainer">
+                            <div class="hotel-list-leftcontainer">
+                                <img class="container-image" src="${hotelImage}" alt="roomimage">
+                                <div class="offer-div">${hotelDiscount} Off</div>
+                            </div>
+                            <div class="hotel-list-rightcontainer">
+                                <div class="rightcontainer-section1">
+                                    <article>
+                                        ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
+                                          4.5
+                                        )}
+                                    </article>
+                                    <article>
+                                        <div class="iconcontainer-main">
+                                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="rightcontainer-section2">
+                                    <h3>${hotelName}</h3>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="location" style="display: inline;">${hotelLocation}</div>
+
+                                    ${facilitiesList}
+                                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022<br>
+                                    <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
+                                </div>
+                                <div class="rightcontainer-section3">
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                    <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
+                                </div>
+                            </div>
+                        </div>`;
+
+              $("#page2-container").append(hotelsList2);
+            }
+            else{
+              hotelsList2 = `
+                        <div class="hotel-list-maincontainer">
+                            <div class="hotel-list-leftcontainer">
+                                <img class="container-image" src="${hotelImage}" alt="roomimage">
+                                
+                            </div>
+                            <div class="hotel-list-rightcontainer">
+                                <div class="rightcontainer-section1">
+                                    <article>
+                                        ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
+                                          4.5
+                                        )}
+                                    </article>
+                                    <article>
+                                        <div class="iconcontainer-main">
+                                            <div class="iconcontainer hearticon"><i class="fas fa-heart fa-xs"></i></div>
+                                            <div class="iconcontainer shareicon"><i class="fas fa-share-nodes fa-xs"></i></div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="rightcontainer-section2">
+                                    <h3>${hotelName}</h3>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="location" style="display: inline;">${hotelLocation}</div>
+
+                                    ${facilitiesList}
+                                    <p><i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Cancellation till 7 jan 2022<br>
+                                    <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
+                                </div>
+                                <div class="rightcontainer-section3">
+
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                    <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
+                                </div>
+                            </div>
+                        </div>`;
+                        $("#page2-container").append(hotelsList2);
+            }
+          })
+        });
+
+      });
+
+    </script>
+  </head>
+  <body>
+      <!-- Header --------------Start------------- -->
   <div class="main-header"></div>
   <!-- Header -------------End ---------------- -->
-  <div class="container">
-    <div id="page1-container"></div>
+    <!-- parent container containing page1 and page2 -->
+    <div class="container">
 
-  </div>
-  <!-- footer starts here -->
+      <!-- page1 container -->
+      <div id="page1-container" class="content"></div>
+
+      <!-- page2 container -->
+      <div id="page2-container" class="content"></div>
+
+      <!-- toggle buttons of page1-->
+      <div class="toggle-button-container toggle-button-container1">
+        <button id="toggle-button1" class="toggle-buttons">1</button>
+        <button id="toggle-button2" class="toggle-buttons">2</button>
+      </div>
+    </div>
+      <!-- footer starts here -->
   <div class="footer-container"></div>
   <!-- footer end here -->
-</body>
 
+  </body>
 </html>
+
