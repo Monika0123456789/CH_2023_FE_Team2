@@ -124,6 +124,9 @@
     background-color: #ccc;
     border-radius: 10px;
   }
+  .image-box:hover{
+    background-color: antiquewhite;
+  }
   .icons img{
     width: 25px;
     height: auto;
