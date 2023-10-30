@@ -93,6 +93,14 @@ styling the first leftcontainer image  */
     padding:15%;
     cursor: pointer;
 }
+.hearticon:hover{
+    
+    color: red;
+}
+.shareicon:hover{
+    
+    color: blue;
+}
 .rating-like-share{
     display: flex;
     justify-content: space-between;
@@ -163,6 +171,10 @@ styling the first leftcontainer image  */
     cursor: pointer;
     padding:1%;
 }
+.Select-room-button:hover{
+    background-color: antiquewhite;
+    color: black;
+}
 
 /* 
 styling the container containg the toggle buttons */
@@ -189,13 +201,44 @@ styling the container containg the toggle buttons */
     font-size: 1.5rem;
 }
 
-/* styling the toggle button1 */
-/* #toggle-button1{
-    background-color: blue;
-    color:white;
-}*/
 
-/* styling the toggle button2 */
-/* #toggle-button2{
-    background-color: rgb(216, 204, 189);
-} */
+/* styling the background of the popup */
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+}
+
+/* styling the popup container */
+.popup-content{
+    background-color: whitesmoke;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 40%;
+    text-align: justify;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* style for the closing the popup container */
+.close{
+    color: #aaa;
+    float: right;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

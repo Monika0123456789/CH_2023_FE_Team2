@@ -1,17 +1,19 @@
-
+/* Adding styles for  hotel-details page */
+/* Section 1 styling --------------------------Starts here -------------------- */
 .image-section{
     display: grid;
-    grid-template-columns: repeat(autofill, minmax(4,1fr)); 
-    max-width: 1320px;
-    grid-template-rows: repeat(2,25%);
+    grid-template-columns: repeat(4,1fr); 
+    grid-template-rows: repeat(2,250px);
     grid-gap: 0.5em;
     
 }
+/* styles for every image inside class - .grid-content  */
 .grid-content>img{
     width: 100%;
     height: 100%;
     border-radius: 15px;
 }
+/* positioning images inside the grid */
 .image-01{
     grid-row-start: 1;
     grid-row-end:3 ;
@@ -25,6 +27,7 @@
 .image-04{
     position: relative;
 }
+/* adding an overlay over image to display text - view all - (no functionalities added for now) */
 .overlay-container{
     display: flex;
     position: absolute;
@@ -38,11 +41,12 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    opacity: 0;
-}
-.overlay-container:hover{
     opacity: 1;
 }
+/* .overlay-container:hover{
+    opacity: 1;
+} */
+
 /* Map PopUP Starts here */
 .map-container1{
   display: none;
@@ -91,6 +95,11 @@
     text-align: center;
 }
 /* Map PopUP Ends here */
+/* Section 1 styling --------------------------Ends here -------------------- */
+
+
+/* Section 2 styling --------------------------Starts here -------------------- */
+
 .section-about{
     width: 100%;
     box-sizing: border-box;
@@ -124,11 +133,14 @@
     background-color: #ccc;
     border-radius: 10px;
   }
+  .image-box:hover{
+    background-color: antiquewhite;
+  }
   .icons img{
     width: 25px;
     height: auto;
   }
-  p{
+  .section-about p{
     margin-bottom: 10px;
     color: #898484;
   }
@@ -198,6 +210,9 @@
   .right-content>div:last-child{
     margin-top: 25px;
   }
+/* Section 2 styling --------------------------Ends here -------------------- */
+
+
 
 
 /* styling the hotel options section begins here----------------------------*/
@@ -356,3 +371,33 @@ styling the container containg the toggle buttons */
   margin-bottom: 2%;
 }
 /* styling the hotel policies section ends here----------------------------*/
+
+
+
+
+  /*  adding media queries for screen widths equal or less than 760px screen widths  */
+  @media screen and (max-width:760px){
+    .image-section{
+      display: grid;
+      grid-template-columns: repeat(2,1fr); 
+      grid-template-rows: repeat(4,250px);
+      grid-gap: 0.5em;
+      
+  }
+  .image-01{
+    grid-row-start: 1;
+    grid-row-end:3 ;
+    grid-column-start: 1;
+    grid-column-end:3 ;
+}
+.image-02{
+
+  grid-row-start: 3;
+  grid-row-end:4 ;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+    
+  }
+
+
