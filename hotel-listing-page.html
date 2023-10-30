@@ -81,7 +81,7 @@
                                     <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                                 </div>
                                 <div class="rightcontainer-section3">
-                                    <p><b>$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                    <p><b class="hotel-pricing">$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                     <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                                 </div>
                             </div>
@@ -120,7 +120,8 @@
                                     <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                                 </div>
                                 <div class="rightcontainer-section3">
-                                    <p><b>$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+
                                     <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                                 </div>
                             </div>
@@ -193,7 +194,7 @@
                                     <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                                 </div>
                                 <div class="rightcontainer-section3">
-                                    <p><b>$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                     <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                                 </div>
                             </div>
@@ -232,7 +233,8 @@
                                     <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                                 </div>
                                 <div class="rightcontainer-section3">
-                                    <p><b>$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+
+                                    <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                     <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                                 </div>
                             </div>
@@ -240,7 +242,6 @@
                         $("#page2-container").append(hotelsList2);
             }
           })
-          
         });
 
       });

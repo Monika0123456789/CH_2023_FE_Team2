@@ -21,7 +21,9 @@ function changePageToOne(){
 $(() => {
     // // hide page2 on page load
     $("#page2-container").hide();
-    $("#toggle-button1").css({"background-color":"blue","color":"white"})
+
+    $("#toggle-button1").css({"background-color":"blue","color":"white"});
+
     
     // invoke function changePagetoTwo upon clicking toggle button 2
     $("#toggle-button2").on("click",changePageToTwo);
