@@ -433,3 +433,30 @@
 
 /* section4 testimonial-1 and testimonial-2 ends */
 /* Section 4 Styling --------------------------Ends Here--------------------------------------- */
+
+/* Adding animation feature */
+@keyframes image-rotation {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.section1-innerimage > img:nth-child(1):hover {
+    animation-name: image-rotation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.section1-innerimage > img:nth-child(2):hover {
+    animation-name: image-rotation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.star-top:hover{
+    animation-name: image-rotation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+
+}
