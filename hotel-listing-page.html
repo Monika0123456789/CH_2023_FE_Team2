@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Hotel Listing Page</title>
 
@@ -23,6 +24,8 @@
 
     <script>
       $(document).ready(function () {
+              $(".main-header").load("header.html");
+      $(".footer-container").load("footer.html");
         $.getJSON("hotels.json", function (data) {
 
           // looping through the array of objects
@@ -52,6 +55,7 @@
             // code block to render page1 of hotel lists
             if(hotelId===1){
               hotelsList1 = `
+
                         <div class="hotel-list-maincontainer">
                             <div class="hotel-list-leftcontainer">
                                 <img class="container-image" src="${hotelImage}" alt="roomimage">
@@ -61,8 +65,8 @@
                                 <div class="rightcontainer-section1">
                                     <article>
                                         ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
-                                          4.5
-                                        )}
+            4.5
+          )}
                                     </article>
                                     <article>
                                         <div class="iconcontainer-main">
@@ -126,10 +130,10 @@
                                 </div>
                             </div>
                         </div>`;
-
               $("#page1-container").append(hotelsList1);
             }
           });
+
         });
 
         $.getJSON("hotels.json", (data) => {
@@ -245,9 +249,13 @@
         });
 
       });
+
     </script>
   </head>
   <body>
+      <!-- Header --------------Start------------- -->
+  <div class="main-header"></div>
+  <!-- Header -------------End ---------------- -->
     <!-- parent container containing page1 and page2 -->
     <div class="container">
 
@@ -263,6 +271,10 @@
         <button id="toggle-button2" class="toggle-buttons">2</button>
       </div>
     </div>
+      <!-- footer starts here -->
+  <div class="footer-container"></div>
+  <!-- footer end here -->
 
   </body>
 </html>
+
