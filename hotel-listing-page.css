@@ -223,7 +223,7 @@ styling the container containg the toggle buttons */
     width: 40%;
     text-align: justify;
     position: relative;
-    border-radius: 10%;
+    border-radius: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
