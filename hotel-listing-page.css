@@ -93,9 +93,13 @@ styling the first leftcontainer image  */
     padding:15%;
     cursor: pointer;
 }
-.iconcontainer:hover{
-    background-color: coral;
-    color: aliceblue;
+.hearticon:hover{
+    
+    color: red;
+}
+.shareicon:hover{
+    
+    color: blue;
 }
 .rating-like-share{
     display: flex;
