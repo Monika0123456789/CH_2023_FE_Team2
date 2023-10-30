@@ -19,7 +19,7 @@ $(document).ready(function () {
         for (var i = 0; i < Math.min(facilities.length, 3); i++) {
           facilitiesList += `<li>${facilities[i]}</li>`;
         }
-        facilitiesList+=`<li><a href="javascript:void(0);" onclick="openPopup(${hotelId})" title="More details about the Hotel">More+</a></li>`
+        facilitiesList+=`<li><a href="#" onclick="openPopup(${hotelId})" title="More details about the Hotel">More+</a></li>`
         facilitiesList += "</ul>";
 
 
@@ -133,7 +133,7 @@ $(document).ready(function () {
         for (var i = 0; i < Math.min(facilities.length, 3); i++) {
           facilitiesList += `<li>${facilities[i]}</li>`;
         }
-        facilitiesList+=`<li><a href="javascript:void(0);" onclick="openPopup(${hotelId})" title="View more Hotels">More+</a></li>`
+        facilitiesList+=`<li><a href="#" onclick="openPopup(${hotelId})" title="View more Hotels">More+</a></li>`
         facilitiesList += "</ul>";
 
         // variable to render page2 data
@@ -196,7 +196,7 @@ $(document).ready(function () {
                                 <article>
                                     <div class="iconcontainer-main">
                                         <div class="iconcontainer hearticon" title="Like"><i class="fas fa-heart fa-xs"></i></div>
-                                        <div class="iconcontainer shareicon" title="Share"><i class="fas fa-share-nodes fa-xs"></i></div>
+                                        <div class="iconcontainer shareicon" title="View more Hotels"><i class="fas fa-share-nodes fa-xs"></i></div>
                                     </div>
                                 </article>
                             </div>
