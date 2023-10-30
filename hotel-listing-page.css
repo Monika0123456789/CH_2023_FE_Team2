@@ -93,6 +93,14 @@ styling the first leftcontainer image  */
     padding:15%;
     cursor: pointer;
 }
+.hearticon:hover{
+    
+    color: red;
+}
+.shareicon:hover{
+    
+    color: blue;
+}
 .rating-like-share{
     display: flex;
     justify-content: space-between;
@@ -163,6 +171,10 @@ styling the first leftcontainer image  */
     cursor: pointer;
     padding:1%;
 }
+.Select-room-button:hover{
+    background-color: antiquewhite;
+    color: black;
+}
 
 /* 
 styling the container containg the toggle buttons */
@@ -186,6 +198,7 @@ styling the container containg the toggle buttons */
 /* styling the hotel pricing */
 .hotel-pricing{
     color:black;
+    font-size: 1.5rem;
 }
 
 

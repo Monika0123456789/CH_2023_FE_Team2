@@ -83,6 +83,7 @@ footer{
 .list-div{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
     width:70%;
     gap:5%;

@@ -2,115 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/hotel-details.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/hotel-details.js"></script>
+  <link rel="shortcut icon" href="assets/images/valtech.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./hotel-details.css">
-    <link rel="stylesheet" href="./common.css">
-    <script src="https://kit.fontawesome.com/595ecf8277.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./hotel-details.css">
+  <link rel="stylesheet" href="./common.css">
+  <!-- cdn to include jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/595ecf8277.js" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $(".main-header").load("header.html");
+      $(".footer-container").load("footer.html");
+    });
+  </script>
 
-    <title>Hotel Website App | Hotel Details</title>
+  <title>Hotel Website App | Hotel Details</title>
 </head>
 
 <body>
-    <!-- Header --------------Start------------- -->
-    <header class="main-header">
-        <img class="headerimage logo" src="./assets/images/logo.svg" alt="logo">
-        <img class="headerimage profile" src="./assets/images/01.jpg" alt="profile">
-    </header>
-    <!-- Header -------------End ---------------- -->
+  <!-- Header --------------Start------------- -->
+  <div class="main-header"></div>
+  <!-- Header -------------End ---------------- -->
 
-    <div class="container">
-        <section class="img-section">
-            <h1>Courtyard by Marriott New York</h1>
-            <p><i class="fa-solid fa-location-dot"></i>5855 W Century Blvd, Los Angeles - 90045 <a id="openMap"><i
-                        class="fa-solid fa-eye" style="color: #1558f4;"></i>View On Map.</a></p>
-            <div class="image-section">
-                <div class="grid-content image-01"><img src="./assets/images/16.jpg" alt="hotel images"></div>
-                <div class="grid-content image-02"><img src="./assets/images/13.jpg" alt="hotel images"></div>
-                <div class="grid-content image-03"><img src="./assets/images/12.jpg" alt="hotel images"></div>
-                <div class="grid-content image-04">
-                    <img src="./assets/images/01(2).jpg" alt="hotel images">
-                    <a href="#" class="overlay-container" >View all</a>
-                </div>
-            </div>
-        </section>
-<!-- Embedded Google Map will be there here  -->
+  <div class="container">
+    <!-- Section 1 -------------------Starts Here ---------------------------- -->
+    <section class="img-section">
+      <h1>Courtyard by Marriott New York</h1>
+      <p><i class="fa-solid fa-location-dot"></i>5855 W Century Blvd, Los Angeles - 90045 <a id="openMap"><i
+            class="fa-solid fa-eye" style="color: #1558f4;"></i>View On Map.</a></p>
+      <div class="image-section">
+        <div class="grid-content image-01"><img src="./assets/images/16.jpg" alt="hotel images"></div>
+        <div class="grid-content image-02"><img src="./assets/images/13.jpg" alt="hotel images"></div>
+        <div class="grid-content image-03"><img src="./assets/images/12.jpg" alt="hotel images"></div>
+        <div class="grid-content image-04">
+          <img src="./assets/images/01(2).jpg" alt="hotel images">
+          <a href="#" class="overlay-container">View all</a>
+        </div>
+      </div>
+    </section>
+    <!-- Embedded Google Map will be there here  -->
     <div class="map-container1">
-        <div id="mapPopup" class="popup">
-            <h2>View Our Hotel Location<img class="close" id="closeMap" src="assets/images/close.svg" alt=""></img></h2>
-            <div id="mapContainer">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1698044038173!5m2!1sen!2sin" width="505" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="view-map"><img src="assets/images/view-location.svg" alt="">View in Google Map</div>
+      <div id="mapPopup" class="popup">
+        <h2>View Our Hotel Location<img class="close" id="closeMap" src="assets/images/close.svg" alt=""></img></h2>
+        <div id="mapContainer">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1698044038173!5m2!1sen!2sin"
+            width="505" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-    </div>
-<!-- About The Details -->
-<section class="section-about">
-    <h5>About This Hotel</h5>
-    <h1>Main Highlights</h1>
-    <div class="icons">
-      <div class="image-box">
-        <img src="assets/images/wifi.svg" alt="">
-      </div>
-      <div class="image-box">
-        <img src="assets/images/horse.svg" alt="">
-      </div>
-      <div class="image-box">
-        <img src="assets/images/star-life.svg" alt="">
-      </div>
-      <div class="image-box">
-        <img src="assets/images/bell.svg" alt="">
+        <div class="view-map"><img src="assets/images/view-location.svg" alt="">View in Google Map</div>
       </div>
     </div>
-    <p>Demesne far-hearted suppose venture excited see had has.Dependent on so extremely delivered by.Yet no jokes worse her why.<b>Bad one supposing breakfast day fulfilled off depending questions</b></p>
-    <p>Delivered dejection necessary objection do Mr prevailed.Mr feeling does chiefly cordial in do.Water timed fally right aware if oh truth.Large above be means.Dashwood does provide stronger is.</p>
-    <h1>Advantages</h1>
-    <div class="advantages"><img src="assets/images/check.svg" alt="">Every hotel staff to have Proper PPT kit for COVID-19</div>
-    <div class="advantages"><img src="assets/images/check.svg" alt="">Every staff member wears face masks and gloves at all service times.</div>
-    <div class="advantages"><img src="assets/images/check.svg" alt="">Hotel staff ensures to maintain social distancing at all times.</div>
-    <div class="advantages"><img src="assets/images/check.svg" alt="">The hotel has in-Room Dining options available.</div>
-   </section> 
-   <section class="section-amenities">
-    <h5>Amenities</h5>
-    <div class="full-content">
-      <div class="left-content">
-        <div>
-          <h1><img src="assets/images/bicycle.svg" alt="">Activities</h1>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Swimming pool</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">spa</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Kids play area</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Gym</div>
+
+    <!-- Section 1 -------------------Ends Here ---------------------------- -->
+
+    <!-- About The Details -->
+    <section class="section-about">
+      <h5>About This Hotel</h5>
+      <h1>Main Highlights</h1>
+      <div class="icons">
+        <div class="image-box">
+          <img src="assets/images/wifi.svg" alt="">
         </div>
-        <div>
-          <h1><img src="assets/images/bell.svg" alt="">Services</h1>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Dry Cleaning</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Room Service</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Laundry facilities</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Ironing Service</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Lift</div>
+        <div class="image-box">
+          <img src="assets/images/horse.svg" alt="">
+        </div>
+        <div class="image-box">
+          <img src="assets/images/star-life.svg" alt="">
+        </div>
+        <div class="image-box">
+          <img src="assets/images/bell.svg" alt="">
         </div>
       </div>
-      <div class="right-content">
-        <div>
-          <h1><img src="assets/images/payment.svg" alt="">Payment Method</h1>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Credit card(Visa Master card)</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Cash</div>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Debit Card</div>
-        </div>
-        <div>
-          <h1><img src="assets/images/safty.svg" alt="">Safty & security</h1>
-          <div class="activity-content"><img src="assets/images/check.svg" alt="">Doctor on Cell</div>
-       </div>
-       <div>
-        <h1><img src="assets/images/speaker.svg" alt="">Staff Language</h1>
-        <div class="activity-content"><img src="assets/images/check.svg" alt="">English</div>
-        <div class="activity-content"><img src="assets/images/check.svg" alt="">Hindi</div>
-       </div>
+      <p>Demesne far-hearted suppose venture excited see had has.Dependent on so extremely delivered by.Yet no jokes
+        worse her why.<b>Bad one supposing breakfast day fulfilled off depending questions</b></p>
+      <p>Delivered dejection necessary objection do Mr prevailed.Mr feeling does chiefly cordial in do.Water timed fally
+        right aware if oh truth.Large above be means.Dashwood does provide stronger is.</p>
+      <h1>Advantages</h1>
+      <div class="advantages"><img src="assets/images/check.svg" alt="">Every hotel staff to have Proper PPT kit for
+        COVID-19</div>
+      <div class="advantages"><img src="assets/images/check.svg" alt="">Every staff member wears face masks and gloves
+        at all service times.</div>
+      <div class="advantages"><img src="assets/images/check.svg" alt="">Hotel staff ensures to maintain social
+        distancing at all times.</div>
+      <div class="advantages"><img src="assets/images/check.svg" alt="">The hotel has in-Room Dining options available.
       </div>
-    </div>
-  </section>
-</div>
+    </section>
+    <section class="section-amenities">
+      <h5>Amenities</h5>
+      <div class="full-content">
+        <div class="left-content">
+          <div>
+            <h1><img src="assets/images/bicycle.svg" alt="">Activities</h1>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Swimming pool</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">spa</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Kids play area</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Gym</div>
+          </div>
+          <div>
+            <h1><img src="assets/images/bell.svg" alt="">Services</h1>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Dry Cleaning</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Room Service</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Laundry facilities</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Ironing Service</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Lift</div>
+          </div>
+        </div>
+        <div class="right-content">
+          <div>
+            <h1><img src="assets/images/payment.svg" alt="">Payment Method</h1>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Credit card(Visa Master card)</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Cash</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Debit Card</div>
+          </div>
+          <div>
+            <h1><img src="assets/images/safty.svg" alt="">Safty & security</h1>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Doctor on Cell</div>
+          </div>
+          <div>
+            <h1><img src="assets/images/speaker.svg" alt="">Staff Language</h1>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">English</div>
+            <div class="activity-content"><img src="assets/images/check.svg" alt="">Hindi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+          <!-- footer starts here -->
+          <div class="footer-container"></div>
+          <!-- footer end here -->
 </body>
+
 </html>
