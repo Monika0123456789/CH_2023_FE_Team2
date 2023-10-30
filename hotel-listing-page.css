@@ -93,6 +93,10 @@ styling the first leftcontainer image  */
     padding:15%;
     cursor: pointer;
 }
+.iconcontainer:hover{
+    background-color: coral;
+    color: aliceblue;
+}
 .rating-like-share{
     display: flex;
     justify-content: space-between;
@@ -162,6 +166,10 @@ styling the first leftcontainer image  */
     color: white;
     cursor: pointer;
     padding:1%;
+}
+.Select-room-button:hover{
+    background-color: antiquewhite;
+    color: black;
 }
 
 /* 
