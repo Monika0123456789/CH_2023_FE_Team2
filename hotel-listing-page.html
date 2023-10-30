@@ -20,6 +20,12 @@
 
     <!-- link to include toggle script -->
     <script src="./js/listingpage.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".main-header").load("header.html");
+        $(".footer-container").load("footer.html");
+      });
+    </script>
     
  </head>
 
@@ -40,7 +46,7 @@
       <!-- toggle buttons of page1-->
       <div class="toggle-button-container toggle-button-container1">
         <button id="toggle-button1" class="toggle-buttons">1</button>
-        <button id="toggle-button2" class="toggle-buttons">2</button>
+        <button id="toggle-button2" class="toggle-buttons" title="View more Hotels">2</button>
       </div>
     </div>
 
