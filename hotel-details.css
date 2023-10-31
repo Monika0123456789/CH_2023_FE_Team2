@@ -20,12 +20,16 @@
     grid-column-start: 1;
     grid-column-end:3 ;
 }
+
 .image-02{
     grid-column-start: 3;
     grid-column-end: 5;
 }
 .image-04{
     position: relative;
+}
+.image-section img:hover{
+  opacity: 0.9;
 }
 /* adding an overlay over image to display text - view all - (no functionalities added for now) */
 .overlay-container{
@@ -231,6 +235,9 @@
   display: flex;
   border-radius: 10px;   
   margin:2%;
+}
+.hotel-detail-maincontainer:hover {
+  background-color: aliceblue;
 }
 
 .room-options-heading-div{
