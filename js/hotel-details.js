@@ -18,7 +18,7 @@ function init() {
 <section class="card">
 <div class="popup-head">
 <h3>Room Detail</h3>
-<h3 id="close-popup">X</h3>
+<h3  id="close-popup">X</h3>
 </div>
 
 <hr>

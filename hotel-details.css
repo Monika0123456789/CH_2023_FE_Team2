@@ -453,3 +453,6 @@ styling the container containg the toggle buttons */
   display: flex;
   justify-content: space-between;
 }
+#close-popup{
+  cursor: pointer;
+}
