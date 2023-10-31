@@ -1,5 +1,7 @@
 /* Adding styles for  hotel-details page */
 /* Section 1 styling --------------------------Starts here -------------------- */
+
+/* defining grid layout */
 .image-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -13,6 +15,8 @@
   border-radius: 15px;
 }
 /* positioning images inside the grid */
+
+/* first image positioning in grid */
 .image-01 {
   grid-row-start: 1;
   grid-row-end: 3;
@@ -20,10 +24,13 @@
   grid-column-end: 3;
 }
 
+/* second image positioning in grid */
 .image-02 {
   grid-column-start: 3;
   grid-column-end: 5;
 }
+
+/*styles added - In order to achieve the overlay effect displaying option as viewall option */
 .image-04 {
   position: relative;
 }
@@ -369,27 +376,7 @@ h5::after {
 }
 /* styling the hotel policies section ends here----------------------------*/
 
-/*  adding media queries for screen widths equal or less than 760px screen widths  */
-@media screen and (max-width: 760px) {
-  .image-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 250px);
-    grid-gap: 0.5em;
-  }
-  .image-01 {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-  .image-02 {
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-}
+
 /*Styling for the room-details popup -----------------Starts here--------------------  */
 
 #popup-container {
@@ -397,7 +384,6 @@ h5::after {
   display: none;
   width: 100%;
   height: 100%;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -406,6 +392,7 @@ h5::after {
   position: relative;
 }
 
+/* styles for the card class containing the actual data of room  */
 .card {
   position: absolute;
   top: 0;
@@ -419,6 +406,7 @@ h5::after {
   background-color: antiquewhite;
   overflow: auto;
 }
+/* fixing width and height of images inside card-container */
 .card > img {
   width: 100%;
   height: 40%;
@@ -427,13 +415,17 @@ h5::after {
 .room-details {
   padding: 3%;
 }
+
+/* changing font size of p from that used universally in common.css */
 .room-details > p {
   font-size: 16px;
   text-align: justify;
 }
+
 .room-details > table {
   width: 100%;
 }
+/* styles for the popup heading */
 .popup-head {
   display: flex;
   justify-content: space-between;
@@ -442,3 +434,54 @@ h5::after {
   cursor: pointer;
 }
 /*Styling for the room-details popup -----------------Ends here--------------------  */
+
+
+/*  adding media queries for screen widths equal or less than 760px screen widths  */
+@media screen and (max-width: 760px) {
+
+  /* mobile responsive design for section 1 - containing images of hotel  ---- */
+
+  /* changing grid layout */
+  .image-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 250px);
+    grid-gap: 0.5em;
+  }
+
+  /* positioning first image in grid */
+  .image-01 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  /* positioning second image in grid */
+  .image-02 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  /* mobile responsive design for section  - containing options of rooms available  ---- */
+
+  /* changing flex direction of main container from row to column */
+  .hotel-detail-maincontainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Changing widths of content inside flex */
+  .hotel-detail-rightcontainer {
+    width: 100%;
+  }
+  .hotel-detail-leftcontainer{
+    width: 100%;
+  }
+  .container-image {
+    height: 300px;
+    width: 100%;
+  
+  }
+}
