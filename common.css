@@ -187,6 +187,12 @@ footer{
 #footer-copyright-text{
     text-align: center;
 }
+
+.footer-top-links-a:hover{
+    text-decoration: underline;
+    color: white;
+    
+}
 /* footer section styling ends here */
 
 /* footer styles for--------------- screen width less or equal to 760px ------------ */
