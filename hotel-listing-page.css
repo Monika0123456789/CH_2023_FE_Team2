@@ -209,7 +209,7 @@ styling the container containg the toggle buttons */
 .popup{
     display: none;
     position: fixed;
-    top: -15%;
+    top: -25%;
     left: 0;
     z-index: 1;
     width: 100%;
@@ -223,10 +223,10 @@ styling the container containg the toggle buttons */
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #ccc;
-    width: 40%;
+    width: 30%;
     text-align: justify;
     position: relative;
-    border-radius: 3%;
+    border-radius: 2%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 

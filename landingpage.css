@@ -471,26 +471,9 @@
 }
 .star-top{
     animation-name: image-rotation;
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 
-}
-
-@keyframes image-movement {
-    from {
-        bottom: 40%;
-        
-    }
-    to {
-        bottom: 0%;
-        
-    }
-}
-
-.leaves-image{
-    animation-name: image-movement;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
 }
 
 @keyframes like-button {
@@ -505,9 +488,9 @@
     }
 }
 
-.outer-image>img{
+.outer-image>img:hover{
     
     animation: like-button 2s 1;
-    animation-delay: 3s;
+    
     
 }

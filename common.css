@@ -29,6 +29,7 @@ p{
  
 .logo{
     width: 11em;  
+    cursor: pointer;
 }
 .profile{
     width: 4em;
