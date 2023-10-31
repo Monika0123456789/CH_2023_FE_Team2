@@ -37,7 +37,7 @@
     top: -3%;
     right:-3%;
     width: 23%;
-    height:15%;
+    max-height:fit-content;
     /* margin: auto; */
     border: 3px solid white;
     padding: 3%;
@@ -51,7 +51,7 @@
   }
 .support p,.support h2{
     margin: 0;
-    /* font-size: 16px; */
+    /* font-size: 1.2em; */
 }
 .section1_parent-div {
     width: 45%;
@@ -127,12 +127,13 @@
 .likes-display{
     box-sizing: border-box;
     position: absolute;
-    background-color:aliceblue;
+    background-color:rgba(240, 248, 255,0.8);
     width: 50%;
     /* height: 18%; */
     bottom: 4%;
     left: 6%;
     border-radius: 10px;
+    
 }
 
 .outer-image{
