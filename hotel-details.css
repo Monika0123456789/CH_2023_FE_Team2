@@ -445,21 +445,21 @@ h5::after {
   .image-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 250px);
+    grid-template-rows: repeat(3, 18rem);
     grid-gap: 0.5em;
   }
 
   /* positioning first image in grid */
   .image-01 {
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
   }
   /* positioning second image in grid */
   .image-02 {
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 3;
   }
@@ -483,5 +483,9 @@ h5::after {
     height: 300px;
     width: 100%;
   
+  }
+  .card{
+    left: 0;
+    width: 100%;
   }
 }
