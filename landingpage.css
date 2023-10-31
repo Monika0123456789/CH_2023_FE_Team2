@@ -127,12 +127,13 @@
 .likes-display{
     box-sizing: border-box;
     position: absolute;
-    background-color:aliceblue;
+    background-color:rgba(240, 248, 255,0.8);
     width: 50%;
     /* height: 18%; */
     bottom: 4%;
     left: 6%;
     border-radius: 10px;
+    
 }
 
 .outer-image{
