@@ -18,6 +18,7 @@
     $(document).ready(function () {
       $(".main-header").load("header.html");
       $(".footer-container").load("footer.html");
+      
     });
   </script>
 
@@ -173,7 +174,7 @@
         <!-- section3 containing pricing related info -->
         <div class="rightcontainer-section2">
           <p><b class="hotel-price">$750</b>/day &nbsp<s>$1000</s></p>
-          <button class="Select-room-button">Select Room</button>
+          <button class="Select-room-button"  id="room-popup">Select Room</button>
         </div>
       </div>
     </div>
@@ -238,7 +239,11 @@
   <!-- hotel policies section ends here -->
 </div>
 
-
+<!-- Room details popup content goes here -->
+<div id="popup-container" >
+  <div class="room-popup-content">
+  </div>
+</div>
   </div>
   <!-- footer starts here -->
   <div class="footer-container"></div>
