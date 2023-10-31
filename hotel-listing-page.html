@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title> Hotel Booking | Hotels</title>
+<head>
+  <title> Hotel Booking | Hotels</title>
+
 
     <!-- link to include favicon -->
-    <link rel="shortcut icon" href="assets/images/valtech.ico" type="image/x-icon"/>
-
-    <!-- links to include css -->
-    <link rel="stylesheet" href="hotel-listing-page.css" />
-    <link rel="stylesheet" href="common.css" />
-
-    <!-- link to include font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-
-    <!-- link to include jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="assets/images/favicon-logo.ico" type="image/x-icon"/>
 
 
-    <!-- link to include toggle script -->
-    <script src="./js/listingpage.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".main-header").load("header.html");
-        $(".footer-container").load("footer.html");
-      });
-    </script>
-    
- </head>
+  <!-- links to include css -->
+  <link rel="stylesheet" href="hotel-listing-page.css" />
+  <link rel="stylesheet" href="common.css" />
+
+  <!-- link to include font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- link to include jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-  <body>
-      <!-- Header --------------Start------------- -->
+  <!-- link to include script -->
+  <script src="./js/listingpage.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".main-header").load("header.html");
+      $(".footer-container").load("footer.html");
+    });
+  </script>
+
+</head>
+
+
+<body>
+  <!-- Header --------------Start------------- -->
   <div class="main-header"></div>
   <!-- Header -------------End ---------------- -->
-    <!-- parent container containing page1 and page2 -->
-    <div class="container">
+  <!-- parent container containing page1 and page2 -->
+  <div class="container">
 
-      <!-- page1 container -->
-      <div id="page1-container" class="content"></div>
+    <!-- page1 container -->
+    <div id="page1-container" class="content"></div>
 
-      <!-- page2 container -->
-      <div id="page2-container" class="content"></div>
+    <!-- page2 container -->
+    <div id="page2-container" class="content"></div>
 
-      <!-- toggle buttons of page1-->
-      <div class="toggle-button-container toggle-button-container1">
-        <button id="toggle-button1" class="toggle-buttons">1</button>
-        <button id="toggle-button2" class="toggle-buttons" title="View more Hotels">2</button>
-      </div>
+    <!-- toggle buttons of page1-->
+    <div class="toggle-button-container toggle-button-container1">
+      <button id="toggle-button1" class="toggle-buttons">1</button>
+      <button id="toggle-button2" class="toggle-buttons" title="View more Hotels">2</button>
     </div>
+  </div>
 
-    <!-- popup container -->
-    <div id="popup-container" class="popup">
-      <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <h2 id="popup-hotel-name">Hotel Name</h2>
-        <hr>
-        <p id="popup-long-desc">Long Description</p>
-        <ul id="popup-facilities-list"></ul>
-      </div>
+  <!-- popup container -->
+  <div id="popup-container" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2 id="popup-hotel-name">Hotel Name</h2>
+      <hr>
+      <p id="popup-long-desc">Long Description</p>
+      <ul id="popup-facilities-list"></ul>
     </div>
+  </div>
 
-      <!-- footer starts here -->
+  <!-- footer starts here -->
   <div class="footer-container"></div>
   <!-- footer end here -->
 
 
-  </body>
-</html>
+</body>
 
+</html>

@@ -4,21 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./js/hotel-details.js"></script>
-  <link rel="shortcut icon" href="assets/images/valtech.ico" type="image/x-icon">
 
+  <!-- including javaScript files that are utilized here -->
+  <script src="./js/hotel-details.js"></script>
+
+  <!-- adding favicon for the page -->
+  <link rel="shortcut icon" href="assets/images/favicon-logo.ico" type="image/x-icon">
+
+
+  <!-- including css used in this page -->
   <link rel="stylesheet" href="./hotel-details.css">
   <link rel="stylesheet" href="./common.css">
+
   <!-- cdn to include jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <!-- link to include fontawesome -->
   <script src="https://kit.fontawesome.com/595ecf8277.js" crossorigin="anonymous"></script>
+
+  <!-- To include header and footer stored in different files -->
   <script>
     $(document).ready(function () {
       $(".main-header").load("header.html");
       $(".footer-container").load("footer.html");
-      
+
     });
   </script>
 
@@ -31,12 +40,17 @@
   <div class="main-header"></div>
   <!-- Header -------------End ---------------- -->
 
+  <!-- Main container of body---------------begins --------------- -->
   <div class="container">
-    <!-- Section 1 -------------------Starts Here ---------------------------- -->
+    <!-- Section 1 ------- Hotel Images------------Starts Here ---------------------------- -->
     <section class="img-section">
       <h1>Courtyard by Marriott New York</h1>
-      <p><i class="fa-solid fa-location-dot"></i>&nbsp 5855 W Century Blvd, Los Angeles - 90045&nbsp 
-        <a id="openMap" href="#"><i class="fa-solid fa-eye fa-xs" style="color: #1558f4;"> </i><span style="color: #1558f4;"><u>View On Map</u></span> </a></p>
+
+      <p><i class="fa-solid fa-location-dot"></i>5855 W Century Blvd, Los Angeles - 90045&nbsp
+        <a id="openMap" href="#"><i class="fa-solid fa-eye" style="color: #1558f4;"> </i><span
+            style="color: #1558f4;"><u>View On Map.</u></span> </a>
+      </p>
+
       <div class="image-section">
         <div class="grid-content image-01"><img src="./assets/images/16.jpg" alt="hotel images"></div>
         <div class="grid-content image-02"><img src="./assets/images/13.jpg" alt="hotel images"></div>
@@ -61,8 +75,9 @@
       </div>
     </div>
 
-    <!-- Section 1 -------------------Ends Here ---------------------------- -->
+    <!-- Section 1 ------- Hotel Images------------Ends Here ---------------------------- -->
 
+    <!-- Section containing details about hotel ---------------Starts Here------------------ -->
     <!-- About The Details -->
     <section class="section-about">
       <h5>About This Hotel</h5>
@@ -134,116 +149,126 @@
         </div>
       </div>
 
-  </section>
+    </section>
 
-  <!-- hotel option section begins here -->
-  <div class="parentcontainer">
+    <!-- Section containing details about hotel ---------------Ends Here------------------ -->
 
-    <!-- code block to implement the room options heading -->
-    <div class="room-options-heading-div">
-      <h1>Room Options</h1>
-      <hr>
+
+    <!--  Section containing room options ---------------Starts Here --------------------- -->
+    <!-- hotel option section begins here -->
+    <div class="parentcontainer">
+
+      <!-- code block to implement the room options heading -->
+      <div class="room-options-heading-div">
+        <h1>Room Options</h1>
+        <hr>
+      </div>
+
+      <!-- hotel1 begins here -->
+      <div class="hotel-detail-maincontainer">
+
+        <!-- container in the left containing image -->
+        <div class="hotel-detail-leftcontainer">
+          <img class="container-image" src="assets/images/03-hotel-details-page.jpg" alt="room1">
+          <div class="offer-div">
+            30% Off
+          </div>
+        </div>
+
+        <!-- container in the right containing the text -->
+        <div class="hotel-detail-rightcontainer">
+
+          <!-- section2 containing name of the hotel and offerings -->
+          <div class="rightcontainer-section1">
+            <h3>Luxury Room with Balcony</h3>
+            <ul>
+              <li>Air Conditioning</li>
+              <li>Wifi</li>
+              <li>Kitchen</li>
+              <li><a href="#">More+</a></li>
+            </ul>
+            <p>Free Cancellation till 7 jan 2022</p>
+          </div>
+
+          <!-- section3 containing pricing related info -->
+          <div class="rightcontainer-section2">
+            <p><b class="hotel-price">$750</b>/day &nbsp<s>$1000</s></p>
+            <button class="Select-room-button" id="room-popup">Select Room</button>
+          </div>
+        </div>
+      </div>
+      <!-- hotel1 ends here -->
+
+
+      <!-- hotel2 begins here -->
+      <div class="hotel-detail-maincontainer">
+
+        <!-- container in the left containing image -->
+        <div class="hotel-detail-leftcontainer">
+          <img class="container-image" src="assets/images/04(2).jpg" alt="room1">
+          <div class="offer-div">
+            15% Off
+          </div>
+        </div>
+
+        <!-- container in the right containing the text -->
+        <div class="hotel-detail-rightcontainer">
+
+          <!-- section2 containing name of the hotel and offerings -->
+          <div class="rightcontainer-section1">
+            <h3>Deluxe Pool view with Breakfast</h3>
+            <ul>
+              <li>Air Conditioning</li>
+              <li>Wifi</li>
+              <li>Kitchen</li>
+              <li><a href="#">More+</a></li>
+            </ul>
+            <p>Non Refundable</p>
+          </div>
+
+          <!-- section3 containing pricing related info -->
+          <div class="rightcontainer-section2">
+            <p><b class="hotel-price">$750</b>/day &nbsp<s>$1000</s></p>
+            <button class="Select-room-button">Select Room</button>
+          </div>
+        </div>
+      </div>
+      <!-- hotel2 ends here -->
     </div>
+    <!-- hotel options section ends here -->
+    <!--  Section containing room options ---------------Starts Here --------------------- -->
 
-    <!-- hotel1 begins here -->
-    <div class="hotel-detail-maincontainer">
 
-      <!-- container in the left containing image -->
-      <div class="hotel-detail-leftcontainer">
-        <img class="container-image" src="assets/images/03-hotel-details-page.jpg" alt="room1">
-        <div class="offer-div">
-          30% Off
-        </div>
+    <!-- hotel policies section------------------------------ begins here -------------------->
+    <!-- div containing the hotel policies -->
+    <div class="hotel-policies-maincontainer">
+      <!-- code block to implement the Hotel policies heading -->
+      <div class="room-options-heading-div">
+        <h1>Hotel Policies</h1>
+        <hr>
       </div>
 
-      <!-- container in the right containing the text -->
-      <div class="hotel-detail-rightcontainer">
-
-        <!-- section2 containing name of the hotel and offerings -->
-        <div class="rightcontainer-section1">
-          <h3>Luxury Room with Balcony</h3>
-          <ul>
-            <li>Air Conditioning</li>
-            <li>Wifi</li>
-            <li>Kitchen</li>
-            <li><a href="#">More+</a></li>
-          </ul>
-          <p>Free Cancellation till 7 jan 2022</p>
-        </div>
-
-        <!-- section3 containing pricing related info -->
-        <div class="rightcontainer-section2">
-          <p><b class="hotel-price">$750</b>/day &nbsp<s>$1000</s></p>
-          <button class="Select-room-button"  id="room-popup">Select Room</button>
-        </div>
+      <div class="hotel-options-content">
+        <p><i class="fa-solid fa-circle-check fa-sm" style="color: green;"></i>
+          &nbsp Drinking and smoking within controlled limits are permitted at the farmhouse but please do not create a
+          mess
+          or ruckus at the house.</p>
+        <p>
+          <i class="fa-solid fa-circle-check fa-sm" style="color: green;"></i>
+          &nbsp Drugs and intoxicating illegal products are banned and not to be brought to the house or consumed.
+        </p>
       </div>
     </div>
-    <!-- hotel1 ends here -->
-
-
-    <!-- hotel2 begins here -->
-    <div class="hotel-detail-maincontainer">
-
-      <!-- container in the left containing image -->
-      <div class="hotel-detail-leftcontainer">
-        <img class="container-image" src="assets/images/04(2).jpg" alt="room1">
-        <div class="offer-div">
-          15% Off
-        </div>
-      </div>
-
-      <!-- container in the right containing the text -->
-      <div class="hotel-detail-rightcontainer">
-
-        <!-- section2 containing name of the hotel and offerings -->
-        <div class="rightcontainer-section1">
-          <h3>Deluxe Pool view with Breakfast</h3>
-          <ul>
-            <li>Air Conditioning</li>
-            <li>Wifi</li>
-            <li>Kitchen</li>
-            <li><a href="#">More+</a></li>
-          </ul>
-          <p>Non Refundable</p>
-        </div>
-
-        <!-- section3 containing pricing related info -->
-        <div class="rightcontainer-section2">
-          <p><b class="hotel-price">$750</b>/day &nbsp<s>$1000</s></p>
-          <button class="Select-room-button">Select Room</button>
-        </div>
-      </div>
-    </div>
-    <!-- hotel2 ends here -->
+    <!-- hotel policies section---------------------------------- ends here ------------------------------------>
   </div>
-  <!-- hotel options section ends here -->
+  <!-- Main container of body---------------Ends --------------- -->
 
-  <!-- hotel policies section begins here -->
-  <!-- div containing the hotel policies -->
-  <div class="hotel-policies-maincontainer">
-    <!-- code block to implement the Hotel policies heading -->
-    <div class="room-options-heading-div">
-      <h1>Hotel Policies</h1>
-      <hr>
-    </div>
 
-    <div class="hotel-options-content">
-      <p><i class="fa-solid fa-circle-check fa-sm" style="color: green;"></i>
-        &nbsp Drinking and smoking within controlled limits are permitted at the farmhouse but please do not create a mess
-      or ruckus at the house.</p>
-      <p>
-      <i class="fa-solid fa-circle-check fa-sm" style="color: green;"></i>
-      &nbsp Drugs and intoxicating illegal products are banned and not to be brought to the house or consumed.</p>
+  <!-- Room details popup content goes here -->
+  <div id="popup-container">
+    <div class="room-popup-content">
     </div>
   </div>
-  <!-- hotel policies section ends here -->
-</div>
-
-<!-- Room details popup content goes here -->
-<div id="popup-container" >
-  <div class="room-popup-content">
-  </div>
-</div>
   </div>
   <!-- footer starts here -->
   <div class="footer-container"></div>
