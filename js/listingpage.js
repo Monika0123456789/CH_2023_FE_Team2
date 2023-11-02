@@ -225,9 +225,9 @@ $(document).ready(function () {
     });
 });
 
-var data; //declare the variable data
+var data; //declare the variable data to store hotel data
 
-//fetch hotel data
+//fetch hotel data from given JSON file using jQuery's $.getJSON
 $.getJSON("hotels.json",function(hotelData){
     data = hotelData;
 });
@@ -239,21 +239,23 @@ function getHotelDataById(hotelId){
           return data.items[i];
         }
     }
-    return null;
+    return null; 
+    // Return null if the hotel with the given ID is not found
 }
 
 
-// function to open the popup
+// function to open the popup for specific hotel by its ID
 function openPopup(hotelId){
-    var hotelData = getHotelDataById(hotelId);
+    var hotelData = getHotelDataById(hotelId); // get hotel data based on the given ID
     if(hotelData){
-        $("#popup-hotel-name").text(hotelData.name);
-        $("#popup-long-desc").text(hotelData.longDesc);
+        // update the popup's elements
+        $("#popup-hotel-name").text(hotelData.name);  // set the hotel name
+        $("#popup-long-desc").text(hotelData.longDesc); // set the hotel desc
 
-        var facilitiesList = $("#popup-facilities-list");
-        facilitiesList.empty();
+        var facilitiesList = $("#popup-facilities-list"); // get the list of facilities
+        facilitiesList.empty(); // clear any existing list items
         hotelData.Facilities.forEach(function (facility){
-            var li = $("<li>").text(facility);
+            var li = $("<li>").text(facility); // create a list items for each facilities list 
             facilitiesList.append(li);
         });
         $("#popup-container").show();

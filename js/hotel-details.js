@@ -1,14 +1,15 @@
+// function for opening the pop up
 function clickHandler() {
-  document.getElementsByClassName("map-container1")[0].style.display = "block";
+  document.getElementsByClassName("map-container1")[0].style.display = "block"; // Displays the map container
 }
-
+// function for closing the pop up
 function closeHandler() {
-  document.getElementsByClassName("map-container1")[0].style.display = "none";
+  document.getElementsByClassName("map-container1")[0].style.display = "none"; // Hide the map container
 }
 
 function init() {
-  document.getElementById("openMap").addEventListener("click", clickHandler);
-  document.getElementById("closeMap").addEventListener("click", closeHandler);
+  document.getElementById("openMap").addEventListener("click", clickHandler); // click event listener to open the popup
+  document.getElementById("closeMap").addEventListener("click", closeHandler); // click event listener to close the popup
 
 // to load the room details when a user selects the room
   document.getElementsByClassName("hotel-detail-maincontainer")[0].addEventListener("click", function () {
@@ -73,4 +74,5 @@ function init() {
     });
 }
 
+// Add an event listener to intialize the functions when the DOM is loaded
 document.addEventListener("DOMContentLoaded", init);

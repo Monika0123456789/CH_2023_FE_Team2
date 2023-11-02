@@ -304,14 +304,6 @@
     left: 2%;
     border:none;
   }
-  .location-btn:hover{
-    
-    background-color: coral;
-    box-shadow: 5px 5px 5px black;
-    color: black;
-    
-  }
-
   .card h3{
     margin: 5px 0 0 0;
     color: black;

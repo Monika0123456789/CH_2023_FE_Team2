@@ -167,10 +167,10 @@ h5::after {
   margin-right: 5px;
   size: 12px;
 }
+/* Style for section Amenities */
 .section-amenities {
   width: 100%;
   box-sizing: border-box;
-  /* border: 1px solid red; */
   padding: 20px;
 }
 .section-amenities h5 {
@@ -193,8 +193,6 @@ h5::after {
   margin-left: 40%;
 }
 .activity-content {
-  display: flex;
-  align-items: center;
   margin-bottom: 5px;
   color: #898484;
 }
