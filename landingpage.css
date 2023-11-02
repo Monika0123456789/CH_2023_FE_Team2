@@ -18,6 +18,7 @@
 #discoverbutton:hover{
     background-color: blue;
     color: lightcyan;
+    box-shadow: 5px 5px 5px black;
 }
 
 #section1_image {

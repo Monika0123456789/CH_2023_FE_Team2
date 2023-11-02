@@ -175,6 +175,7 @@ styling the first leftcontainer image  */
 .Select-room-button:hover {
     background-color: antiquewhite;
     color: black;
+    box-shadow: 5px 5px 5px black;
 }
 
 /* 
