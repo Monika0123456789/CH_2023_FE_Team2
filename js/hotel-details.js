@@ -21,7 +21,12 @@ function init() {
 
         <hr>
         <img src="./assets/images/12(1).jpg" alt="Room Image">
-        <div class="room-details">
+        <div class="swipe-container">
+        <img  class="box1" src="./assets/images/right-arrow.svg" alt="">
+        <img  class="box2" src="./assets/images/left-arrow.svg" alt="">
+        </div>
+       
+       <div class="room-details">
         <h1>Deluxe Pool View</h1>
         <p>Club rooms are well furnished with air conditioner,32 inch LCD television and a mini bar.
             They have attached bathroom with shower head and hair dryer and 24 hours supply of hot water.
