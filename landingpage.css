@@ -454,7 +454,8 @@
 /* section4 testimonial-1 and testimonial-2 ends */
 /* Section 4 Styling --------------------------Ends Here--------------------------------------- */
 
-/* Adding animation feature */
+/* Adding animation features-------- */
+/* image rotation */
 @keyframes image-rotation {
     from {
         transform: rotate(0);
@@ -480,7 +481,7 @@
     animation-iteration-count: infinite;
 
 }
-
+/* animations in like button in likes display */
 @keyframes like-button {
     0% {
         transform: translate(0%, 0%) rotate(0deg);

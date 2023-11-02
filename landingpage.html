@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking | Home</title>
-    <!-- adding the valtech icon as fevicon -->
-    <link rel="shortcut icon" href="assets/images/favicon-logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./common.css">
-    <link rel="stylesheet" href="landingpage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- adding favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon-logo.ico" type="image/x-icon">
+    <!-- including common styling -->
+    <link rel="stylesheet" href="./common.css">
+    <!-- including specific styles related to this page -->
+    <link rel="stylesheet" href="landingpage.css">
     <!-- cdn to include icons from fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- including styles for screen widths less than 760px -->
     <link rel="stylesheet" href="mobiletemplate.css">
-
     <!-- cdn to include jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- link to include script -->
+    <!-- link to include script related to this page-->
     <script src="./js/landingpage.js"></script>
 
-    <!-- cdn to include icons from fontawesome -->
-    <script src="https://kit.fontawesome.com/01b4c12bd0.js" crossorigin="anonymous"></script>
+    <!-- script to load header and footer content  -->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".main-header").load("header.html");
             $(".footer-container").load("footer.html");
         });
@@ -36,6 +35,8 @@
     <!-- Header --------------Start------------- -->
     <div class="main-header"></div>
     <!-- Header -------------End ---------------- -->
+
+    <!-- Main container ----------------Start ---------------------- -->
     <div class="container">
         <!-- Section 1 ----------Start---------------- -->
         <section class="section-1">
@@ -44,7 +45,8 @@
                 <p>We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
                 <br>
 
-                <button id="discoverbutton" onclick=" window.location.href='hotel-listing-page.html' ">Discover Now</button>
+                <button id="discoverbutton" onclick=" window.location.href='hotel-listing-page.html' ">Discover
+                    Now</button>
             </div>
             <div class="section1_parent-div section1-ParentImage">
                 <img id="section1_image" src="assets/images/06.jpg" alt="image">
@@ -53,7 +55,7 @@
                     <img src="./assets/images/headphone.svg" alt="">
                     <h2>24/7</h2>
                     <p>Guide Supports</p>
-                  </div>
+                </div>
                 <div class="section1-innerimage">
                     <img src="assets/images/12.jpg" alt="hotel">
                     <img src="assets/images/12.jpg" alt="hotel">
@@ -69,9 +71,9 @@
             <!---------------------------------------------------------------------------------------------- -->
             <div class="section2-div left-image">
                 <img class="adImage" src="./assets/images/01(1).jpg" alt="ADVERISEMENTS">
-                
-                    <img class="star-top"  src="./assets/images/starTop1.svg">
-    
+
+                <img class="star-top" src="./assets/images/starTop1.svg">
+
                 <div class="likes-display">
                     <div class="outer-image">
                         <img src="./assets/images/01.svg" alt="like">
@@ -147,7 +149,10 @@
                     <div class="hotel-img">
                         <img src="./assets/images/01(2).jpg" onclick="window.location.href='hotel-listing-page.html'"
                             alt="">
-                        <button class="location-btn"><i class="fa-solid fa-map-location-dot" style="color: #f4f5f5;"></i>New York</button>
+
+                        <button class="location-btn"><i class="fa-solid fa-map-location-dot"
+                                style="color: #f4f5f5;"></i>&nbsp New York</button>
+
                     </div>
                     <h3>Baga Comfort</h3>
                     <div class="fig-caption">
@@ -161,7 +166,10 @@
                     <div class="hotel-img">
                         <img src="./assets/images/02(1).jpg" onclick="window.location.href='hotel-listing-page.html'"
                             alt="">
-                        <button class="location-btn"><i class="fa-solid fa-map-location-dot" style="color: #f4f5f5;"></i>Califonia</button>
+
+                        <button class="location-btn"><i class="fa-solid fa-map-location-dot"
+                                style="color: #f4f5f5;"></i>&nbsp Califonia</button>
+
                     </div>
                     <h3>New Apollo Hotel</h3>
                     <div class="fig-caption">
@@ -175,7 +183,10 @@
                     <div class="hotel-img">
                         <img src="./assets/images/03(1).jpg" onclick="window.location.href='hotel-listing-page.html'"
                             alt="">
-                        <button class="location-btn"><i class="fa-solid fa-map-location-dot" style="color: #f4f5f5;"></i>Los Angeles</button>
+
+                        <button class="location-btn"><i class="fa-solid fa-map-location-dot"
+                                style="color: #f4f5f5;"></i>&nbsp Los Angeles</button>
+
                     </div>
                     <h3>New Age Hotel</h3>
                     <div class="fig-caption">
@@ -189,7 +200,10 @@
                     <div class="hotel-img">
                         <img src="./assets/images/04(1).jpg" onclick="window.location.href='hotel-listing-page.html'"
                             alt="">
-                        <button class="location-btn"><i class="fa-solid fa-map-location-dot" style="color: #f4f5f5;"></i>Chicago</button>
+
+                        <button class="location-btn"><i class="fa-solid fa-map-location-dot"
+                                style="color: #f4f5f5;"></i>&nbsp Chicago</button>
+
                     </div>
                     <h3>Helios Beach</h3>
                     <div class="fig-caption">
@@ -222,15 +236,16 @@
             <div class="section4_right_text_div">
                 <img src="./assets/images/double-quote.png" alt="double-quote" class="double-quote">
 
-                <p class="section4_right_text_div_p" id="section4_right_text_div_p3_1">Passage its ten led hearted removal cordial.
-                preference any astonished unreserved Mrs.Understood the preference
+                <p class="section4_right_text_div_p" id="section4_right_text_div_p3_1">Passage its ten led hearted
+                    removal cordial.
+                    preference any astonished unreserved Mrs.Understood the preference
                     unreserved.</p>
 
-                    <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
-                    <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
-                    <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
-                    <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
-                    <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
+                <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
 
                 <b>
                     <p class="section4_customer_name">Carolyn Ortiz</p>
@@ -244,19 +259,20 @@
         <section class="section4_section" id="section4_testimonial2">
             <!-- section4 left division containing image -->
             <div class="section4_left_img_div">
-                
+
                 <div class="section4_left_sub_img_div">
                     <img src="./assets/images/02.svg" alt="" class="section4_left_sub_img">
                 </div>
                 <img src="./assets/images/01(3).jpg" alt="section4_left_img_1" class="section4_left_img">
-                
+
             </div>
 
             <!-- section4 right division containig text -->
             <div class="section4_right_text_div" id="section4_testimonial2">
                 <img src="./assets/images/double-quote.png" alt="double-quote" class="double-quote">
 
-                <p class="section4_right_text_div_p" id="section4_right_text_div_p3_2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.preference any astonished unreserved Mr.Lorem ipsum dolor sit amet.</p> 
+                <p class="section4_right_text_div_p" id="section4_right_text_div_p3_2">Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit.preference any astonished unreserved Mr.Lorem ipsum dolor sit amet.</p>
 
                 <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
                 <i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>
@@ -271,11 +287,13 @@
             </div>
         </section>
         <!-- section4 testimonial-2 ends -->
-        <!-- Section 4 -------------------------End------------------------------------- -->       
+        <!-- Section 4 -------------------------End------------------------------------- -->
     </div>
-            <!-- footer starts here -->
-            <div class="footer-container"></div>
-            <!-- footer end here -->
+    <!-- Main container ----------------End ---------------------- -->
+
+    <!-- footer starts here -->
+    <div class="footer-container"></div>
+    <!-- footer end here -->
 
 </body>
 
