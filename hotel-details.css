@@ -513,7 +513,7 @@ h5::after {
   
   }
   .card{
-    left: 0;
-    width: 100%;
+    left: 10%;
+    width: 80%;
   }
 }
