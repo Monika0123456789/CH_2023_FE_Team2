@@ -446,19 +446,50 @@ h5::after {
   justify-content: space-between;
 }
 
+/* Styles for the swipe arrows of the image */
+.card>img:first-of-type{
+  position: relative;
+
+}
+/* style for right arrow */
+.box1{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 25%;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: black;
+  margin-right: 10px;
+}
+/* style for left arrow */
+.box2{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 25%;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: black;
+  margin-left: 10px;
+}
 .popup-head>h3{
   margin:0px;
 }
 
 #close-popup {
-  font-size: 25px;
+  font-size: 30px;
   cursor: pointer;
   color: #aaa;
 }
 
 #close-popup:hover, 
 #close-popup:focus{
-  color: black;
+    color: black;
     cursor: pointer;
 }
 /*Styling for the room-details popup -----------------Ends here--------------------  */
