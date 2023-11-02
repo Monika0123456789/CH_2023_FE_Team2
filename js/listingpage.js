@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $.getJSON("hotels.json", function (data) {
 
