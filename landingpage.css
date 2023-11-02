@@ -296,7 +296,7 @@
   /* style for the button inside the img */
   .location-btn{
     position: absolute;
-    padding: 2% 4%;
+    padding: 2%;
     border-radius: 15px;
     background-color: black;
     color: white;
@@ -305,7 +305,7 @@
   }
   .location-btn:hover{
     
-    background-color: coral;
+    background-color: rgba(92, 17, 241, 0.858);
     color: black;
     
   }
