@@ -85,18 +85,15 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
     width:70%;
-    gap:5%;
 }
 
 /* styling the div containg the ul */
 .list-footer{
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     max-width: fit-content;
-    flex-wrap: wrap;
-    margin:2%;
 }
 
  /* styling to remove text decoration on a tag */
@@ -215,13 +212,10 @@ footer{
   
   /* styling the div containing set of lists */
   .list-div{
-    display:flex;
-    flex-wrap: wrap;
-    width:100%;
-  }
-  
-  .list-footer{
-    width:40%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1fr;
   }
   
   .footersection{
