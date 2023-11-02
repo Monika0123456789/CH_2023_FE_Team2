@@ -197,6 +197,9 @@ styling the container containg the toggle buttons */
     cursor: pointer;
     background-color: rgb(216, 204, 189);
 }
+.toggle-buttons:hover{
+    box-shadow: 2px 3px 3px black;
+}
 
 /* styling the hotel pricing */
 .hotel-pricing {
