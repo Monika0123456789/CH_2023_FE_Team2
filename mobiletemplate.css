@@ -3,6 +3,7 @@
 
     .section1_parent-div {
         width: 100%;
+        margin-bottom:10%;
     }
 
     .section1-ParentImage {
@@ -28,6 +29,7 @@
         width: 30%;
         font-size: larger;
         border: 0px;
+        padding:2%;
     }
 
     .section-1 {
