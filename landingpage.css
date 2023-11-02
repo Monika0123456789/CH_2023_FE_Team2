@@ -305,7 +305,8 @@
   }
   .location-btn:hover{
     
-    background-color: rgba(92, 17, 241, 0.858);
+    background-color: coral;
+    box-shadow: 5px 5px 5px black;
     color: black;
     
   }
