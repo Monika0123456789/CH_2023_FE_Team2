@@ -36,10 +36,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #ffdf00;"></i>'.repeat(
                                       4
                                     )}
-                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #ffdf00;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -58,7 +58,7 @@ $(document).ready(function () {
                                 <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                             </div>
                             <div class="rightcontainer-section3">
-                                <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                <p><b class="hotel-pricing">$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                 <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                             </div>
                         </div>
@@ -76,10 +76,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #ffdf00;"></i>'.repeat(
                                       4
                                     )}
-                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #ffdf00;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -98,7 +98,7 @@ $(document).ready(function () {
                                 <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                             </div>
                             <div class="rightcontainer-section3">
-                                <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                <p><b class="hotel-pricing">$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
 
                                 <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                             </div>
@@ -151,10 +151,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #ffdf00;"></i>'.repeat(
                                       4
                                     )}
-                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #ffdf00;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -173,7 +173,7 @@ $(document).ready(function () {
                                 <i class="fa-solid fa-circle-check fa-xs" style="color: rgb(3, 185, 3);"></i>&nbsp Free Breakfast</p>
                             </div>
                             <div class="rightcontainer-section3">
-                                <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                <p><b class="hotel-pricing">$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                 <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                             </div>
                         </div>
@@ -191,10 +191,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #ffdf00;"></i>'.repeat(
                                       4
                                     )}
-                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #ffdf00;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -214,7 +214,7 @@ $(document).ready(function () {
                             </div>
                             <div class="rightcontainer-section3">
 
-                                <p><b class="hotel-pricing">${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
+                                <p><b class="hotel-pricing">$${hotelPrice}</b>/day &nbsp<s>$1000</s></p>
                                 <button class="Select-room-button" onclick="window.location.href='hotel-details.html'">Select Room</button>
                             </div>
                         </div>
