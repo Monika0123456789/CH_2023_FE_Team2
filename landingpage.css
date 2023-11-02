@@ -4,11 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom:5%;
 }
 
 #discoverbutton {
     color: blue;
-    background-color: lightcyan;
+    background-color: rgb(220, 248, 248);
     border-radius: 10px;
     height: 8%;
     width: 25%;
