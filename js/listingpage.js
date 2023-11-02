@@ -37,9 +37,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
-                                      4.5
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                      4
                                     )}
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -76,9 +77,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
-                                      4.5
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                      4
                                     )}
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -150,9 +152,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
-                                      4.5
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                      4
                                     )}
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -189,9 +192,10 @@ $(document).ready(function () {
                         <div class="hotel-list-rightcontainer">
                             <div class="rightcontainer-section1">
                                 <article>
-                                    ${'<i class="fa-solid fa-star fa-sm" style="color: yellow;"></i>'.repeat(
-                                      4.5
+                                    ${'<i class="fa-solid fa-star fa-sm" style="color: #e1f014;"></i>'.repeat(
+                                      4
                                     )}
+                                    <i class="fa-solid fa-star-half-stroke fa-sm" style="color: #e1f014;"></i>
                                 </article>
                                 <article>
                                     <div class="iconcontainer-main">
@@ -222,6 +226,24 @@ $(document).ready(function () {
     });
 });
 
+var data; //declare the variable data
+
+//fetch hotel data
+$.getJSON("hotels.json",function(hotelData){
+    data = hotelData;
+});
+
+//function to match the id of hotel to respective id in the json data
+function getHotelDataById(hotelId){
+    for(var i=0;i<data.items.length;i++){
+        if(data.items[i].id === hotelId){
+          return data.items[i];
+        }
+    }
+    return null;
+}
+
+
 // function to open the popup
 function openPopup(hotelId){
     var hotelData = getHotelDataById(hotelId);
@@ -242,23 +264,6 @@ function openPopup(hotelId){
 function closePopup(){
     $("#popup-container").hide();
 }
-
-//function to match the id of hotel to respective id in the json data
-function getHotelDataById(hotelId){
-    for(var i=0;i<data.items.length;i++){
-        if(data.items[i].id === hotelId){
-          return data.items[i];
-        }
-    }
-    return null;
-}
-
-var data; //declare the variable data
-//fetch hotel data
-$.getJSON("hotels.json",function(hotelData){
-    data = hotelData;
-   
-});
 
 // function to switch to page2
 function changePageToTwo(){

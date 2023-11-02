@@ -449,8 +449,13 @@ h5::after {
 /* Styles for the swipe arrows of the image */
 .card>img:first-of-type{
   position: relative;
-
 }
+
+/* styling the hotel pricing */
+.hotel-price {
+  color: black;
+}
+
 /* style for right arrow */
 .box1{
   width: 20px;
