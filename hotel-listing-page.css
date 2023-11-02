@@ -10,6 +10,7 @@
 }
 .hotel-list-maincontainer:hover {
     background-color: aliceblue;
+    box-shadow: 5px 5px 10px black;
 }
 
 /* styling the container containing the image in the left */
