@@ -61,7 +61,7 @@ function init() {
         </div>
         </section>
 
-`);
+    `);
     document.getElementById("popup-container").style.display = "block";
   });
 
