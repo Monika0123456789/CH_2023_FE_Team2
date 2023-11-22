@@ -1,4 +1,5 @@
 import "../landing-page-styles/section1.css";
+// import { NavLink } from "react-router-dom";
 
 export let SectionOneComp = () => {
     return (
@@ -9,8 +10,9 @@ export let SectionOneComp = () => {
                 <p>We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
                 <br/>
 
-                <button id="discoverbutton" onClick={()=>{window.location.href = 'hotelListingPageMain.jsx'}}>Discover
+                <button id="discoverbutton" onClick={()=>{'hotelListingPageMain.jsx'}}>Discover
                     Now</button>
+                
       </div>
       <div className="section1_parent-div section1-ParentImage">
                 <img id="section1_image" src="./assets/images/06.jpg" alt="image"/>

@@ -3,8 +3,8 @@ import { HotelLandingPageMain } from "./landingPage/components/hotelLandingPageM
 
 export let Main = () =>{
   return <div>
-    <h1>hello from Main App</h1>
+    
     <HotelLandingPageMain/>
-    <HotelListingPageMain/>
+    {/* <HotelListingPageMain/> */}
   </div>
 }

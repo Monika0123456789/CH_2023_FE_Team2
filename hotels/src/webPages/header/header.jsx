@@ -1,6 +1,4 @@
 import "./header.css";
-import { FaBell } from "react-icons/fa";
-
 
 export let HeaderComp = () => {
     return (
