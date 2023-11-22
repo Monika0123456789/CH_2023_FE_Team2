@@ -1,10 +1,13 @@
-import { HotelListingPageMain } from "./hotelListingPage/components/hotelListingPageMain"
-import { HotelLandingPageMain } from "./landingPage/components/hotelLandingPageMain"
+import "./common.css";
+import { HotelListingPageMain } from "./hotelListingPage/components/hotelListingPageMain";
+import { HotelLandingPageMain } from "./landingPage/components/hotelLandingPageMain";
 
-export let Main = () =>{
-  return <div>
-    
-    <HotelLandingPageMain/>
-    {/* <HotelListingPageMain/> */}
-  </div>
-}
+export let Main = () => {
+  return (
+    <div className="container">
+      <HotelLandingPageMain />
+       {/* <HotelListingPageMain/> */}
+    </div>
+  );
+};
+
