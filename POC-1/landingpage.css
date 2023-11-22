@@ -1,0 +1,492 @@
+/* Styles for Section - 01 in landing page --------Starts Here---------- */
+.section-1 {
+    /* height: 600px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom:5%;
+}
+
+#discoverbutton {
+    color: blue;
+    background-color: rgb(220, 248, 248);
+    border-radius: 10px;
+    height: 8%;
+    width: 25%;
+    font-size: large;
+    border: 0px;
+}
+#discoverbutton:hover{
+    background-color: blue;
+    color: lightcyan;
+    box-shadow: 5px 5px 5px black;
+}
+
+#section1_image {
+    position: relative;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+.leaves-image{
+    position: absolute;
+    width: 50%;
+    right: 0;
+    bottom: 0;
+}
+.support{
+    position: absolute;
+    top: -3%;
+    right:-3%;
+    width: 23%;
+    max-height:fit-content;
+    /* margin: auto; */
+    border: 3px solid white;
+    padding: 3%;
+    text-align: center;
+    border-radius: 10%;
+    background-color:rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 0px 10px rgba(156, 156, 220,0.5);
+  }
+  .support:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+.support p,.support h2{
+    margin: 0;
+    /* font-size: 1.2em; */
+}
+.section1_parent-div {
+    width: 45%;
+    max-height: 100%;
+}
+.section1_parent-div>h1{
+    font-size: var(--primary-heading-web);
+}
+
+/* style for rounded images on the left-edge of image */
+.section1-ParentImage {
+    position: relative;
+}
+.section1-innerimage > img {
+    position: absolute;
+    border: 2px solid white;
+}
+.section1-innerimage > img:nth-child(1) {
+    width: 10%;
+    height: 8%;
+    border-radius: 100%;
+    top: 10%;
+    left: -5%;
+}
+.section1-innerimage > img:nth-child(2) {
+    width: 20%;
+    height: 16%;
+    border-radius: 100%;
+    top: 25%;
+    left: -10%;
+}
+
+/* Styles for Section 01 in Landing page ---------Ends Here------------------ */
+
+
+/* Styles for whole section2 container --------------Starts Here-----------------*/
+.section2{
+    display: flex;
+    margin: 3%;
+
+}
+
+/* left and right divisions of section2 */
+.section2-div{
+    width: 50%;
+    margin: 10px;
+}
+.right-content >h1:first-child{
+    font-size: var(--secondary-heading-web);
+}
+.left-image{
+    padding-right: 10%;
+}
+/* styles to obtain the likes and ratings over the left side of section two */
+/* Likes and Ratings styles-------------------------- start here ------------ */
+.left-image{
+    position: relative;
+}
+/* star on top left corner of image present in section 2 */
+.adImage{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.star-top{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: -10%;
+    left: -10%;
+}
+
+.likes-display{
+    box-sizing: border-box;
+    position: absolute;
+    background-color:rgba(240, 248, 255,0.8);
+    width: 50%;
+    /* height: 18%; */
+    bottom: 4%;
+    left: 6%;
+    border-radius: 10px;
+    
+}
+
+.outer-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.outer-image>img{
+    width: 18%;
+    z-index: 2;
+    position: absolute;
+    top: -15%;
+    left : -10%;
+    
+}
+
+.client-rating-display{
+    display: flex;
+    position: relative;
+}
+.client-rating-display>div:nth-child(1){
+    box-sizing: border-box;
+    padding-left: 10%;
+    width: 70%;
+    position: relative;
+}
+.ratings{
+    padding-right: 5%;
+    width:30%;
+}
+.ratings i{
+    color: #fff700;
+}
+.inner-images{
+    position: relative;
+}
+.inner-images>img{
+    border-radius: 100%;
+    width: 20%;
+    position: absolute;
+
+}
+/* positioning of images in client rating display ------- */
+.inner-images>img:nth-child(1){
+    top:0;
+    left:0px;
+    z-index: 1;
+}
+.inner-images>img:nth-child(2){
+    top:0px;
+    left:14%;
+    z-index: 2;
+}
+.inner-images>img:nth-child(3){
+    top:0px;
+    left:28%;
+    z-index: 3;
+}
+.inner-images>img:nth-child(4){
+    top:0px;
+    left:42%;
+    z-index: 4;
+}
+/* --------------Likes and Rating Styles end here ---------------*/
+
+/* Right division of the section */
+.adImage{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+/* to display the highlighting services in grid format */
+.inner-grid-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row: inherit;
+    gap: 5px;
+    /* margin: 5% 0; */
+}
+/* to have a circular background for icons displayed*/
+.grid-content>.fa-solid{
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-top: 8%;
+}
+
+/* to change the color of icons and faded background for icons Starts here ----------- */
+.fa-utensils{
+    color: rgb(51, 225, 222);
+    background-color: rgba(51, 225, 222,0.2);
+}
+.fa-stopwatch{
+    color : rgb(223, 58, 82);
+    background-color: rgba(223, 58, 82,0.2);;
+
+}
+.fa-shield{
+    color:rgb(226, 81, 3);
+    background-color: rgba(226, 81, 3,0.2);
+
+}
+.fa-bolt{
+    color : rgb(48, 253, 185);
+    background-color: rgba(48, 253, 185,0.2);;
+}
+/* icons with fadded background style ends here */
+
+/* Section 2 Styling --------------------------Ends Here--------------------------------------- */
+
+
+/* Section 3 Styling --------------------------Starts Here--------------------------------------- */
+
+/* style for destop version */
+.section-3{
+    height: auto;
+    text-align: center;
+    padding: 1% 0;
+  }
+  
+  /* container contains all the images */
+  .section3-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1% auto;
+  }
+  
+  .section-3>h2:first-child{
+    font-size: var(--secondary-heading-web);
+  }
+  
+  /* style for the image container*/
+  .card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 23%;
+    margin: 1%;
+  }
+  
+  .card img{
+    max-width: 100%;
+    max-height: auto;
+    border-radius: 4%;
+  }
+  
+  .hotel-img{
+    position: relative;
+  }
+  
+  /* style for the button inside the img */
+  .location-btn{
+    position: absolute;
+    padding: 3%;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    bottom: 5%;
+    left: 2%;
+    border:none;
+  }
+  .card h3{
+    margin: 5px 0 0 0;
+    color: black;
+    text-align: left;
+  }
+  
+  .fig-caption>h4{
+    margin: 0;
+  }
+  
+  /* style for figure caption */
+  .fig-caption{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+  }
+  
+  .fig-caption>h4:first-child{
+    color: aquamarine;
+  }
+  
+  .fig-caption .rate{
+    color: rgb(5, 156, 156);
+  }
+  
+  .fig-caption .rating{
+    color: black;
+    margin-right: 1em; 
+  }
+  
+  .star{
+    width: 13px;
+  }
+/* Section 3 Styling --------------------------Ends Here--------------------------------------- */
+  
+
+/* Section 4 Styling --------------------------Starts Here--------------------------------------- */
+/* section4 testimonials section styling */
+
+/* section4 testimonial-1 and testimonial-2 begins */
+/* section4 containing testimonials */
+/* section4 testimonial-1 begins */
+.section4_section{
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    flex-basis: 50%;
+    margin:50px auto;
+    align-items: center;
+    gap:5%;
+}
+
+.section4_left_img_div{
+    width:50%;
+    flex-basis: 50%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: right;
+}
+
+/* testimonial image styling */
+.section4_left_img{
+    width:60%;
+    border-radius: 5%;
+    position:relative;
+}
+
+/* left division sub image div styling */
+.section4_left_sub_img_div{
+    width:35px;
+    height:35px;
+    position: relative;
+    left: 1.5rem;
+    top:2rem;
+    border:none;
+    z-index:2;
+    border-radius:5px;
+    padding:1%;
+    background-color: orange;
+}
+
+
+/* testimonial right div element styling */
+.section4_right_text_div{
+    width:50%;
+}
+
+/* testimonial right div element paragraph styling */
+.section4_right_text_div_p{
+    line-height: 20px;
+    font-size: 15px;
+    color:black;
+}
+
+/* star icon styling */
+.rating_star{
+    width:12px;
+}
+
+/* double quote icon styling */
+.double-quote{
+    width:30px;
+    margin-left: 4%;
+}
+
+/* customer occupation styling */
+.section4_customer_occupation{
+    color:rgb(158, 154, 154);
+    margin-top:0rem;
+    margin-bottom:0rem;
+    font-size: 11px;
+}
+
+/* customer name sytling */
+.section4_customer_name{
+    margin-top:0rem;
+    margin-bottom:0rem;
+    font-size: 12px;
+    color:black;
+}
+
+/* third paragraph in right div styling for testimonial-1*/
+#section4_right_text_div_p3_1{
+    margin-bottom: 0.5rem;
+}
+/* section4 testimonial-1 ends */
+
+
+
+/* section4 testimonial-2 begins */
+/* third paragraph in right div styling for testimonial-2*/
+#section4_right_text_div_p3_2{
+    margin-bottom: 0.5rem;
+}
+/* section4 testimonial-2 ends */
+
+/* section4 testimonial-1 and testimonial-2 ends */
+/* Section 4 Styling --------------------------Ends Here--------------------------------------- */
+
+/* Adding animation features-------- */
+/* image rotation */
+@keyframes image-rotation {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.section1-innerimage > img:nth-child(1):hover {
+    animation-name: image-rotation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.section1-innerimage > img:nth-child(2):hover {
+    animation-name: image-rotation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.star-top{
+    animation-name: image-rotation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+/* animations in like button in likes display */
+@keyframes like-button {
+    0% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -150%) rotate(-90deg);
+    }
+    100% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+}
+
+.outer-image>img:hover{
+    
+    animation: like-button 2s 1;
+    
+    
+}
