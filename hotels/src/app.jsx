@@ -4,7 +4,7 @@ import { Main } from "./webPages/main"
 
 export let App = () =>{
   return <div>
-    <h1>hello from app</h1>
+    {/* main of the application renders here */}
     <Main/>
   </div>
 }
