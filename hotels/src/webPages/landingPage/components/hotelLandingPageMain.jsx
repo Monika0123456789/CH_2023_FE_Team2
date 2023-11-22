@@ -1,8 +1,14 @@
 // main component of this webpage -- here we will render the components of this page
+
+
+import { HeaderComp } from "../../header/header";
+import { SectionOneComp } from "./section1";
+
 export let HotelLandingPageMain = () => {
   return (
     <div>
-      <h1>hello from hotel landing page</h1>
+      <HeaderComp/>
+      <SectionOneComp/>
     </div>
   );
 };
