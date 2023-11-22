@@ -22,7 +22,7 @@ export let Testimonial = (props) => {
                     <div className="section4_right_text_div">
                         <img src="./assets/images/double-quote.png" alt="double-quote" className="double-quote" />
 
-                        <p class="section4_right_text_div_p" id="section4_right_text_div_p3_1">Passage its ten led hearted
+                        <p className="section4_right_text_div_p" id="section4_right_text_div_p3_1">Passage its ten led hearted
                         removal cordial.
                         preference any astonished unreserved Mrs.Understood the preference
                         unreserved.</p>
