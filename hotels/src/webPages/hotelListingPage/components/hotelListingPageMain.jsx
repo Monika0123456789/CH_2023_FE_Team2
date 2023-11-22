@@ -3,7 +3,6 @@
 export let HotelListingPageMain = () => {
   return (
     <div>
-      <h1>Hello Prends</h1>
     </div>
   );
 };
