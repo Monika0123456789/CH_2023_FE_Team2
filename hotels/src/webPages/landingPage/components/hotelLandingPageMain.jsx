@@ -1,8 +1,3 @@
-
-
-import  ParentComponent  from "./section3-parentcomp";
-import { Section2 } from "./section2.component";
-
 import { Section2 } from "./section2.component";
 import  ParentComponent  from "./section3-parentcomp";
 import { Section4 } from "./section4";
