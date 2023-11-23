@@ -24,6 +24,7 @@ export let Main = () => {
     // </div>
     <div>
       <HeaderComp/>
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <HotelLandingPageMain/> } />
