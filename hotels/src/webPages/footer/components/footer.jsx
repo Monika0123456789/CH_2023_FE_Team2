@@ -15,7 +15,7 @@ import { FaLinkedin } from "react-icons/fa";
 import "../footer-styles/footer.css";
 
 export let Footer = () => {
-    return <div>
+    return <div className="footer_container">
         {/*Footer -------------------------Start-------------------------------------*/}
         <footer>
 
