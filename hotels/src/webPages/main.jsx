@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export let Main = () => {
   return (
+
     <>
       <HeaderComp />
       <div className="container">
@@ -28,6 +29,7 @@ export let Main = () => {
       </div>
       <Footer />
     </>
+
   );
 };
 
