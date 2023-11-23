@@ -4,7 +4,7 @@
 /* defining grid layout */
 .image-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: repeat(2, 250px);
     grid-gap: 0.5em;
   }
@@ -20,14 +20,12 @@
   .image-01 {
     grid-row-start: 1;
     grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 3;
   }
   
   /* second image positioning in grid */
   .image-02 {
-    grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 4;
   }
   
   /*styles added - In order to achieve the overlay effect displaying option as viewall option */
