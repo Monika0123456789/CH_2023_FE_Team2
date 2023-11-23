@@ -1,5 +1,6 @@
 
 import "./common.css";
+import { DetailPageMain } from "./hotelDetailPage/components/hotel-detail-page-main";
 import { HotelListingPageMain } from "./hotelListingPage/components/hotelListingPageMain";
 import { HotelLandingPageMain } from "./landingPage/components/hotelLandingPageMain";
 import { Footer } from "./footer/components/footer";
@@ -28,6 +29,7 @@ export let Main = () => {
         <Routes>
           <Route path="/" element={ <HotelLandingPageMain/> } />
           <Route path="/hotelListingPage" element={ < HotelListingPageMain /> } />
+          <Route path="/detailPage" element={ <DetailPageMain/> } />
         </Routes>
       </BrowserRouter>
 

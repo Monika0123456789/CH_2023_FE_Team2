@@ -1,0 +1,16 @@
+/* styling the hotel policies maincontainer */
+.hotel-options-content {
+    margin: 2%;
+  }
+  
+  /* styling the hotel policies content */
+  .hotel-options-content {
+    line-height: 2rem;
+    text-align: justify;
+  }
+  
+  /* styling the hotel policies main container */
+  .hotel-policies-maincontainer {
+    margin-bottom: 2%;
+  }
+  /* styling the hotel policies section ends here----------------------------*/
