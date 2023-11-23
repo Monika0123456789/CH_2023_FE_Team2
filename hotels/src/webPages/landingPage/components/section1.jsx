@@ -1,7 +1,9 @@
 import "../landing-page-styles/section1.css";
-// import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export let SectionOneComp = () => {
+    let navigate = useNavigate();
     return (
       
     <section className="section-1">
@@ -10,7 +12,7 @@ export let SectionOneComp = () => {
                 <p>We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
                 <br/>
 
-                <button id="discoverbutton" onClick={()=>{'hotelListingPageMain.jsx'}}>Discover
+                <button id="discoverbutton" onClick={()=>{navigate('/hotelListingPage')}}>Discover
                     Now</button>
                 
       </div>
