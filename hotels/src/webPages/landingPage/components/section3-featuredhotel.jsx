@@ -2,8 +2,11 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
 import "../landing-page-styles/section3.css";
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedHotels = ({ hotels }) => {
+    let navigate = useNavigate();
+
   return (
     <section className="section-3">
     <h2>Featured Hotels</h2>
@@ -13,7 +16,7 @@ const FeaturedHotels = ({ hotels }) => {
           <div className="hotel-img">
             <img
               src={hotel.imgSrc}
-              onClick={() => window.location.href='hotel-listing-page.html'}
+              onClick={()=>{navigate('/hotelListingPage')}}
               alt=""
             />
             <button className="location-btn">

@@ -3,6 +3,7 @@ import {HotelListingPageCard} from "./hotelListingPageCard";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { GrFormNextLink } from "react-icons/gr";
 import "../hotel-listing-page-js/hotelListingPage.js";
+import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
 
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
@@ -21,11 +22,11 @@ export let HotelListingPageMain = () => {
       </div>
         
 
-        <div class="toggle-button-container toggle-button-container1">
-          <button id="toggle-button-<" class="toggle-buttons" title="View Previous page"><GrFormPreviousLink /></button>
-          <button id="toggle-button1" class="toggle-buttons">1</button>
-          <button id="toggle-button2" class="toggle-buttons">2</button>
-          <button id="toggle-button->" class="toggle-buttons" title="View Next page"><GrFormNextLink /></button>
+        <div className={`${style.toggle_button_container} ${style.toggle_button_container1}`}>
+          <button id="toggle-button-<" className={style.toggle_buttons} title="View Previous page"><GrFormPreviousLink /></button>
+          <button id="toggle-button1" className={style.toggle_buttons}>1</button>
+          <button id="toggle-button2" className={style.toggle_buttons}>2</button>
+          <button id="toggle-button->" className={style.toggle_buttons} title="View Next page"><GrFormNextLink /></button>
         </div>
     </div>
   );
