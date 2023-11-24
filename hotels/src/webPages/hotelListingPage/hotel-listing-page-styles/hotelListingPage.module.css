@@ -1,5 +1,5 @@
 /* styling the main container */
-.hotel-list-maincontainer {
+.hotel_list_maincontainer {
     /* width: 1320px; */
     height: auto;
     /* border: 2px solid #ccc; */
@@ -8,13 +8,13 @@
     border-radius: 10px;
     margin: 2%;
 }
-.hotel-list-maincontainer:hover {
+.hotel_list_maincontainer:hover {
     background-color: aliceblue;
     box-shadow: 5px 5px 10px black;
 }
 
 /* styling the container containing the image in the left */
-.hotel-list-leftcontainer {
+.hotel_list_leftcontainer {
     width: 40%;
     box-sizing: border-box;
     padding: 0.5%;
@@ -23,12 +23,12 @@
 
 /* 
 styling the first leftcontainer image  */
-#first-leftcontainer-image {
+#first_leftcontainer_image {
     position: relative;
 }
 
 /* styling the offerdiv div */
-.offer-div {
+.offer_div {
     position: absolute;
     width: 20%;
     background-color: red;
@@ -42,14 +42,14 @@ styling the first leftcontainer image  */
 }
 
 /* styling the image in the left */
-.container-image {
+.container_image {
     height: 100%;
     width: 100%;
     border-radius: 10px;
 }
 
 /* styling the container in the right containing the text */
-.hotel-list-rightcontainer {
+.hotel_list_rightcontainer {
     width: 60%;
     box-sizing: border-box;
     padding: 2%;
@@ -57,7 +57,7 @@ styling the first leftcontainer image  */
 }
 
 /* styling section1 of the right container containing ratings and two other icons */
-.rightcontainer-section1 {
+.rightcontainer_section1 {
     display: flex;
     height: auto;
     justify-content: space-between;
@@ -65,17 +65,17 @@ styling the first leftcontainer image  */
 }
 
 /* styling the ratings in section1 */
-.rightcontainer-section1 > article:nth-child(1) {
+.rightcontainer_section1 > article:nth-child(1) {
     width: 80%;
 }
 
 /* styling the two icons in section1 */
-.rightcontainer-section1 > article:nth-child(2) {
+.rightcontainer_section1 > article:nth-child(2) {
     width: 20%;
 }
 
 /* styling the container containing the two icons in the section1 of right container */
-.iconcontainer-main {
+.iconcontainer_main {
     display: flex;
     /* justify-content: space-evenly; */
     flex-basis: 50%;
@@ -115,23 +115,23 @@ styling the first leftcontainer image  */
 .shareicon:hover {
     color: blue;
 }
-.rating-like-share {
+.rating_like_share {
     display: flex;
     justify-content: space-between;
 }
-.location-icon{
+.location_icon{
     width: 20px;
     font-size: x-large;
 }
 
 /* styling the h3 inside the section 2 of the right container */
-.rightcontainer-section2 h3 {
+.rightcontainer_section2 h3 {
     margin-top: 0rem;
     margin-bottom: 0rem;
 }
 
 /* styling the hotel facilities div */
-.hotel-facilities-div{
+.hotel_facilities_div{
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
@@ -145,29 +145,29 @@ styling the first leftcontainer image  */
 
 
 /* styling the right container's a tag */
-.rightcontainer-section2 ul li a {
+.rightcontainer_section2 ul li a {
     text-decoration: none;
 }
 
-.rightcontainer-section2 {
+.rightcontainer_section2 {
     padding-left: 0%;
     margin-left: 0%;
     margin-bottom: 2%;
 }
 
 /* styling the p inside the section 2 of the right container */
-.rightcontainer-section2 p {
+.rightcontainer_section2 p {
     margin-top: 0.2rem;
     margin-bottom: 0rem;
 }
 
 /* styling the first li of ul inside section2 of right container */
-.rightcontainer-section2 ul li:first-child {
+.rightcontainer_section2 ul li:first-child {
     list-style: none;
 }
 
 /* styling the ul tag inside the right container */
-.rightcontainer-section2 ul {
+.rightcontainer_section2 ul {
     display: flex;
     gap: 7%;
     flex-wrap: wrap;
@@ -179,7 +179,7 @@ styling the first leftcontainer image  */
 }
 
 /* styling the container containing the price and button in the last section of the right container*/
-.rightcontainer-section3 {
+.rightcontainer_section3 {
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -189,12 +189,12 @@ styling the first leftcontainer image  */
 }
 
 /* styling the hotel pricing */
-.hotel-price {
+.hotel_price {
     color: black;
 }
 
 /* styling the select room button in the last section of the right container */
-.Select-room-button {
+.Select_room_button {
     box-sizing: border-box;
     border-radius: 10px;
     width: 20%;
@@ -203,7 +203,7 @@ styling the first leftcontainer image  */
     cursor: pointer;
     padding: 1%;
 }
-.Select-room-button:hover {
+.Select_room_button:hover {
     background-color: antiquewhite;
     color: black;
     box-shadow: 5px 5px 5px black;
@@ -211,7 +211,7 @@ styling the first leftcontainer image  */
 
 /* 
 styling the container containg the toggle buttons */
-.toggle-button-container {
+.toggle_button_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -220,19 +220,19 @@ styling the container containg the toggle buttons */
 }
 
 /* styling the toggle buttons */
-.toggle-buttons {
+.toggle_buttons {
     border-radius: 5px;
     padding: 1%;
     border: none;
     cursor: pointer;
     background-color: rgb(216, 204, 189);
 }
-.toggle-buttons:hover{
+.toggle_buttons:hover{
     box-shadow: 2px 3px 3px black;
 }
 
 /* styling the hotel pricing */
-.hotel-pricing {
+.hotel_pricing {
     color: black;
     font-size: 1.5rem;
 }
@@ -252,7 +252,7 @@ styling the container containg the toggle buttons */
 }
 
 /* styling the popup container */
-.popup-content {
+.popup_content {
     background-color: whitesmoke;
     margin: 3% auto;
     padding: 20px;
@@ -281,25 +281,25 @@ styling the container containg the toggle buttons */
 }
 /* adding media queries for screen widths less or equal to 760px */
 @media screen and (max-width: 760px) {
-    .hotel-list-maincontainer {
+    .hotel_list_maincontainer {
         display: flex;
         flex-direction: column;
     }
 
-    .hotel-list-leftcontainer {
+    .hotel_list_leftcontainer {
         width: 100%;
     }
 
-    .hotel-list-rightcontainer {
+    .hotel_list_rightcontainer {
         width: 100%;
     }
-    .container-image {
+    .container_image {
         width: 100%;
         height: 23em;
         /* margin: 0 10%; */
     }
 
-    .popup-content{
+    .popup_content{
         width: 80%;        
     }
 }
