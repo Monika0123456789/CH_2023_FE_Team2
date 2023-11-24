@@ -292,6 +292,7 @@ styling the container containg the toggle buttons */
 
     .hotel_list_rightcontainer {
         width: 100%;
+        height: 300px;
     }
     .container_image {
         width: 100%;
