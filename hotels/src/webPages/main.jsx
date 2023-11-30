@@ -17,17 +17,22 @@ export let Main = () => {
   return (
     <>
       <HeaderComp />
-
+      <div className="container">
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<HotelLandingPageMain />} />
-            <Route exact path="/hotelListingPage" element={<HotelListingPageMain />} />
+            <Route
+              exact
+              path="/hotelListingPage"
+              element={<HotelListingPageMain />}
+            />
             <Route exact path="/detailPage" element={<DetailPageMain />} />
-            <Route exact path="/adminlogin" element={<AdminLogin/> } />
-            <Route exact path="/footer" element={<Footer/> } />
+            <Route exact path="/adminlogin" element={<AdminLogin />} />
+            <Route exact path="/footer" element={<Footer />} />
             <Route path="/checkout" element={<CheckoutMain />} />
           </Routes>
         </BrowserRouter>
+      </div>
     </>
   );
 };

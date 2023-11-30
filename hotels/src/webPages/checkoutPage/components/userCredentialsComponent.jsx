@@ -34,7 +34,7 @@ let handleChange = () => {
     gender : maleRef.current.checked ? "male" : femaleRef.current.checked ? "female" : otherRef.current.checked ? "other" : '',
   }));
 };
-// console.log(userData);
+console.log(userData);
 
   return (
     <>
