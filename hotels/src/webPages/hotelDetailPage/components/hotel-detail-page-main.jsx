@@ -1,9 +1,13 @@
 // import { DemoComp } from "./demo";
+import { Footer } from "../../footer/components/footer";
+
 import { DetailSectionOne } from "./section1";
 import { DetailSectionTwo } from "./section2";
 import { DetailSectionThree } from "./section3";
-import { DeatilSectionFour } from "./section4";
+import HotelDetail from "./section4";
+
 import { DetailSectionFive } from "./section5";
+// import { Demo } from "./demo";
 
 export let DetailPageMain = () => {
     return (
@@ -11,9 +15,9 @@ export let DetailPageMain = () => {
         <DetailSectionOne/>
         <DetailSectionTwo/>
         <DetailSectionThree/>
-        <DeatilSectionFour/>
+        <HotelDetail/>
         <DetailSectionFive/>
-        
+        <Footer/>
       </div>
     );
   };

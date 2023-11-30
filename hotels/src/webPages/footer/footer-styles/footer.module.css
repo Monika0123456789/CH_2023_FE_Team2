@@ -19,7 +19,7 @@ footer{
 }
 
 
-.first-footer-div{
+.first_footer_div{
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -38,15 +38,16 @@ footer{
 }
 
 /* styling the div containing set of lists */
-.list-div{
+.list_div{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   width:70%;
 }
 
 /* styling the div containg the ul */
-.list-footer{
+.list_footer{
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -77,27 +78,30 @@ footer h3{
   line-height: 20px;
 }
 
+.admin_logo{
+  font-size: x-large;
+}
 
 /* styling the top links div */
-.footer-top-links-div{
+.footer_top_links_div{
   display: flex;
   flex-wrap: wrap;
   padding-right:5%;
 }
 
 /* styling the h3 tag inside top links div */
-#footer-top-links-h3{
+#footer_top_links_h3{
   margin-bottom: 0.5rem;
 }
 
 /* styling the a tag inside top links div */
-.footer-top-links-a{
+.footer_top_links_a{
   margin-right:25px;
   line-height: 30px;
 }
 
 /* styling the div containg payment and follow us part */
-.footer-bottom-div{
+.footer_bottom_div{
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -105,7 +109,7 @@ footer h3{
 }
 
 /* styling the payment and security div */
-.footer-payment-and-security-div{
+.footer_payment_and_security_div{
   display: flex;
   gap:3%;
   flex-direction: column;
@@ -114,14 +118,14 @@ footer h3{
 }
 
 /* styling the payment and security icons div */
-.ps-icons{
+.ps_icons{
   display: flex;
   gap:4%;
   font-size: xx-large;
 }
 
 /* styling the follow us div */
-.footer-follow-us-div{
+.footer_follow_us_div{
   display: flex;
   gap: 2%;
   flex-direction: column;
@@ -131,7 +135,7 @@ footer h3{
 }
 
 /* styling the follow us icons div */
-.fu-icons{
+.fu_icons{
   display: flex;
   width: 100%;
   gap: 4%;
@@ -141,7 +145,7 @@ footer h3{
 }
 
 /* styling footer copyright text */
-#footer-copyright-text{
+#footer_copyright_text{
   text-align: center;
 }
 
@@ -166,12 +170,12 @@ footer{
 }
 
 /* styling the div containing the logo and sub texts */
-.first-footer-div{
+.first_footer_div{
   width: 100%;
 }
 
 /* styling the div containing set of lists */
-.list-div{
+.list_div{
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2,1fr);
@@ -189,24 +193,24 @@ footer ul{
 }
 
 /* styling the top links div */
-.footer-top-links-div{
+.footer_top_links_div{
   padding-right: 10px;
 }
 
 /* styling the a tag inside top links div */
-.footer-top-links-a{
+.footer_top_links_a{
   margin-right:15px;
   line-height: 30px;
 }
 
 /* styling the div containg payment and follow us part */
-.footer-bottom-div{
+.footer_bottom_div{
   display: flex;
   gap: 10%;
   flex-direction: column;
 }
 
-.footer-follow-us-div{
+.footer_follow_us_div{
   display: flex;
   gap: 2%;
   flex-direction: column;
@@ -215,7 +219,7 @@ footer ul{
   flex-wrap: wrap;
 }
 
-.fu-icons{
+.fu_icons{
   display: flex;
   width: 100%;
   gap: 4%;

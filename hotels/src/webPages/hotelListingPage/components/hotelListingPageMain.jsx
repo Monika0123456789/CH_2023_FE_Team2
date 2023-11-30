@@ -13,6 +13,7 @@ import Amenities from "./amenities";
 import ButtomButton from "./buttom-button";
 import React, { useState } from "react";
 import { FilterProvider } from "./fiterContext";
+import { Footer } from "../../footer/components/footer.jsx";
 
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
@@ -121,6 +122,8 @@ export let HotelListingPageMain = () => {
           <button id="toggle-button2" className={style.toggle_buttons}>2</button>
           <button id="toggle-button->" className={style.toggle_buttons} title="View Next page"><GrFormNextLink /></button>
         </div>
+
+        <Footer/>
     </div>
     
     </div>
