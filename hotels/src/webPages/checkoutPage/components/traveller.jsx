@@ -3,8 +3,8 @@ import styles from "../checkout-page-styles/travellerDetailComponent.module.css"
 
 export let Traveller = ({idn, onRemove}) => {
   let [user, setUser] = useState({
-    firstname: "FirstName",
-    lastname: "lastName",
+    firstname: "",
+    lastname: "",
   });
   console.log (idn)
 

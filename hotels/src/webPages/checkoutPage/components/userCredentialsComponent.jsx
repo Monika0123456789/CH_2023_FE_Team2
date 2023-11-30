@@ -1,6 +1,41 @@
+import { useRef, useState } from "react";
 import style from "../checkout-page-styles/userCredentialsComponent.module.css";
 
 export let UserCredentialsComponent = () => {
+  let [userData, setUserData] = useState({
+    fullName: "",
+    email: "",
+    mobileNumber: "",
+    nationality: "IND",
+    dateOfBirth: "",
+    address: "",
+    gender: "",
+  });
+
+  let nameRef = useRef();
+  let emailRef = useRef();
+  let phoneRef = useRef();
+  let nationalityRef = useRef();
+  let dobRef = useRef();
+  let genderRef = useRef();
+  let maleRef = useRef();
+  let femaleRef = useRef();
+  let otherRef = useRef();
+  let addressRef = useRef();
+
+let handleChange = () => {
+  setUserData(() => ({
+    fullName: nameRef.current.value,
+    email: emailRef.current.value,
+    mobileNumber: phoneRef.current.value,
+    nationality: nationalityRef.current.value,
+    dateOfBirth: dobRef.current.value,
+    address: addressRef.current.value,
+    gender : maleRef.current.checked ? "male" : femaleRef.current.checked ? "female" : otherRef.current.checked ? "other" : '',
+  }));
+};
+// console.log(userData);
+
   return (
     <>
       <div className={style.formContainer}>
@@ -11,7 +46,9 @@ export let UserCredentialsComponent = () => {
           >
             Upload your Id
           </label>
-          <button className={style.idProof} id="identityproof">Upload</button>
+          <button className={style.idProof} id="identityproof">
+            Upload
+          </button>
         </div>
         <div className={style.colsHalf}>
           <label
@@ -20,7 +57,13 @@ export let UserCredentialsComponent = () => {
           >
             Full Name
           </label>
-          <input className={style.form_inputs} id="name" type="text" />
+          <input
+            className={style.form_inputs}
+            id="name"
+            type="text"
+            ref={nameRef}
+            onChange={handleChange}
+          />
         </div>
         <div className={style.colsHalf}>
           <label
@@ -29,7 +72,13 @@ export let UserCredentialsComponent = () => {
           >
             Email address
           </label>
-          <input className={style.form_inputs} id="email" type="email" />
+          <input
+            className={style.form_inputs}
+            id="email"
+            type="email"
+            ref={emailRef}
+            onChange={handleChange}
+          />
         </div>
         <div className={style.colsHalf}>
           <label
@@ -38,7 +87,13 @@ export let UserCredentialsComponent = () => {
           >
             Mobile number
           </label>
-          <input className={style.form_inputs} id="phone" type="number" />
+          <input
+            className={style.form_inputs}
+            id="phone"
+            type="number"
+            ref={phoneRef}
+            onChange={handleChange}
+          />
         </div>
         <div className={style.colsHalf}>
           <label
@@ -51,6 +106,8 @@ export let UserCredentialsComponent = () => {
             className={style.form_inputs}
             id="nationality"
             name="nationality"
+            ref={nationalityRef}
+            onChange={handleChange}
           >
             <option value="IND">India</option>
             <option value="USA">United States</option>
@@ -86,7 +143,13 @@ export let UserCredentialsComponent = () => {
           >
             Date of Birth
           </label>
-          <input className={style.form_inputs} id="dob" type="date" />
+          <input
+            className={style.form_inputs}
+            id="dob"
+            type="date"
+            ref={dobRef}
+            onChange={handleChange}
+          />
         </div>
         <div className={style.colsHalf}>
           <label
@@ -95,15 +158,36 @@ export let UserCredentialsComponent = () => {
           >
             Select Gender
           </label>
-          <input type="radio" id="male" name="gender" value="male" />
+          <input
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+            ref={maleRef}
+            onChange={handleChange}
+          />
           <label htmlFor="male" className={style.gender_label}>
             Male
           </label>
-          <input type="radio" id="female" name="gender" value="female" />
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            ref={femaleRef}
+            onChange={handleChange}
+          />
           <label htmlFor="female" className={style.gender_label}>
             Female
           </label>
-          <input type="radio" id="other" name="gender" value="other" />
+          <input
+            type="radio"
+            id="other"
+            name="gender"
+            value="other"
+            ref={otherRef}
+            onChange={handleChange}
+          />
           <label htmlFor="other" className={style.gender_label}>
             Other
           </label>
@@ -112,7 +196,12 @@ export let UserCredentialsComponent = () => {
           <label htmlFor="addr" className={style.form_label}>
             Address
           </label>
-          <textarea id="addr" className={style.addressField} />
+          <textarea
+            id="addr"
+            className={style.addressField}
+            ref={addressRef}
+            onChange={handleChange}
+          />
         </div>
       </div>
     </>

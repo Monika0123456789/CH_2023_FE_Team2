@@ -3,7 +3,7 @@ import style from "../checkout-page-styles/checkinCheckoutComponent.module.css";
 import { TravellerComponent } from "./travellerDetailComponent";
 import { SummaryComponent } from "./summaryComponent";
 
-export let CheckInCheckOut = () => {
+export let CheckInCheckOut = ({ totalPrice }) => {
   let [state, setState] = useState({
     checkin: "",
     checkout: " ",
@@ -59,7 +59,11 @@ export let CheckInCheckOut = () => {
         </div>
       </div>
       <TravellerComponent />
-      <SummaryComponent checkin={state.checkin} checkout = {state.checkout} />
+      <SummaryComponent
+        checkin={state.checkin}
+        checkout={state.checkout}
+        price={totalPrice}
+      />
     </>
   );
 };

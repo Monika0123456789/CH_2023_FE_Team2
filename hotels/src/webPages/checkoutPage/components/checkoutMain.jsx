@@ -7,19 +7,20 @@ import { useState } from "react";
 export let CheckoutMain = () => {
     const [totalPrice, setTotalPrice] = useState(500); // Initialize with the base price
 
-    const handlePriceChange = (newPrice) => {
+    const handleChange = (newPrice, rooms) => {
       setTotalPrice(newPrice);
-      console.log(totalPrice)
+    
+      console.log(rooms,newPrice)
     };
   return (
     <div style={{ width: "100%" }}>
       <h1>Booking Details</h1>
       <hr />
-      <RoomComponent onPriceChange={handlePriceChange} />
+      <RoomComponent onChange={handleChange} />
       <br></br>
       <UserCredentialsComponent />
       <br></br>
-      <CheckInCheckOut />
+      <CheckInCheckOut  totalPrice={totalPrice}/>
       <br></br>
       <button className={style.submitBtn}>Proceed</button>
       <br></br>
