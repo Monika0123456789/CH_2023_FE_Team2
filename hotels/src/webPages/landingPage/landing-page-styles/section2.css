@@ -151,6 +151,42 @@
 }
 /* icons with fadded background style ends here */
 
+/* Adding animation features-------- */
+/* image rotation */
+@keyframes image-rotation {
+  from {
+      transform: rotate(0);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.star-top{
+  animation-name: image-rotation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+}
+/* animations in like button in likes display */
+@keyframes like-button {
+  0% {
+      transform: translate(0%, 0%) rotate(0deg);
+  }
+  50% {
+      transform: translate(-50%, -150%) rotate(-90deg);
+  }
+  100% {
+      transform: translate(0%, 0%) rotate(0deg);
+  }
+}
+
+.outer-image>img:hover{
+  
+  animation: like-button 2s 1;
+  
+  
+}
+
 
 /* mobile responsive styling -------------------------starts here--------------------  */
 
