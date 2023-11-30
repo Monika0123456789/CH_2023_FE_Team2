@@ -79,53 +79,79 @@ export let HotelListingPageMain = () => {
  
   
  return (
- 
-    <div style={{display:'flex'}}>
-    <div className="Fitler Hotels">
-    {/* <HotelListingPage data={data}/> */}
-    <HotelTypes data={data} onTypesChange={handleTypesChange} />
-    <PriceSlider onPriceChange={handlePriceRangeChange} />
-     <PopularType />
-     <CustomerRating onRatingChange={handleRatingChange} />
-    <RatingStar />
-    <Amenities selectedAmenities={selectedAmenities} onAmenitiesChange={handleAmenitiesChange} />
-    <ButtomButton onClearAllClick={handleClearAll} />
-    </div>
-    <div> 
-    <FilterProvider>
-   {/* Display filtered data or "No data available" message */}
-  <div id="page1-container">
-  {filterData().length > 0 ? (
-    filterData().map((hotelListingObj, index) => (
-      <HotelListingPageCard key={index} hotelListingObj={hotelListingObj} />
-    ))
-  ) : (
-    <p>No data available for your search</p>
-  )}
-  </div>
-  {/* Similar logic for the second page */}
-   <div id="page2-container">
-  {filterData().length > 0 ? (
-    filterData()
-      .reverse()
-      .map((hotelListingObj, index) => (
-        <HotelListingPageCard key={index} hotelListingObj={hotelListingObj} />
-      ))
-  ) : (
-    <p>No data available for your search</p>
-  )}
-  </div>
-  </FilterProvider>
-   <div className={`${style.toggle_button_container} ${style.toggle_button_container1}`}>
-          <button id="toggle-button-<" className={style.toggle_buttons} title="View Previous page"><GrFormPreviousLink /></button>
-          <button id="toggle-button1" className={style.toggle_buttons}>1</button>
-          <button id="toggle-button2" className={style.toggle_buttons}>2</button>
-          <button id="toggle-button->" className={style.toggle_buttons} title="View Next page"><GrFormNextLink /></button>
-        </div>
-
-        <Footer/>
-    </div>
-    
-    </div>
-  );
+   <>
+     <div style={{ display: "flex" }}>
+       <div className="Fitler Hotels">
+         {/* <HotelListingPage data={data}/> */}
+         <HotelTypes data={data} onTypesChange={handleTypesChange} />
+         <PriceSlider onPriceChange={handlePriceRangeChange} />
+         <PopularType />
+         <CustomerRating onRatingChange={handleRatingChange} />
+         <RatingStar />
+         <Amenities
+           selectedAmenities={selectedAmenities}
+           onAmenitiesChange={handleAmenitiesChange}
+         />
+         <ButtomButton onClearAllClick={handleClearAll} />
+       </div>
+       <div>
+         <FilterProvider>
+           {/* Display filtered data or "No data available" message */}
+           <div id="page1-container">
+             {filterData().length > 0 ? (
+               filterData().map((hotelListingObj, index) => (
+                 <HotelListingPageCard
+                   key={index}
+                   hotelListingObj={hotelListingObj}
+                 />
+               ))
+             ) : (
+               <p>No data available for your search</p>
+             )}
+           </div>
+           {/* Similar logic for the second page */}
+           <div id="page2-container">
+             {filterData().length > 0 ? (
+               filterData()
+                 .reverse()
+                 .map((hotelListingObj, index) => (
+                   <HotelListingPageCard
+                     key={index}
+                     hotelListingObj={hotelListingObj}
+                   />
+                 ))
+             ) : (
+               <p>No data available for your search</p>
+             )}
+           </div>
+         </FilterProvider>
+         <div
+           className={`${style.toggle_button_container} ${style.toggle_button_container1}`}
+         >
+           <button
+             id="toggle-button-<"
+             className={style.toggle_buttons}
+             title="View Previous page"
+           >
+             <GrFormPreviousLink />
+           </button>
+           <button id="toggle-button1" className={style.toggle_buttons}>
+             1
+           </button>
+           <button id="toggle-button2" className={style.toggle_buttons}>
+             2
+           </button>
+           <button
+             id="toggle-button->"
+             className={style.toggle_buttons}
+             title="View Next page"
+           >
+             <GrFormNextLink />
+           </button>
+         </div>
+       </div>
+     </div>
+     <Footer style={{ width: "100%" }} />
+   </>
+ );
 };
