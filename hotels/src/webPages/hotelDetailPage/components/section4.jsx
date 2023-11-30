@@ -25,9 +25,9 @@ const HotelDetail = () => {
             <h2>{item.name}</h2>
             <h3>Room {room.roomId}</h3>
             <p>Price: ${item.price}</p>
-            <ul>
+            <ul className="room_facilities_ul">
               {room.roomFacilities.map(facility => (
-                <li key={facility}>{facility}</li>
+                <li className="room_facilities_li" key={facility}>{facility}</li>
               ))}
             </ul>
           </div>
