@@ -18,10 +18,7 @@ export let Main = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HotelLandingPageMain />} />
-            <Route
-              path="/hotelListingPage"
-              element={<HotelListingPageMain />}
-            />
+            <Route path="/hotelListingPage" element={<HotelListingPageMain />}/>
             <Route path="/detailPage" element={<DetailPageMain />} />
           </Routes>
         </BrowserRouter>

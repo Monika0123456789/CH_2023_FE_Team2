@@ -12,6 +12,7 @@
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],
 				"images": ["https://via.placeholder.com/980x360", "https://via.placeholder.com/980x360"]
 				
+				
 			},{
 				"roomId": 2,
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],
