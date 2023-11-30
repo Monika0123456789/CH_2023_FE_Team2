@@ -8,25 +8,28 @@ import { HeaderComp } from "./header/components/header";
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CheckoutMain } from "./checkoutPage/components/checkoutMain";
 
 
 export let Main = () => {
   return (
-
     <>
       <HeaderComp />
       <div className="container">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HotelLandingPageMain />} />
-            <Route path="/hotelListingPage" element={<HotelListingPageMain />}/>
+            <Route
+              path="/hotelListingPage"
+              element={<HotelListingPageMain />}
+            />
             <Route path="/detailPage" element={<DetailPageMain />} />
+            <Route path="/checkout" element={<CheckoutMain />} />
           </Routes>
         </BrowserRouter>
       </div>
       <Footer />
     </>
-
   );
 };
 
