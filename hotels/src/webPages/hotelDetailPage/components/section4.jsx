@@ -1,46 +1,55 @@
-// DeatilSectionFour.jsx
-import React from 'react';
-import hotelsData from '../../json/hotel-booking.json';
+import React, { useEffect, useState } from 'react';
+import hotelBookingData from "../../json/hotel-booking.json";
 import "./section4.css"
 
-export const DeatilSectionFour = () => {
-    if (!hotelsData.items) {
-        return <div>No hotel data available.</div>;
-      }
+const HotelDetail = () => {
+  const [jsonData, setJsonData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setJsonData(hotelBookingData);
+    };
+
+    fetchData();
+  }, []);
+
+  const dynamicJSONData = (item) => (
+
+    item.rooms.map(room => (
+      <div className="room" key={room.roomId}>
+        <div className="container-image images">
+          <img src={room.images[0]} alt={`Room ${room.roomId}`} />
+        </div>
+        <div className="hotel-detail-rightcontainer">
+          <div className="rightcontainer-section1">
+            <h2>{item.name}</h2>
+            <h3>Room {room.roomId}</h3>
+            <p>Price: ${item.price}</p>
+            <ul>
+              {room.roomFacilities.map(facility => (
+                <li key={facility}>{facility}</li>
+              ))}
+            </ul>
+          </div>
+          <button className="Select-room-button">Select Room</button>
+        </div>
+      </div>
+    ))
+  );
 
   return (
-    <div className="parentcontainer">
-      <div className="room-options-heading-div">
-        <h1>Room Options</h1>
-        <hr />
-      </div>
-
-      {hotelsData.items.slice(0,2).map((hotel) => (
-        <div key={hotel.id} className="hotel-detail-maincontainer">
-          <div className="hotel-detail-leftcontainer">
-            <img className="container-image" src={hotel.img} alt={hotel.name} />
-            <div className="offer-div">30%off</div>
-          </div>
-
-          <div className="hotel-detail-rightcontainer">
-            <div className="rightcontainer-section1">
-              <h3>{hotel.name}</h3>
-              <ul>
-                
-              </ul>
-              <p>Free Cancellation till 7 jan 2022</p>
-            </div>
-
-            <div className="rightcontainer-section2">
-              <p>
-                <b className="hotel-price">${hotel.price}</b>/day &nbsp;
-                <s>$1000</s>
-              </p>
-              <button className="Select-room-button">Select Room</button>
-            </div>
-          </div>
+    <div className="hotel-detail-maincontainer">
+       <h1>Room Options</h1>
+       <hr />
+       <br />
+      {jsonData && jsonData.items.map(item => (
+        <div key={item.id}>
+          {dynamicJSONData(item)}
+          
         </div>
       ))}
     </div>
   );
 };
+
+export default HotelDetail;
