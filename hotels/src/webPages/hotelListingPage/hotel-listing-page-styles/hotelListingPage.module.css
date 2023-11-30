@@ -1,3 +1,4 @@
+
 /* styling the main container */
 .hotel_list_maincontainer {
     /* width: 1320px; */
@@ -6,7 +7,7 @@
     box-shadow: 5px 5px 5px 5px rgba(116, 115, 115, 0.5);
     display: flex;
     border-radius: 10px;
-    margin: 2%;
+    margin: 0 2% 2% 2%;
 }
 .hotel_list_maincontainer:hover {
     background-color: aliceblue;

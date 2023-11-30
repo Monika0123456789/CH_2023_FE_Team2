@@ -6,13 +6,21 @@ import { FaHeart } from "react-icons/fa";
 import { FaShareAlt } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiMiniCheckBadge } from "react-icons/hi2";
+
 import $ from "jquery";
-
-
-
 export let HotelListingPageCard = (props) => {
 
-    let openPopUp = () => {
+  const { hotelListingObj, selectedTypes = [] } = props;
+
+  // Add your filtering logic here based on selectedTypes
+  const shouldRender = selectedTypes.length === 0 || selectedTypes.includes(hotelListingObj.type);
+
+  if (!shouldRender) {
+    // If the hotel type does not match the selected types, return null or an empty component
+    return null;
+  }
+
+  let openPopUp = () => {
         $("#popup-hotel-name").text(props.hotelListingObj.name);  
         $("#popup-long-desc").text(props.hotelListingObj.longDesc);
 
@@ -28,6 +36,7 @@ export let HotelListingPageCard = (props) => {
     let closePopUp = () => {
         $("#popup-container").hide();
     }
+
 
     return (
       <div>

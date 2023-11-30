@@ -1,10 +1,10 @@
-// we will render only main component here
-
+import { FilterProvider } from "./webPages/hotelListingPage/components/fiterContext"
 import { Main } from "./webPages/main"
 
-export let App = () =>{
+export  let App = () =>{
   return <div>
-    {/* main of the application renders here */}
-    <Main/>
+   <FilterProvider>
+      <Main />
+    </FilterProvider>
   </div>
 }
