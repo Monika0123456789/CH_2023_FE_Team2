@@ -42,7 +42,7 @@ const HotelDetail = () => {
        <h1>Room Options</h1>
        <hr />
        <br />
-      {jsonData && jsonData.items.map(item => (
+      {jsonData && jsonData.items.slice(0,1).map(item => (
         <div key={item.id}>
           {dynamicJSONData(item)}
           
