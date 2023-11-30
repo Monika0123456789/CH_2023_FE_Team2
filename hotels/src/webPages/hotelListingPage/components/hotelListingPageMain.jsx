@@ -4,6 +4,7 @@ import { GrFormPreviousLink } from "react-icons/gr";
 import { GrFormNextLink } from "react-icons/gr";
 import "../hotel-listing-page-js/hotelListingPage.js";
 import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
+import { Footer } from "../../footer/components/footer.jsx";
 
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
@@ -28,6 +29,8 @@ export let HotelListingPageMain = () => {
           <button id="toggle-button2" className={style.toggle_buttons}>2</button>
           <button id="toggle-button->" className={style.toggle_buttons} title="View Next page"><GrFormNextLink /></button>
         </div>
+
+        <Footer/>
     </div>
   );
 };

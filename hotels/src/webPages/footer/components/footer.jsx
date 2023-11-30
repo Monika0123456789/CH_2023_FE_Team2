@@ -12,9 +12,12 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { MdAdminPanelSettings } from "react-icons/md";
 import "../footer-styles/footer.css";
+import { useNavigate } from "react-router-dom";
 
 export let Footer = () => {
+    let navigate = useNavigate();
     return <div className="footer_container">
         {/*Footer -------------------------Start-------------------------------------*/}
         <footer>
@@ -27,6 +30,7 @@ export let Footer = () => {
                     <p>Departure defective arranging rapturous did we believe him all had departed</p>
                     <span style={{color:"rgb(212, 209, 209)", marginTop:"15px"}}><FaPhoneAlt style={{color: "rgb(212, 209, 209)", marginRight:"10px"}}/>+1234 568 963</span>
                     <span style={{color:"rgb(212, 209, 209)", marginTop:"10px"}}><FaEnvelope style={{color: "rgb(212, 209, 209)", marginRight:"10px"}}/>example@gmail.com</span>
+                    <span style={{color:"rgb(212, 209, 209)", marginTop:"10px"}}><MdAdminPanelSettings style={{color: "rgb(212, 209, 209)", marginRight:"10px"}} className="admin_logo"/><a onClick={()=>{navigate('/adminlogin')}} style={{cursor:"pointer", textDecoration:"none"}}>Login as Admin</a></span>
                 </div>
     
                 <div className="list-div">

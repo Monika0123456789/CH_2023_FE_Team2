@@ -1,4 +1,5 @@
 // import { DemoComp } from "./demo";
+import { Footer } from "../../footer/components/footer";
 import { DetailSectionOne } from "./section1";
 import { DetailSectionTwo } from "./section2";
 import { DetailSectionThree } from "./section3";
@@ -13,7 +14,7 @@ export let DetailPageMain = () => {
         <DetailSectionThree/>
         <DeatilSectionFour/>
         <DetailSectionFive/>
-        
+        <Footer/>
       </div>
     );
   };
