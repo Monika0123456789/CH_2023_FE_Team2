@@ -7,7 +7,7 @@ import {
   FaStairs
 } from "react-icons/fa6";
 
-export let RoomComponent = ({ onPriceChange }) => {
+export let RoomComponent = ({ onChange }) => {
   const roomCount = (state, action) => {
     switch (action.type) {
       case "INCREASE":
@@ -45,15 +45,16 @@ export let RoomComponent = ({ onPriceChange }) => {
   };
   let [state, dispatch] = useReducer(roomCount, initialState);
     useEffect(() => {
-      // Call the onPriceChange callback when the number of rooms changes
-      onPriceChange(state.price);
-    }, [state.numberOfRooms, onPriceChange]);
+      // here callback - when number of rooms change - callback for updated price and update number of rooms.
+      onChange(state.price, state.numberOfRooms);
+    }, [state.numberOfRooms, onChange]);
+    // console.log(state.numberOfRooms);
   return (
     <>
       <section>
         <div className={style.hotel_detail}>
           <div className={style.left_img_division}>
-            <img src="./assets/images/02.jpg" alt="image1" />
+            <img src="./assets/images/02(3).jpg" alt="image1" />
             <img src="./assets/images/13.jpg" alt="image2" />
             <img src="./assets/images/15.jpg" alt="image3" />
             <img src="./assets/images/16.jpg" alt="image4" />
