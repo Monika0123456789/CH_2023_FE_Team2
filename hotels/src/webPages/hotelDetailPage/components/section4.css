@@ -6,6 +6,7 @@
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+
 .room:hover{
   box-shadow: 3px 3px 10px slategray;
 }
@@ -13,7 +14,6 @@
 .container-image {
   width: 50%;
   border-radius: 10px;
-
 }
 
 .container-image img {
@@ -27,12 +27,12 @@
   padding: 2%;
 }
 
-ul {
+.room_facilities_ul {
   display: flex; 
   list-style: none;
 }
 
-li {
+.room_facilities_li {
   padding-left: 1rem;
 }
 
