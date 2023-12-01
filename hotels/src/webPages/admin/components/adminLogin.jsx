@@ -1,8 +1,11 @@
 import style from "../admin-styles/admin.module.css";
 import "../admin-js/admin.js";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export let AdminLogin = () => {
+
+    let navigate = useNavigate();
 
     let [ adminCredentials, setAdminCredentials ] = useState({ email : "", password : "" });
 
@@ -10,11 +13,13 @@ export let AdminLogin = () => {
     let passwordRef = useRef();
 
     let submitHandler = () => {
-        if(adminCredentials.email.length!=0 && adminCredentials.password.length!=0){
-            if(localStorage.getItem("email") === adminCredentials.email && localStorage.getItem("password") === adminCredentials.password ){
+        let dataObject = JSON.parse(localStorage.getItem("adminData"));
+        if(adminCredentials.email.length!==0 && adminCredentials.password.length!==0){
+            if(dataObject.email === adminCredentials.email && dataObject.password === adminCredentials.password ){
                 alert("logged in successfully");
                 emailRef.current.value = "";
                 passwordRef.current.value = "";
+                navigate('/adminLanding');
             }
             else{
                 alert("you have entered wrong credentials");

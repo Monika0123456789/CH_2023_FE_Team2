@@ -99,7 +99,7 @@ export let HotelListingPageMain = () => {
          />
          <ButtomButton onClearAllClick={handleClearAll} />
        </div>
-       <div>
+       <div >
          <FilterProvider>
            {/* Display filtered data or "No data available" message for page 1 */}
            <div id="page1-container">
