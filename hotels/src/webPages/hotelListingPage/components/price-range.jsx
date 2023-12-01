@@ -8,9 +8,13 @@ const PriceSlider = ({ onPriceChange }) => {
   const [values, setValues] = useState(priceRange);
 
   useEffect(() => {
-    setValues(priceRange);
-  }, [priceRange]);
-
+    // If onPriceChange is provided externally, update the component's state
+    if (onPriceChange) {
+      setValues(priceRange);
+    }
+  }, [priceRange, onPriceChange]);
+  
+  
   const formatPrice = (value) => {
     return `$${value}`;
   };
@@ -18,9 +22,10 @@ const PriceSlider = ({ onPriceChange }) => {
   const handleChange = (newValues) => {
     const sortedValues = newValues.sort((a, b) => a - b);
     setValues(sortedValues);
-    onPriceChange && onPriceChange(sortedValues);
-    setPriceRange(sortedValues);
+    onPriceChange && onPriceChange(sortedValues); // Call onPriceChange only if it's provided
+    setPriceRange(sortedValues); // Update context if available
   };
+  
 
   return (
     <div style={{ padding: '20px', border: '1px solid #ddd', borderRadius: '5px', boxShadow: '0 0 2px rgba(0, 0, 0, 0.1)', width: '300px' }}>
