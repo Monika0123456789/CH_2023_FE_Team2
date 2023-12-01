@@ -10,19 +10,16 @@ export default function HotelTypes({ data, onTypesChange }) {
       if (type === 'All') {
         // If 'All' checkbox is clicked, toggle between selecting all and none
         return prevSelectedTypes.includes('All') ? [] : ['All', ...data.items.map(hotel => hotel.type)];
-      } else if (prevSelectedTypes.includes('All')) {
-        // If 'All' was previously selected, clear it and only select the current type
-        const filteredTypes = prevSelectedTypes.filter(selectedType => selectedType !== 'All');
-        return filteredTypes.includes(type) ? filteredTypes.filter(selectedType => selectedType !== type) : [...filteredTypes, type];
-      }else {
+      } else if (prevSelectedTypes.includes(type)) {
+        // If the type is already selected, unselect it
+        return prevSelectedTypes.filter((selectedType) => selectedType !== type);
+      } else {
         // If the type is not selected, add it to the selection
         return [...prevSelectedTypes, type];
       }
-    });
-    
-  };
-  
-  // Use useEffect to call onTypesChange after the component has been rendered
+      });
+    };
+
   useEffect(() => {
     onTypesChange(selectedTypes);
   }, [selectedTypes, onTypesChange]);

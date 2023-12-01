@@ -14,6 +14,7 @@ import ButtomButton from "./buttom-button";
 import React, { useState } from "react";
 import { FilterProvider } from "./fiterContext";
 import { Footer } from "../../footer/components/footer.jsx";
+import { IoFilterSharp } from "react-icons/io5";
 
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
@@ -21,6 +22,7 @@ export let HotelListingPageMain = () => {
   const [selectedRating, setSelectedRating] = useState(null);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleTypesChange = (types) => {
     setSelectedTypes(types);
@@ -35,6 +37,10 @@ export let HotelListingPageMain = () => {
   
   const handleAmenitiesChange = (amenities) => {
     setSelectedAmenities(amenities);
+  };
+
+  const handleToggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
   };
 
   const handleClearAll = () => {
@@ -75,8 +81,13 @@ export let HotelListingPageMain = () => {
   
  return (
    <>
+     <div className={`${style.filter_button} ${isFilterOpen ? style.active : ""}`}>
+        <button onClick={handleToggleFilter}>
+          <IoFilterSharp />
+        </button>
+      </div>
      <div style={{ display: "flex" }}>
-       <div className="Fitler Hotels">
+       <div className="FitlerHotels">
          <HotelTypes data={data} onTypesChange={handleTypesChange} />
          <PriceSlider onPriceChange={handlePriceRangeChange} />
          <PopularType />
