@@ -1,16 +1,17 @@
+// Update ButtomButton.js
+
 import React from 'react';
 import { useFilter } from './fiterContext';
 
-export default function ButtomButton() {
+export default function ButtomButton({ onClearAllClick }) {
   const { handleClearAll } = useFilter();
 
   const handleClearAllClick = () => {
     // Call the handleClearAll function from the context to reset the state
     handleClearAll();
-
-    // You may need additional logic to reset the page position to its original state
-    // This could involve scrolling to the top or any other desired behavior
-    window.scrollTo(0, 0);
+    
+   // Trigger the onClearAllClick prop to re-render hotel listings
+    onClearAllClick();
   };
 
   return (

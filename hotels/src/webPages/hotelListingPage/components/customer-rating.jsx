@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFilter } from './fiterContext';
 
 const CustomerRating = ({ onRatingChange }) => {
-  const { selectedRating, setSelectedRating, handleClearAll } = useFilter();
+  const { selectedRating, setSelectedRating } = useFilter();
 
   const handleRatingClick = (rating) => {
     // Toggle the rating if clicked again
@@ -12,10 +12,15 @@ const CustomerRating = ({ onRatingChange }) => {
     setSelectedRating(newRating);
 
     // Notify the parent component about the selected rating
-    if (onRatingChange) {
-      onRatingChange(newRating);
-    }
+    onRatingChange && onRatingChange(newRating);
   };
+  
+  // // Notify the parent component about the selected rating
+  //  if (onRatingChange) {
+  //   onRatingChange(selectedRating);
+  // }
+
+  
 
   return (
     <div style={{ padding: '20px', border: '1px solid #ddd', borderRadius: '5px', boxShadow: '0 0 2px rgba(0, 0, 0, 0.1)', width: '300px' }}>

@@ -26,12 +26,10 @@ export let HotelListingPageMain = () => {
     setSelectedTypes(types);
   };
   const handlePriceRangeChange = (newValues) => {
-    console.log('New Price Range:', newValues);
     setPriceRange(newValues);
   };
   
   const handleRatingChange = (rating) => {
-    console.log('Selected Rating:', rating);
     setSelectedRating(rating);
   };
   
@@ -43,14 +41,11 @@ export let HotelListingPageMain = () => {
     // Reset all filters
     setPriceRange([200, 1000]);
     setSelectedRating(null);
-    setSelectedTypes([]);  // Reset selectedTypes to an empty array
+    setSelectedTypes([]);  
     setSelectedAmenities([]);
   };
    
   const filterData = () => {
-    console.log('Filtering Data: at filter data', priceRange, selectedRating, selectedTypes, selectedAmenities);
-  
-    // Filter hotels based on other criteria
     const filteredHotels = data.items.filter(
       (hotel) =>
         hotel.price >= priceRange[0] &&
@@ -82,7 +77,6 @@ export let HotelListingPageMain = () => {
    <>
      <div style={{ display: "flex" }}>
        <div className="Fitler Hotels">
-         {/* <HotelListingPage data={data}/> */}
          <HotelTypes data={data} onTypesChange={handleTypesChange} />
          <PriceSlider onPriceChange={handlePriceRangeChange} />
          <PopularType />
@@ -96,7 +90,7 @@ export let HotelListingPageMain = () => {
        </div>
        <div>
          <FilterProvider>
-           {/* Display filtered data or "No data available" message */}
+           {/* Display filtered data or "No data available" message for page 1 */}
            <div id="page1-container">
              {filterData().length > 0 ? (
                filterData().map((hotelListingObj, index) => (
@@ -109,7 +103,7 @@ export let HotelListingPageMain = () => {
                <p>No data available for your search</p>
              )}
            </div>
-           {/* Similar logic for the second page */}
+           {/* Display filtered data or "No data available" message for page 2*/}
            <div id="page2-container">
              {filterData().length > 0 ? (
                filterData()
