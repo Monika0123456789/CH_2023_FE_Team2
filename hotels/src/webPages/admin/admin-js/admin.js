@@ -1,6 +1,9 @@
 import $ from "jquery";
 
 $(() => {
-    localStorage.setItem("email","hotel.booking.admin@gmail.com");
-    localStorage.setItem("password","admin@123");
+    var adminData = {
+        email : "hotel.booking.admin@gmail.com",
+        password : "admin@123"
+    }
+    localStorage.setItem("adminData", JSON.stringify(adminData));
 })
