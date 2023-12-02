@@ -11,6 +11,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AdminLogin } from "./admin/components/adminLogin";
 import { Footer } from "./footer/components/footer";
 import { App } from "./checkoutPage/app";
+import { CheckoutMain } from "./checkoutPage/components/checkoutMain";
+import { AdminLanding } from "./admin/components/adminLanding";
 
 
 export let Main = () => {
@@ -30,6 +32,7 @@ export let Main = () => {
             <Route exact path="/adminlogin" element={<AdminLogin />} />
             <Route exact path="/footer" element={<Footer />} />
             <Route path="/checkout" element={<App/>} />
+            <Route path="/adminLanding" element={<AdminLanding/>} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -14,6 +14,7 @@ import ButtomButton from "./buttom-button";
 import React, { useState } from "react";
 import { FilterProvider } from "./fiterContext";
 import { Footer } from "../../footer/components/footer.jsx";
+import { IoFilterSharp } from "react-icons/io5";
 
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
@@ -21,17 +22,16 @@ export let HotelListingPageMain = () => {
   const [selectedRating, setSelectedRating] = useState(null);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleTypesChange = (types) => {
     setSelectedTypes(types);
   };
   const handlePriceRangeChange = (newValues) => {
-    console.log('New Price Range:', newValues);
     setPriceRange(newValues);
   };
   
   const handleRatingChange = (rating) => {
-    console.log('Selected Rating:', rating);
     setSelectedRating(rating);
   };
   
@@ -39,18 +39,19 @@ export let HotelListingPageMain = () => {
     setSelectedAmenities(amenities);
   };
 
+  const handleToggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
   const handleClearAll = () => {
     // Reset all filters
     setPriceRange([200, 1000]);
     setSelectedRating(null);
-    setSelectedTypes([]);  // Reset selectedTypes to an empty array
+    setSelectedTypes([]);  
     setSelectedAmenities([]);
   };
    
   const filterData = () => {
-    console.log('Filtering Data: at filter data', priceRange, selectedRating, selectedTypes, selectedAmenities);
-  
-    // Filter hotels based on other criteria
     const filteredHotels = data.items.filter(
       (hotel) =>
         hotel.price >= priceRange[0] &&
@@ -80,9 +81,13 @@ export let HotelListingPageMain = () => {
   
  return (
    <>
+     <div className={`${style.filter_button} ${isFilterOpen ? style.active : ""}`}>
+        <button onClick={handleToggleFilter}>
+          <IoFilterSharp />
+        </button>
+      </div>
      <div style={{ display: "flex" }}>
-       <div className="Fitler Hotels">
-         {/* <HotelListingPage data={data}/> */}
+       <div className="FitlerHotels">
          <HotelTypes data={data} onTypesChange={handleTypesChange} />
          <PriceSlider onPriceChange={handlePriceRangeChange} />
          <PopularType />
@@ -94,9 +99,9 @@ export let HotelListingPageMain = () => {
          />
          <ButtomButton onClearAllClick={handleClearAll} />
        </div>
-       <div>
+       <div >
          <FilterProvider>
-           {/* Display filtered data or "No data available" message */}
+           {/* Display filtered data or "No data available" message for page 1 */}
            <div id="page1-container">
              {filterData().length > 0 ? (
                filterData().map((hotelListingObj, index) => (
@@ -109,7 +114,7 @@ export let HotelListingPageMain = () => {
                <p>No data available for your search</p>
              )}
            </div>
-           {/* Similar logic for the second page */}
+           {/* Display filtered data or "No data available" message for page 2*/}
            <div id="page2-container">
              {filterData().length > 0 ? (
                filterData()
