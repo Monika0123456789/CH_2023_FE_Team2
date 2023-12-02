@@ -2,12 +2,18 @@ import { useState } from "react";
 import style from "../checkout-page-styles/checkinCheckoutComponent.module.css";
 import { TravellerComponent } from "./travellerDetailComponent";
 import { SummaryComponent } from "./summaryComponent";
+import { useDispatch } from "react-redux";
+import { addBookingDetails } from "../redux/actions/roomQuantity.actions";
 
-export let CheckInCheckOut = ({ totalPrice }) => {
+
+
+export let CheckInCheckOut = () => {
   let [state, setState] = useState({
     checkin: "",
     checkout: " ",
   });
+  const dispatch = useDispatch();
+
   const updateDates = (e) => {
     const { name, value } = e.target;
 
@@ -30,6 +36,7 @@ export let CheckInCheckOut = ({ totalPrice }) => {
     }
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
+    dispatch(addBookingDetails(state));
   return (
     <>
       <div className={style.checkinCheckoutContainer}>
@@ -62,7 +69,6 @@ export let CheckInCheckOut = ({ totalPrice }) => {
       <SummaryComponent
         checkin={state.checkin}
         checkout={state.checkout}
-        price={totalPrice}
       />
     </>
   );

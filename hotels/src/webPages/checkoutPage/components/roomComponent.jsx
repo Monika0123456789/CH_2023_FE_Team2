@@ -1,54 +1,32 @@
 import { useEffect, useReducer, useState } from "react";
 import style from "../checkout-page-styles/roomComponent.module.css";
 import { IoLocationOutline } from "react-icons/io5";
+import { FaArrowRightArrowLeft, FaBed, FaStairs } from "react-icons/fa6";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  FaArrowRightArrowLeft,
-  FaBed,
-  FaStairs
-} from "react-icons/fa6";
+  decreaseCount,
+  increaseCount,
+} from "../redux/actions/roomQuantity.actions";
 
-export let RoomComponent = ({ onChange }) => {
-  const roomCount = (state, action) => {
-    switch (action.type) {
-      case "INCREASE":
-        if (state.numberOfRooms + 1 > 9) {
-          alert(
-            "you reached the maximum booking allowed for an individual user"
-          );
-          return state;
-        }
-        let increasedNumberOfRooms = state.numberOfRooms + 1;
-        let IncreasedPrice = increasedNumberOfRooms * 500;
-        return {
-          numberOfRooms: increasedNumberOfRooms,
-          price: IncreasedPrice,
-        };
-      case "DECREASE":
-        if (state.numberOfRooms - 1 <= 0) {
-          alert("you need to select at least one room");
-          return state;
-        }
-        let decreasedNumberOfRooms = state.numberOfRooms - 1;
-        let decreasedPrice = decreasedNumberOfRooms * 500;
-        return {
-          numberOfRooms: decreasedNumberOfRooms,
-          price: decreasedPrice,
-        };
-      default:
-        return state;
+export let RoomComponent = () => {
+  const rooms = useSelector((store) => store.roomCount);
+
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => {
+    if (rooms + 1 > 9) {
+      alert("you reached the maximum booking allowed for an individual user");
+      return rooms;
     }
+    dispatch(increaseCount());
   };
-
-  let initialState = {
-    numberOfRooms: 1,
-    price: 500,
+  const handleDecrement = () => {
+    if (rooms - 1 <= 0) {
+      alert("you need to select at least one room");
+      return rooms;
+    }
+    dispatch(decreaseCount());
   };
-  let [state, dispatch] = useReducer(roomCount, initialState);
-    useEffect(() => {
-      // here callback - when number of rooms change - callback for updated price and update number of rooms.
-      onChange(state.price, state.numberOfRooms);
-    }, [state.numberOfRooms, onChange]);
-    // console.log(state.numberOfRooms);
   return (
     <>
       <section>
@@ -98,22 +76,16 @@ export let RoomComponent = ({ onChange }) => {
         </div>
 
         <div className={style.room_quantity}>
-          <button
-            onClick={() => dispatch({ type: "INCREASE" })}
-            className={style.no_border_button}
-          >
+          <button onClick={handleIncrement} className={style.no_border_button}>
             +
           </button>
           <input
             className={style.no_border_input}
             readOnly
             type="text"
-            value={state.numberOfRooms}
+            value={rooms}
           />
-          <button
-            onClick={() => dispatch({ type: "DECREASE" })}
-            className={style.no_border_button}
-          >
+          <button onClick={handleDecrement} className={style.no_border_button}>
             -
           </button>
           Rooms

@@ -10,7 +10,7 @@ import { HeaderComp } from "./header/components/header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AdminLogin } from "./admin/components/adminLogin";
 import { Footer } from "./footer/components/footer";
-import { CheckoutMain } from "./checkoutPage/components/checkoutMain";
+import { App } from "./checkoutPage/app";
 
 
 export let Main = () => {
@@ -29,7 +29,7 @@ export let Main = () => {
             <Route exact path="/detailPage" element={<DetailPageMain />} />
             <Route exact path="/adminlogin" element={<AdminLogin />} />
             <Route exact path="/footer" element={<Footer />} />
-            <Route path="/checkout" element={<CheckoutMain />} />
+            <Route path="/checkout" element={<App/>} />
           </Routes>
         </BrowserRouter>
       </div>
