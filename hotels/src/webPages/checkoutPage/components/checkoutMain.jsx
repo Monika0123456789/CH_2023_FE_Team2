@@ -1,29 +1,50 @@
 import { CheckInCheckOut } from "./checkinCheckoutComponent";
 import { RoomComponent } from "./roomComponent";
-import { UserCredentialsComponent } from "./userCredentialsComponent"
+import { UserCredentialsComponent } from "./userCredentialsComponent";
 import style from "../checkout-page-styles/checkoutMain.module.css";
-import { useState } from "react";
+import dataStore from "../store";
+
 
 export let CheckoutMain = () => {
-    const [totalPrice, setTotalPrice] = useState(500); // Initialize with the base price
+  let storeData = () => {
+    const data = dataStore.getState();
 
-    const handleChange = (newPrice, rooms) => {
-      setTotalPrice(newPrice);
-    
-      console.log(rooms,newPrice)
+    const existingDataString = localStorage.getItem("Booking Details");
+
+    const existingData = existingDataString
+      ? JSON.parse(existingDataString)
+      : {};
+
+       const bookingId = Date.now();
+          const newBooking = {
+            [bookingId]: data,
+          };
+
+    const mergedData = {
+      ...existingData,
+      bookingData:{
+        ...existingData.bookingData || {},
+        ...newBooking,
+      },
     };
+
+    localStorage.setItem("Booking Details", JSON.stringify(mergedData));
+    // console.log("Data saved to local storage:", data);
+  };
   return (
     <div style={{ width: "100%" }}>
       <h1>Booking Details</h1>
       <hr />
-      <RoomComponent onChange={handleChange} />
+      <RoomComponent />
       <br></br>
       <UserCredentialsComponent />
       <br></br>
-      <CheckInCheckOut  totalPrice={totalPrice}/>
+      <CheckInCheckOut />
       <br></br>
-      <button className={style.submitBtn}>Proceed</button>
+      <button className={style.submitBtn} onClick={storeData}>
+        Proceed
+      </button>
       <br></br>
     </div>
   );
-}
+};

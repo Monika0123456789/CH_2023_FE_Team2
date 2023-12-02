@@ -1,0 +1,4 @@
+export const INCREASE_COUNT = "INCREASE";
+export const DECREASE_COUNT = "DECREASE";
+export const ADD_USER_DATA = "ADD_DATA";
+export const ADD_BOOKING_DETAILS = "ADD_BOOKING_DETAILS";

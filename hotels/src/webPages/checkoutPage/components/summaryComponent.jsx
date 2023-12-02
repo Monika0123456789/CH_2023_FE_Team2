@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import styles from "../checkout-page-styles/summaryComponent.module.css";
 
-export let SummaryComponent = ({checkin,checkout,price}) => {
+export let SummaryComponent = ({checkin,checkout}) => {
+
+  const price = useSelector((state) => state.price);
   return (
     <div className={styles.summaryContainer}>
       <div className={styles.bookingDetails}>

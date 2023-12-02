@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import style from "../checkout-page-styles/userCredentialsComponent.module.css";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/actions/roomQuantity.actions";
 
 export let UserCredentialsComponent = () => {
   let [userData, setUserData] = useState({
@@ -17,11 +19,12 @@ export let UserCredentialsComponent = () => {
   let phoneRef = useRef();
   let nationalityRef = useRef();
   let dobRef = useRef();
-  let genderRef = useRef();
   let maleRef = useRef();
   let femaleRef = useRef();
   let otherRef = useRef();
   let addressRef = useRef();
+  const dispatch = useDispatch();
+
 
 let handleChange = () => {
   setUserData(() => ({
@@ -33,8 +36,9 @@ let handleChange = () => {
     address: addressRef.current.value,
     gender : maleRef.current.checked ? "male" : femaleRef.current.checked ? "female" : otherRef.current.checked ? "other" : '',
   }));
+  
 };
-console.log(userData);
+dispatch(addUser(userData));
 
   return (
     <>
