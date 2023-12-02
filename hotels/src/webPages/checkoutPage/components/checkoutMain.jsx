@@ -13,19 +13,20 @@ export let CheckoutMain = () => {
 
     const existingData = existingDataString
       ? JSON.parse(existingDataString)
-      : {};
+      : {bookingData : []};
 
        const bookingId = Date.now();
           const newBooking = {
-            [bookingId]: data,
+            id : bookingId,
+            data,
           };
 
     const mergedData = {
       ...existingData,
-      bookingData:{
-        ...existingData.bookingData || {},
-        ...newBooking,
-      },
+      bookingData:[
+        ...existingData.bookingData,
+        newBooking
+      ],
     };
 
     localStorage.setItem("Booking Details", JSON.stringify(mergedData));
