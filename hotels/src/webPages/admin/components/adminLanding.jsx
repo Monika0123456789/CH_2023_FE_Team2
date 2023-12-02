@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 import style from "../admin-styles/adminLanding.module.css";
 export let AdminLanding = () => {
+
+    var booking_details = JSON.parse(localStorage.getItem("Booking Details"));
+
     return <div>
         <table className={style.customer_table}>
             <thead>
@@ -13,13 +17,17 @@ export let AdminLanding = () => {
             </thead>
                 
             <tbody>
-                <tr>
-                    <td>Lori Stevens</td>
-                    <td>18 Dec 2022</td>
-                    <td>22 Dec 2022</td>
+                {booking_details.bookingData.map((dataObj, index) => (
+                // alert(dataObj.data.address);
+                
+                <tr key={index}>
+                    <td>{dataObj.data.fullName}</td>
+                    <td>{dataObj.data.checkin}</td>
+                    <td>{dataObj.data.checkout}</td>
                     <td>04</td>
-                    <td className={style.amount}>$1025</td>
+                    <td className={style.amount}>${dataObj.data.price}</td>
                 </tr>
+                ))}
                 
             </tbody>
             
