@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { useParams } from "react-router";
 import "../hotel-detail-page-styles/roomoption.css";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate, useParams } from "react-router";
@@ -23,15 +22,17 @@ export let SectionFour = ({ hotelData }) => {
 
   
   const selectedHotel = hotelData.items.find(
-    (hotel) => hotel.name === hotelName
+    (hotel) => hotel.name === hotelName 
   );
-
+{
+  // console.log(selectedHotel);
+}
   if (!selectedHotel) {
     return <div>Hotel not found</div>;
   }
 
   const selectRoom = () => {
-    navigate(`/checkout`)
+     navigate(`/checkout`, { state: { selectedHotel} });
   }
   return (
     <div>
@@ -59,7 +60,7 @@ export let SectionFour = ({ hotelData }) => {
               <h2>Room {room.roomId}</h2>
               <p>{room.roomFacilities.slice(0,4).join(", ")} <span className="detailmorelink" onClick={() => handleRoomSelection(room)}>more</span></p>
               
-              <button className="roomoptionselectroombutton">
+              <button className="roomoptionselectroombutton" onClick={selectRoom}>
                 Select Room
               </button>
 

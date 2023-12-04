@@ -1,4 +1,4 @@
-import { ADD_BOOKING_DETAILS, ADD_USER_DATA, DECREASE_ROOM_COUNT, DECREASE_TRAVELLER_COUNT, INCREASE_ROOM_COUNT, INCREASE_TRAVELLER_COUNT } from "../types/roomQuantity.types"
+import { ADD_BOOKING_DETAILS, ADD_PRICING_DETAILS, ADD_USER_DATA, DECREASE_ROOM_COUNT, DECREASE_TRAVELLER_COUNT, INCREASE_ROOM_COUNT, INCREASE_TRAVELLER_COUNT } from "../types/roomQuantity.types"
 
 export const increaseCount = () => {
   return {
@@ -35,5 +35,11 @@ export const addBookingDetails = (argb) => {
   return {
     type: ADD_BOOKING_DETAILS,
     payload: argb
+  };
+}
+  export const addHotelDetails = (args) => {
+  return {
+    type: ADD_PRICING_DETAILS,
+    payload: args
   };
 }
