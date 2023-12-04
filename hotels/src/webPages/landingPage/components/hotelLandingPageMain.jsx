@@ -4,16 +4,19 @@ import { Section4 } from "./section4";
 
 import { SectionOneComp } from "./section1";
 import { Footer } from "../../footer/components/footer";
+import commonStyle from "../../common.module.css"
 
 
 export let HotelLandingPageMain = () => {
   return (
-    <div>
-        <SectionOneComp/>
-        <Section2/>
-        < ParentComponent />
-        <Section4/>
-        <Footer/>
-    </div>
+    <>
+      <div className={commonStyle.container}>
+        <SectionOneComp />
+        <Section2 />
+        <ParentComponent />
+        <Section4 />
+      </div>
+      <Footer />
+    </>
   );
 };

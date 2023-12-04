@@ -5,6 +5,7 @@ import style from "../checkout-page-styles/checkoutMain.module.css";
 import dataStore from "../store";
 import { SummaryComponent } from "./summaryComponent";
 import { Footer } from "../../footer/components/footer";
+import commonStyle from "../../common.module.css"
 
 export let CheckoutMain = () => {
   let storeData = () => {
@@ -56,21 +57,23 @@ export let CheckoutMain = () => {
     return true;
   };
   return (
-    <div style={{ width: "100%" }}>
-      <h1>Booking Details</h1>
-      <hr />
-      <RoomComponent />
-      <br></br>
-      <UserCredentialsComponent />
-      <br></br>
-      <CheckInCheckOut />
-      <br></br>
-      <SummaryComponent />
-      <button className={style.submitBtn} onClick={storeData}>
-        Proceed
-      </button>
-      <br></br>
-      <Footer/>
-    </div>
+    <>
+      <div className={commonStyle.container}>
+        <h1>Booking Details</h1>
+        <hr />
+        <RoomComponent />
+        <br></br>
+        <UserCredentialsComponent />
+        <br></br>
+        <CheckInCheckOut />
+        <br></br>
+        <SummaryComponent />
+        <button className={style.submitBtn} onClick={storeData}>
+          Proceed
+        </button>
+        <br></br>
+      </div>
+      <Footer />
+    </>
   );
 };
