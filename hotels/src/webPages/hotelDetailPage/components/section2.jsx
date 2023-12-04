@@ -1,6 +1,6 @@
 import { FaBellConcierge, FaWifi } from "react-icons/fa6";
 import {  FaRegSnowflake, FaSwimmingPool } from "react-icons/fa";
-import "./section2.css"
+import "../hotel-detail-page-styles/section2.css"
 export let DetailSectionTwo = () => {
     return (
         <section className="section-about">
@@ -25,13 +25,13 @@ export let DetailSectionTwo = () => {
         <p>Delivered dejection necessary objection do Mr prevailed.Mr feeling does chiefly cordial in do.Water timed fally
           right aware if oh truth.Large above be means.Dashwood does provide stronger is.</p>
         <h1>Advantages</h1>
-        <div className="advantages"><img src="assets/images/check.svg" alt="check"/>Every hotel staff to have Proper PPT kit for
+        <div className="advantages"><img src={process.env.PUBLIC_URL + '/assets/images/check.svg'} alt="check" />Every hotel staff to have Proper PPT kit for
           COVID-19</div>
-        <div className="advantages"><img src="assets/images/check.svg" alt="check"/>Every staff member wears face masks and gloves
+        <div className="advantages"><img src={process.env.PUBLIC_URL + '/assets/images/check.svg'} alt="check" />Every staff member wears face masks and gloves
           at all service times.</div>
-        <div className="advantages"><img src="assets/images/check.svg" alt="check"/>Hotel staff ensures to maintain social
+        <div className="advantages"><img src={process.env.PUBLIC_URL + '/assets/images/check.svg'} alt="check" />Hotel staff ensures to maintain social
           distancing at all times.</div>
-        <div className="advantages"><img src="assets/images/check.svg" alt="check"/>The hotel has in-Room Dining options available.
+        <div className="advantages"><img src={process.env.PUBLIC_URL + '/assets/images/check.svg'} alt="check" />The hotel has in-Room Dining options available.
         </div>
       </section>
     );

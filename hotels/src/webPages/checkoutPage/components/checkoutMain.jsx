@@ -6,9 +6,14 @@ import dataStore from "../store";
 import { SummaryComponent } from "./summaryComponent";
 import { Footer } from "../../footer/components/footer";
 import commonStyle from "../../common.module.css"
+
 import { HeaderComp } from "../../header/components/header";
 
+import { useNavigate } from "react-router";
+
+
 export let CheckoutMain = () => {
+  const navigate = useNavigate();
   let storeData = () => {
     const isUserDataValid = validateUserData(["address"]);
 
@@ -36,7 +41,9 @@ export let CheckoutMain = () => {
     };
 
     localStorage.setItem("Booking Details", JSON.stringify(mergedData));
-    // console.log("Data saved to local storage:", data);
+    
+    alert("your booking is confirmed")
+    navigate(`/`)
   };
   const validateUserData = (excludeFields = []) => {
     const requiredFields = [
@@ -46,7 +53,7 @@ export let CheckoutMain = () => {
       "dateOfBirth",
       "gender",
       "checkin",
-      "checkout"
+      "checkout",
     ];
     const userData = dataStore.getState();
     for (const field of requiredFields) {

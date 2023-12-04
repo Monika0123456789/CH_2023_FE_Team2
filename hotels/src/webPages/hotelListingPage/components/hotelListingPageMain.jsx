@@ -10,10 +10,8 @@ import PopularType from "./popular-type";
 import CustomerRating from "./customer-rating";
 import RatingStar from "./rating-star";
 import Amenities from "./amenities";
-
 import ButtomButton from "./bottom-button";
 import React, { useEffect, useState } from "react";
-import { FilterProvider } from "./fiterContext";
 
 import { Footer } from "../../footer/components/footer.jsx";
 import { IoFilterSharp } from "react-icons/io5";
@@ -120,8 +118,8 @@ export let HotelListingPageMain = () => {
 
     return filteredHotels;
   };
- 
   
+
  return (
    <>
       <HeaderComp />
@@ -227,3 +225,4 @@ export let HotelListingPageMain = () => {
    </>
  );
 };
+

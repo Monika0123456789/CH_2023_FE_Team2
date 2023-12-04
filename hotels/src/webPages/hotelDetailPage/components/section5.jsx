@@ -1,4 +1,4 @@
-import "./section5.css"
+import "../hotel-detail-page-styles/section5.css"
 
 export let DetailSectionFive = () => {
   return (
