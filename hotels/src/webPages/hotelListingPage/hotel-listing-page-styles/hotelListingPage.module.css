@@ -283,11 +283,13 @@ styling the container containg the toggle buttons */
 
 .filter_button {
    
-   position: fixed;
-   top: 75px;
-   right: 10px;
+   /* position: static; */
+   /* float: right; */
+   position:absolute;
+   top: 90px; 
+   right: 20px;
    display: none; /* Initially hide the filter button */
-    border: 2px solid red;
+    /* border: 2px solid red; */
     /* z-index: 3; */
   }
   
@@ -301,24 +303,7 @@ styling the container containg the toggle buttons */
     cursor: pointer;
   }
   
-  .filter_button.active {
-    display: block; /* Show the filter button when active */
-  }
 
-  .FilterIconsDesktop {
-    display: flex;
-    gap: 10px;
-    /* Add more styling as needed */
-  }
-
-  .FilterHotels {
-    display: none;
-  }
-  
-  .FilterHotels.block {
-    display: block;
-    /* Add styles for positioning on the side in mobile view */
-  }
 /* adding media queries for screen widths less or equal to 760px */
 @media screen and (max-width: 760px) {
     .hotel_list_maincontainer {
@@ -344,16 +329,60 @@ styling the container containg the toggle buttons */
         width: 80%;        
     }
 
-     .filter_button {
+    .filter_button {
         display: block; /* Show the filter button in mobile view */
       }
 
      
 
-      .FilterHotels {
+    .FitlerHotels {
         display: none; /* Hide the filter block on small screens */
       }
      
-     
+    .hotelpages{
+        width: 100%;
+        /* border: 2px solid red; */
+      }
+
+      .IconFilter {
+        position:absolute;
+        top: 10px; 
+        right: 20px; 
+        background-color: white;
+        z-index: 3; 
+        width: auto;
+        /* border: 2px solid red; */
+        box-sizing: border-box;
+      }
+
+      
+      
+
+       .filter_popup {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .filter_text {
+        margin: 0;
+      }
+      
+      .closebtn {
+        cursor: pointer;
+        color:black;
+        font-size: 1.8rem;
+        margin: 0;
+      }
+
+      .mobile{
+        margin: 0px;
+        border: 2px solid green;
+      }
     
 }
