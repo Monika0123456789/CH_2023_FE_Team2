@@ -4,13 +4,13 @@ import { Footer } from "../../footer/components/footer";
 import { DetailSectionOne } from "./section1";
 import { DetailSectionTwo } from "./section2";
 import { DetailSectionThree } from "./section3";
-import HotelDetail from "./section4";
+
 
 import { DetailSectionFive } from "./section5";
-import { Demo } from "./sectionfour";
+import { SectionFour } from "./sectionfour";
 
-// import { Demo } from "./demo";
-import commonStyle from "../../common.module.css"
+
+
 
 export let DetailPageMain = () => {
 
@@ -93,7 +93,7 @@ export let DetailPageMain = () => {
          "id":4,
          "img":"https://cf.bstatic.com/xdata/images/hotel/square600/459880008.webp?k=0a501732908137fcb34b70982b854f1f98b38378f7bb7df752684048ee1b356f&o=",
          "name":"Vintage Vihara: The Heritage Bungalow",
-         "type":"",
+         "type":"Resort",
          "price":570,
          "rating":4.5,
    "location":"5855 W Century Blvd, Los Angeles - 90045",
@@ -118,7 +118,7 @@ export let DetailPageMain = () => {
          "img":"https://cf.bstatic.com/xdata/images/hotel/square600/480115419.webp?k=ae02ccf56ec06fbbbfe0cfc13b8c33779d164a081d08f183d8ba5124c83ca67f&o=",
          "name":"Olive Electronic City - by Embassy Group",
          "price":395,
-         "type":"Resort",
+         "type":"Villa",
          "rating":3,
    "location":"31J W Spark Street, California - 24578",
    "additionInfo":["Non Refundable"],
@@ -137,20 +137,18 @@ export let DetailPageMain = () => {
    "longDesc": "Compact yet beautiful 1bhk 306 is situated in Bangalore, 8.5 km from Forum Mall, Koramangala, 12 km from ISKCON Hare Krishna Temple, as well as 13 km from Bull Temple. This property offers access to a balcony, free private parking and free WiFi.The 1-bedroom apartment features a living room with flat-screen TV, and a fully equipped kitchen.Brigade Road is 13 km from the apartment, while Chinnaswamy Stadium is 14 km from the property.Distance in property description is calculated using © OpenStreetMap"
       }
    ]
-  };
+  
+};
     return (
-
-      <>
-        <div className={commonStyle.container}>
-          <DetailSectionOne />
-          <DetailSectionTwo />
-          <DetailSectionThree />
-          <HotelDetail />
-          <DetailSectionFive />
-        </div>
-        <Footer />
-      </>
-
+      <div>
+        <DetailSectionOne/>
+        <DetailSectionTwo/>
+        <DetailSectionThree/>
+        
+        <SectionFour hotelData={hotelData} />
+        <DetailSectionFive/>
+        <Footer/>
+      </div>
     );
   };
   

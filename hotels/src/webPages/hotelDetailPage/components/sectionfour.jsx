@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import "./roomoption.css"
 
-export let Demo = ({ hotelData }) => {
+export let SectionFour = ({ hotelData }) => {
   const { hotelName } = useParams();
 
   
