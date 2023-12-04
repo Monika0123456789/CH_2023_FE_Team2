@@ -20,10 +20,8 @@ const PriceSlider = ({ onPriceChange }) => {
   };
 
   const handleChange = (newValues) => {
-    const sortedValues = newValues.sort((a, b) => a - b);
-    setValues(sortedValues);
-    onPriceChange && onPriceChange(sortedValues); // Call onPriceChange only if it's provided
-    setPriceRange(sortedValues); // Update context if available
+    onPriceChange(newValues); // Call onPriceChange only if it's provided
+    setPriceRange(newValues); // Update context if available
   };
   
 
