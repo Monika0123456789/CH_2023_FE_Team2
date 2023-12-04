@@ -2,14 +2,14 @@ import "./section5.css"
 
 export let DetailSectionFive = () => {
   return (
-    <div class="hotel-policies-maincontainer">
+    <div className="hotel-policies-maincontainer">
     
-      <div class="room-options-heading-div">
+      <div className="room-options-heading-div">
         <h1>Hotel Policies</h1>
         <hr/>
       </div>
 
-      <div class="hotel-options-content">
+      <div className="hotel-options-content">
         <p>
         <img src="assets/images/check.svg" alt=""/>
           &nbsp Drinking and smoking within controlled limits are permitted at the farmhouse but please do not create a

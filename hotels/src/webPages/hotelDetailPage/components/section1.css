@@ -77,17 +77,19 @@
   text-align: center;
 }
 
-.close-button {
-  background-color: #f11414;
-  color: #fff;
-  padding: 5%;
+.close-button{
+  background-color: #fff;
   border: none;
   cursor: pointer;
-  margin-top: 2%;
-  border-radius: 10px;
+  height: 100%;
+  width: 10%;
+  margin-top: 5%;
 }
-.close-button:hover{
-  background-color: #c52525;
+.headingclose{
+ display: flex;
+ justify-content: space-between;
+  
+  
 }
 
   /* Map PopUP Ends here */

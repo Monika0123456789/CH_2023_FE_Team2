@@ -1,0 +1,42 @@
+.mainroomoptioncontainer{
+    display: flex;
+    border: 2px solid grey;
+    margin-top: 1%;
+    border-radius: 10px;
+    
+}
+.mainroomoptioncontainer:hover{
+    box-shadow: 3px 3px 3px black;
+   
+}
+
+.roomoptionimageconatiner{
+    width: 60%;
+    padding: 1%;
+}
+.roomoptionimageconatiner img{
+    width: 100%;
+    
+}
+.roomoptiontextconatiner{
+    position: relative;
+}
+
+.roomoptionselectroombutton{
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 20%;
+    background-color: rgb(100, 100, 240);
+    color: white;
+    cursor: pointer;
+    padding:3%;
+    border: none;
+    float: right;
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    margin-right: 1%;
+}
+.roomoptionselectroombutton:hover{
+  background-color: #45a049;
+}
