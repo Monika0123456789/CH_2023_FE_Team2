@@ -1,5 +1,5 @@
 
-import "./section3.css"
+import "../hotel-detail-page-styles/section3.css"
 import { IoMdBicycle } from "react-icons/io";
 import { MdOutlinePayment, MdOutlineSecurity } from "react-icons/md";
 import { FaBellConcierge } from "react-icons/fa6";
