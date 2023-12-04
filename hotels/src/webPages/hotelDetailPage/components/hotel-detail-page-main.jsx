@@ -12,8 +12,13 @@ import { SectionFour } from "./sectionfour";
 
 
 
-export let DetailPageMain = () => {
+// import { Demo } from "./demo";
+import commonStyle from "../../common.module.css"
+import { HeaderComp } from "../../header/components/header";
 
+
+
+export let DetailPageMain = () => {
   const hotelData = {
     items:[
       {
@@ -140,15 +145,20 @@ export let DetailPageMain = () => {
   
 };
     return (
-      <div>
-        <DetailSectionOne/>
-        <DetailSectionTwo/>
-        <DetailSectionThree/>
-        
-        <SectionFour hotelData={hotelData} />
-        <DetailSectionFive/>
-        <Footer/>
-      </div>
+
+      <>
+      <HeaderComp />
+        <div className={commonStyle.container}>
+          <DetailSectionOne />
+          <DetailSectionTwo />
+          <DetailSectionThree />
+          <HotelDetail />
+          <DetailSectionFive />
+        </div>
+        <Footer />
+      </>
+
+
     );
   };
   

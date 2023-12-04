@@ -6,7 +6,11 @@ import dataStore from "../store";
 import { SummaryComponent } from "./summaryComponent";
 import { Footer } from "../../footer/components/footer";
 import commonStyle from "../../common.module.css"
+
+import { HeaderComp } from "../../header/components/header";
+
 import { useNavigate } from "react-router";
+
 
 export let CheckoutMain = () => {
   const navigate = useNavigate();
@@ -62,6 +66,7 @@ export let CheckoutMain = () => {
   };
   return (
     <>
+      <HeaderComp />
       <div className={commonStyle.container}>
         <h1>Booking Details</h1>
         <hr />
