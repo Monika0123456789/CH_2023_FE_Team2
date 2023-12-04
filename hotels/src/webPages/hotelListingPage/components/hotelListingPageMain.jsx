@@ -12,10 +12,14 @@ import RatingStar from "./rating-star";
 import Amenities from "./amenities";
 import ButtomButton from "./bottom-button";
 import React, { useEffect, useState } from "react";
+
 import { Footer } from "../../footer/components/footer.jsx";
 import { IoFilterSharp } from "react-icons/io5";
 
 import $ from "jquery";
+
+import commonStyle from "../../common.module.css";
+
 
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
@@ -114,106 +118,109 @@ export let HotelListingPageMain = () => {
     return filteredHotels;
   };
   
- return <>
-     <div className={style.filter_button} onClick={handleToggleMobileFilter}>
-        <button>
-          <IoFilterSharp />
-        </button>
-     </div>
-     <div style={{ display: "flex"}} className="mainone">
-       <div className={style.FitlerHotels}>
-         <HotelTypes data={data} onTypesChange={handleTypesChange} />
-         <PriceSlider onPriceChange={handlePriceRangeChange} />
-         <PopularType />
-         <CustomerRating onRatingChange={handleRatingChange} />
-         <RatingStar />
-         <Amenities
-           onAmenitiesChange={handleAmenitiesChange}
-         />
-         <ButtomButton onClearAllClick={handleClearAll} />
+
+ return (
+   <>
+     <div className={commonStyle.container}>
+       <div className={style.filter_button} onClick={handleToggleMobileFilter}>
+         <button>
+           <IoFilterSharp />
+         </button>
        </div>
+       <div style={{ display: "flex" }} className="mainone">
+         <div className={style.FitlerHotels}>
+           <HotelTypes data={data} onTypesChange={handleTypesChange} />
+           <PriceSlider onPriceChange={handlePriceRangeChange} />
+           <PopularType />
+           <CustomerRating onRatingChange={handleRatingChange} />
+           <RatingStar />
+           <Amenities onAmenitiesChange={handleAmenitiesChange} />
+           <ButtomButton onClearAllClick={handleClearAll} />
+         </div>
 
-       
-       {/* Use isMobileFilterVisible to conditionally render the filter */}
-       {isMobileFilterVisible && (
-          <div className={style.IconFilter}>
-            <div className={style.filter_popup}>
-            <p className={style.filter_text}>Advanced Filters</p>
-              <p className={style.closebtn} onClick={handleToggleMobileFilter}>&times;</p>
+         {/* Use isMobileFilterVisible to conditionally render the filter */}
+         {isMobileFilterVisible && (
+           <div className={style.IconFilter}>
+             <div className={style.filter_popup}>
+               <p className={style.filter_text}>Advanced Filters</p>
+               <p className={style.closebtn} onClick={handleToggleMobileFilter}>
+                 &times;
+               </p>
+             </div>
+
+             <HotelTypes data={data} onTypesChange={handleTypesChange} />
+             <PriceSlider onPriceChange={handlePriceRangeChange} />
+             <PopularType />
+             <CustomerRating onRatingChange={handleRatingChange} />
+             <RatingStar />
+             <Amenities
+               selectedAmenities={selectedAmenities}
+               onAmenitiesChange={handleAmenitiesChange}
+             />
+             <ButtomButton onClearAllClick={handleClearAll} />
            </div>
-            
-            <HotelTypes data={data} onTypesChange={handleTypesChange} />
-            <PriceSlider onPriceChange={handlePriceRangeChange} />
-            <PopularType />
-            <CustomerRating onRatingChange={handleRatingChange} />
-            <RatingStar />
-            <Amenities
-              selectedAmenities={selectedAmenities}
-              onAmenitiesChange={handleAmenitiesChange}
-            />
-            <ButtomButton onClearAllClick={handleClearAll} />
-          </div>
-        )}
-       <div className={style.hotelpages} >
-
-       <div >
-
-           {/* Display filtered data or "No data available" message for page 1 */}
-           <div id="page1-container">
-             {filterData().length > 0 ? (
-               filterData().map((hotelListingObj, index) => (
-                 <HotelListingPageCard
-                   key={index}
-                   hotelListingObj={hotelListingObj}
-                 />
-               ))
-             ) : (
-               <p>No data available for your search</p>
-             )}
-           </div>
-           {/* Display filtered data or "No data available" message for page 2*/}
-           <div id="page2-container">
-             {filterData().length > 0 ? (
-               filterData()
-                 .reverse()
-                 .map((hotelListingObj, index) => (
+         )}
+         <div className={style.hotelpages}>
+           <div>
+             {/* Display filtered data or "No data available" message for page 1 */}
+             <div id="page1-container">
+               {filterData().length > 0 ? (
+                 filterData().map((hotelListingObj, index) => (
                    <HotelListingPageCard
                      key={index}
                      hotelListingObj={hotelListingObj}
                    />
                  ))
-             ) : (
-               <p>No data available for your search</p>
-             )}
+               ) : (
+                 <p>No data available for your search</p>
+               )}
+             </div>
+             {/* Display filtered data or "No data available" message for page 2*/}
+             <div id="page2-container">
+               {filterData().length > 0 ? (
+                 filterData()
+                   .reverse()
+                   .map((hotelListingObj, index) => (
+                     <HotelListingPageCard
+                       key={index}
+                       hotelListingObj={hotelListingObj}
+                     />
+                   ))
+               ) : (
+                 <p>No data available for your search</p>
+               )}
+             </div>
+
+             <div
+               className={`${style.toggle_button_container} ${style.toggle_button_container1}`}
+             >
+               <button
+                 id="toggle-button-<"
+                 className={style.toggle_buttons}
+                 title="View Previous page"
+               >
+                 <GrFormPreviousLink />
+               </button>
+               <button id="toggle-button1" className={style.toggle_buttons}>
+                 1
+               </button>
+               <button id="toggle-button2" className={style.toggle_buttons}>
+                 2
+               </button>
+               <button
+                 id="toggle-button->"
+                 className={style.toggle_buttons}
+                 title="View Next page"
+               >
+                 <GrFormNextLink />
+               </button>
+             </div>
            </div>
-       
-         <div
-           className={`${style.toggle_button_container} ${style.toggle_button_container1}`}
-         >
-           <button
-             id="toggle-button-<"
-             className={style.toggle_buttons}
-             title="View Previous page"
-           >
-             <GrFormPreviousLink />
-           </button>
-           <button id="toggle-button1" className={style.toggle_buttons}>
-             1
-           </button>
-           <button id="toggle-button2" className={style.toggle_buttons}>
-             2
-           </button>
-           <button
-             id="toggle-button->"
-             className={style.toggle_buttons}
-             title="View Next page"
-           >
-             <GrFormNextLink />
-           </button>
          </div>
        </div>
-       </div>
-       </div>
-       <Footer style={{ width: "100%" }} />
-       </>
-}
+     </div>
+     <Footer />
+   </>
+ );
+};
+

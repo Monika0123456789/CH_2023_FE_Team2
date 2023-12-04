@@ -25,8 +25,19 @@ export let UserCredentialsComponent = () => {
   let addressRef = useRef();
   const dispatch = useDispatch();
 
-
 let handleChange = () => {
+      const dobValue = dobRef.current.value;
+      const currentDate = new Date();
+      const tenYearsAgo = new Date();
+      tenYearsAgo.setFullYear(currentDate.getFullYear() - 10);
+
+      const selectedDate = new Date(dobValue);
+      if (selectedDate > tenYearsAgo) {
+        alert(
+          "NOTE : Your age should atleast be 10Years from today"
+        );
+        dobRef.current.value = '';
+      }
   setUserData(() => ({
     fullName: nameRef.current.value,
     email: emailRef.current.value,
@@ -36,6 +47,7 @@ let handleChange = () => {
     address: addressRef.current.value,
     gender : maleRef.current.checked ? "male" : femaleRef.current.checked ? "female" : otherRef.current.checked ? "other" : '',
   }));
+
   
 };
 dispatch(addUser(userData));
@@ -50,9 +62,7 @@ dispatch(addUser(userData));
           >
             Upload your Id
           </label>
-          <button className={style.idProof} id="identityproof">
-            Upload
-          </button>
+          <input type="file" className={style.idProof} id="identityproof"/>
         </div>
         <div className={style.colsHalf}>
           <label

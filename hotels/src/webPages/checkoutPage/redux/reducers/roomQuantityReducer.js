@@ -2,8 +2,10 @@ import dataStore from "../../store";
 import {
   ADD_BOOKING_DETAILS,
   ADD_USER_DATA,
-  DECREASE_COUNT,
-  INCREASE_COUNT,
+  DECREASE_ROOM_COUNT,
+  DECREASE_TRAVELLER_COUNT,
+  INCREASE_ROOM_COUNT,
+  INCREASE_TRAVELLER_COUNT,
 } from "../types/roomQuantity.types";
 
 const INITIAL_VALUE = {
@@ -16,22 +18,33 @@ const INITIAL_VALUE = {
   address: "",
   gender: "",
   checkin: "",
-  checkout: " ",
+  checkout: "",
   price: "500",
+  numberOfTravellers: 1,
 };
 const roomReducer = (store = INITIAL_VALUE, action) => {
   switch (action.type) {
-    case INCREASE_COUNT:
+    case INCREASE_ROOM_COUNT:
       return {
         ...store,
         roomCount: store.roomCount + 1,
         price: (store.roomCount + 1) * 500,
       };
-    case DECREASE_COUNT:
+    case DECREASE_ROOM_COUNT:
       return {
         ...store,
         roomCount: store.roomCount - 1,
         price: (store.roomCount - 1) * 500,
+      };
+    case INCREASE_TRAVELLER_COUNT:
+      return {
+        ...store,
+        numberOfTravellers: store.numberOfTravellers + 1,
+      };
+    case DECREASE_TRAVELLER_COUNT:
+      return {
+        ...store,
+        numberOfTravellers: store.numberOfTravellers - 1,
       };
     case ADD_USER_DATA:
       return { ...store, ...action.payload };
