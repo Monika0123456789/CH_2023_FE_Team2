@@ -1,9 +1,11 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import "./roomoption.css"
 
 export let SectionFour = ({ hotelData }) => {
   const { hotelName } = useParams();
+
+  let navigate = useNavigate();
 
   
   const selectedHotel = hotelData.items.find(
@@ -15,6 +17,9 @@ export let SectionFour = ({ hotelData }) => {
     return <div>Hotel not found</div>;
   }
 
+  const selectRoom = () => {
+    navigate(`/checkout`)
+  }
   return (
     <div>
       <h1>Room options</h1>
@@ -40,7 +45,7 @@ export let SectionFour = ({ hotelData }) => {
             <h2>Room {room.roomId}</h2>
             <p>{room.roomFacilities.join(", ")}</p>
             
-            <button className="roomoptionselectroombutton">Select Room</button>
+            <button className="roomoptionselectroombutton" onClick={selectRoom}>Select Room</button>
             </div>
           </div>
         ))}
