@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AdminLogin } from "./admin/components/adminLogin";
 import { Footer } from "./footer/components/footer";
 import { CheckoutMain } from "./checkoutPage/components/checkoutMain";
+import { DetailSectionOne } from "./hotelDetailPage/components/section1";
 
 
 export let Main = () => {
@@ -22,7 +23,7 @@ export let Main = () => {
           <Routes>
             <Route exact path="/" element={<HotelLandingPageMain />} />
             <Route exact path="/hotelListingPage" element={<HotelListingPageMain />} />
-            <Route exact path="/detailPage" element={<DetailPageMain />} />
+            <Route exact path="/detailPage/:hotelName" element={<DetailPageMain />}   />
             <Route exact path="/adminlogin" element={<AdminLogin/> } />
             <Route exact path="/footer" element={<Footer/> } />
             <Route path="/checkout" element={<CheckoutMain />} />
