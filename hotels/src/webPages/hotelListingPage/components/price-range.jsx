@@ -8,7 +8,7 @@ const PriceSlider = ({ onPriceChange }) => {
   const [values, setValues] = useState(priceRange);
 
   useEffect(() => {
-    // If onPriceChange is provided externally, update the component's state
+    // update the component's state
     if (onPriceChange) {
       setValues(priceRange);
     }
@@ -20,8 +20,8 @@ const PriceSlider = ({ onPriceChange }) => {
   };
 
   const handleChange = (newValues) => {
-    onPriceChange(newValues); // Call onPriceChange only if it's provided
-    setPriceRange(newValues); // Update context if available
+    onPriceChange(newValues); // Call onPriceChange with the new values
+    setPriceRange(newValues); // Update priceRange in the context using setPriceRange
   };
   
 
