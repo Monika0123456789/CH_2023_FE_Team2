@@ -10,11 +10,8 @@ import PopularType from "./popular-type";
 import CustomerRating from "./customer-rating";
 import RatingStar from "./rating-star";
 import Amenities from "./amenities";
-
 import ButtomButton from "./bottom-button";
-import React, { useState } from "react";
-import { FilterProvider } from "./fiterContext";
-
+import React, { useEffect, useState } from "react";
 import { Footer } from "../../footer/components/footer.jsx";
 import { IoFilterSharp } from "react-icons/io5";
 
@@ -116,10 +113,8 @@ export let HotelListingPageMain = () => {
 
     return filteredHotels;
   };
- 
   
- return (
-   <>
+ return <>
      <div className={style.filter_button} onClick={handleToggleMobileFilter}>
         <button>
           <IoFilterSharp />
@@ -218,8 +213,7 @@ export let HotelListingPageMain = () => {
          </div>
        </div>
        </div>
-     
-     <Footer style={{ width: "100%" }} />
-   </>
- );
-};
+       </div>
+       <Footer style={{ width: "100%" }} />
+       </>
+}
