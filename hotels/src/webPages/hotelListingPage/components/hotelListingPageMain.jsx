@@ -2,7 +2,7 @@ import data from "../../../json/hotel-booking.json";
 import {HotelListingPageCard} from "./hotelListingPageCard";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { GrFormNextLink } from "react-icons/gr";
-import "../hotel-listing-page-js/hotelListingPage.js";
+// import "../hotel-listing-page-js/hotelListingPage.js";
 import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
 import HotelTypes from "./hotel-type";
 import PriceSlider from "./price-range";
@@ -10,13 +10,51 @@ import PopularType from "./popular-type";
 import CustomerRating from "./customer-rating";
 import RatingStar from "./rating-star";
 import Amenities from "./amenities";
+
 import ButtomButton from "./bottom-button";
 import React, { useState } from "react";
+import { FilterProvider } from "./fiterContext";
+
 import { Footer } from "../../footer/components/footer.jsx";
 import { IoFilterSharp } from "react-icons/io5";
 
+import $ from "jquery";
+
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
+
+  useEffect(() => {
+    $("#page2-container").hide();
+
+    $("#toggle-button1").css({"background-color":"blue","color":"white"});
+
+    // invoke function changePagetoTwo upon clicking toggle button 2
+    $("#toggle-button2").on("click",changePageToTwo);
+
+    // invoke function changePagetoOne upon clicking toggle button 1
+    $("#toggle-button1").on("click",changePageToOne);
+  }, [])
+
+  // function to switch to page2
+  function changePageToTwo(){
+    // hide page1 and show page2 as well as change the color of button2 to active
+    $("#page1-container").hide();
+    $("#page2-container").show();
+
+    $("#toggle-button1").css({"background-color":"rgb(216, 204, 189)", "color":"black"});
+    $("#toggle-button2").css({"background-color":"blue", "color":"white"});
+  }
+
+  // function to switch to page1
+  function changePageToOne(){
+    // hide page2 and show page1 as well as change the color of button1 to active
+    $("#page2-container").hide();
+    $("#page1-container").show();
+
+    $("#toggle-button2").css({"background-color":"rgb(216, 204, 189)", "color":"black"});
+    $("#toggle-button1").css({"background-color":"blue", "color":"white"});
+  }
+
   const [priceRange, setPriceRange] = useState([200, 1000]);
   const [selectedRating, setSelectedRating] = useState(null);
   const [selectedTypes, setSelectedTypes] = useState([]);
@@ -99,6 +137,7 @@ export let HotelListingPageMain = () => {
          />
          <ButtomButton onClearAllClick={handleClearAll} />
        </div>
+
        
        {/* Use isMobileFilterVisible to conditionally render the filter */}
        {isMobileFilterVisible && (
@@ -121,7 +160,9 @@ export let HotelListingPageMain = () => {
           </div>
         )}
        <div className={style.hotelpages} >
-         
+
+       <div >
+
            {/* Display filtered data or "No data available" message for page 1 */}
            <div id="page1-container">
              {filterData().length > 0 ? (
