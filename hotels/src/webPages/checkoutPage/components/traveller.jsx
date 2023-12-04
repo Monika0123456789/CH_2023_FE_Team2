@@ -16,8 +16,7 @@ export let Traveller = ({idn, onRemove}) => {
   };
 
   let removeTraveller = () => {
-    onRemove(idn)
-
+    onRemove(idn);
   }
   return (
     <div className={styles.travellerContainer}>

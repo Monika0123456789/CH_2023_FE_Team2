@@ -8,17 +8,20 @@ import HotelDetail from "./section4";
 
 import { DetailSectionFive } from "./section5";
 // import { Demo } from "./demo";
+import commonStyle from "../../common.module.css"
 
 export let DetailPageMain = () => {
     return (
-      <div>
-        <DetailSectionOne/>
-        <DetailSectionTwo/>
-        <DetailSectionThree/>
-        <HotelDetail/>
-        <DetailSectionFive/>
-        <Footer/>
-      </div>
+      <>
+        <div className={commonStyle.container}>
+          <DetailSectionOne />
+          <DetailSectionTwo />
+          <DetailSectionThree />
+          <HotelDetail />
+          <DetailSectionFive />
+        </div>
+        <Footer />
+      </>
     );
   };
   
