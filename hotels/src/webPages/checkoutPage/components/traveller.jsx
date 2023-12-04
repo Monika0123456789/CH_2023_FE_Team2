@@ -6,7 +6,7 @@ export let Traveller = ({idn, onRemove}) => {
     firstname: "",
     lastname: "",
   });
-  console.log (idn)
+  // console.log (idn)
 
   let addFirstName = (evt) => {
     setUser(() => ({ ...user, firstname: evt.target.value }));
@@ -16,8 +16,7 @@ export let Traveller = ({idn, onRemove}) => {
   };
 
   let removeTraveller = () => {
-    onRemove(idn)
-
+    onRemove(idn);
   }
   return (
     <div className={styles.travellerContainer}>

@@ -1,4 +1,4 @@
-import "../../common.css"
+
 import "../landing-page-styles/section2.css"
 import { FaBolt, FaStopwatch, FaShield, FaUtensils, FaStar } from "react-icons/fa6";
 

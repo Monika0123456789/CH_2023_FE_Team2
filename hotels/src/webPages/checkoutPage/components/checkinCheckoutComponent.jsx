@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "../checkout-page-styles/checkinCheckoutComponent.module.css";
 import { TravellerComponent } from "./travellerDetailComponent";
-import { SummaryComponent } from "./summaryComponent";
+import { useDispatch } from "react-redux";
+import { addBookingDetails } from "../redux/actions/roomQuantity.actions";
 
-export let CheckInCheckOut = ({ totalPrice }) => {
+export let CheckInCheckOut = () => {
   let [state, setState] = useState({
     checkin: "",
-    checkout: " ",
+    checkout: "",
   });
+  const dispatch = useDispatch();
+
   const updateDates = (e) => {
     const { name, value } = e.target;
 
@@ -30,6 +33,14 @@ export let CheckInCheckOut = ({ totalPrice }) => {
     }
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
+  useEffect(() => {
+    const formattedState = {
+      ...state,
+      checkin: state.checkin.replace("T", " "),
+      checkout: state.checkout.replace("T", " "),
+    };
+    dispatch(addBookingDetails(formattedState));
+  }, [state, dispatch]);
   return (
     <>
       <div className={style.checkinCheckoutContainer}>
@@ -38,7 +49,7 @@ export let CheckInCheckOut = ({ totalPrice }) => {
             Check-in Date
           </label>
           <input
-            type="date"
+            type="datetime-local"
             name="checkin"
             value={state.checkin}
             className={style.dateInputs}
@@ -50,7 +61,7 @@ export let CheckInCheckOut = ({ totalPrice }) => {
             Check-out Date
           </label>
           <input
-            type="date"
+            type="datetime-local"
             name="checkout"
             className={style.dateInputs}
             value={state.checkout}
@@ -59,11 +70,6 @@ export let CheckInCheckOut = ({ totalPrice }) => {
         </div>
       </div>
       <TravellerComponent />
-      <SummaryComponent
-        checkin={state.checkin}
-        checkout={state.checkout}
-        price={totalPrice}
-      />
     </>
   );
 };

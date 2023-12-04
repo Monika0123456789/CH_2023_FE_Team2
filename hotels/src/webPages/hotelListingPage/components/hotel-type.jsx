@@ -1,19 +1,14 @@
-import React, {  useEffect } from 'react';
-import { FaAngleDown } from "react-icons/fa6";
+import React, { useEffect } from 'react';
 import { useFilter } from './fiterContext';
 
-
 export default function HotelTypes({ data, onTypesChange }) {
-  // const [selectedTypes, setSelectedTypes] = useState([]);
   const { selectedTypes, setSelectedTypes } = useFilter();
+
   const handleCheckboxChange = (type) => {
     setSelectedTypes((prevSelectedTypes) => {
       if (type === 'All') {
         // If 'All' checkbox is clicked, toggle between selecting all and none
-        return prevSelectedTypes.length === data.items.length ? [] : data.items.map(hotel => hotel.type);
-      } else if (prevSelectedTypes.includes('All')) {
-        // If 'All' was previously selected, clear it and only select the current type
-        return [type];
+        return prevSelectedTypes.includes('All') ? [] :['All', ...data.items.map(hotel => hotel.type)] ;
       } else if (prevSelectedTypes.includes(type)) {
         // If the type is already selected, unselect it
         return prevSelectedTypes.filter((selectedType) => selectedType !== type);
@@ -21,12 +16,11 @@ export default function HotelTypes({ data, onTypesChange }) {
         // If the type is not selected, add it to the selection
         return [...prevSelectedTypes, type];
       }
-    });
-  };
+      });
+    };
 
-  
 
-  // Notify the parent component of the selected types change
+
   useEffect(() => {
     onTypesChange(selectedTypes);
   }, [selectedTypes, onTypesChange]);
@@ -89,10 +83,9 @@ export default function HotelTypes({ data, onTypesChange }) {
           Villa
         </label>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      {/* <div style={{ display: 'flex', alignItems: 'center' }}>
         <span>See more</span>&nbsp;<FaAngleDown />
-      </div>
-      
+      </div> */}
     </div>
   );
 }

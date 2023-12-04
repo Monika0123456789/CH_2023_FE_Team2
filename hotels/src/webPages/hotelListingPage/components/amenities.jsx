@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { FaAngleDown } from 'react-icons/fa6';
 import { useFilter } from './fiterContext';
 
@@ -21,13 +21,6 @@ const Amenities = ({ onAmenitiesChange }) => {
       onAmenitiesChange(newSelected);
     }
   };
-
-  const handleClearAll = () => {
-    // Reset all filters
-    setSelectedAmenities([]);
-    onAmenitiesChange([]);
-  };
-
   const amenitiesData = [
     { value: 'all', label: 'All' },
     { value: 'Air conditioning', label: 'Air conditioning' },
@@ -48,11 +41,7 @@ const Amenities = ({ onAmenitiesChange }) => {
 
   const visibleAmenities = showAll ? amenitiesData : amenitiesData.slice(0, 5);
 
-  useEffect(() => {
-    // Update the component's state when selectedAmenities are changed externally
-    setShowAll(selectedAmenities.length === amenitiesData.length);
-  }, [selectedAmenities]);
-
+  
   return (
     <div style={{ padding: '20px', border: '1px solid #ddd', borderRadius: '5px', boxShadow: '0 0 2px rgba(0, 0, 0, 0.1)', width: '300px' }}>
       <h2 style={{ marginTop: 0 }}>Amenities</h2>
@@ -73,7 +62,7 @@ const Amenities = ({ onAmenitiesChange }) => {
           <span>{showAll ? 'See less' : 'See more'}</span>&nbsp;<FaAngleDown />
         </div>
       )}
-     
+
     </div>
   );
 };

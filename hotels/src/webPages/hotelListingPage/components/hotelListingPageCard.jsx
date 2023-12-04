@@ -1,9 +1,12 @@
 import React from "react";
+import { HiMiniCheckBadge } from "react-icons/hi2";
 import { FaStar, FaStarHalfAlt, FaHeart, FaShareAlt } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineCheck } from "react-icons/hi"; // Correct import for HiOutlineCheck
 import { useNavigate } from 'react-router-dom';
 import $ from "jquery";
+import StarComponent from "./star-rating";
+
 import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
 
 export let HotelListingPageCard = (props) => {
@@ -18,6 +21,7 @@ export let HotelListingPageCard = (props) => {
     // If the hotel type does not match the selected types, return null or an empty component
     return null;
   }
+
 
   let openPopUp = () => {
     $("#popup-hotel-name").text(props.hotelListingObj.name);
@@ -114,7 +118,7 @@ export let HotelListingPageCard = (props) => {
           </div>
         </div>
       </div>
-
+      
       <div id="popup-container" className={style.popup}>
         <div className={style.popup_content}>
           <span className={style.close} onClick={closePopUp}>
@@ -124,6 +128,7 @@ export let HotelListingPageCard = (props) => {
           <hr />
           <p id="popup-long-desc"></p>
           <ul id="popup-facilities-list"></ul>
+
         </div>
       </div>
     </div>
