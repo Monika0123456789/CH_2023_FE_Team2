@@ -2,6 +2,7 @@ import style from "../admin-styles/admin.module.css";
 import "../admin-js/admin.js";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { HeaderComp } from "../../header/components/header.jsx";
 
 export let AdminLogin = () => {
 
@@ -33,6 +34,7 @@ export let AdminLogin = () => {
     }
 
     return <div>
+        <HeaderComp />
         <div className={style.main_container}>
             
             <img src="./assets/images/logo.svg" alt="logo" className={style.logo}/>

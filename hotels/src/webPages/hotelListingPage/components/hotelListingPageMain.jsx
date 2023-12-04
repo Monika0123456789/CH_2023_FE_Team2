@@ -21,6 +21,7 @@ import { IoFilterSharp } from "react-icons/io5";
 import $ from "jquery";
 
 import commonStyle from "../../common.module.css";
+import { HeaderComp } from "../../header/components/header.jsx";
 
 
 // main component of this webpage -- here we will render the components of this page
@@ -123,6 +124,7 @@ export let HotelListingPageMain = () => {
   
  return (
    <>
+      <HeaderComp />
      <div className={commonStyle.container}>
        <div className={style.filter_button} onClick={handleToggleMobileFilter}>
          <button>
