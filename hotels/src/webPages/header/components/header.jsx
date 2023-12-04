@@ -4,8 +4,10 @@ export let HeaderComp = () => {
     return (
       
         <header className="main-header">
-            <img className="headerimage logo" src="./assets/images/logo.svg" alt="logo"/>
-            <img className="headerimage profile" src="./assets/images/01.jpg" alt="profile"/>
+            <img className="headerimage logo" src={process.env.PUBLIC_URL + '/assets/images/logo.svg'} alt="hotel images" />
+            <img className="headerimage profile" src={process.env.PUBLIC_URL + '/assets/images/01.jpg'} alt="hotel images" />
+
+    
         </header>
       
     );

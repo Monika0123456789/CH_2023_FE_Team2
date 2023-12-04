@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
-import "./section1.css";
+import "../hotel-detail-page-styles/section1.css";
+
 
 
 import { useParams } from "react-router";
@@ -40,16 +41,20 @@ export const DetailSectionOne = () => {
 
         <div className="image-section">
           <div className="grid-content image-01">
-            <img src="./assets/images/13.jpg" alt="hotel images" />
+          <img src={process.env.PUBLIC_URL + '/assets/images/16.jpg'} alt="hotel images" />
+
           </div>
           <div className="grid-content image-02">
-            <img src="./assets/images/13.jpg" alt="hotel images" />
+          <img src={process.env.PUBLIC_URL + '/assets/images/13.jpg'} alt="hotel images" />
+
           </div>
           <div className="grid-content image-03">
-            <img src="./assets/images/12(1).jpg" alt="hotel images" />
+          <img src={process.env.PUBLIC_URL + '/assets/images/12(1).jpg'} alt="hotel images" />
+
           </div>
           <div className="grid-content image-04">
-            <img src="./assets/images/01(2).jpg" alt="hotel images" />
+          <img src={process.env.PUBLIC_URL + '/assets/images/01(2).jpg'} alt="hotel images" />
+
             <a href="#" className="overlay-container">
               View all
             </a>

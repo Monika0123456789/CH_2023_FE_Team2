@@ -26,7 +26,9 @@ export let Footer = () => {
             <div className={style.footersection}>
                 {/* div representing the text in the left part of the footer */}
                 <div className={style.first_footer_div}>
-                    <img className={style.footerlogo} src="assets/images/logo-light.svg" alt="logo" />
+                    <img className={style.footerlogo} src={process.env.PUBLIC_URL + '/assets/images/logo-light.svg'} alt="hotel images" />
+
+                   
                     <p>Departure defective arranging rapturous did we believe him all had departed</p>
                     <span style={{color:"rgb(212, 209, 209)", marginTop:"15px"}}><FaPhoneAlt style={{color: "rgb(212, 209, 209)", marginRight:"10px"}}/>+1234 568 963</span>
                     <span style={{color:"rgb(212, 209, 209)", marginTop:"10px"}}><FaEnvelope style={{color: "rgb(212, 209, 209)", marginRight:"10px"}}/>example@gmail.com</span>
