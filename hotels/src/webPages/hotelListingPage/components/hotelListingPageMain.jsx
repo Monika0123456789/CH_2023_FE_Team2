@@ -10,9 +10,8 @@ import PopularType from "./popular-type";
 import CustomerRating from "./customer-rating";
 import RatingStar from "./rating-star";
 import Amenities from "./amenities";
-import ButtomButton from "./buttom-button";
+import ButtomButton from "./bottom-button";
 import React, { useState } from "react";
-import { FilterProvider } from "./fiterContext";
 import { Footer } from "../../footer/components/footer.jsx";
 import { IoFilterSharp } from "react-icons/io5";
 
@@ -22,7 +21,12 @@ export let HotelListingPageMain = () => {
   const [selectedRating, setSelectedRating] = useState(null);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isMobileFilterVisible, setIsMobileFilterVisible] = useState(false);
+
+  const handleToggleMobileFilter = () => {
+    setIsMobileFilterVisible(!isMobileFilterVisible);
+   
+  };
 
   const handleTypesChange = (types) => {
     setSelectedTypes(types);
@@ -38,11 +42,8 @@ export let HotelListingPageMain = () => {
   const handleAmenitiesChange = (amenities) => {
     setSelectedAmenities(amenities);
   };
-
-  const handleToggleFilter = () => {
-    setIsFilterOpen(!isFilterOpen);
-  };
-
+  
+  
   const handleClearAll = () => {
     // Reset all filters
     setPriceRange([200, 1000]);
@@ -81,26 +82,46 @@ export let HotelListingPageMain = () => {
   
  return (
    <>
-     <div className={`${style.filter_button} ${isFilterOpen ? style.active : ""}`}>
-        <button onClick={handleToggleFilter}>
+     <div className={style.filter_button} onClick={handleToggleMobileFilter}>
+        <button>
           <IoFilterSharp />
         </button>
-      </div>
-     <div style={{ display: "flex" }}>
-       <div className="FitlerHotels">
+     </div>
+     <div style={{ display: "flex"}} className="mainone">
+       <div className={style.FitlerHotels}>
          <HotelTypes data={data} onTypesChange={handleTypesChange} />
          <PriceSlider onPriceChange={handlePriceRangeChange} />
          <PopularType />
          <CustomerRating onRatingChange={handleRatingChange} />
          <RatingStar />
          <Amenities
-           selectedAmenities={selectedAmenities}
            onAmenitiesChange={handleAmenitiesChange}
          />
          <ButtomButton onClearAllClick={handleClearAll} />
        </div>
-       <div>
-         <FilterProvider>
+       
+       {/* Use isMobileFilterVisible to conditionally render the filter */}
+       {isMobileFilterVisible && (
+          <div className={style.IconFilter}>
+            <div className={style.filter_popup}>
+            <p className={style.filter_text}>Advanced Filters</p>
+              <p className={style.closebtn} onClick={handleToggleMobileFilter}>&times;</p>
+           </div>
+            
+            <HotelTypes data={data} onTypesChange={handleTypesChange} />
+            <PriceSlider onPriceChange={handlePriceRangeChange} />
+            <PopularType />
+            <CustomerRating onRatingChange={handleRatingChange} />
+            <RatingStar />
+            <Amenities
+              selectedAmenities={selectedAmenities}
+              onAmenitiesChange={handleAmenitiesChange}
+            />
+            <ButtomButton onClearAllClick={handleClearAll} />
+          </div>
+        )}
+       <div className={style.hotelpages} >
+         
            {/* Display filtered data or "No data available" message for page 1 */}
            <div id="page1-container">
              {filterData().length > 0 ? (
@@ -129,7 +150,7 @@ export let HotelListingPageMain = () => {
                <p>No data available for your search</p>
              )}
            </div>
-         </FilterProvider>
+       
          <div
            className={`${style.toggle_button_container} ${style.toggle_button_container1}`}
          >
@@ -155,7 +176,8 @@ export let HotelListingPageMain = () => {
            </button>
          </div>
        </div>
-     </div>
+       </div>
+     
      <Footer style={{ width: "100%" }} />
    </>
  );

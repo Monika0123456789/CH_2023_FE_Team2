@@ -1,13 +1,12 @@
 import React from "react";
-import { FaStar } from "react-icons/fa6";
-import { FaStarHalfAlt } from "react-icons/fa";
 import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
 import { FaHeart } from "react-icons/fa";
 import { FaShareAlt } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiMiniCheckBadge } from "react-icons/hi2";
-
 import $ from "jquery";
+import StarComponent from "./star-rating";
+
 export let HotelListingPageCard = (props) => {
 
   let openPopUp = () => {
@@ -44,13 +43,9 @@ export let HotelListingPageCard = (props) => {
 
           <div className={style.hotel_list_rightcontainer}>
             <div className={style.rightcontainer_section1}>
-              <article className={style.rating_star}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStarHalfAlt />
-              </article>
+            <article className={style.rating_star}>
+              <StarComponent rating={props.hotelListingObj.rating} />
+            </article>
               <article>
                 <div className={style.iconcontainer_main}>
                   <div
@@ -125,10 +120,10 @@ export let HotelListingPageCard = (props) => {
             <span className={style.close} onClick={closePopUp}>
               &times;
             </span>
-            <h2 id="popup-hotel-name"></h2>
+            <h2 id="popup-hotel-name">Hotel Name</h2>
             <hr />
-            <p id="popup-long-desc"></p>
-            <ul id="popup-facilities-list"></ul>
+            <p id="popup-long-desc">Hotel Description</p>
+            <ul id="popup-facilities-list">Hotel List</ul>
           </div>
         </div>
       </div>
