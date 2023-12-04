@@ -1,7 +1,10 @@
+
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import "../hotel-detail-page-styles/roomoption.css";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate, useParams } from "react-router";
+
 
 export let SectionFour = ({ hotelData }) => {
   const { hotelName } = useParams();
@@ -15,6 +18,10 @@ export let SectionFour = ({ hotelData }) => {
     setSelectedRoom(null);
   };
 
+
+  let navigate = useNavigate();
+
+  
   const selectedHotel = hotelData.items.find(
     (hotel) => hotel.name === hotelName
   );
@@ -23,6 +30,9 @@ export let SectionFour = ({ hotelData }) => {
     return <div>Hotel not found</div>;
   }
 
+  const selectRoom = () => {
+    navigate(`/checkout`)
+  }
   return (
     <div>
       <h1>Room options</h1>
@@ -45,12 +55,14 @@ export let SectionFour = ({ hotelData }) => {
               ))}
             </div>
             <div className="roomoptiontextconatiner">
+
               <h2>Room {room.roomId}</h2>
               <p>{room.roomFacilities.slice(0,4).join(", ")} <span className="detailmorelink" onClick={() => handleRoomSelection(room)}>more</span></p>
               
               <button className="roomoptionselectroombutton">
                 Select Room
               </button>
+
             </div>
           </div>
         ))}
