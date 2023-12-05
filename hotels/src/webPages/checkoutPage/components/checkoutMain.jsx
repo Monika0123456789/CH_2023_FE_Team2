@@ -16,6 +16,7 @@ export let CheckoutMain = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // getting object from hotel detail page - selected hotel details
   const { state } = location;
 
   const selectedHotel = state?.selectedHotel;
@@ -23,15 +24,19 @@ export let CheckoutMain = () => {
   const hotelName = selectedHotel?.name;
   const hotelLocation = selectedHotel?.location;
   // console.log("Selected Hotel in CheckoutMain:", hotelPrice);
-  
+
   const hotelPrice = selectedHotel?.price;
 
   const dispatch= useDispatch();
+
+  // adding the price of hotel into store
   dispatch(addHotelDetails({ initial_price: hotelPrice,price:hotelPrice }));
 
   let storeData = () => {
+
     const isUserDataValid = validateUserData(["address"]);
 
+    // validation for required fields
     if (!isUserDataValid) {
       alert("You must fill in all required fields .");
       return;
