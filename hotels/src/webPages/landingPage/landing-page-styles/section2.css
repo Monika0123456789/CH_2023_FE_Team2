@@ -151,61 +151,26 @@
 }
 /* icons with fadded background style ends here */
 
-/* Adding animation features-------- */
-/* image rotation */
-@keyframes image-rotation {
-  from {
-      transform: rotate(0);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}
-.star-top{
-  animation-name: image-rotation;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-
-}
-/* animations in like button in likes display */
-@keyframes like-button {
-  0% {
-      transform: translate(0%, 0%) rotate(0deg);
-  }
-  50% {
-      transform: translate(-50%, -150%) rotate(-90deg);
-  }
-  100% {
-      transform: translate(0%, 0%) rotate(0deg);
-  }
-}
-
-.outer-image>img:hover{
-  
-  animation: like-button 2s 1;
-  
-  
-}
-
-
 /* mobile responsive styling -------------------------starts here--------------------  */
 
-@media screen and (max-width: 760px){
-  .section2,.inner-grid-container{
+@media screen and (max-width: 760px) {
+  .section2,
+  .inner-grid-container {
     display: flex;
     flex-direction: column;
-}
-.section2-div{
+  }
+  .section2-div {
     width: 100%;
-}
-.right-content >h1:first-child{
+  }
+  .right-content > h1:first-child {
     font-size: var(--secondary-heading-mobile);
-}
+  }
 
-.grid-content > h3, .grid-content> i {
-  display: inline-flex; 
-  margin-right: 10px; 
-}
+  .grid-content > h3,
+  .grid-content > i {
+    display: inline-flex;
+    margin-right: 10px;
+  }
 }
 
 /* mobile responsive styling -------------------------ends here--------------------  */

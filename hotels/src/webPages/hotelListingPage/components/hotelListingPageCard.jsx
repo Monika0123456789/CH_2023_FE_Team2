@@ -11,6 +11,7 @@ import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
 
 export let HotelListingPageCard = (props) => {
 
+
   const navigate = useNavigate();
 
   // function to open pop up
@@ -53,10 +54,12 @@ export let HotelListingPageCard = (props) => {
         {/* right container of the card */}
         <div className={style.hotel_list_rightcontainer}>
           <div className={style.rightcontainer_section1}>
+
             {/* user ratings */}
             <article className={style.rating_star}>
               <StarComponent rating={props.hotelListingObj.rating} />
-            </article>
+          </article>
+             
           </div>
           
           {/* hotel name and location */}
