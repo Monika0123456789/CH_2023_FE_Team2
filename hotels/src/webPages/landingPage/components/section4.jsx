@@ -1,12 +1,15 @@
 import { useEffect } from "react"
 import { Testimonial } from "./testimonial";
 import $ from "jquery";
-// import "../landing-page-js/section4.js";
 
 export let Section4 = () => {
 
+    // functionalities to be implemented upon loading of the application
     useEffect(() => {
+        // keep the testimonial2 hidden upon loading of the application
         $("#section4_testimonial2").hide();
+
+        // invoking the toggleSection()  every 4 seconds after every 2 seconds
         setInterval(() => {
             setTimeout(() => {
                 toggleSection();
@@ -14,6 +17,7 @@ export let Section4 = () => {
         },4000);
     })
 
+    // function to toggle between the testimonials
     function toggleSection(){
         if(!($("#section4_testimonial1").is(":hidden")) && $("#section4_testimonial2").is(":hidden")){
             $("#section4_testimonial1").hide();
@@ -25,6 +29,7 @@ export let Section4 = () => {
         }
     }
     
+    // objects to store the testimonials data to be passed on to the component
     let testimonial1 = { 
         section4_testimonial_id : "section4_testimonial1",
         section4_left_sub_img : "./assets/images/03.svg",

@@ -25,9 +25,12 @@ import { HeaderComp } from "../../header/components/header.jsx";
 // main component of this webpage -- here we will render the components of this page
 export let HotelListingPageMain = () => {
 
+  // functionalities to be implemented upon loading of the application
   useEffect(() => {
+    // keep the page2 hidden by default
     $("#page2-container").hide();
 
+    // styling the button1 upon page load
     $("#toggle-button1").css({"background-color":"blue","color":"white"});
 
     // invoke function changePagetoTwo upon clicking toggle button 2
@@ -43,6 +46,7 @@ export let HotelListingPageMain = () => {
     $("#page1-container").hide();
     $("#page2-container").show();
 
+    // making the button2 active and button1 inactive
     $("#toggle-button1").css({"background-color":"rgb(216, 204, 189)", "color":"black"});
     $("#toggle-button2").css({"background-color":"blue", "color":"white"});
   }
@@ -53,6 +57,7 @@ export let HotelListingPageMain = () => {
     $("#page2-container").hide();
     $("#page1-container").show();
 
+    // making the button1 active and button2 inactive
     $("#toggle-button2").css({"background-color":"rgb(216, 204, 189)", "color":"black"});
     $("#toggle-button1").css({"background-color":"blue", "color":"white"});
   }
@@ -166,12 +171,10 @@ export let HotelListingPageMain = () => {
            <div>
              {/* Display filtered data or "No data available" message for page 1 */}
              <div id="page1-container">
-               {filterData().length > 0 ? (
-                 filterData().map((hotelListingObj, index) => (
-                   <HotelListingPageCard
-                     key={index}
-                     hotelListingObj={hotelListingObj}
-                   />
+
+              {/* loop through the array of objects */}
+               {filterData().length > 0 ? (filterData().map((hotelListingObj, index) => (
+                   <HotelListingPageCard key={index} hotelListingObj={hotelListingObj} />
                  ))
                ) : (
                  <p>No data available for your search</p>
@@ -179,41 +182,33 @@ export let HotelListingPageMain = () => {
              </div>
              {/* Display filtered data or "No data available" message for page 2*/}
              <div id="page2-container">
-               {filterData().length > 0 ? (
-                 filterData()
-                   .reverse()
-                   .map((hotelListingObj, index) => (
-                     <HotelListingPageCard
-                       key={index}
-                       hotelListingObj={hotelListingObj}
-                     />
-                   ))
+              {/* loop through the array of objects */}
+               {filterData().length > 0 ? (filterData().reverse().map((hotelListingObj, index) => (
+                     <HotelListingPageCard key={index} hotelListingObj={hotelListingObj} />
+                ))
                ) : (
                  <p>No data available for your search</p>
                )}
              </div>
 
-             <div
-               className={`${style.toggle_button_container} ${style.toggle_button_container1}`}
-             >
-               <button
-                 id="toggle-button-<"
-                 className={style.toggle_buttons}
-                 title="View Previous page"
-               >
+              {/* container containing the toggle buttons */}
+             <div className={`${style.toggle_button_container} ${style.toggle_button_container1}`}>
+              {/* previous button */}
+               <button id="toggle-button-<" className={style.toggle_buttons} title="View Previous page" >
                  <GrFormPreviousLink />
                </button>
+
+               {/* button 1 */}
                <button id="toggle-button1" className={style.toggle_buttons}>
                  1
                </button>
+               {/* button 2 */}
                <button id="toggle-button2" className={style.toggle_buttons}>
                  2
                </button>
-               <button
-                 id="toggle-button->"
-                 className={style.toggle_buttons}
-                 title="View Next page"
-               >
+
+               {/* next button */}
+               <button id="toggle-button->" className={style.toggle_buttons} title="View Next page">
                  <GrFormNextLink />
                </button>
              </div>

@@ -3,10 +3,13 @@ import style from "../admin-styles/adminLanding.module.css";
 import { HeaderComp } from "../../header/components/header";
 export let AdminLanding = () => {
 
+    // obtaining the customer hotel booking details object from the local storage
     var booking_details = JSON.parse(localStorage.getItem("Booking Details"));
 
     return <div>
         <HeaderComp />
+
+        {/* table containing the customer hotel booking details */}
         <table className={style.customer_table}>
             <thead>
                 <tr className={style.heading_row}>
@@ -20,6 +23,7 @@ export let AdminLanding = () => {
             </thead>
                 
             <tbody>
+                {/* loop through the array of objects containing the customer hotel booking details */}
                 {booking_details.bookingData.map((dataObj, index) => (
                 // alert(dataObj.data.address);
                 

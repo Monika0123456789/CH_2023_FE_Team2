@@ -19,8 +19,8 @@ export let DetailPageMain = () => {
           <DetailSectionTwo />
           <DetailSectionThree />
 
+          <SectionFour hotelData={hotelData}/>
 
-          <SectionFour hotelData={hotelData} />
           <DetailSectionFive />
         </div>
           <Footer />

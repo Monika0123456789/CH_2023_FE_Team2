@@ -8,18 +8,25 @@ export let AdminLogin = () => {
 
     let navigate = useNavigate();
 
+    // setState to store the chaning email and password
     let [ adminCredentials, setAdminCredentials ] = useState({ email : "", password : "" });
 
+    // using the references to refer to admin email and password
     let emailRef = useRef();
     let passwordRef = useRef();
 
     let submitHandler = () => {
+
+        // obtaining the object containing the admin email and password
         let dataObject = JSON.parse(localStorage.getItem("adminData"));
+
+        // admin email and password matching is done here
         if(adminCredentials.email.length!==0 && adminCredentials.password.length!==0){
             if(dataObject.email === adminCredentials.email && dataObject.password === adminCredentials.password ){
                 alert("logged in successfully");
                 emailRef.current.value = "";
                 passwordRef.current.value = "";
+                // on successful login redirect to adminLanding page
                 navigate('/adminLanding');
             }
             else{
@@ -35,6 +42,7 @@ export let AdminLogin = () => {
 
     return <div>
         <HeaderComp />
+        {/* main container containing the admin email and password fields */}
         <div className={style.main_container}>
             
             <img src="./assets/images/logo.svg" alt="logo" className={style.logo}/>
