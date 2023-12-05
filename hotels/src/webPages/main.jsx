@@ -25,7 +25,7 @@ export let Main = () => {
               path="/hotelListingPage"
               element={<HotelListingPageMain />}
             />
-            <Route exact path="/detailPage/:hotelName" element={<DetailPageMain />}   />
+            <Route exact path="/detailPage/:hotelName/" element={<DetailPageMain />}   />
             <Route exact path="/adminlogin" element={<AdminLogin />} />
             <Route path="/checkout" element={<App/>} />
             <Route path="/adminLanding" element={<AdminLanding/>} />
