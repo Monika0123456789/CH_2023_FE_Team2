@@ -34,6 +34,7 @@ export let Testimonial = (props) => {
                         <FaStar className="rating_star"/>
                         <FaStarHalfAlt className="rating_star"/>
 
+                        {/* user name and occupation */}
                         <b>
                             <p className="section4_customer_name">{ props.testimonial.section4_customer_name }</p>
                         </b>    

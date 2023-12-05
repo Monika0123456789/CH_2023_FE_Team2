@@ -152,7 +152,7 @@ export let DetailPageMain = () => {
           <DetailSectionOne />
           <DetailSectionTwo />
           <DetailSectionThree />
-          <HotelDetail />
+          <SectionFour hotelData={hotelData}/>
           <DetailSectionFive />
         </div>
         <Footer />
