@@ -2,10 +2,8 @@ import { DetailPageMain } from "./hotelDetailPage/components/hotel-detail-page-m
 import { HotelListingPageMain } from "./hotelListingPage/components/hotelListingPageMain";
 import { HotelLandingPageMain } from "./landingPage/components/hotelLandingPageMain";
 // import { Footer } from "./footer/components/footer";
-import { HeaderComp } from "./header/components/header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AdminLogin } from "./admin/components/adminLogin";
-import { Footer } from "./footer/components/footer";
 
 import { App } from "./checkoutPage/app";
 import { AdminLanding } from "./admin/components/adminLanding";
