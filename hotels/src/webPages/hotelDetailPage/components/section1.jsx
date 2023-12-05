@@ -10,6 +10,10 @@ import { useParams } from "react-router";
 
 export const DetailSectionOne = () => {
   const { hotelName } = useParams();
+
+  
+  
+  
   
   const [isMapVisible, setIsMapVisible] = useState(false);
   

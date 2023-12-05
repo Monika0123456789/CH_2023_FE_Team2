@@ -1,8 +1,10 @@
-
 import React, { useState } from "react";
 import "../hotel-detail-page-styles/roomoption.css";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate } from "react-router";
+
+import { useNavigate, useParams } from "react-router";
+import { FaCheckCircle } from "react-icons/fa";
+
 
 
 export let SectionFour = ({ hotelData }) => {
@@ -58,9 +60,23 @@ export let SectionFour = ({ hotelData }) => {
             <div className="roomoptiontextconatiner">
 
               <h2>Room {room.roomId}</h2>
-              <p>{room.roomFacilities.slice(0,4).join(", ")} <span className="detailmorelink" onClick={() => handleRoomSelection(room)}>more</span></p>
               
+
+              <div className="detailroomfacilities">
+              <ul>
+                {room.roomFacilities.slice(0, 4).map((facility, index) => (
+                <li key={index}>{facility}</li>
+               ))}
+               <li><span className="detailmorelink" onClick={() => handleRoomSelection(room)}>more</span></li>
+              </ul>
+              </div>
+  
+              <div className="price">
+              <h3>{`Price: $${selectedHotel.price}`}</h3>
+              </div>
+
               <button className="roomoptionselectroombutton" onClick={selectRoom}>
+
                 Select Room
               </button>
 
@@ -85,14 +101,14 @@ export let SectionFour = ({ hotelData }) => {
           />
           <div className="staticdata">
             <p>
-            Experience luxury in our spacious deluxe rooms, tastefully furnished for your comfort. Enjoy breathtaking views from your private balcony, unwind in a plush king-size bed, and indulge in modern amenities. Immerse yourself in tranquility and sophistication for an unforgettable stay
-            </p>
+            Experience luxury in our spacious deluxe rooms. </p>
           </div>
           <div className="facilities">
           <h3>Facilities</h3>
           <ul>
             {selectedRoom.roomFacilities.map((facility, index) => (
-              <li key={index}>{facility}</li>
+              
+              <li key={index}> <FaCheckCircle />{facility}</li>
             ))}
           </ul>
           </div>

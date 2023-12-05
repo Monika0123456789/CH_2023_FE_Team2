@@ -25,6 +25,7 @@
 
 .detailmorelink{
     color: blue;
+    cursor: pointer;
 }
 
 .roomoptionselectroombutton{
@@ -49,11 +50,24 @@
 .hoteldetail-popup-container{
     border: 2px solid gray;
 }
+.detailroomfacilities li{
+    /* list-style: none; */
+    padding-right: 4%;
+    
+}
+.detailroomfacilities ul{
+    display: flex;
+    margin-left: -5%;
+}
+.price{
+  position: absolute;
+  bottom: 0%;
+}
 
 
 
 
-/* ////////////////////////////////// */
+/* pop up styling starts here */
 
 
 .hoteldetail-popup-container {
@@ -83,8 +97,8 @@
     padding: 1%;
     border-radius: 10px;
     padding: 2%;
-    width: 600px;
-    height: 700px;
+    width: 35rem;
+    height: fit-content;
  
   }
   
