@@ -48,6 +48,7 @@ export let HotelListingPageCard = (props) => {
 
         <div className={style.hotel_list_rightcontainer}>
           <div className={style.rightcontainer_section1}>
+
           <article className={style.rating_star}>
               <StarComponent rating={props.hotelListingObj.rating} />
           </article>
@@ -83,13 +84,19 @@ export let HotelListingPageCard = (props) => {
             </li>
           </div>
 
-          <p>
-            <HiOutlineCheck style={{ color: "rgb(3, 185, 3)" }} />
-            &nbsp; Free Cancellation till 7 jan 2022
+          
+
+          {props.hotelListingObj.additionalInfo.length==2 ? <p>
+            <HiMiniCheckBadge style={{ color: "rgb(3, 185, 3)" }} />
+            &nbsp; {props.hotelListingObj.additionalInfo[0]}
             <br />
-            <HiOutlineCheck style={{ color: "rgb(3, 185, 3)" }} />
-            &nbsp; Free Breakfast
-          </p>
+            <HiMiniCheckBadge style={{ color: "rgb(3, 185, 3)" }} />
+            &nbsp; {props.hotelListingObj.additionalInfo[1]}
+          </p> : 
+          <p>
+          <HiMiniCheckBadge style={{ color: "rgb(248, 33, 33)" }} />
+          &nbsp; {props.hotelListingObj.additionalInfo[0]}
+        </p>}
 
           <div className={style.rightcontainer_section3}>
             <p>
