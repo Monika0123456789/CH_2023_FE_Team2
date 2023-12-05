@@ -108,7 +108,7 @@ export let SectionFour = ({ hotelData }) => {
           <ul>
             {selectedRoom.roomFacilities.map((facility, index) => (
               
-              <li key={index}> <FaCheckCircle />{facility}</li>
+              <li key={index}> <FaCheckCircle className="facilitieslistpopup"/>&nbsp;{facility}</li>
             ))}
           </ul>
           </div>
