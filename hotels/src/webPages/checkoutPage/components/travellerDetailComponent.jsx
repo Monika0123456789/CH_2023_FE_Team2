@@ -19,7 +19,7 @@ export let TravellerComponent = () => {
   // };
   const addTravellerClick = () => {
     const newTraveller = {
-      // Use a unique ID (you can use a library like uuid for better uniqueness)
+      // Use a unique ID
       id: Date.now(),
       component: <Traveller idn={Date.now()} onRemove={removeTraveller} />,
     };

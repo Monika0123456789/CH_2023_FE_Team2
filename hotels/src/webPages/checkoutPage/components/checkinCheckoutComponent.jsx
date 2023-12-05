@@ -19,14 +19,16 @@ export let CheckInCheckOut = () => {
     // console.log(currentDate);
     // console.log(selectedDate);
 
-    // Set the time portion to the end of the day
+    // Set the time portion to the end of the day - setting selected date to last millisecond of the day
     selectedDate.setUTCHours(23, 59, 59, 999);
 
+    // checking that chekin date should not b in past
     if (name === "checkin" && selectedDate < currentDate) {
       alert("Check-in date cannot be in the past.");
       return;
     }
 
+    // checking that chekout date should not b later than checkin
     if (name === "checkout" && selectedDate <= new Date(state.checkin)) {
       alert("Checkout date must be later than check-in date.");
       return;
