@@ -10,18 +10,8 @@ import StarComponent from "./star-rating";
 import style from "../hotel-listing-page-styles/hotelListingPage.module.css";
 
 export let HotelListingPageCard = (props) => {
-  const { hotelListingObj, selectedTypes = [] } = props;
-
+  
   const navigate = useNavigate(); // useNavigate replaces useHistory
-
-  // Add your filtering logic here based on selectedTypes
-  const shouldRender = selectedTypes.length === 0 || selectedTypes.includes(hotelListingObj.type);
-
-  if (!shouldRender) {
-    // If the hotel type does not match the selected types, return null or an empty component
-    return null;
-  }
-
 
   let openPopUp = () => {
     $("#popup-hotel-name").text(props.hotelListingObj.name);
@@ -58,13 +48,10 @@ export let HotelListingPageCard = (props) => {
 
         <div className={style.hotel_list_rightcontainer}>
           <div className={style.rightcontainer_section1}>
-            <article className={style.rating_star}>
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
-            </article>
+          <article className={style.rating_star}>
+              <StarComponent rating={props.hotelListingObj.rating} />
+          </article>
+             
           </div>
           
           <div className={style.rightcontainer_section2}>
