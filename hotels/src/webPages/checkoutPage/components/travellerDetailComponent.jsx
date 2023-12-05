@@ -12,7 +12,7 @@ export let TravellerComponent = () => {
 
   const dispatch = useDispatch();
   const travellersCount = useSelector((store) => store.numberOfTravellers);
-  console.log(travellersCount);
+  // console.log(travellersCount);
 
   // const addTravellerClick = () => {
   //   setTraveller(() => [...traveller, <Traveller idn={Math.random()}/>]);
