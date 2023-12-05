@@ -23,7 +23,6 @@ export let AdminLogin = () => {
         // admin email and password matching is done here
         if(adminCredentials.email.length!==0 && adminCredentials.password.length!==0){
             if(dataObject.email === adminCredentials.email && dataObject.password === adminCredentials.password ){
-                alert("logged in successfully");
                 emailRef.current.value = "";
                 passwordRef.current.value = "";
                 // on successful login redirect to adminLanding page
