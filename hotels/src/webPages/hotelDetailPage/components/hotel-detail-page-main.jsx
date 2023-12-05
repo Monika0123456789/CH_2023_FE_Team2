@@ -8,22 +8,29 @@ import hotelData from '../../json/hotel-booking.json';
 
 import { DetailSectionFive } from "./section5";
 import { SectionFour } from "./sectionfour";
+import commonStyle from "../../common.module.css"
 
 
 
 
-export let DetailPageMain = () => {
+// import { Demo } from "./demo";
+import commonStyle from "../../common.module.css"
+import { HeaderComp } from "../../header/components/header";
 
     return (
-      <div>
-        <DetailSectionOne />
-        <DetailSectionTwo/>
-        <DetailSectionThree/>
-        
-        <SectionFour hotelData={hotelData} />
-        <DetailSectionFive/>
-        <Footer/>
-      </div>
+     <>
+      <HeaderComp />
+        <div className={commonStyle.container}>
+          <DetailSectionOne />
+          <DetailSectionTwo />
+          <DetailSectionThree />
+
+
+          <SectionFour hotelData={hotelData} />
+          <DetailSectionFive />
+        </div>
+          <Footer />
+      </>
     );
   };
   

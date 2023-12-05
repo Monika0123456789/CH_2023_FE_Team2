@@ -14,7 +14,7 @@ import { AdminLanding } from "./admin/components/adminLanding";
 export let Main = () => {
   return (
     <>
-      <HeaderComp />
+      
       <div>
         <BrowserRouter>
           <Routes>

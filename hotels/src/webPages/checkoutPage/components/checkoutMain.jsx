@@ -5,11 +5,30 @@ import style from "../checkout-page-styles/checkoutMain.module.css";
 import dataStore from "../store";
 import { SummaryComponent } from "./summaryComponent";
 import { Footer } from "../../footer/components/footer";
-import commonStyle from "../../common.module.css"
-import { useNavigate } from "react-router";
+import commonStyle from "../../common.module.css";
+import { useLocation, useNavigate } from "react-router";
+import { addHotelDetails } from "../redux/actions/roomQuantity.actions";
+import { useDispatch } from "react-redux";
+import { HeaderComp } from "../../header/components/header";
+
 
 export let CheckoutMain = () => {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const { state } = location;
+
+  const selectedHotel = state?.selectedHotel;
+
+  const hotelName = selectedHotel?.name;
+  const hotelLocation = selectedHotel?.location;
+  // console.log("Selected Hotel in CheckoutMain:", hotelPrice);
+  
+  const hotelPrice = selectedHotel?.price;
+
+  const dispatch= useDispatch();
+  dispatch(addHotelDetails({ initial_price: hotelPrice,price:hotelPrice }));
+
   let storeData = () => {
     const isUserDataValid = validateUserData(["address"]);
 
@@ -37,9 +56,9 @@ export let CheckoutMain = () => {
     };
 
     localStorage.setItem("Booking Details", JSON.stringify(mergedData));
-    
-    alert("your booking is confirmed")
-    navigate(`/`)
+
+    alert("your booking is confirmed");
+    navigate(`/`);
   };
   const validateUserData = (excludeFields = []) => {
     const requiredFields = [
@@ -62,10 +81,11 @@ export let CheckoutMain = () => {
   };
   return (
     <>
+      <HeaderComp />
       <div className={commonStyle.container}>
         <h1>Booking Details</h1>
         <hr />
-        <RoomComponent />
+        <RoomComponent hotelName={hotelName} hotelLocation={hotelLocation} />
         <br></br>
         <UserCredentialsComponent />
         <br></br>

@@ -7,6 +7,7 @@
             "img":"https://cf.bstatic.com/xdata/images/hotel/square600/497300786.webp?k=e63fe5456e8b90dcd87512a25893ddc82f894fc3fa02db632640e4426b8bd491&o=",
             "name":"Downtown Delight",
             "price":298,
+			"additionalInfo": ["Free Cancellation till 7 jan 2022"],
 			"rooms": [{
 				"roomId": 1,
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],
@@ -28,6 +29,7 @@
             "img":"https://cf.bstatic.com/xdata/images/hotel/square600/479879940.webp?k=7b06118e7f5a5e5c7af4b80d330a85cdbfb68a648e5dae60a013c7396b62d4af&o=",
             "name":"Covie Bannergatta 185",
             "price":298,
+			"additionalInfo": ["Non Refundable"],
 			"rooms": [{
 				"roomId": 3,
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],
@@ -48,6 +50,7 @@
             "img":"https://cf.bstatic.com/xdata/images/hotel/square600/463565127.webp?k=6b058c162ff6b7f0681e5f90cc0adda0caf47b90d24ea73e8a2cc1f7e920f345&o=",
             "name":"Farmhouse",
             "price":395,
+			"additionalInfo": ["Free Cancellation till 7 jan 2022"],
 			"rooms": [{
 				"roomId": 5,
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],
@@ -68,6 +71,7 @@
             "img":"https://cf.bstatic.com/xdata/images/hotel/square600/459880008.webp?k=0a501732908137fcb34b70982b854f1f98b38378f7bb7df752684048ee1b356f&o=",
             "name":"Vintage Vihara: The Heritage Bungalow",
             "price":570,
+			"additionalInfo": ["Free Cancellation till 7 jan 2022"],
 			"rooms": [{
 				"roomId": 7,
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],
@@ -88,6 +92,7 @@
             "img":"https://cf.bstatic.com/xdata/images/hotel/square600/480115419.webp?k=ae02ccf56ec06fbbbfe0cfc13b8c33779d164a081d08f183d8ba5124c83ca67f&o=",
             "name":"Olive Electronic City - by Embassy Group",
             "price":395,
+			"additionalInfo": ["Non Refundable"],
 			"rooms": [{
 				"roomId": 9,
 				"roomFacilities": ["closet", "mirror", "cloth rack", "black out curtains", "child safety socket covers", "TV", "AC" ],

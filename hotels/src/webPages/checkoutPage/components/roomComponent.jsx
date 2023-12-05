@@ -8,10 +8,11 @@ import {
   increaseCount,
 } from "../redux/actions/roomQuantity.actions";
 
-export let RoomComponent = () => {
+export let RoomComponent = ({hotelName,hotelLocation}) => {
   const rooms = useSelector((store) => store.roomCount);
 
   const dispatch = useDispatch();
+
 
   const handleIncrement = () => {
     if (rooms + 1 > 9) {
@@ -39,11 +40,11 @@ export let RoomComponent = () => {
           </div>
           <div className={style.right_hotel_detail_division}>
             <div>
-              <h1>Hotel: Courtyard by Marriott New York</h1>
+              <h1>{hotelName}</h1>
 
               <p>
                 <IoLocationOutline />
-                5855 W Century Blvd, ls Angeles-90045
+                {hotelLocation}
               </p>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt,

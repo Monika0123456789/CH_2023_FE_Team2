@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../hotel-detail-page-styles/roomoption.css";
 import { IoMdClose } from "react-icons/io";
+
 import { useNavigate, useParams } from "react-router";
 import { FaCheckCircle } from "react-icons/fa";
+
 
 
 export let SectionFour = ({ hotelData }) => {
@@ -22,15 +24,17 @@ export let SectionFour = ({ hotelData }) => {
 
   
   const selectedHotel = hotelData.items.find(
-    (hotel) => hotel.name === hotelName
+    (hotel) => hotel.name === hotelName 
   );
-
+{
+  // console.log(selectedHotel);
+}
   if (!selectedHotel) {
     return <div>Hotel not found</div>;
   }
 
   const selectRoom = () => {
-    navigate(`/checkout`)
+     navigate(`/checkout`, { state: { selectedHotel} });
   }
   return (
     <div>
@@ -57,6 +61,7 @@ export let SectionFour = ({ hotelData }) => {
 
               <h2>Room {room.roomId}</h2>
               
+
               <div className="detailroomfacilities">
               <ul>
                 {room.roomFacilities.slice(0, 4).map((facility, index) => (
@@ -69,7 +74,9 @@ export let SectionFour = ({ hotelData }) => {
               <div className="price">
               <h3>{`Price: $${selectedHotel.price}`}</h3>
               </div>
-              <button className="roomoptionselectroombutton">
+
+              <button className="roomoptionselectroombutton" onClick={selectRoom}>
+
                 Select Room
               </button>
 

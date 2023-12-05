@@ -1,7 +1,29 @@
-import { Testimonial } from "./testimonial"
-import "../landing-page-js/section4.js";
+import { useEffect } from "react"
+import { Testimonial } from "./testimonial";
+import $ from "jquery";
+// import "../landing-page-js/section4.js";
 
 export let Section4 = () => {
+
+    useEffect(() => {
+        $("#section4_testimonial2").hide();
+        setInterval(() => {
+            setTimeout(() => {
+                toggleSection();
+            },2000);
+        },4000);
+    })
+
+    function toggleSection(){
+        if(!($("#section4_testimonial1").is(":hidden")) && $("#section4_testimonial2").is(":hidden")){
+            $("#section4_testimonial1").hide();
+            $("#section4_testimonial2").show();
+        }
+        else if(!($("#section4_testimonial2").is(":hidden")) && $("#section4_testimonial1").is(":hidden")){
+            $("#section4_testimonial2").hide();
+            $("#section4_testimonial1").show();
+        }
+    }
     
     let testimonial1 = { 
         section4_testimonial_id : "section4_testimonial1",
