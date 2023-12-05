@@ -9,6 +9,8 @@ import commonStyle from "../../common.module.css";
 import { useLocation, useNavigate } from "react-router";
 import { addHotelDetails } from "../redux/actions/roomQuantity.actions";
 import { useDispatch } from "react-redux";
+import { HeaderComp } from "../../header/components/header";
+
 
 export let CheckoutMain = () => {
   const location = useLocation();
@@ -79,6 +81,7 @@ export let CheckoutMain = () => {
   };
   return (
     <>
+      <HeaderComp />
       <div className={commonStyle.container}>
         <h1>Booking Details</h1>
         <hr />

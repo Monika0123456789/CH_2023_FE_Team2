@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "../hotel-detail-page-styles/roomoption.css";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 
 
 export let SectionFour = ({ hotelData }) => {
