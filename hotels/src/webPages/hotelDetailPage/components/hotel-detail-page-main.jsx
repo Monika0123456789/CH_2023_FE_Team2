@@ -8,6 +8,7 @@ import { DetailSectionThree } from "./section3";
 
 import { DetailSectionFive } from "./section5";
 import { SectionFour } from "./sectionfour";
+import commonStyle from "../../common.module.css"
 
 
 
@@ -145,19 +146,19 @@ export let DetailPageMain = () => {
   
 };
     return (
-
-      <>
+     <>
       <HeaderComp />
         <div className={commonStyle.container}>
           <DetailSectionOne />
           <DetailSectionTwo />
           <DetailSectionThree />
-          <HotelDetail />
+
+
+          <SectionFour hotelData={hotelData} />
           <DetailSectionFive />
         </div>
-        <Footer />
+          <Footer />
       </>
-
 
     );
   };

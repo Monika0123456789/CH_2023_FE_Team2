@@ -1,6 +1,8 @@
+import { useLocation } from "react-router";
 import dataStore from "../../store";
 import {
   ADD_BOOKING_DETAILS,
+  ADD_PRICING_DETAILS,
   ADD_USER_DATA,
   DECREASE_ROOM_COUNT,
   DECREASE_TRAVELLER_COUNT,
@@ -19,7 +21,8 @@ const INITIAL_VALUE = {
   gender: "",
   checkin: "",
   checkout: "",
-  price: "500",
+  initial_price:"",
+  price: "",
   numberOfTravellers: 1,
 };
 const roomReducer = (store = INITIAL_VALUE, action) => {
@@ -28,13 +31,13 @@ const roomReducer = (store = INITIAL_VALUE, action) => {
       return {
         ...store,
         roomCount: store.roomCount + 1,
-        price: (store.roomCount + 1) * 500,
+        price: (store.roomCount + 1) * store.initial_price,
       };
     case DECREASE_ROOM_COUNT:
       return {
         ...store,
         roomCount: store.roomCount - 1,
-        price: (store.roomCount - 1) * 500,
+        price: (store.roomCount - 1) * store.initial_price,
       };
     case INCREASE_TRAVELLER_COUNT:
       return {
@@ -49,6 +52,8 @@ const roomReducer = (store = INITIAL_VALUE, action) => {
     case ADD_USER_DATA:
       return { ...store, ...action.payload };
     case ADD_BOOKING_DETAILS:
+      return { ...store, ...action.payload };
+    case ADD_PRICING_DETAILS:
       return { ...store, ...action.payload };
     default:
       return store;
