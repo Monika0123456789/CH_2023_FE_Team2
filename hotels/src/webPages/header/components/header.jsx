@@ -7,8 +7,8 @@ export let HeaderComp = () => {
       
         <header className="main-header">
 
-            <img className="headerimage logo" src="./assets/images/logo.svg" alt="logo" onClick={() => navigate('/')}/>
-            <img className="headerimage profile" src="./assets/images/01.jpg" alt="profile"/>
+            <img className="headerimage logo" src={process.env.PUBLIC_URL + '/assets/images/logo.svg'} alt="hotel images" onClick={() => navigate('/')}/>
+            <img className="headerimage profile" src={process.env.PUBLIC_URL + '/assets/images/01.jpg'} alt="hotel images" />
 
         </header>
       
