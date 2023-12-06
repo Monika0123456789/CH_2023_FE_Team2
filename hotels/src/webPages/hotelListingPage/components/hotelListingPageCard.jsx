@@ -38,7 +38,8 @@ export let HotelListingPageCard = (props) => {
 
   const handleButtonClick = () => {
     
-    navigate(`/detailPage/${props.hotelListingObj.name}`)
+    navigate(`/detailPage/${props.hotelListingObj.name}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

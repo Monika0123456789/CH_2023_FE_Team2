@@ -35,6 +35,7 @@ export let SectionFour = ({ hotelData }) => {
 
   const selectRoom = () => {
      navigate(`/checkout`, { state: { selectedHotel} });
+     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   return (
     <div>
@@ -48,7 +49,7 @@ export let SectionFour = ({ hotelData }) => {
             
           >
             <div className="roomoptionimageconatiner">
-              {/* Map over room images and render them */}
+              
               {room.images.slice(0, 1).map((image, index) => (
                 <img
                   key={index}
@@ -67,7 +68,7 @@ export let SectionFour = ({ hotelData }) => {
                 {room.roomFacilities.slice(0, 4).map((facility, index) => (
                 <li key={index}>{facility}</li>
                ))}
-               <li><span className="detailmorelink" onClick={() => handleRoomSelection(room)}>more</span></li>
+               <li><span className="detailmorelink" onClick={() => handleRoomSelection(room)}>more+</span></li>
               </ul>
               </div>
   
