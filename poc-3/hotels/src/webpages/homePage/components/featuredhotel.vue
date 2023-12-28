@@ -5,7 +5,9 @@
       <!-- All Hotel Images in the Container -->
       <figure v-for="(hotel, index) in hotels" :key="index" class="card">
         <div class="hotel-img">
+          <router-link to="/hotellisting">
           <img :src="hotel.imgSrc" alt="">
+          </router-link>
           <button class="location-btn">
             <font-awesome-icon :icon="['fas', 'location-dot']" style="color: #f4f5f5;" />
             &nbsp;{{ hotel.location }}
