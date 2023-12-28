@@ -1,5 +1,5 @@
 <template>
-  <div<
+  <div>
     <SectionOneComp/>
     <section2Comp/>
     <Section3/>
