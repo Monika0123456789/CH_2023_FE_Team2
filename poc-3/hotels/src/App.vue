@@ -1,23 +1,21 @@
 <template>
-  <div>
-    <Home />
-    <Footer />
+ <div id="app">
+    <HeaderMain />
+    <HomeComp/>
+      <Footer />
   </div>
 </template>
-
 <script>
-// Import the section4Vue component
-import Home from './webpages/homePage/components/home.vue';
+import HeaderMain from './webpages/header/components/headerMain.vue';
+import  HomeComp from './webpages/homePage/components/home.vue';
 import Footer from './webpages/footer/components/footerMain.vue'
 
 export default {
   components: {
-    Home,
+    HeaderMain,
+    HomeComp,
     Footer
   },
 };
 </script>
-
-<style>
-/* Add your component-specific styles here */
-</style>
+<style src="./webpages/common.css"></style>

@@ -1,20 +1,23 @@
 <template>
-  <div>
+  <div<
+    <SectionOneComp/>
+    <section2Comp/>
+    <Section3/>
     <section4Vue />
   </div>
 </template>
-
 <script>
-// Import the section4Vue component
-import section4Vue from './section4.vue';
-
-export default {
-  components: {
-    section4Vue,
-  },
-};
+  import SectionOneComp from './section-1.vue';
+  import Section3 from './featuredhotel.vue';
+  import section2Comp from "../components/section2.vue";
+  import section4Vue from './section4.vue';
+  export default {
+    components: {
+      SectionOneComp,
+      Section3,
+      section2Comp,
+      section4Vue,
+    },
+  };
 </script>
-
-<style>
-/* Add your component-specific styles here */
-</style>
+<style></style>
