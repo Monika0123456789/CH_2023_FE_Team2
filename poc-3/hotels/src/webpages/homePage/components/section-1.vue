@@ -4,7 +4,9 @@
       <h1>Find the top Hotels nearby.</h1>
       <p>We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
       <br />
-      <button id="discoverbutton" @click="navigateToHotelListing">Discover Now</button>
+      <router-link to="/hotellisting">
+      <button id="discoverbutton">Discover Now</button>
+    </router-link>
     </div>
     <div class="section1_parent-div section1-ParentImage">
       <img id="section1_image" src="/assets/images/06.jpg" alt="image" />

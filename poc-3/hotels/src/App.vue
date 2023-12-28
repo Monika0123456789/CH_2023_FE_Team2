@@ -1,23 +1,22 @@
 <template>
  <div id="app">
-    <!-- <HeaderMain />
-    <HomeComp/>
-      <Footer /> -->
-      <HotelListPage/>
+
+    <HeaderMain />
+    <router-view></router-view>
+      <Footer />
+
   </div>
 </template>
 <script>
 import HeaderMain from './webpages/header/components/headerMain.vue';
-import  HomeComp from './webpages/homePage/components/home.vue';
-import Footer from './webpages/footer/components/footerMain.vue';
-import HotelListPage from './webpages/hotelListingPage/components/hotelListMain.vue'
+
+import Footer from './webpages/footer/components/footerMain.vue'
+
 
 export default {
   components: {
     HeaderMain,
-    HomeComp,
-    Footer,
-    HotelListPage
+    Footer
   },
 };
 </script>
