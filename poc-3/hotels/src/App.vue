@@ -1,3 +1,4 @@
+
 <template>
  <div id="app">
     <HeaderMain />
@@ -15,4 +16,5 @@ export default {
   },
 };
 </script>
-<style></style>
+<style src="./webpages/common.css"></style>
+
