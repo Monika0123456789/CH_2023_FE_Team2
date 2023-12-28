@@ -11,7 +11,7 @@
 
       <!-- section4 right division containing text -->
       <div class="section4_right_text_div">
-        <img src="../../../../public/assets/images/double-quote.png" alt="double-quote" class="double-quote" />
+        <img src="/assets/images/double-quote.png" alt="double-quote" class="double-quote" />
 
         <p class="section4_right_text_div_p" id="section4_right_text_div_p3_1">
           Passage its ten led hearted removal cordial. preference any astonished unreserved Mrs.Understood the preference
