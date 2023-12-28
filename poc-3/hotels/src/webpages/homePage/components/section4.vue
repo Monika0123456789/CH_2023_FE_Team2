@@ -1,3 +1,64 @@
+<template>
+  <div>
+    <Testimonial :testimonial="testimonial1" v-show="currentTestimonial === 1" />
+    <Testimonial :testimonial="testimonial2" v-show="currentTestimonial === 2" />
+  </div>
+</template>
+
+<script>
+import { ref, onMounted } from "vue";
+import Testimonial from "./testimonial.vue"; // Assuming Testimonial.vue file is in the same directory
+
+export default {
+  components: {
+    Testimonial,
+  },
+  setup() {
+    const currentTestimonial = ref(1);
+
+    // Function to toggle between the testimonials
+    const toggleSection = () => {
+      currentTestimonial.value = currentTestimonial.value === 1 ? 2 : 1;
+    };
+
+    // Functionalities to be implemented upon loading of the application
+    onMounted(() => {
+      // Keep the testimonial2 hidden upon loading of the application
+      currentTestimonial.value = 1;
+
+      // Invoking the toggleSection() every 4 seconds after every 2 seconds
+      setInterval(() => {
+        setTimeout(() => {
+          toggleSection();
+        }, 2000);
+      }, 4000);
+    });
+
+    // Objects to store the testimonials data to be passed on to the component
+    const testimonial1 = {
+      section4_testimonial_id: "section4_testimonial1",
+      section4_left_sub_img: "./assets/images/03.svg",
+      section4_left_img_1: "./assets/images/02(2).jpg",
+      section4_customer_name: "Carolyn Ortiz",
+    };
+
+    const testimonial2 = {
+      section4_testimonial_id: "section4_testimonial2",
+      section4_left_sub_img: "./assets/images/02.svg",
+      section4_left_img_1: "./assets/images/01(3).jpg",
+      section4_customer_name: "Billy Vasquez",
+    };
+
+    return {
+      testimonial1,
+      testimonial2,
+      currentTestimonial,
+    };
+  },
+};
+</script>
+
+<style>
 /* Section 4 Styling --------------------------Starts Here--------------------------------------- */
 /* section4 testimonials section styling */
 
@@ -199,3 +260,4 @@
   /* section4 testimonial-1 and testimonial-2 ends */
   /* Section 4 mobile view styles --------------Ends----------------------- */
 }
+</style>
