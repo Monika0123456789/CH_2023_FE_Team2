@@ -1,16 +1,15 @@
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faUserSecret, faStar, faLocationDot, faUtensils, faStopwatch, faShield, faBolt } from '@fortawesome/free-solid-svg-icons';
 
-/* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(faUserSecret,faStar,faLocationDot, faUtensils, faStopwatch, faShield, faBolt)
 
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+const app = createApp(App);
 
-/* import specific icons */
-import { faStar, faUtensils, faStopwatch, faShield, faBolt } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faStar, faUtensils, faStopwatch, faShield, faBolt)
-
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+app.use(router);
+app.component('font-awesome-icon', FontAwesomeIcon)
+app.mount('#app');

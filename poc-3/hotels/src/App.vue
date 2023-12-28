@@ -1,13 +1,20 @@
-<script>
-  import homeComp from "./webpages/homePage/components/home.vue";
 
-  export default{
-    components:{
-      homeComp
-    }
-  }
-</script>
 <template>
-  <homeComp/>
+ <div id="app">
+    <HeaderMain />
+    <HomeComp/>
+  </div>
 </template>
+<script>
+import HeaderMain from './webpages/header/components/headerMain.vue';
+import  HomeComp from './webpages/homePage/components/home.vue';
+
+export default {
+  components: {
+    HeaderMain,
+    HomeComp
+  },
+};
+</script>
 <style src="./webpages/common.css"></style>
+
