@@ -1,5 +1,13 @@
-<script></script>
+<script>
+  import homeComp from "./webpages/homePage/components/home.vue";
+
+  export default{
+    components:{
+      homeComp
+    }
+  }
+</script>
 <template>
-  <h1>Hello</h1>
+  <homeComp/>
 </template>
-<style></style>
+<style src="./webpages/common.css"></style>

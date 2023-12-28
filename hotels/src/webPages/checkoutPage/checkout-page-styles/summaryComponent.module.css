@@ -1,0 +1,32 @@
+/* styles for summary content container */
+.summaryContainer{
+  border: 1px solid rgba(0,0,0,0.3);
+  width: 100%;
+  background-color: rgba(192,192,192,0.4);
+  border-radius: 5px;
+  display: flex;
+}
+/* styles for labels in summary conatiner */
+.bookingLabels{
+  display: block;
+  color: rgba(0,0,0,0.8);
+}
+/* styles for individual divisions in summary container */
+.bookingDetails{
+  margin: 20px;
+}
+.summaryInp{
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  padding: 5px 0px;
+  color: black;
+  font-weight: bold;
+}
+
+@media  screen and (max-width: 760px) {
+  .summaryContainer{
+    flex-direction: column;
+  }
+  
+}

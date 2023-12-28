@@ -1,0 +1,62 @@
+/* Section 2 styling --------------------------Starts here -------------------- */
+
+.section-about {
+    width: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    padding: 20px;
+    margin-top:2%;
+  }
+  
+  .section-about h5 {
+    margin-top: 0px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  h5::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #d0c1c1;
+    margin-top: 10px;
+  }
+  
+  .icons {
+    display: flex;
+    margin-top: 15px;
+  }
+  .image-box {
+    display: inline-block;
+    width: 25px;
+    padding: 15px;
+    text-align: center;
+    margin-right: 15px;
+    background-color: #eeecec;
+    border-radius: 10px;
+  }
+  .image-box:hover {
+    background-color: antiquewhite;
+  }
+  .icons img {
+    width: 25px;
+    height: auto;
+  }
+  .section-about p {
+    margin-bottom: 10px;
+    color: #898484;
+  }
+  .section-about h1 {
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
+  .advantages {
+    margin: 10px 0;
+    color: #898484;
+  }
+  .advantages img {
+    margin-right: 5px;
+    size: 12px;
+  }
+  
+  /* Section 2 styling --------------------------Ends here -------------------- */
