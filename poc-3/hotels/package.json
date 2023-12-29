@@ -19,6 +19,7 @@
     "vue-icon": "^2.3.0",
     "vue-icons": "^2.0.0",
     "vue-router": "^4.2.5",
+    "vue-slider-component": "^3.2.24",
     "vue-svg-icon": "^1.2.9"
   },
   "devDependencies": {

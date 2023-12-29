@@ -1,12 +1,12 @@
 <template>
     <div class="mainfilter">
-      <h1>Hotel Filtering Main Component</h1>
       <HotelTypeComponent />
       <PriceRangeFilter/>
-      <CustomerRating/>
       <PopularType/>
+      <CustomerRating/>
       <RatingStar/>
       <Ammenities/>
+      <BottomButton/>
     </div>
   </template>
   
@@ -18,6 +18,7 @@
   import PopularType from './PopularTypeComponent.vue';
   import RatingStar from './RatingStarComponent.vue';
   import Ammenities from './ammenitiesComponent.vue';
+  import BottomButton from './BottombuttomComponent.vue';
   
   export default {
     name: 'HotelFilteringMain',
@@ -28,6 +29,7 @@
       PopularType,
       RatingStar,
       Ammenities,
+      BottomButton,
     },
   }
   </script>
