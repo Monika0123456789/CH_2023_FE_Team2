@@ -45,7 +45,6 @@ export default {
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
 }
 
 .hotel-type-filter h2 {

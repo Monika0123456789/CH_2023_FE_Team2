@@ -1,0 +1,17 @@
+:root{
+    --primary-heading-web:5rem;
+    --primary-heading-mobile:3rem;
+  
+    --secondary-heading-web:3rem;
+    --secondary-heading-mobile:2rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .container{
+    max-width: 1320px;
+    margin: auto;
+    margin-top: 40px;
+  }
+  p{
+    color: slategray;
+    font-size: 1.2em;
+  }

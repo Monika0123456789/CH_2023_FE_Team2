@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="padding: 20px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 0 2px rgba(0, 0, 0, 0.1); width: 300px;">
+    <div style="padding: 20px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);">
       <h1>Popular Type</h1>
       <div>
         <label>

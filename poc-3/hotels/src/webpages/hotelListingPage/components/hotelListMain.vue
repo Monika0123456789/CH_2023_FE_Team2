@@ -1,27 +1,30 @@
 <template>
-    <div>
-      <h1>Hotel List Main Component</h1>
-      
-      
-      <HotelFilteringMain />
-      
-      
-    </div>
-  </template>
-  
-  <script>
 
-  import HotelFilteringMain from './HotelFilteringmain.vue';
-  
-  export default {
-    name: 'HotelListMain',
-    components: {
-      HotelFilteringMain, 
-    },
-  }
-  </script>
-  
-  <style scoped>
+  <div class = "listMain">
+    <HotelFilteringMain class="filters" />
+    <HotelList class="hotelLists"/>
+  </div>
+</template>
+<script>
+import HotelList from './hotelListCard.vue'
+import HotelFilteringMain from './HotelFilteringmain.vue';
+export default {
+  components: {
+    HotelList,
+    HotelFilteringMain, 
+  },
+};
+</script>
+<style scoped>
+.listMain{
+  display: flex;
+  gap: 2%;
+}
+.filters{
+  width: 28%;
+}
+.hotelLists{
+  width: 70%;
+}
+</style>
 
-  </style>
-  

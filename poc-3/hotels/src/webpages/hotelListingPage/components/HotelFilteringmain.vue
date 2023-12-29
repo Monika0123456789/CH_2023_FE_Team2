@@ -33,8 +33,6 @@
   </script>
   
   <style scoped>
-  .mainfilter{
-    width: 30%;
-  }
+
   </style>
   

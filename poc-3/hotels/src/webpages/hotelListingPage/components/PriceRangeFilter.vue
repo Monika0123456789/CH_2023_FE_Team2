@@ -1,13 +1,8 @@
 <template>
-  <DoubleRangeSlider :min="min" :max="max" @update:min="value => min = value" @update:max="value => max = value"></DoubleRangeSlider>
-</template>
-
-    <label>Min</label><input type="text" v-model="min"/>
-    <label>Max</label><input type="text" v-model="max"/>
+<h1>Range</h1>
+  </template>
 <script>
 
-
-import DoubleRangeSlider from '@/components/shared/slider/DoubleRangeSlider'
 
 export default {
   data () {
@@ -17,7 +12,7 @@ export default {
     }
   },
   components: {
-    DoubleRangeSlider
+   
   },
   name: 'HelloWorld',
   props: {

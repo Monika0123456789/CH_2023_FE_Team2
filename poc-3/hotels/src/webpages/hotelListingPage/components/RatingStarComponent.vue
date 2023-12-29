@@ -15,7 +15,6 @@
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   name: 'RatingStar',
@@ -43,7 +42,6 @@ export default {
   border: 1px solid #ddd;
   border-radius: 2px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 300px;
 }
 
 .rating-heading {
