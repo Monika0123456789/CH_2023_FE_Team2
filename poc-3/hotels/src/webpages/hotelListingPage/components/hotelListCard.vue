@@ -1,42 +1,50 @@
 <template>
-  <div>
-    <ul>
-      <li style="list-style: none; margin-top: 5px;" v-for="item in jsonData" :key="item.id">
-        <div class="hotelCard">
-          <div class="hotelImage">
-            <img :src="item.img" alt="Hotel Image" />
-          </div>
-          <div class="hotelData">
-            <font-awesome-icon icon="fa-solid fa-star" />
-            <font-awesome-icon icon="fa-solid fa-star" />
-            <font-awesome-icon icon="fa-solid fa-star" />
-            <font-awesome-icon icon="fa-solid fa-star" />
-            <font-awesome-icon icon="fa-solid fa-star" />
-            <h2>{{ item.name }}</h2>
-            <p><font-awesome-icon icon="fa-solid fa-location-dot" /> {{ item.location }}</p>
-            <p>
-            <ul style="list-style-type: none;display: flex;padding: 0;">
-              <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{ facility }}</li>
-              <li style="cursor: pointer;"><a href="#">More+</a></li>
-            </ul>
-            </p>
-            <ul style="padding: 0;">
-              <li style="list-style: none;margin: 10px 0;" v-for="(additionalInfo, index) in item.additionalInfo" :key="index">
-                <font-awesome-icon :style="{ color: additionalInfo === 'Non Refundable' ? 'red' : 'green' }"
-                  icon="fa-solid fa-circle-check" />{{ additionalInfo }}
-              </li>
-
-            </ul>
-            <div style="display: flex;justify-content: space-between;">
-              <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
-              <button class="selectRoomButton">Select Room</button>
-            </div>
-
-          </div>
+  <ul>
+    <li style="list-style: none; margin-top: 5px;" v-for="item in displayedHotels" :key="item.id">
+      <div class="hotelCard">
+        <div class="hotelImage">
+          <img :src="item.img" alt="Hotel Image" />
         </div>
-      </li>
-    </ul>
-    <div class="toggleButtons"><button>1</button><button>2</button></div>
+        <div class="hotelData">
+          <font-awesome-icon icon="fa-solid fa-star" />
+          <font-awesome-icon icon="fa-solid fa-star" />
+          <font-awesome-icon icon="fa-solid fa-star" />
+          <font-awesome-icon icon="fa-solid fa-star" />
+          <font-awesome-icon icon="fa-solid fa-star" />
+          <h2>{{ item.name }}</h2>
+          <p><font-awesome-icon icon="fa-solid fa-location-dot" /> {{ item.location }}</p>
+          <p>
+          <ul style="list-style-type: none;display: flex;padding: 0;">
+            <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{
+              facility }}</li>
+            <li style="cursor: pointer;"><a href="#">More+</a></li>
+          </ul>
+          </p>
+          <ul style="padding: 0;">
+            <li style="list-style: none;margin: 10px 0;" v-for="(additionalInfo, index) in item.additionalInfo"
+              :key="index">
+              <font-awesome-icon :style="{ color: additionalInfo === 'Non Refundable' ? 'red' : 'green' }"
+                icon="fa-solid fa-circle-check" />{{ additionalInfo }}
+            </li>
+
+          </ul>
+          <div style="display: flex;justify-content: space-between;">
+            <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
+            <button class="selectRoomButton">Select Room</button>
+          </div>
+
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- <div class="toggleButtons"><button>1</button><button>2</button></div>
+  </div> -->
+
+  <div class="toggleButtons">
+    <button v-for="pageNumber in pageCount" :key="pageNumber" @click="changePage(pageNumber)">
+      {{ pageNumber }}
+    </button>
   </div>
 </template>
 
@@ -47,8 +55,34 @@ export default {
   data() {
     return {
       jsonData: [],
+      currentPage: 1,
+      hotelsPerPage: 5,
     };
   },
+
+
+  computed: {
+    //counting total number of pages based on total entries of hotel in jsondata
+    pageCount() {
+      // console.log(Math.ceil(this.jsonData.length / this.hotelsPerPage))
+      return Math.ceil(this.jsonData.length / this.hotelsPerPage);
+    },
+    // Calculate the subset of hotels to display based on the current page
+    displayedHotels() {
+      const startIndex = (this.currentPage - 1) * this.hotelsPerPage;
+      // console.log(startIndex)
+      const endIndex = startIndex + this.hotelsPerPage;
+      // console.log(endIndex)
+      return this.jsonData.slice(startIndex, endIndex);
+    },
+  },
+  methods: {
+    // Change the current page
+    changePage(pageNumber) {
+      this.currentPage = pageNumber;
+    },
+  },
+
   created() {
     const jsonFilePath = '/assets/json/hotel-booking.json';
 
@@ -101,7 +135,6 @@ export default {
   background-color: black;
   color: white;
   cursor: pointer;
-  padding: 1%;
 }
 
 .selectRoomButton:hover {
@@ -115,7 +148,8 @@ export default {
   color: black;
   font-size: 1.5rem;
 }
-.toggleButtons{
+
+.toggleButtons {
   display: flex;
   justify-content: center;
   gap: 5px;
