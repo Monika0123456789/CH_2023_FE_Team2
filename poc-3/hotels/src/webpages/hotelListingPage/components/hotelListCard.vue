@@ -18,7 +18,7 @@
               <ul style="list-style-type: none;display: flex;padding: 0;">
                 <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{
                   facility }}</li>
-                <li style="cursor: pointer;"><a href="#">More+</a></li>
+                <li style="cursor: pointer;"><a @click="openPopup(item)" href="#">More+</a></li>
               </ul>
               </p>
               <ul style="padding: 0;">
@@ -34,6 +34,19 @@
                 <button class="selectRoomButton">Select Room</button>
               </div>
 
+            </div>
+          </div>
+          <div id="popup-container" class="popup">
+            <div class="popup_content">
+              <span class=close @click="closePopUp">
+                &times;
+              </span>
+              <h2 id="popup-hotel-name">{{ popupData.name }}</h2>
+              <hr />
+              <p id="popup-long-desc">{{ popupData.longDesc }}</p>
+              <ul id="popup-facilities-list">
+                <li v-for="(facility, index) in popupData.Facilities" :key="index">{{ facility }}</li>
+              </ul>
             </div>
           </div>
         </li>
@@ -60,6 +73,11 @@ export default {
       jsonData: [],
       currentPage: 1,
       hotelsPerPage: 5,
+      popupData: {
+        name: '',
+        longDesc: '',
+        Facilities: [],
+      },
     };
   },
 
@@ -94,6 +112,16 @@ export default {
         return 'far fa-star';
       }
     },
+    openPopup(item) {
+      this.popupData.name = item.name;
+      this.popupData.longDesc = item.longDesc;
+      this.popupData.Facilities = item.Facilities;
+      document.getElementById('popup-container').style.display = 'block';
+    },
+    closePopUp() {
+      document.getElementById('popup-container').style.display = 'none';
+    },
+
   },
 
   created() {
@@ -181,5 +209,48 @@ export default {
   justify-content: center;
   gap: 5px;
   margin: 15px 0;
+}
+
+/* styling the background of the popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* styling the popup container */
+.popup_content {
+  background-color: whitesmoke;
+  margin: 3% auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 40%;
+  height: 80%;
+  text-align: justify;
+  position: relative;
+  border-radius: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+
+/* style for the closing the popup container */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
 }
 </style>
