@@ -9,6 +9,12 @@ export default {
   components: {
     HotelList,
   },
+  methods: {
+  openHotelDetails(item) {
+    // Navigate to the "hoteldetails" page with the hotelId parameter
+    this.$router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
+  },
+}
 };
 </script>
 <style></style>

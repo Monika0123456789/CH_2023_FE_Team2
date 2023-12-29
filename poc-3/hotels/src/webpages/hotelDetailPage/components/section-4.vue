@@ -1,0 +1,98 @@
+<template>
+  <div>
+    <h1>Room options</h1>
+    <hr/>
+    <div v-if="selectedHotel">
+      <div v-for="room in selectedHotel.rooms" :key="room.roomId" class="mainroomoptioncontainer">
+        <div class="roomoptionimageconatiner">
+          <img v-for="(image, index) in room.images.slice(0, 1)" :key="index" :src="image" :alt="`Room ${room.roomId} Image ${index + 1}`" />
+        </div>
+        <div class="roomoptiontextconatiner">
+          <h2>Room {{ room.roomId }}</h2>
+          <div class="detailroomfacilities">
+            <ul>
+              <li v-for="(facility, index) in room.roomFacilities.slice(0, 4)" :key="index">{{ facility }}</li>
+              <li><span class="detailmorelink" @click="handleRoomSelection(room)">more</span></li>
+            </ul>
+          </div>
+          <div class="price">
+            <h3>{{ `Price: $${selectedHotel.price}` }}</h3>
+          </div>
+          <button class="roomoptionselectroombutton" @click="selectRoom">Select Room</button>
+          <div v-if="room === selectedRoom" class="hoteldetail-popup-container">
+            <div>
+              <div class="hoteldetail-popup-content">
+                <div class="popupheadingpart">
+                  <h2>Room {{ selectedRoom.roomId }}</h2>
+                  <font-awesome-icon :icon="['fas', 'xmark']"  class="detailpopupclose" @click="closePopup" style="color:#a29898; cursor: pointer;"/>
+                </div>
+                <hr />
+                <img :src="selectedRoom.images[0]" :alt="`Room ${selectedRoom.roomId} Image 1`" />
+                <div class="staticdata">
+                  <p>Experience luxury in our spacious deluxe rooms.</p>
+                </div>
+                <div class="facilities">
+                  <h3>Facilities</h3>
+                  <ul>
+                    <li v-for="(facility, index) in selectedRoom.roomFacilities" :key="index">
+                      <font-awesome-icon :icon="['fas', 'circle-check']" style="color: green;"/>&nbsp;{{ facility }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import axios from 'axios';
+
+export default {
+  props: {
+    hotelId: { type: Number, required: true },
+  },
+  data() {
+    return {
+    selectedRoom: null,
+    hotel: null,
+    selectedHotel: null,
+    };
+  },
+  watch: {
+    hotelId(newHotelId) {
+      const hotelIdToFind = Number(newHotelId);
+      this.fetchHotelData(hotelIdToFind);
+    },
+  },
+  created() {
+    console.log('Hotel ID Type:', typeof this.hotelId);
+    this.fetchHotelData(Number(this.hotelId));
+  },
+  methods: {
+  fetchHotelData(hotelId) {
+    const jsonFilePath = '/assets/json/hotel-booking.json';
+    axios
+      .get(jsonFilePath)
+      .then((response) => {
+        this.hotel = response.data.items.find((item) => item.id === hotelId);
+        this.selectedHotel = this.hotel; 
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  },
+  handleRoomSelection(room) {
+      this.selectedRoom = room;
+    },
+    closePopup() {
+      this.selectedRoom = null;
+    },
+},
+
+};
+</script>
+
+<style src="../hotelDetails-styles/section-4.css" scoped></style>

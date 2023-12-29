@@ -29,7 +29,7 @@
             </ul>
             <div style="display: flex;justify-content: space-between;">
               <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
-              <button class="selectRoomButton">Select Room</button>
+              <button class="selectRoomButton" @click="openHotelDetails(item)">Select Room</button>
             </div>
 
           </div>
@@ -42,6 +42,7 @@
 
 <script>
 import axios from 'axios';
+import router from '../../../router';
 
 export default {
   data() {
@@ -60,6 +61,11 @@ export default {
         console.error('Error fetching data:', error);
       });
   },
+  methods:{
+    openHotelDetails(item) {
+      router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
+    },
+  }
 };
 </script>
 <style scoped>
