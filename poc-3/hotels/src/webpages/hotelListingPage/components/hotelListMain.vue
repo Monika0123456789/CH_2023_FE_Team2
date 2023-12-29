@@ -1,6 +1,6 @@
 <template>
 
-  <div class = "listMain">
+  <div class = "listMain container">
     <HotelFilteringMain class="filters" />
     <HotelList class="hotelLists"/>
   </div>
