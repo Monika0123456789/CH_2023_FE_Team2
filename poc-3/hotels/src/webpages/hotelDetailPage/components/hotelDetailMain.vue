@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
   <SectionOne  :hotelId="hotelId"/>
   <SectionAbout/>
   <SectionAmenities/>
