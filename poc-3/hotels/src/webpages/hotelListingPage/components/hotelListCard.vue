@@ -12,31 +12,31 @@
             <font-awesome-icon icon="fa-solid fa-star" />
             <font-awesome-icon icon="fa-solid fa-star" />
             <font-awesome-icon icon="fa-solid fa-star" />
-            <!-- <p>Rating: {{ item.rating }}</p> -->
             <h2>{{ item.name }}</h2>
             <p><font-awesome-icon icon="fa-solid fa-location-dot" /> {{ item.location }}</p>
             <p>
-            <ul>
-              <li v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{ facility }}</li>
-              <li>more+</li>
+            <ul style="list-style-type: none;display: flex;padding: 0;">
+              <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{ facility }}</li>
+              <li style="cursor: pointer;"><a href="#">More+</a></li>
             </ul>
             </p>
-            <ul>
-              <li style="list-style: none;" v-for="(additionalInfo, index) in item.additionalInfo" :key="index">
-                <font-awesome-icon :style="{color: additionalInfo ==='Non Refundable'?'red':'green'}"
+            <ul style="padding: 0;">
+              <li style="list-style: none;margin: 10px 0;" v-for="(additionalInfo, index) in item.additionalInfo" :key="index">
+                <font-awesome-icon :style="{ color: additionalInfo === 'Non Refundable' ? 'red' : 'green' }"
                   icon="fa-solid fa-circle-check" />{{ additionalInfo }}
               </li>
 
             </ul>
             <div style="display: flex;justify-content: space-between;">
-              <p>Price: ${{ item.price }} &nbsp;&nbsp;<s>$1000</s></p>
-              <button>Select Room</button>
+              <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
+              <button class="selectRoomButton">Select Room</button>
             </div>
 
           </div>
         </div>
       </li>
     </ul>
+    <div class="toggleButtons"><button>1</button><button>2</button></div>
   </div>
 </template>
 
@@ -64,10 +64,19 @@ export default {
 </script>
 <style scoped>
 .hotelCard {
-  border: 2px solid black;
-  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(116, 115, 115, 0.5);
+  border-radius: 10px;
   display: flex;
+  width: 70%;
   gap: 3%;
+  margin: 0 2% 2% 2%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.hotelCard:hover {
+  background-color: aliceblue;
+  box-shadow: 5px 5px 10px black;
 }
 
 .hotelImage {
@@ -83,5 +92,34 @@ export default {
 
 .hotelData {
   width: 65%;
+}
+
+/* styling the select room button in the last section of the right container */
+.selectRoomButton {
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 20%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 1%;
+}
+
+.selectRoomButton:hover {
+  background-color: rgb(215, 250, 220);
+  color: black;
+  box-shadow: 5px 5px 5px black;
+}
+
+/* styling the hotel pricing */
+.hotel_pricing {
+  color: black;
+  font-size: 1.5rem;
+}
+.toggleButtons{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 15px 0;
 }
 </style>
