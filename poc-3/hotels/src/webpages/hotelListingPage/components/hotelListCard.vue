@@ -66,6 +66,9 @@
 
 <script>
 import axios from 'axios';
+import { faStar } from "@fortawesome/free-regular-svg-icons"
+import { library } from '@fortawesome/fontawesome-svg-core';
+library.add(faStar)
 
 export default {
   data() {
@@ -107,7 +110,7 @@ export default {
       if (index <= rating - 0.5) {
         return 'fas fa-star';
       } else if (index <= rating) {
-        return 'fas fa-star-half-alt';
+        return 'fas fa-star-half-stroke';
       } else {
         return 'far fa-star';
       }
