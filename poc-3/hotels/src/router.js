@@ -21,6 +21,13 @@ const routes = [
   {
     path: '/hotellisting',
     component:HotelListing
+  },
+  {
+      path: '/hoteldetails/:hotelId',
+      name: 'hoteldetails',
+      component: HotelDetails,
+      props: true,
+    
   }
 ];
 

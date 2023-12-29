@@ -13,6 +13,12 @@ export default {
     HotelList,
     HotelFilteringMain, 
   },
+  methods: {
+  openHotelDetails(item) {
+    // Navigate to the "hoteldetails" page with the hotelId parameter
+    this.$router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
+  },
+}
 };
 </script>
 <style scoped>

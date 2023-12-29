@@ -31,7 +31,7 @@
               </ul>
               <div style="display: flex;justify-content: space-between;">
                 <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
-                <button class="selectRoomButton">Select Room</button>
+                  <button class="selectRoomButton" @click="openHotelDetails(item)">Select Room</button>
               </div>
 
             </div>
@@ -66,6 +66,7 @@
 
 <script>
 import axios from 'axios';
+import router from '../../../router';
 import { faStar } from "@fortawesome/free-regular-svg-icons"
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faStar)
@@ -123,6 +124,9 @@ export default {
     },
     closePopUp() {
       document.getElementById('popup-container').style.display = 'none';
+    },
+    openHotelDetails(item) {
+      router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
     },
 
   },
