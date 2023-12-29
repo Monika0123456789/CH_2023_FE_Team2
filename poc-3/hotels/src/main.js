@@ -1,3 +1,4 @@
+
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
@@ -49,8 +50,6 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-
-/* add icons to the library */
 
 library.add(
   faLocationDot,
