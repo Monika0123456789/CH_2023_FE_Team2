@@ -1,12 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HeaderMain from './webpages/header/components/headerMain.vue';
+import HomeComp from "./webpages/homePage/components/home.vue";
+import CheckoutComp from "./webpages/checkoutPage/components/checkoutMain.vue";
 
 const routes = [
   {
     path: '/',
-    component: HeaderMain,
+    component: HomeComp,
   },
-  
+  {
+    path : '/checkoutPage',
+    component : CheckoutComp
+  },
 ];
 
 const router = createRouter({

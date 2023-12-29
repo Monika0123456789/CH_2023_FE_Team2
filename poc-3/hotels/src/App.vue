@@ -1,18 +1,16 @@
 
 <template>
  <div id="app">
-    <HeaderMain />
-    <HomeComp/>
+    <HeaderMain/>
+    <router-view></router-view>
   </div>
 </template>
 <script>
 import HeaderMain from './webpages/header/components/headerMain.vue';
-import  HomeComp from './webpages/homePage/components/home.vue';
 
 export default {
   components: {
     HeaderMain,
-    HomeComp
   },
 };
 </script>
