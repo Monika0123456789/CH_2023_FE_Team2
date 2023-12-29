@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <SectionOneComp/>
     <section2Comp/>
     <Section3/>

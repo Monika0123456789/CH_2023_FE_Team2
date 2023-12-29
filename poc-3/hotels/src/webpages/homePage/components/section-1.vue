@@ -5,7 +5,7 @@
       <p>We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
       <br />
       <router-link to="/hotellisting">
-      <button id="discoverbutton">Discover Now</button>
+      <button onclick="window.scrollTo(0, 0);" id="discoverbutton">Discover Now</button>
     </router-link>
     </div>
     <div class="section1_parent-div section1-ParentImage">

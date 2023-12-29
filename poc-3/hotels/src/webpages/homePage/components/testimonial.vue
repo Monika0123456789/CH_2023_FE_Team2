@@ -48,6 +48,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style src="../homePage-styles/section4.css" scoped></style>
