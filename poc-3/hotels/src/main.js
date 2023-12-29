@@ -16,7 +16,7 @@ import { faCcApplePay, faCcMastercard, faCcPaypal, faCcVisa, faFacebook, faInsta
 
 /* add icons to the library */
 
-library.add(    faPhone,faCcPaypal,faCcVisa,faCcMastercard,faCcApplePay,faFacebook,faInstagram,faTwitter,faLinkedin,faStar,faStarHalfStroke,faWifi,faWaterLadder,faSnowflake,faBell,faCircleCheck,faCreditCard,faPersonBiking,faVolumeHigh,faEye,faXmark,faUserSecret,faLocationDot, faUtensils, faStopwatch, faShield, faBolt,faEnvelope,faHotel,faPlane,faEarthAsia,faTaxi,faUserShield,faCcPaypal,faCcVisa,faCcMastercard,faCcApplePay,faFacebook,faInstagram,faTwitter,faLinkedin,faStar,faStarHalfStroke);
+library.add(  faStarHalfStroke,  faPhone,faCcPaypal,faCcVisa,faCcMastercard,faCcApplePay,faFacebook,faInstagram,faTwitter,faLinkedin,faStar,faStarHalfStroke,faWifi,faWaterLadder,faSnowflake,faBell,faCircleCheck,faCreditCard,faPersonBiking,faVolumeHigh,faEye,faXmark,faUserSecret,faLocationDot, faUtensils, faStopwatch, faShield, faBolt,faEnvelope,faHotel,faPlane,faEarthAsia,faTaxi,faUserShield,faCcPaypal,faCcVisa,faCcMastercard,faCcApplePay,faFacebook,faInstagram,faTwitter,faLinkedin,faStar,faStarHalfStroke);
 
 
 const app = createApp(App);

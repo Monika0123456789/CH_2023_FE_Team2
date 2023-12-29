@@ -1,50 +1,53 @@
 <template>
-  <ul>
-    <li style="list-style: none; margin-top: 5px;" v-for="item in displayedHotels" :key="item.id">
-      <div class="hotelCard">
-        <div class="hotelImage">
-          <img :src="item.img" alt="Hotel Image" />
-        </div>
-        <div class="hotelData">
-          <font-awesome-icon icon="fa-solid fa-star" />
-          <font-awesome-icon icon="fa-solid fa-star" />
-          <font-awesome-icon icon="fa-solid fa-star" />
-          <font-awesome-icon icon="fa-solid fa-star" />
-          <font-awesome-icon icon="fa-solid fa-star" />
-          <h2>{{ item.name }}</h2>
-          <p><font-awesome-icon icon="fa-solid fa-location-dot" /> {{ item.location }}</p>
-          <p>
-          <ul style="list-style-type: none;display: flex;padding: 0;">
-            <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{
-              facility }}</li>
-            <li style="cursor: pointer;"><a href="#">More+</a></li>
-          </ul>
-          </p>
-          <ul style="padding: 0;">
-            <li style="list-style: none;margin: 10px 0;" v-for="(additionalInfo, index) in item.additionalInfo"
-              :key="index">
-              <font-awesome-icon :style="{ color: additionalInfo === 'Non Refundable' ? 'red' : 'green' }"
-                icon="fa-solid fa-circle-check" />{{ additionalInfo }}
-            </li>
+  <div class="hotelListMainContainer">
+    <div>
+      <ul>
+        <li style="list-style: none; margin-top: 5px;" v-for="item in displayedHotels" :key="item.id">
+          <div class="hotelCard">
+            <div class="hotelImage">
+              <img :src="item.img" alt="Hotel Image" />
+            </div>
+            <div class="hotelData">
+              <div class="rating">
+                <font-awesome-icon style="color: rgb(245, 245, 34);" v-for="i in 5" :key="i"
+                  :icon="getStarIcon(i, item.rating)" />
+              </div>
+              <h2>{{ item.name }}</h2>
+              <p><font-awesome-icon icon="fa-solid fa-location-dot" /> {{ item.location }}</p>
+              <p>
+              <ul style="list-style-type: none;display: flex;padding: 0;">
+                <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{
+                  facility }}</li>
+                <li style="cursor: pointer;"><a href="#">More+</a></li>
+              </ul>
+              </p>
+              <ul style="padding: 0;">
+                <li style="list-style: none;margin: 10px 0;" v-for="(additionalInfo, index) in item.additionalInfo"
+                  :key="index">
+                  <font-awesome-icon :style="{ color: additionalInfo === 'Non Refundable' ? 'red' : 'green' }"
+                    icon="fa-solid fa-circle-check" />{{ additionalInfo }}
+                </li>
 
-          </ul>
-          <div style="display: flex;justify-content: space-between;">
-            <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
-            <button class="selectRoomButton">Select Room</button>
+              </ul>
+              <div style="display: flex;justify-content: space-between;">
+                <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
+                <button class="selectRoomButton">Select Room</button>
+              </div>
+
+            </div>
           </div>
+        </li>
+      </ul>
+    </div>
 
-        </div>
-      </div>
-    </li>
-  </ul>
-
-  <!-- <div class="toggleButtons"><button>1</button><button>2</button></div>
+    <!-- <div class="toggleButtons"><button>1</button><button>2</button></div>
   </div> -->
 
-  <div class="toggleButtons">
-    <button v-for="pageNumber in pageCount" :key="pageNumber" @click="changePage(pageNumber)">
-      {{ pageNumber }}
-    </button>
+    <div class="toggleButtons">
+      <button v-for="pageNumber in pageCount" :key="pageNumber" @click="changePage(pageNumber)">
+        {{ pageNumber }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -80,6 +83,16 @@ export default {
     // Change the current page
     changePage(pageNumber) {
       this.currentPage = pageNumber;
+      window.scrollTo(0, 0);
+    },
+    getStarIcon(index, rating) {
+      if (index <= rating - 0.5) {
+        return 'fas fa-star';
+      } else if (index <= rating) {
+        return 'fas fa-star-half-alt';
+      } else {
+        return 'far fa-star';
+      }
     },
   },
 
@@ -127,6 +140,15 @@ export default {
   width: 65%;
 }
 
+.rating {
+  color: black;
+}
+
+.rating .fas.fa-star,
+.rating .fas.fa-star-half-alt {
+  color: #f8d62b;
+}
+
 /* styling the select room button in the last section of the right container */
 .selectRoomButton {
   box-sizing: border-box;
@@ -147,6 +169,11 @@ export default {
 .hotel_pricing {
   color: black;
   font-size: 1.5rem;
+}
+
+.hotelListMainContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .toggleButtons {
