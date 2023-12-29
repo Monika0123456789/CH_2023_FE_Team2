@@ -67,7 +67,6 @@ export default {
   box-shadow: 5px 5px 5px 5px rgba(116, 115, 115, 0.5);
   border-radius: 10px;
   display: flex;
-  width: 70%;
   gap: 3%;
   margin: 0 2% 2% 2%;
   padding: 5px;
