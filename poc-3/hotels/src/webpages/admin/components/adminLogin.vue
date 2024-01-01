@@ -37,11 +37,11 @@ export default {
       if (this.email.length !== 0 && this.password.length !== 0) {
         if (this.email === dataObject.email && this.password === dataObject.password) {
           // on successful login redirect to adminLanding page
-          // navigate('/adminLanding');
-          alert("login success");
-          console.log("success")
-          this.email = '',
-            this.password = ''
+          // alert("login success");
+          // console.log("success")
+          this.$router.push('/adminDashboard').then(() => {
+            console.log("login success")
+          })
         }
         else {
           alert("you have entered wrong credentials");

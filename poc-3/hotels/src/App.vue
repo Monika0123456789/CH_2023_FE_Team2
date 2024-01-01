@@ -3,7 +3,7 @@
 
     <HeaderMain />
     <router-view></router-view>
-    <Footer />
+    <Footer v-if="$route.path !='/adminDashboard'"/>
   </div>
 </template>
 <script>
