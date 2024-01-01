@@ -25,12 +25,22 @@ export default {
 .listMain{
   display: flex;
   gap: 2%;
+  box-sizing: border-box;
 }
 .filters{
-  width: 28%;
+  width: 25%;
 }
 .hotelLists{
-  width: 70%;
+  width: 73%;
+}
+@media screen and (max-width : 760px) {
+  .listMain{
+    flex-direction: column;
+  }
+  .hotelLists{
+    width: 100%;
+  }
+  
 }
 </style>
 
