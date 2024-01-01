@@ -1,7 +1,7 @@
 <template>
- <div id="app">
+  <div id="app">
 
-    <HeaderMain/>
+    <HeaderMain />
     <router-view></router-view>
     <Footer />
   </div>
@@ -11,9 +11,17 @@ import HeaderMain from './webpages/header/components/headerMain.vue';
 import Footer from './webpages/footer/components/footerMain.vue'
 
 export default {
+  created() {
+    const adminData = {
+      email: "hotel.booking.admin@gmail.com",
+      password: "admin@123"
+    };
+    localStorage.setItem("adminData", JSON.stringify(adminData))
+
+  },
   components: {
     HeaderMain,
-    Footer
+    Footer,
   },
 };
 </script>
