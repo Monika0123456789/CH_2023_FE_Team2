@@ -31,7 +31,7 @@
               </ul>
               <div style="display: flex;justify-content: space-between;">
                 <p class="hotel_pricing"> ${{ item.price }} &nbsp;<s>$1000</s></p>
-                  <button class="selectRoomButton" @click="openHotelDetails(item)">Select Room</button>
+                <button class="selectRoomButton" @click="openHotelDetails(item)">Select Room</button>
               </div>
 
             </div>
@@ -127,6 +127,7 @@ export default {
     },
     openHotelDetails(item) {
       router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
+      window.scrollTo(0, 0);
     },
 
   },
