@@ -39,7 +39,7 @@ import { store } from '../../../store.js';
 
             handleCheckoutdate(){
                 var q = new Date();
-                var userDate = new Date(this.$refs.checkinDate.value);
+                var userDate = new Date(this.$refs.checkoutDate.value);
                 var presentDate = new Date(q.getFullYear(),q.getMonth(),q.getDate());
 
                 if(userDate < presentDate || userDate < store.checkinDate){
