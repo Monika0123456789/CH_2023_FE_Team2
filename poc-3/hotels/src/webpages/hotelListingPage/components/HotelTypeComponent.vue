@@ -1,53 +1,56 @@
 <template>
-  <div class="hotel-type-filter">
-    <h2>Hotel Type</h2>
-    <div v-for="type in types" :key="type">
+  <div style="padding: 20px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+    <h2 style="margin-top: 0;">Hotel Type</h2>
+    
+    <div>
+      <label>
+        <input
+          type="checkbox"
+          value="All"
+          :checked="selectedTypes.includes('All')"
+          @change="handleCheckboxChange('All')"
+        />
+        All
+      </label>
+    </div>
+
+    <div v-for="type in ['Hotel', 'Apartment', 'Resort', 'Villa']" :key="type">
       <label>
         <input
           type="checkbox"
           :value="type"
-          v-model="selectedTypes"
+          :checked="selectedTypes.includes(type)"
+          @change="handleCheckboxChange(type)"
         />
         {{ type }}
       </label>
     </div>
+
     <!-- Additional content can be added here -->
+
   </div>
 </template>
 
 <script>
 export default {
   name: 'HotelTypeFilter',
-  props: {
-    value: Array, // v-model binding
-  },
   data() {
     return {
-      types: ['All', 'Hotel', 'Apartment', 'Resort', 'Villa'],
+      selectedTypes: [],
     };
   },
-  computed: {
-    selectedTypes: {
-      get() {
-        return this.value;
-      },
-      set(newValue) {
-        this.$emit('input', newValue);
-      },
+  methods: {
+    handleCheckboxChange(type) {
+      this.selectedTypes = this.selectedTypes.includes('All')
+        ? type === 'All' ? [] : ['All', ...['Hotel', 'Apartment', 'Resort', 'Villa'].filter(t => t !== type)]
+        : type === 'All' ? ['All', ...['Hotel', 'Apartment', 'Resort', 'Villa']] : (this.selectedTypes.includes(type)
+          ? this.selectedTypes.filter(selectedType => selectedType !== type)
+          : [...this.selectedTypes, type]);
     },
   },
 };
 </script>
 
 <style scoped>
-.hotel-type-filter {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.hotel-type-filter h2 {
-  margin-top: 0;
-}
+/* Add your styling here */
 </style>

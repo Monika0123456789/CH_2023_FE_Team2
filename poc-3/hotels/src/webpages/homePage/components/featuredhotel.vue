@@ -5,7 +5,7 @@
       <!-- All Hotel Images in the Container -->
       <figure v-for="(hotel, index) in hotels" :key="index" class="card">
         <div class="hotel-img">
-          <router-link to="/hotellisting">
+          <router-link  to="/hotellisting" onclick="window.scrollTo(0, 0);">
           <img :src="hotel.imgSrc" alt="">
           </router-link>
           <button class="location-btn">
