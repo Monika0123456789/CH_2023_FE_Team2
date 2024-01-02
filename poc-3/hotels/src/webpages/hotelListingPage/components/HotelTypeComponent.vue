@@ -1,7 +1,7 @@
 <template>
   <div style="padding: 20px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
     <h2 style="margin-top: 0;">Hotel Type</h2>
-    
+
     <div>
       <label>
         <input
@@ -14,7 +14,7 @@
       </label>
     </div>
 
-    <div v-for="type in ['Hotel', 'Apartment', 'Resort', 'Villa']" :key="type">
+    <div v-for="type in uniqueTypes" :key="type">
       <label>
         <input
           type="checkbox"
@@ -25,27 +25,38 @@
         {{ type }}
       </label>
     </div>
-
-    <!-- Additional content can be added here -->
-
   </div>
 </template>
 
 <script>
 export default {
   name: 'HotelTypeFilter',
-  data() {
-    return {
-      selectedTypes: [],
-    };
+  props: {
+    hotels: Array,
+    selectedTypes: Array,
+  },
+  computed: {
+    uniqueTypes() {
+      return Array.from(new Set(this.hotels.map(hotel => hotel.type)));
+    },
   },
   methods: {
     handleCheckboxChange(type) {
-      this.selectedTypes = this.selectedTypes.includes('All')
-        ? type === 'All' ? [] : ['All', ...['Hotel', 'Apartment', 'Resort', 'Villa'].filter(t => t !== type)]
-        : type === 'All' ? ['All', ...['Hotel', 'Apartment', 'Resort', 'Villa']] : (this.selectedTypes.includes(type)
-          ? this.selectedTypes.filter(selectedType => selectedType !== type)
-          : [...this.selectedTypes, type]);
+      let updatedSelectedTypes;
+
+      if (type === 'All') {
+        updatedSelectedTypes = [];
+      } else {
+        // Toggle the selected type
+        if (this.selectedTypes.includes(type)) {
+          updatedSelectedTypes = this.selectedTypes.filter(selectedType => selectedType !== type);
+        } else {
+          updatedSelectedTypes = [...this.selectedTypes, type];
+        }
+      }
+
+      // Emit the updated selected types
+      this.$emit('typeChange', updatedSelectedTypes);
     },
   },
 };

@@ -66,7 +66,8 @@ export default {
       this.showAll = !this.showAll;
     },
     onAmenitiesChange(selectedAmenities) {
-      console.log('Selected Amenities:', selectedAmenities);
+     
+      this.$emit('amenitiesChange', selectedAmenities);
      
     },
   },
