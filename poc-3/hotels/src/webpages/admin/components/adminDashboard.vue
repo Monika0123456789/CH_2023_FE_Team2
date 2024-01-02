@@ -1,6 +1,8 @@
 <template>
   <div class="container">
 
+    <button @click="logout" class="logout_button"><font-awesome-icon icon="fa-solid fa-arrow-right-from-bracket" />&nbsp;LogOut</button>
+
     <!-- table containing the customer hotel booking details  -->
     <table class="customer_table">
       <thead>
@@ -39,6 +41,12 @@ export default {
       booking_details: {
         bookingData: JSON.parse(localStorage.getItem("Booking Details")) || []
       }
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.setItem("loggedIn", JSON.stringify(false))
+      this.$router.push('/adminLogin')
     }
   }
 

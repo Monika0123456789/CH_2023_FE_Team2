@@ -128,9 +128,9 @@ export default {
 
     },
     getStarIcon(index, rating) {
-      if (index <= rating - 0.5) {
+      if (index <= rating) {
         return 'fas fa-star';
-      } else if (index <= rating) {
+      } else if (index - 0.5 === rating) {
         return 'fas fa-star-half-stroke';
       } else {
         return 'far fa-star';

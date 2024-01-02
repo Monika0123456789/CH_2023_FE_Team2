@@ -37,6 +37,17 @@ const routes = [
   {
     path: "/adminDashboard",
     component: AdminDashboard,
+    beforeEnter: (to, from, next) => {
+      // Check the loggedIn status before allowing navigation
+      const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+      if (loggedIn) {
+        // If logged in, allow navigation to the admin dashboard
+        next();
+      } else {
+        // If not logged in, redirect to the login page
+        next("/adminLogin"); 
+      }
+    },
   },
 ];
 
