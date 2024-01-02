@@ -37,6 +37,7 @@ import {
   faTaxi,
   faUserShield,
   faCircleCheck,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -86,6 +87,7 @@ library.add(
   faInstagram,
   faLinkedin,
   faTwitter,
+  faArrowRightFromBracket
 );
 
 const app = createApp(App);

@@ -1,7 +1,7 @@
 <template>
   <div class="hotelListMainContainer">
     <div>
-      <ul>
+      <ul style="padding-left: 0px;">
         <li style="list-style: none; margin-top: 5px;" v-for="item in displayedHotels" :key="item.id">
           <div class="hotelCard">
             <div class="hotelImage">
@@ -9,13 +9,13 @@
             </div>
             <div class="hotelData">
               <div class="rating">
-                <font-awesome-icon style="color: rgb(245, 245, 34);" v-for="i in 5" :key="i"
+                <font-awesome-icon style="color: rgb(245, 217, 34);" v-for="i in 5" :key="i"
                   :icon="getStarIcon(i, item.rating)" />
               </div>
               <h2>{{ item.name }}</h2>
               <p><font-awesome-icon icon="fa-solid fa-location-dot" /> {{ item.location }}</p>
               <p>
-              <ul style="list-style-type: none;display: flex;padding: 0;">
+              <ul style="list-style-type: none;display: flex;padding: 0;flex-wrap: wrap;">
                 <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{
                   facility }}</li>
                 <li style="cursor: pointer;"><a @click="openPopup(item)" href="#">More+</a></li>
@@ -57,9 +57,13 @@
   </div> -->
 
     <div class="toggleButtons">
-      <button v-for="pageNumber in pageCount" :key="pageNumber" @click="changePage(pageNumber)">
+      <button class="pageButtons" @click="previousPage()">&lt;</button>
+      <button class="pageButtons" v-for="pageNumber in pageCount" :key="pageNumber" @click="changePage(pageNumber)"
+        :class="{ 'selectedPage': currentPage === pageNumber }">
         {{ pageNumber }}
       </button>
+      <button class="pageButtons" @click="nextPage()">&gt;</button>
+
     </div>
   </div>
 </template>
@@ -105,12 +109,28 @@ export default {
     // Change the current page
     changePage(pageNumber) {
       this.currentPage = pageNumber;
-      window.scrollTo(0, 0);
+    },
+    nextPage() {
+      if (this.currentPage < (Math.ceil(this.jsonData.length / this.hotelsPerPage))) {
+        this.currentPage = this.currentPage + 1;
+      }
+      else {
+        this.currentPage = this.currentPage;
+      }
+    },
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage = this.currentPage - 1;
+      }
+      else {
+        this.currentPage = this.currentPage
+      }
+
     },
     getStarIcon(index, rating) {
-      if (index <= rating - 0.5) {
+      if (index <= rating) {
         return 'fas fa-star';
-      } else if (index <= rating) {
+      } else if (index - 0.5 === rating) {
         return 'fas fa-star-half-stroke';
       } else {
         return 'far fa-star';
