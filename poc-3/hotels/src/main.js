@@ -51,6 +51,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
+
 library.add(
   faLocationDot,
   faWifi,
