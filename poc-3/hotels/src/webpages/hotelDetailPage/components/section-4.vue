@@ -18,7 +18,10 @@
           <div class="price">
             <h3>{{ `Price: $${selectedHotel.price}` }}</h3>
           </div>
-          <button class="roomoptionselectroombutton" @click="selectRoom">Select Room</button>
+
+          <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="selectRoom" v-on:click="navigate">Select Room</button></router-link>
+         
+
           <div v-if="room === selectedRoom" class="hoteldetail-popup-container">
             <div>
               <div class="hoteldetail-popup-content">
@@ -49,6 +52,7 @@
 </template>
 <script>
 import axios from 'axios';
+import { store } from '../../../store.js';
 
 export default {
   props: {
@@ -59,6 +63,7 @@ export default {
     selectedRoom: null,
     hotel: null,
     selectedHotel: null,
+    store
     };
   },
   watch: {
@@ -69,9 +74,16 @@ export default {
   },
   created() {
     console.log('Hotel ID Type:', typeof this.hotelId);
+    console.log("hotel id", this.hotelId)
     this.fetchHotelData(Number(this.hotelId));
   },
   methods: {
+
+    setHotelId(data){
+      store.hotelId = data;
+      console.log("store id", store.hotelId)
+    },
+
   fetchHotelData(hotelId) {
     const jsonFilePath = '/assets/json/hotel-booking.json';
     axios

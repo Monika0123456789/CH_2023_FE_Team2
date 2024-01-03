@@ -15,5 +15,6 @@ export const store = reactive({
     checkoutDate : null,
     travellerDetailArr : [],
     travellerCount : 0,
-    userData : []
+    userData : [],
+    price : 0
 })
