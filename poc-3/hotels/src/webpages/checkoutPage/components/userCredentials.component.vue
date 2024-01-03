@@ -1,23 +1,23 @@
 <template>
     <div class="formContainer">
         <div class="colsFull">
-          <label htmlFor="identityproof" class="form_label required">Upload your Id</label>
+          <label for="identityproof" class="form_label required">Upload your Id</label>
           <input type="file" class="idProof" id="identityproof"/>
         </div>
         <div class="colsHalf">
-          <label htmlFor="name" class="form_label required">Full Name</label>
+          <label for="name" class="form_label required">Full Name</label>
           <input class="form_inputs" id="name" type="text"  v-on:input="handleName($event)" />
         </div>
         <div class="colsHalf">
-          <label htmlFor="email" class="form_label required">Email address</label>
+          <label for="email" class="form_label required">Email address</label>
           <input class="form_inputs" id="email" type="email"  v-on:input="handleEmail($event)"/>
         </div>
         <div class="colsHalf">
-          <label htmlFor="phone" class="form_label required">Mobile number</label>
+          <label for="phone" class="form_label required">Mobile number</label>
           <input class="form_inputs" id="phone" type="number" v-on:input="handlePhone($event)" />
         </div>
         <div class="colsHalf">
-          <label htmlFor="nationality" class="form_label required">Nationality</label>
+          <label for="nationality" class="form_label required">Nationality</label>
           <select class="form_inputs" id="nationality"  name="nationality" v-on:input="handleNationality($event)">
             <option value="IND">India</option>
             <option value="USA">United States</option>
@@ -47,20 +47,20 @@
           </select>
         </div>
         <div class="colsHalf">
-          <label htmlFor="dob" class="form_label required">Date of Birth</label>
+          <label for="dob" class="form_label required">Date of Birth</label>
           <input class="form_inputs" id="dob" type="date" v-on:input="handleDob($event)"/>
         </div>
         <div class="colsHalf">
-          <label htmlFor="gender" class="form_label required">Select Gender</label>
+          <label for="gender" class="form_label required">Select Gender</label>
           <input type="radio" id="male" name="gender" value="male" v-on:input="handleGender($event)"/>
-          <label htmlFor="male" class="gender_label">Male</label>
+          <label for="male" class="gender_label">Male</label>
           <input type="radio" id="female" name="gender" value="female" v-on:input="handleGender($event)"/>
-          <label htmlFor="female" class="gender_label">Female</label>
+          <label for="female" class="gender_label">Female</label>
           <input type="radio" id="other" name="gender" value="other" v-on:input="handleGender($event)"/>
-          <label htmlFor="other" class="gender_label">Other</label>
+          <label for="other" class="gender_label">Other</label>
         </div>
         <div class="colsFull">
-          <label htmlFor="addr" class="form_label">Address</label>
+          <label for="addr" class="form_label">Address</label>
           <textarea id="addr" class="addressField" v-on:input="handleAddress($event)"/>
         </div>
     </div>

@@ -3,7 +3,7 @@
 
     <HeaderMain />
     <router-view></router-view>
-    <Footer />
+    <Footer v-if="$route.path != '/adminDashboard'" />
   </div>
 </template>
 <script>
@@ -16,7 +16,9 @@ export default {
       email: "hotel.booking.admin@gmail.com",
       password: "admin@123"
     };
+    const loggedIn = false;
     localStorage.setItem("adminData", JSON.stringify(adminData))
+    localStorage.setItem("loggedIn", JSON.stringify(loggedIn))
 
   },
   components: {

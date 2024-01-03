@@ -8,5 +8,13 @@ export const store = reactive({
     nationality : "",
     gender : "",
     address : "",
-    dob : ""
+    dob : "",
+    checkin :null,
+    checkout : null,
+    checkinDate : null, // Sat Dec 30 2023 05:30:00 GMT+0530 (India Standard Time)
+    checkoutDate : null,
+    travellerDetailArr : [],
+    travellerCount : 0,
+    userData : [],
+    price : 0
 })

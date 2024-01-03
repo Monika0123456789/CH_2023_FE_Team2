@@ -37,6 +37,10 @@ import {
   faTaxi,
   faUserShield,
   faCircleCheck,
+  faArrowRightFromBracket,
+  faBed,
+  faStairs,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -50,6 +54,7 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+
 
 library.add(
   faLocationDot,
@@ -85,6 +90,10 @@ library.add(
   faInstagram,
   faLinkedin,
   faTwitter,
+  faArrowRightFromBracket,
+  faBed,
+  faStairs,
+  faArrowLeft
 );
 
 const app = createApp(App);
