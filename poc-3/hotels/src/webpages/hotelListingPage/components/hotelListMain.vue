@@ -8,6 +8,8 @@
 <script>
 import HotelList from './hotelListCard.vue'
 import HotelFilteringMain from './HotelFilteringmain.vue';
+import { store } from '../../../store.js';
+
 export default {
   components: {
     HotelList,

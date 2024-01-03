@@ -13,7 +13,8 @@ const routes = [
     component: HomeComp,
   },
   {
-    path: "/checkoutPage",
+    path: "/checkoutPage/:hotelId",
+    name : "checkout",
     component: CheckoutComp,
   },
   {
