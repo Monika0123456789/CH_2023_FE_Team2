@@ -13,34 +13,18 @@ export default {
     HotelList,
     HotelFilteringMain, 
   },
-  methods: {
-  openHotelDetails(item) {
-    // Navigate to the "hoteldetails" page with the hotelId parameter
-    this.$router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
-  },
-}
 };
 </script>
 <style scoped>
 .listMain{
   display: flex;
   gap: 2%;
-  box-sizing: border-box;
 }
 .filters{
-  width: 25%;
+  width: 28%;
 }
 .hotelLists{
-  width: 73%;
-}
-@media screen and (max-width : 760px) {
-  .listMain{
-    flex-direction: column;
-  }
-  .hotelLists{
-    width: 100%;
-  }
-  
+  width: 70%;
 }
 </style>
 

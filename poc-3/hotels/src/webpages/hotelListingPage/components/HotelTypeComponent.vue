@@ -3,16 +3,16 @@
     <h2 style="margin-top: 0;">Hotel Type</h2>
 
     <div>
-      <label>
-        <input
-          type="checkbox"
-          value="All"
-          :checked="selectedTypes.includes('All')"
-          @change="handleCheckboxChange('All')"
-        />
-        All
-      </label>
-    </div>
+    <label>
+      <input
+        type="checkbox"
+        value="All"
+        :checked="selectedTypes.length === uniqueTypes.length"
+        @change="handleCheckboxChange('All')"
+      />
+      All
+    </label>
+  </div>
 
     <div v-for="type in uniqueTypes" :key="type">
       <label>
@@ -31,6 +31,10 @@
 <script>
 export default {
   name: 'HotelTypeFilter',
+  data(){
+    return{
+    selectedType:"",}
+  },
   props: {
     hotels: Array,
     selectedTypes: Array,
@@ -45,7 +49,8 @@ export default {
       let updatedSelectedTypes;
 
       if (type === 'All') {
-        updatedSelectedTypes = [];
+        // If "All" checkbox is checked, select all types
+        updatedSelectedTypes = this.selectedTypes.length === this.uniqueTypes.length ? [] : [...this.uniqueTypes];
       } else {
         // Toggle the selected type
         if (this.selectedTypes.includes(type)) {
