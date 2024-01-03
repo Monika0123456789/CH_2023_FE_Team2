@@ -18,12 +18,12 @@
 
       <tbody>
         <tr v-for="(dataObj, index) in booking_details.bookingData" :key="index">
-          <td>{{ dataObj.id }}</td>
-          <td>{{ dataObj.data.fullName }}</td>
-          <td>{{ dataObj.data.checkin }}</td>
-          <td>{{ dataObj.data.checkout }}</td>
-          <td>{{ dataObj.data.numberOfTravellers }}</td>
-          <td class="amount">${{ dataObj.data.price }}</td>
+          <td>{{ dataObj.bookingId }}</td>
+          <td>{{ dataObj.name }}</td>
+          <td>{{ dataObj.checkin }}</td>
+          <td>{{ dataObj.checkout }}</td>
+          <td>{{ dataObj.travellerCount }}</td>
+          <td class="amount">${{ dataObj.price }}</td>
         </tr>
 
       </tbody>
@@ -39,7 +39,7 @@ export default {
     return {
       // obtaining the customer hotel booking details object from the local storage
       booking_details: {
-        bookingData: JSON.parse(localStorage.getItem("Booking Details")) || []
+        bookingData: JSON.parse(localStorage.getItem("Data")) || []
       }
     }
   },
