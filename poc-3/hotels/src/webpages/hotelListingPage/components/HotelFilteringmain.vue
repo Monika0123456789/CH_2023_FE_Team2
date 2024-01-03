@@ -2,31 +2,51 @@
 <template>
   <div>
     <!-- Other existing components and code -->
-    <HotelTypeComponent :hotels="hotels" :selectedTypes="selectedTypes" @typeChange="handleTypeChange" />
-    <PriceRangeFilter @price-range-updated="handlePriceRangeChange" />
-    <CustomerRating @ratingChange="handleRatingChange" /><!-- Include the component and listen to the 'ratingChange' event -->
+    <HotelTypeComponent
+      :hotels="hotels"
+      :selectedTypes="selectedTypes"
+      @typeChange="handleTypeChange"
+    />
+    <PriceRangeFilter 
+      :min="priceRange.min"
+      :max="priceRange.max"
+      @price-range-updated="handlePriceRangeChange" 
+    />
+    <PopularTypeComponent/>
+    <CustomerRating @ratingChange="handleRatingChange" />
+    <!-- Include the component and listen to the 'ratingChange' event -->
+    <RatingStarComp/>
     <AmenitiesFilter :hotels="filteredHotels" :selectedAmenities="selectedAmenities" @amenitiesChange="handleAmenitiesChange" />
-    
+    <BottomButton @clearAllFilters="handleClearAllFilters" />
+
     <div v-for="hotel in filteredHotels" :key="hotel.id">
-      <p>{{ hotel.name }} - {{ hotel.location }} - {{ hotel.price }}</p>
+      <p>{{ hotel.id }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import HotelTypeComponent from './HotelTypeComponent.vue';
-import AmenitiesFilter from './ammenitiesComponent.vue'; // Assuming the correct import name
-import PriceRangeFilter from './PriceRangeFilter.vue';
-import CustomerRating from './CustomerRatingComponent.vue';
-import hotelData from '../../../../public/assets/json/hotel-booking.json';
-
+import HotelTypeComponent from "./HotelTypeComponent.vue";
+import AmenitiesFilter from "./ammenitiesComponent.vue";
+import PriceRangeFilter from "./PriceRangeFilter.vue";
+import CustomerRating from "./CustomerRatingComponent.vue";
+import BottomButton from "./BottombuttomComponent.vue";
+import RatingStarComp from "./RatingStarComponent.vue";
+import PopularType from "./PopularTypeComponent.vue";
+import hotelData from "../../../../public/assets/json/hotel-booking.json";
+import { filteredHotel } from "../js/filteredHotelId.js";
+import PopularTypeComponent from "./PopularTypeComponent.vue";
 export default {
   components: {
     HotelTypeComponent,
     AmenitiesFilter,
     PriceRangeFilter,
     CustomerRating,
-  },
+    BottomButton,
+    RatingStarComp,
+    PopularType,
+    PopularTypeComponent
+},
   data() {
     return {
       hotels: hotelData.items || [],
@@ -45,23 +65,37 @@ export default {
 
       // Apply existing filters
       if (this.selectedTypes.length > 0) {
-        filtered = filtered.filter((hotel) => this.selectedTypes.includes(hotel.type));
+        filtered = filtered.filter((hotel) =>
+          this.selectedTypes.includes(hotel.type)
+        );
       }
 
       if (this.selectedAmenities.length > 0) {
         filtered = filtered.filter((hotel) =>
-          this.selectedAmenities.every((amenity) => hotel.Facilities.includes(amenity))
+          this.selectedAmenities.every((amenity) =>
+            hotel.Facilities.includes(amenity)
+          )
         );
       }
 
-      filtered = filtered.filter((hotel) => hotel.price >= this.priceRange.min && hotel.price <= this.priceRange.max);
+      filtered = filtered.filter(
+        (hotel) =>
+          hotel.price >= this.priceRange.min &&
+          hotel.price <= this.priceRange.max
+      );
 
       // Apply the new rating filter
       if (this.selectedRating !== null) {
-        filtered = filtered.filter((hotel) => hotel.rating === this.selectedRating);
+        filtered = filtered.filter(
+          (hotel) => hotel.rating === this.selectedRating
+        );
       }
 
-      return filtered;
+      const hotelIds = filtered.map((hotel) => hotel.id);
+
+      this.addHotelId(hotelIds);
+
+      return hotelIds;
     },
   },
   methods: {
@@ -71,11 +105,26 @@ export default {
     handleAmenitiesChange(selectedAmenities) {
       this.selectedAmenities = selectedAmenities;
     },
-    handlePriceRangeChange(priceRange) {
-      this.priceRange = priceRange;
+    handlePriceRangeChange(updatedRange) {
+      this.priceRange.min = updatedRange.min;
+      this.priceRange.max = updatedRange.max;
+    },
+    handleClearAllFilters() {
+     
+      this.selectedTypes = [];
+      this.selectedAmenities = [];
+      this.priceRange = {
+        min: 200,
+        max: 1000,
+      };
+      this.selectedRating = null;
     },
     handleRatingChange(selectedRating) {
       this.selectedRating = selectedRating; // Update the selected rating when received from the CustomerRating component
+    },
+    addHotelId(ids) {
+      filteredHotel.filteredId = ids;
+      // console.log(filteredHotel.filteredId );
     },
   },
 };

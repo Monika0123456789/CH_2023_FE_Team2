@@ -5,7 +5,7 @@
       <label>
         <input
           type="checkbox"
-          :checked="selectedAmenities.includes(amenity.value)"
+          :checked="isSelected(amenity.value)"
           @change="() => handleCheckboxChange(amenity.value)"
         />
         {{ amenity.label }}
@@ -66,9 +66,10 @@ export default {
       this.showAll = !this.showAll;
     },
     onAmenitiesChange(selectedAmenities) {
-     
       this.$emit('amenitiesChange', selectedAmenities);
-     
+    },
+    isSelected(type) {
+      return this.selectedAmenities.includes(type);
     },
   },
 };
