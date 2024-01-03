@@ -146,7 +146,7 @@ export default {
       document.getElementById('popup-container').style.display = 'none';
     },
     openHotelDetails(item) {
-      router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
+      router.push({ name: 'hoteldetails', params: { hotelId:  item.id} });
       window.scrollTo(0, 0);
     },
 

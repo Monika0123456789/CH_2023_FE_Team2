@@ -11,23 +11,23 @@
           <h2>Room {{ room.roomId }}</h2>
           <div class="detailroomfacilities">
             <ul>
-              <li v-for="(facility, index) in room.roomFacilities.slice(0, 4)" :key="index">{{ facility }}</li>
+            <li class="facilityList" v-for="(facility, index) in room.roomFacilities.slice(0, 3)" :key="index">{{facility}}</li>
               <li><span class="detailmorelink" @click="handleRoomSelection(room)">more</span></li>
             </ul>
           </div>
           <div class="price">
             <h3>{{ `Price: $${selectedHotel.price}` }}</h3>
+            <button class="roomoptionselectroombutton" @click="selectRoom">Select Room</button>
           </div>
-
-          <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="selectRoom" v-on:click="navigate">Select Room</button></router-link>
-         
-
+          </div>
+         <!-- room option popup -->
+          <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="selectRoom" v-on:click="navigate">Select Room</button></router-link>   
           <div v-if="room === selectedRoom" class="hoteldetail-popup-container">
             <div>
               <div class="hoteldetail-popup-content">
                 <div class="popupheadingpart">
                   <h2>Room {{ selectedRoom.roomId }}</h2>
-                  <font-awesome-icon :icon="['fas', 'xmark']"  class="detailpopupclose" @click="closePopup" style="color:#a29898; cursor: pointer;"/>
+                  <font-awesome-icon :icon="['fas', 'xmark']"  class="detailpopupclose" @click="closePopup" />
                 </div>
                 <hr />
                 <img :src="selectedRoom.images[0]" :alt="`Room ${selectedRoom.roomId} Image 1`" />
@@ -36,18 +36,15 @@
                 </div>
                 <div class="facilities">
                   <h3>Facilities</h3>
-                  <ul>
-                    <li v-for="(facility, index) in selectedRoom.roomFacilities" :key="index">
-                      <font-awesome-icon :icon="['fas', 'circle-check']" style="color: green;"/>&nbsp;{{ facility }}
-                    </li>
-                  </ul>
-                </div>
+                  <div v-for="(facility, index) in selectedRoom.roomFacilities" :key="index">
+                      <font-awesome-icon :icon="['fas', 'circle-check']" style="color: green;"/>&nbsp;&nbsp;{{ facility }}
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 <script>
@@ -65,12 +62,6 @@ export default {
     selectedHotel: null,
     store
     };
-  },
-  watch: {
-    hotelId(newHotelId) {
-      const hotelIdToFind = Number(newHotelId);
-      this.fetchHotelData(hotelIdToFind);
-    },
   },
   created() {
     console.log('Hotel ID Type:', typeof this.hotelId);

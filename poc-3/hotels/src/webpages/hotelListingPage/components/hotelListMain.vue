@@ -18,7 +18,7 @@ export default {
   methods: {
   openHotelDetails(item) {
     // Navigate to the "hoteldetails" page with the hotelId parameter
-    this.$router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
+    this.$router.push({ name: 'hoteldetails', params: { hotelId: Number(item.id) } });
   },
 }
 };
