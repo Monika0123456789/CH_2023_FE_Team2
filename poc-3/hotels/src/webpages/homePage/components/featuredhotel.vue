@@ -2,8 +2,7 @@
   <section class="section-3">
     <h2>Featured Hotels</h2>
     <div class="section3-container">
-      <!-- All Hotel Images in the Container -->
-      <figure v-for="(hotel, index) in hotels" :key="index" class="card">
+      <div v-for="(hotel, index) in hotels" :key="index" class="card">
         <div class="hotel-img">
           <router-link  to="/hotellisting" onclick="window.scrollTo(0, 0);">
           <img :src="hotel.imgSrc" alt="">
@@ -20,8 +19,7 @@
             <font-awesome-icon :icon="['fas', 'star']" style="color: #ffdf00; font-size: 20px;"/>
           </h4>
         </div>
-      </figure>
-      <!-- end of adding the hotel img -->
+      </div>
     </div>
   </section>
 </template>

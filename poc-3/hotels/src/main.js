@@ -40,6 +40,9 @@ import {
   faUserShield,
   faCircleCheck,
   faArrowRightFromBracket,
+  faBed,
+  faStairs,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -89,7 +92,10 @@ library.add(
   faInstagram,
   faLinkedin,
   faTwitter,
-  faArrowRightFromBracket
+  faArrowRightFromBracket,
+  faBed,
+  faStairs,
+  faArrowLeft
 );
 import 'primevue/resources/themes/saga-blue/theme.css'; // Choose a theme
 import 'primevue/resources/primevue.min.css';

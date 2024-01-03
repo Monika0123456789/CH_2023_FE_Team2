@@ -8,11 +8,21 @@
 <script>
 import HotelList from './hotelListCard.vue'
 import HotelFilteringMain from './HotelFilteringmain.vue';
+import { store } from '../../../store.js';
+
 export default {
   components: {
     HotelList,
     HotelFilteringMain, 
   },
+
+  methods: {
+  openHotelDetails(item) {
+    // Navigate to the "hoteldetails" page with the hotelId parameter
+    this.$router.push({ name: 'hoteldetails', params: { hotelId: Number(item.id) } });
+  },
+}
+
 };
 </script>
 <style scoped>

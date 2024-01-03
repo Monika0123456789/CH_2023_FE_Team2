@@ -11,7 +11,9 @@
         <travellerDetailMainComp/>
         <br><br><br>
         <summaryComp/>
-        <br><br>
+        <br>
+        <localStorageComp/>
+        <br>
     </div>
     
 </template>
@@ -21,8 +23,9 @@
     import checkinCheckoutComp from "./checkinCheckout.component.vue";
     import travellerDetailMainComp from "./travellerDetailMain.component.vue";
     import summaryComp from "./summary.component.vue";
-
+    import localStorageComp from "./localStorage.component.vue";
     import { store } from '../../../store.js';
+
     export default{
         data(){
             return{
@@ -34,7 +37,8 @@
             userCredentialsComp,
             checkinCheckoutComp,
             travellerDetailMainComp,
-            summaryComp
+            summaryComp,
+            localStorageComp,
         },
     }
 </script>

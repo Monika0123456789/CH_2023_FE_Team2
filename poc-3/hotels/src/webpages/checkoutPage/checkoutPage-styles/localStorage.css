@@ -1,0 +1,8 @@
+.submitBtn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(43, 39, 241, 0.707);
+    display:block;
+    margin: 0 auto;
+  }
