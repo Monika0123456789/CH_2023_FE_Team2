@@ -26,11 +26,7 @@
 
 <script>
 export default {
-  methods: {
-    navigateToHotelListing() {
-      console.log('Navigating to hotel listing page');
-    },
-  },
+
 };
 </script>
 
