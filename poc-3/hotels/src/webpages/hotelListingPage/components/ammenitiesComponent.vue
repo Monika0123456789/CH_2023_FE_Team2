@@ -12,7 +12,7 @@
       </label>
     </div>
     <div v-if="amenitiesData.length > 5" style="display: flex; align-items: center; cursor: pointer;" @click="toggleShowAll">
-      <span>{{ showAll ? 'See less' : 'See more' }}</span>&nbsp;<FaAngleDown />
+      <span>{{ showAll ? 'See less' : 'See more' }}</span>&nbsp;
     </div>
   </div>
 </template>
