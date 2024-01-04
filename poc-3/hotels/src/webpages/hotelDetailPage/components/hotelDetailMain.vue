@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-  <SectionOne  :hotelId="hotelId"/>
+  <SectionOne  :hotelId="Number(hotelId)"/>
   <SectionAbout/>
   <SectionAmenities/>
-  <SectionRoomOptions :hotelId="hotelId"/>
+  <SectionRoomOptions :hotelId="Number(hotelId)"/>
   <SectionFive/>
   </div>
 </template>

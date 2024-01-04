@@ -1,12 +1,8 @@
 <template>
-    <section class="img-section">
-    <div v-if="isLoading">
-      <!-- You can customize the loading message or spinner here -->
-      <p>Loading hotel data...</p>
-    </div>
-    <div v-else>
+  <section class="img-section">
+    <div v-if="hotel">
       <h1>{{ hotel.name }}</h1>
-      <p v-if="hotel">
+      <p >
         <font-awesome-icon :icon="['fas', 'location-dot']"/>
         {{hotel.location}}&nbsp;
         <a id="openMap" href="#" @click.prevent="openMapPopup">
@@ -32,13 +28,13 @@
   </div>
 
     <!-- Embedded Google Map Popup -->
-    <div v-show="mapPopupVisible" class="map-container1">
+   <div v-show="mapPopupVisible" class="map-container1">
       <div class="popup">
         <h2>View Our Hotel Location<font-awesome-icon :icon="['fas', 'xmark']" class="close" @click.prevent="closeMapPopup"/></h2>
         <div id="mapContainer">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1698044038173!5m2!1sen!2sin"
-            width="505" height="450" style="border:0;" allowfullscreen="" loading="easy" referrerpolicy="no-referrer-when-downgrade">
+            width="505" height="450" style="border:0;" loading="easy">
           </iframe>
         </div>
         <div class="view-map">
@@ -56,25 +52,16 @@ export default {
   data() {
     return {
       hotel: null, 
-      isLoading: true, 
       jsonData: [],
       mapPopupVisible: false
     };
   },
-  watch: {
-    hotelId(newHotelId) {
-      const hotelIdToFind = Number(newHotelId); 
-      this.fetchHotelData(hotelIdToFind);
-    },
-  },
   created() {
-    console.log('Hotel ID Type:', typeof this.hotelId);
     this.fetchHotelData(Number(this.hotelId));
   },
   methods: {
     fetchHotelData(hotelId) {
       const jsonFilePath = '/assets/json/hotel-booking.json';
-
       axios
         .get(jsonFilePath)
         .then(response => {
@@ -82,16 +69,12 @@ export default {
 
           // Find the hotel with the given hotelId
           this.hotel = this.jsonData.find(item => item.id === hotelId);
-
-          // Log the fetched hotel data (you can remove this line in production)
-          console.log('Fetched Hotel JSON Data:', this.jsonData);
-          console.log('Fetched Hotel Data:', this.hotel);
-
-          this.isLoading = false; // Set loading state to false after data is fetched
+          
+          // console.log('Fetched Hotel JSON Data:', this.jsonData);
+          // console.log('Fetched Hotel Data:', this.hotel);
         })
         .catch(error => {
           console.error('Error fetching data:', error);
-          this.isLoading = false; // Set loading state to false in case of an error
         });
     },
     openMapPopup() {

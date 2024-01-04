@@ -92,12 +92,8 @@
   }
 }
 
-/* Styles for Section 01 in Landing page ---------Ends Here------------------ */
-
 @media screen and (max-width: 760px) {
-  /* Media Queries for Section 1 (for devices with 760px or lesser screen size) - Landing page ---------starts here --------- */
-
-  .section1_parent-div {
+ .section1_parent-div {
       width: 100%;
       margin-bottom:10%;
   }
@@ -136,5 +132,4 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
   }
-  /* Media Queries for Section 1 (for devices with 760px or lesser screen size) - Landing page ---------Ends here ---------  */
 }
