@@ -28,15 +28,20 @@ export default defineComponent({
       priceRange: [200, 800],
     };
   },
+  watch: {
+    priceRange: {
+      handler: 'handlePriceChange',
+      deep: true,
+    },
+  },
   methods: {
     formatPrice(value) {
       return `$${value}`;
     },
     handlePriceChange() {
-      // Emit the updated price range to the parent component
       this.$emit('price-range-updated', {
-        min: this.min,
-        max: this.priceRange,
+        min: this.priceRange[0],
+        max: this.priceRange[1],
       });
     },
   },
@@ -44,5 +49,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* No additional styles for now */
 </style>
