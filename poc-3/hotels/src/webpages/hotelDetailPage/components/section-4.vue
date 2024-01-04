@@ -69,8 +69,8 @@
   },
   // LifeCycle hook to fetch hotel data when the component is created
   created() {
-    console.log('Hotel ID Type:', typeof this.hotelId);
-    console.log("hotel id", this.hotelId)
+    // console.log('Hotel ID Type:', typeof this.hotelId);
+    // console.log("hotel id", this.hotelId)
     this.fetchHotelData(Number(this.hotelId));
   },
     methods: {
