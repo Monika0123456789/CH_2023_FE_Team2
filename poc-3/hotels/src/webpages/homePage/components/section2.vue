@@ -1,5 +1,6 @@
 <template>
     <section class="section2">
+    <!-- left division to contain the image and client ratings -->
       <div class="section2-div left-image">
           <img class="adImage" src="/assets/images/01(1).jpg" alt="ADVERISEMENTS"/>
           <img class="star-top" src="/assets/images/starTop1.svg" alt="starImage"/>
@@ -27,6 +28,8 @@
               </div>
           </div>
       </div>
+
+      <!-- right div contain the text icons and services provided by the listed hotels -->
       <div class="section2-div right-content">
           <h1>The Best Holidays Start Here!</h1>
           <p>Book your hotel with us and don't forget to grab an awesome hotel deals to save a massive on your
@@ -44,31 +47,26 @@
                   </p>
               </div>
               <div class="grid-content">
-
                       <i class="fa-solid fa-stopwatch">
                         <font-awesome-icon :icon="['fas', 'stopwatch']" />
                       </i>
                       <h3>Quick Services</h3>
-                  
-                      <p>
+                     <p>
                           Supposing so be resolving breakfast am or perfectly.
                       </p>
-                 
-
               </div>
-              <div class="grid-content">
 
-                <i class="fa-solid fa-shield">
+              <div class="grid-content">
+                 <i class="fa-solid fa-shield">
                     <font-awesome-icon :icon="['fas', 'shield']" />
-                </i>
-                
+                </i>               
                 <h3>High Security</h3>
                   <p>
                       Arranging rapturous did believe him all had supported.
                   </p>
               </div>
-              <div class="grid-content">
 
+              <div class="grid-content">
                   <i class="fa-solid fa-bolt">
                     <font-awesome-icon :icon="['fas', 'bolt']" class="bolt"/>
                   </i>

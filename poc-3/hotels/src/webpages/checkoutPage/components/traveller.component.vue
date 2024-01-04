@@ -1,4 +1,6 @@
 <template>
+
+  <!-- division to contain the form to obtain additional travellers details -->
     <div class="travellerContainer">
       <hr />
       <div class="travellerBanner">
@@ -29,6 +31,7 @@
             }
         },
         methods:{
+          // method to obtain the value and remove it from travellerDetailArr
             removeTraveller(val){
                 console.log("value:", val);
                 store.travellerDetailArr.splice(store.travellerDetailArr.indexOf(val), 1);

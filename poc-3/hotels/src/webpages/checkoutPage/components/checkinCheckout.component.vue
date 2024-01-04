@@ -1,4 +1,5 @@
 <template>
+    <!-- division to contain the form to collect checkin and checkout date from user -->
     <div class="checkinCheckoutContainer">
         <div class="cols">
           <label class="required dateLabels">Check-in Date</label>
@@ -20,6 +21,7 @@ import { store } from '../../../store.js';
             }
         },
         methods:{
+            // methods to handle and store the checkin and checkout dates into store
             handleCheckindate(){
                 var q = new Date();
                 var date = new Date(q.getFullYear(),q.getMonth(),q.getDate());
@@ -33,7 +35,6 @@ import { store } from '../../../store.js';
                     store.checkinDate = userDate;
                     store.checkin = this.$refs.checkinDate.value;
                 }
-                
                 // Sat Dec 30 2023 05:30:00 GMT+0530 (India Standard Time)
             },
 

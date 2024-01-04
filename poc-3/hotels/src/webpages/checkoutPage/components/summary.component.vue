@@ -1,5 +1,6 @@
 <template>
-    <div class="summaryContainer" v-on:click="display()">
+    <!-- div to contain the user checkin and checkout dates and the amount to be paid -->
+    <div class="summaryContainer">
       <div class="bookingDetails">
         <label for="checkInDate" class="bookingLabels">Check-In</label>
         <h4 class="summaryInp">{{ store.checkin }}</h4>
