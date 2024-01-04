@@ -19,7 +19,7 @@
             <h3>{{ `Price: $${selectedHotel.price}` }}</h3>
           </div>
 
-          <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="selectRoom" v-on:click="navigate">Select Room</button></router-link>
+          <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="redirect()" v-on:click="navigate">Select Room</button></router-link>
          
 
           <div v-if="room === selectedRoom" class="hoteldetail-popup-container">
@@ -78,10 +78,8 @@ export default {
     this.fetchHotelData(Number(this.hotelId));
   },
   methods: {
-
-    setHotelId(data){
-      store.hotelId = data;
-      console.log("store id", store.hotelId)
+    redirect(){
+      window.scrollTo(0,0);
     },
 
   fetchHotelData(hotelId) {

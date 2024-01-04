@@ -36,7 +36,7 @@
               <div class="grid-content">
 
                   <i class="fa-solid fa-utensils">
-                    <font-awesome-icon :icon="['fas', 'utensils']" class="utensils"/>
+                    <font-awesome-icon :icon="['fas', 'utensils']"/>
                   </i>
                   <h3>Quality Food</h3>
                   <p>
@@ -46,7 +46,7 @@
               <div class="grid-content">
 
                       <i class="fa-solid fa-stopwatch">
-                        <font-awesome-icon :icon="['fas', 'stopwatch']" class="stopwatch"/>
+                        <font-awesome-icon :icon="['fas', 'stopwatch']" />
                       </i>
                       <h3>Quick Services</h3>
                   
@@ -59,7 +59,7 @@
               <div class="grid-content">
 
                 <i class="fa-solid fa-shield">
-                    <font-awesome-icon :icon="['fas', 'shield']" class="shield"/>
+                    <font-awesome-icon :icon="['fas', 'shield']" />
                 </i>
                 
                 <h3>High Security</h3>

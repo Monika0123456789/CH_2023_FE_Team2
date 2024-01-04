@@ -70,7 +70,7 @@
         created(){
           this.hotelData = jsonData.items.find(item => item.id === Number(this.$route.params.hotelId));
           store.price = this.hotelData.price;
-          alert(store.price);
+          
         },
         methods: {
             incrementRoomCount(){
