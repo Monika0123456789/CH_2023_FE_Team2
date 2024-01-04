@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Filtering</h2>
+    
     <HotelTypeComponent
       :hotels="hotels"
       :selectedTypes="selectedTypes"
@@ -17,9 +17,9 @@
     <RatingStarComp/>
     <AmenitiesFilter :hotels="filteredHotels" :selectedAmenities="selectedAmenities" @amenitiesChange="handleAmenitiesChange" />
     <BottomButton @clearAllFilters="handleClearAllFilters" />
+    
 
     <div v-for="hotel in filteredHotels" :key="hotel.id">
-      <p>{{ hotel.id }}</p>
     </div>
   </div>
 </template>
@@ -59,6 +59,7 @@ export default {
     };
   },
   computed: {
+    
     filteredHotels() {
       let filtered = this.hotels;
 
@@ -96,6 +97,7 @@ export default {
     },
   },
   methods: {
+    
     handleTypeChange(selectedTypes) {
       this.selectedTypes = selectedTypes;
     },
@@ -125,3 +127,4 @@ export default {
   },
 };
 </script>
+
