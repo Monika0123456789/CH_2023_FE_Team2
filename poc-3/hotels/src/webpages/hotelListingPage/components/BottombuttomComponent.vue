@@ -16,9 +16,9 @@ export default {
     handleClearAllClick() {
       
       this.$emit('clearAllFilters');
-      
      
       this.$emit('clearAllCheckboxes');
+      
     },
   },
 };

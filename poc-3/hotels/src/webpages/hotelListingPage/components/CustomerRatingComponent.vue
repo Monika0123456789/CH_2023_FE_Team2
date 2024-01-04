@@ -25,6 +25,7 @@ export default {
     };
   },
   methods: {
+    
     handleRatingClick(rating) {
      
       const newRating = this.selectedRating === rating ? null : rating;

@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <HotelTypeComponent
       :hotels="hotels"
       :selectedTypes="selectedTypes"
@@ -13,13 +12,23 @@
     />
     <PopularTypeComponent/>
     <CustomerRating @ratingChange="handleRatingChange" />
-   
     <RatingStarComp/>
-    <AmenitiesFilter :hotels="filteredHotels" :selectedAmenities="selectedAmenities" @amenitiesChange="handleAmenitiesChange" />
+    <AmenitiesFilter
+      ref="amenitiesFilterRef"
+      :hotels="hotels"
+      :selectedAmenities="selectedAmenities"
+      @amenitiesChange="handleAmenitiesChange"
+    />
     <BottomButton @clearAllFilters="handleClearAllFilters" />
-    
 
-    <div v-for="hotel in filteredHotels" :key="hotel.id">
+    <div v-if="filteredHotels.length === 0">
+        <p>Sorry, hotels not found.</p>
+      </div>
+      
+      <div v-else>
+        <div v-for="hotel in filteredHotels" :key="hotel.id">
+          <!-- Render your hotel content here -->
+        </div>
     </div>
   </div>
 </template>
@@ -31,10 +40,10 @@ import PriceRangeFilter from "./PriceRangeFilter.vue";
 import CustomerRating from "./CustomerRatingComponent.vue";
 import BottomButton from "./BottombuttomComponent.vue";
 import RatingStarComp from "./RatingStarComponent.vue";
-import PopularType from "./PopularTypeComponent.vue";
+import PopularTypeComponent from "./PopularTypeComponent.vue";
 import hotelData from "../../../../public/assets/json/hotel-booking.json";
 import { filteredHotel } from "../js/filteredHotelId.js";
-import PopularTypeComponent from "./PopularTypeComponent.vue";
+
 export default {
   components: {
     HotelTypeComponent,
@@ -43,9 +52,8 @@ export default {
     CustomerRating,
     BottomButton,
     RatingStarComp,
-    PopularType,
     PopularTypeComponent
-},
+  },
   data() {
     return {
       hotels: hotelData.items || [],
@@ -55,11 +63,10 @@ export default {
         min: 200,
         max: 1000,
       },
-      selectedRating: null, 
+      selectedRating: null,
     };
   },
   computed: {
-    
     filteredHotels() {
       let filtered = this.hotels;
 
@@ -93,11 +100,10 @@ export default {
 
       this.addHotelId(hotelIds);
 
-      return hotelIds;
+      return filtered;
     },
   },
   methods: {
-    
     handleTypeChange(selectedTypes) {
       this.selectedTypes = selectedTypes;
     },
@@ -109,7 +115,7 @@ export default {
       this.priceRange.max = updatedRange.max;
     },
     handleClearAllFilters() {
-     
+      // Clear all filters and checkboxes
       this.selectedTypes = [];
       this.selectedAmenities = [];
       this.priceRange = {
@@ -117,14 +123,17 @@ export default {
         max: 1000,
       };
       this.selectedRating = null;
+
+      
+      this.$refs.amenitiesFilterRef.clearAllCheckboxes();
+      
     },
     handleRatingChange(selectedRating) {
-      this.selectedRating = selectedRating; 
-       },
+      this.selectedRating = selectedRating;
+    },
     addHotelId(ids) {
       filteredHotel.filteredId = ids;
     },
   },
 };
 </script>
-
