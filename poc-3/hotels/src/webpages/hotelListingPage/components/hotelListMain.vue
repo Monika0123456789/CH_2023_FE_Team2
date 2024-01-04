@@ -15,6 +15,10 @@
 
     <div class="hotelLists">
       <HotelList />
+      <div v-if="filteredHotels.length === 0" class="sorry-message">
+        <p>Sorry, no hotels match the selected criteria.</p>
+      </div>
+      
     </div>
   </div>
 </template>
@@ -31,6 +35,7 @@ export default {
   },
   data() {
     return {
+      filteredHotels: [],
       isMobile: window.innerWidth <= 760,
       isFilterPopupVisible: false,
     };

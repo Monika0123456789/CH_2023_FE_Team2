@@ -68,9 +68,8 @@ export default {
     toggleShowAll() {
       this.showAll = !this.showAll;
     },
-    clearAllFilters() {
+    clearAllCheckboxes() {
     this.selectedAmenities = [];
-    this.$emit('amenitiesChange', this.selectedAmenities);
   },
 
     onAmenitiesChange(selectedAmenities) {
