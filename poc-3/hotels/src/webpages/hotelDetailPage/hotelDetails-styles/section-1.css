@@ -59,9 +59,10 @@
 
 /* Map PopUP Starts here */
 .map-container1 {
-  /* display: none; */
-  visibility: hidden;
-  opacity: 0;
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -70,37 +71,25 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   overflow: auto;
-  transition: visiblility 0s,opacity 0.5s ease;
 }
 
-.map-container1.visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-#mapContainer {
-  width: 500px;
-  height: 450px;
-}
 .popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
   border: 1px solid #ccc;
   border-radius: 2%;
   background-color: white;
+  overflow: auto;
+  width: 40%;
+  height: fit-content;
+}
+.mapHeadingContainer{
+  display: flex;
+  justify-content: space-between;
+}
+#mapContainer{
+  height: 300px
 }
 .popup h2 {
   margin-left: 10px;
-}
-.close {
-  position: absolute;
-  cursor: pointer;
-  right: 10px;
-  font-size: 30px;
-  color:#a29898;
 }
 .view-map {
   margin-top: 10px;
@@ -109,7 +98,7 @@
   width: 180px;
   height: auto;
   border-radius: 10px;
-  margin-left: 300px;
+  float: right;
   margin-right: 5px;
   color: white;
   background-color: rgb(98, 98, 207);
@@ -163,5 +152,9 @@
   .card{
     left: 10%;
     width: 80%;
+  }
+  .popup{
+    width: 80%;
+    height: fit-content;
   }
 }

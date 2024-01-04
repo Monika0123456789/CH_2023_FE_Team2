@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
 import HomeComp from "./webpages/homePage/components/home.vue";
 import CheckoutComp from "./webpages/checkoutPage/components/checkoutMain.vue";
 import  HotelDetails from './webpages/hotelDetailPage/components/hotelDetailMain.vue';
@@ -16,10 +15,6 @@ const routes = [
     path: "/checkoutPage/:hotelId",
     name : "checkout",
     component: CheckoutComp,
-  },
-  {
-    path: "/hoteldetails",
-    component: HotelDetails,
   },
   {
     path: "/hotellisting",

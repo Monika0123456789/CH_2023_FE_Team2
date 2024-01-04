@@ -3,10 +3,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
-  /* margin-top:1%; */
-  
 }
-
 .section-about h5 {
   margin-top: 0px;
   font-size: 2rem;
@@ -26,7 +23,6 @@ h5::after {
   margin-top: 15px;
 }
 .image-box {
-  /* display: inline-block; */
   display: flex;
   justify-content: center;
   width: 25px;

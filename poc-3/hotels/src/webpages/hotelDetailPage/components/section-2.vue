@@ -3,7 +3,7 @@
     <h5>About This Hotel</h5>
     <h1>Main Highlights</h1>
     <div class="icons">
-      <div class="image-box" v-for="(icon, index) in icons" :key="index" @click="iconClicked(index)">
+      <div class="image-box" v-for="(icon, index) in icons" :key="index">
         <font-awesome-icon :icon="['fas', icon]" style="font-size: 25px;" />
       </div>
     </div>
@@ -31,11 +31,6 @@ export default {
         "The hotel has in-Room Dining options available."
       ]
     };
-  },
-  methods: {
-    iconClicked(index) {
-      console.log(`Icon at index ${index} clicked`);
-    }
   }
 };
 </script>
