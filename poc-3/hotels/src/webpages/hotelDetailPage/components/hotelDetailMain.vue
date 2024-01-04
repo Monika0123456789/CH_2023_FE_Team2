@@ -22,7 +22,7 @@
       SectionFive 
     },
     props: {
-    hotelId: { type: Number, required: true },
+    hotelId: { type: String, required: true },
   }
   };
 </script>

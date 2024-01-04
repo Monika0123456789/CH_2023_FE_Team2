@@ -53,8 +53,7 @@
       </ul>
     </div>
 
-    <!-- <div class="toggleButtons"><button>1</button><button>2</button></div>
-  </div> -->
+    
 
     <div class="toggleButtons">
       <button class="pageButtons" @click="previousPage()">&lt;</button>
@@ -74,7 +73,7 @@ import router from '../../../router';
 import { faStar } from "@fortawesome/free-regular-svg-icons"
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faStar)
-
+import { filteredHotel } from '../js/filteredHotelId';
 export default {
   data() {
     return {
@@ -90,20 +89,25 @@ export default {
   },
 
 
+
   computed: {
     //counting total number of pages based on total entries of hotel in jsondata
     pageCount() {
       // console.log(Math.ceil(this.jsonData.length / this.hotelsPerPage))
       return Math.ceil(this.jsonData.length / this.hotelsPerPage);
     },
-    // Calculate the subset of hotels to display based on the current page
     displayedHotels() {
-      const startIndex = (this.currentPage - 1) * this.hotelsPerPage;
-      // console.log(startIndex)
-      const endIndex = startIndex + this.hotelsPerPage;
-      // console.log(endIndex)
-      return this.jsonData.slice(startIndex, endIndex);
-    },
+    const hotelIds = filteredHotel.filteredId;
+    if (!hotelIds || hotelIds.length === 0) {
+      return [];
+    }
+    const filteredHotels = this.jsonData.filter((hotel) => hotelIds.includes(hotel.id));
+
+    const startIndex = (this.currentPage - 1) * this.hotelsPerPage;
+    const endIndex = startIndex + this.hotelsPerPage;
+
+    return filteredHotels.slice(startIndex, endIndex);
+  },
   },
   methods: {
     // Change the current page

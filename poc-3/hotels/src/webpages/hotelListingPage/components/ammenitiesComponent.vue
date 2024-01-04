@@ -5,7 +5,7 @@
       <label>
         <input
           type="checkbox"
-          :checked="selectedAmenities.includes(amenity.value)"
+          :checked="isSelected(amenity.value)"
           @change="() => handleCheckboxChange(amenity.value)"
         />
         {{ amenity.label }}
@@ -18,8 +18,10 @@
 </template>
 
 <script>
+
 export default {
   name: 'Amenities',
+  
   data() {
     return {
       selectedAmenities: [],
@@ -49,6 +51,7 @@ export default {
     },
   },
   methods: {
+    
     handleCheckboxChange(type) {
       if (type === 'all') {
         const newSelected = this.selectedAmenities.length === this.amenitiesData.length ? [] : this.amenitiesData.map((amenity) => amenity.value);
@@ -65,10 +68,16 @@ export default {
     toggleShowAll() {
       this.showAll = !this.showAll;
     },
+    clearAllFilters() {
+    this.selectedAmenities = [];
+    this.$emit('amenitiesChange', this.selectedAmenities);
+  },
+
     onAmenitiesChange(selectedAmenities) {
-     
       this.$emit('amenitiesChange', selectedAmenities);
-     
+    },
+    isSelected(type) {
+      return this.selectedAmenities.includes(type);
     },
   },
 };

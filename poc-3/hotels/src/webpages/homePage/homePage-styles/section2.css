@@ -134,33 +134,20 @@
   
   /* to change the color of icons and faded background for icons Starts here ----------- */
   .fa-utensils {
-    
+    color: rgb(51, 225, 222);
     background-color: rgba(51, 225, 222, 0.2);
   }
   .fa-stopwatch {
-    
+    color: rgb(223, 58, 82);
     background-color: rgba(223, 58, 82, 0.2);
   }
   .fa-shield {
-    
+    color: rgb(226, 81, 3);
     background-color: rgba(226, 81, 3, 0.2);
   }
   .fa-bolt {
-    
-    background-color: rgba(48, 253, 185, 0.2);
-  }
-
-  .utensils{
-    color: rgb(51, 225, 222);
-  }
-  .stopwatch{
-    color: rgb(223, 58, 82);
-  }
-  .shield{
-    color: rgb(226, 81, 3);
-  }
-  .bolt{
     color: rgb(48, 253, 185);
+    background-color: rgba(48, 253, 185, 0.2);
   }
   /* icons with fadded background style ends here */
   

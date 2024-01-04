@@ -1,4 +1,4 @@
-  <template>
+<template>
     <!-- Room Options Component -->
     <div>
       <h1>Room options</h1>
@@ -36,6 +36,12 @@
                   <img :src="selectedRoom.images[0]" :alt="`Room ${selectedRoom.roomId} Image 1`" />
                   <div class="staticdata">
                     <p>Experience luxury in our spacious deluxe rooms.</p>
+                </div>
+                <div class="facilities">
+                  <h3>Facilities</h3>
+                  <div v-for="(facility, index) in selectedRoom.roomFacilities" :key="index">
+                      <font-awesome-icon :icon="['fas', 'circle-check']" style="color: green;"/>&nbsp;&nbsp;{{ facility }}
+                    </div>
                   </div>
                   <div class="facilities">
                     <h3>Facilities</h3>
@@ -58,21 +64,21 @@
     // hotelID from the parent component
     props: {
       hotelId: { type: Number, required: true },
-    },
-    data() {
-      return {
-      selectedRoom: null,
-      hotel: null,
-      selectedHotel: null,
-      store
-      };
-    },
-    // LifeCycle hook to fetch hotel data when the component is created
-    created() {
-      console.log('Hotel ID Type:', typeof this.hotelId);
-      console.log("hotel id", this.hotelId)
-      this.fetchHotelData(Number(this.hotelId));
-    },
+  },
+  data() {
+    return {
+    selectedRoom: null,
+    hotel: null,
+    selectedHotel: null,
+    store
+    };
+  },
+  // LifeCycle hook to fetch hotel data when the component is created
+  created() {
+    console.log('Hotel ID Type:', typeof this.hotelId);
+    console.log("hotel id", this.hotelId)
+    this.fetchHotelData(Number(this.hotelId));
+  },
     methods: {
       // Method to set hotelID in the store
       setHotelId(data){
@@ -99,6 +105,9 @@
       // Method to close the room options popup
       closePopup() {
         this.selectedRoom = null;
+      },
+      redirect(){
+        window.scrollTo(0,0);
       },
   },
 
