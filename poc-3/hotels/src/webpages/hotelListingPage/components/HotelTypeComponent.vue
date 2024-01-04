@@ -60,6 +60,7 @@ export default {
 
       this.$emit('typeChange', updatedSelectedTypes);
     },
+    
   },
 };
 </script>
