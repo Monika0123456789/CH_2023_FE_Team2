@@ -59,6 +59,7 @@ background-color: #45a049;
 .hoteldetail-popup-container{
   border: 2px solid gray;
   width: 100%;
+  overflow: scroll;
 }
 .detailroomfacilities li{
   padding-right: 15px;
@@ -81,6 +82,8 @@ background-color: #45a049;
   display: none;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6); 
@@ -105,15 +108,14 @@ background-color: #45a049;
 }
 
 .hoteldetail-popup-content {
-  background: white; 
-  padding: 1%;
-  border-radius: 10px;
   margin: auto;
+  margin-top: 25px;
+  background: white; 
+  border-radius: 10px;
   width: 60%;
-  height: 80%;
-  margin-top: 2%;
-  position: relative;
   overflow: auto;
+  height: fit-content;
+  padding-left: 1%;
 } 
 
 .hoteldetail-popup-content img {
