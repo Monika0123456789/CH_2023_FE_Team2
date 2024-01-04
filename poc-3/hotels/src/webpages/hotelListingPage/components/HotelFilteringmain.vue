@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    <h2>Filtering</h2>
     <HotelTypeComponent
       :hotels="hotels"
       :selectedTypes="selectedTypes"
