@@ -1,4 +1,5 @@
 <template>
+  <!-- division to contain the form to collect user credentials -->
     <div class="formContainer">
         <div class="colsFull">
           <label for="identityproof" class="form_label required">Upload your Id</label>
@@ -74,6 +75,7 @@
             }
         },
         methods: {
+            // methods to store the user credentials into the store
             handleName(event){
                 store.name = event.target.value;
             },
