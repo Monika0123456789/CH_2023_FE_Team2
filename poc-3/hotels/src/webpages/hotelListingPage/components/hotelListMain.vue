@@ -1,8 +1,8 @@
 <template>
   <div class="listMain container">
     <button class="menuButton" @click="toggleFilterPopup" v-if="isMobile">
-  &#9776; <!-- Unicode character for three horizontal lines -->
-</button>
+      &#9776; <!-- Unicode character for three horizontal lines -->
+    </button>
 
     <div v-if="isFilterPopupVisible" class="popupOverlay">
       <div class="popupContent">
@@ -26,7 +26,6 @@
 <script>
 import HotelList from './hotelListCard.vue'
 import HotelFilteringMain from './HotelFilteringmain.vue';
-import { store } from '../../../store.js';
 
 export default {
   components: {
@@ -56,10 +55,10 @@ export default {
     handleWindowResize() {
       this.isMobile = window.innerWidth <= 760;
       if (this.isMobile) {
-        this.isFilterPopupVisible = false; 
+        this.isFilterPopupVisible = false;
       }
     },
-    
+
   },
 };
 </script>
@@ -74,16 +73,16 @@ export default {
   width: 10%;
   position: absolute;
   right: 3%;
-  top:10%;
+  top: 10%;
 }
 
 .popupOverlay {
   position: fixed;
   top: 0;
-  
+
   width: 100%;
   height: 100%;
- 
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,9 +94,9 @@ export default {
   padding: 20px;
   border-radius: 8px;
   max-width: 80%;
-  width: auto; 
+  width: auto;
   position: absolute;
-  top: 50%; 
+  top: 50%;
   right: 0;
   transform: translate(0, -35%);
   overflow-y: auto;
@@ -111,9 +110,9 @@ export default {
 }
 
 .filters {
-  width: 28%;
-  overflow-y: auto; 
-  max-height: 80vh; 
+  width: 25%;
+  /* overflow-y: auto;  */
+  /* max-height: 80vh;  */
 }
 
 .hotelLists {
@@ -125,7 +124,8 @@ export default {
     flex-direction: column;
   }
 
-  .filters, .hotelLists {
+  .filters,
+  .hotelLists {
     width: 100%;
   }
 
@@ -134,7 +134,7 @@ export default {
   }
 
   .filters {
-    display: none; 
+    display: none;
   }
 }
 </style>

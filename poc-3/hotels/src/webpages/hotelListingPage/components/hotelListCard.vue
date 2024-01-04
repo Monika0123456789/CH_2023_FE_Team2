@@ -53,7 +53,7 @@
       </ul>
     </div>
 
-    
+
 
     <div class="toggleButtons">
       <button class="pageButtons" @click="previousPage()">&lt;</button>
@@ -94,20 +94,22 @@ export default {
     //counting total number of pages based on total entries of hotel in jsondata
     pageCount() {
       // console.log(Math.ceil(this.jsonData.length / this.hotelsPerPage))
-      return Math.ceil(this.jsonData.length / this.hotelsPerPage);
+      const hotelIds = filteredHotel.filteredId;
+      return Math.ceil(hotelIds.length / this.hotelsPerPage);
     },
     displayedHotels() {
-    const hotelIds = filteredHotel.filteredId;
-    if (!hotelIds || hotelIds.length === 0) {
-      return [];
-    }
-    const filteredHotels = this.jsonData.filter((hotel) => hotelIds.includes(hotel.id));
+      const hotelIds = filteredHotel.filteredId;
+      // console.log(hotelIds)
+      if (!hotelIds || hotelIds.length === 0) {
+        return [];
+      }
+      const filteredHotels = this.jsonData.filter((hotel) => hotelIds.includes(hotel.id));
 
-    const startIndex = (this.currentPage - 1) * this.hotelsPerPage;
-    const endIndex = startIndex + this.hotelsPerPage;
+      const startIndex = (this.currentPage - 1) * this.hotelsPerPage;
+      const endIndex = startIndex + this.hotelsPerPage;
 
-    return filteredHotels.slice(startIndex, endIndex);
-  },
+      return filteredHotels.slice(startIndex, endIndex);
+    },
   },
   methods: {
     // Change the current page
@@ -150,7 +152,7 @@ export default {
       document.getElementById('popup-container').style.display = 'none';
     },
     openHotelDetails(item) {
-      router.push({ name: 'hoteldetails', params: { hotelId:  item.id} });
+      router.push({ name: 'hoteldetails', params: { hotelId: item.id } });
       window.scrollTo(0, 0);
     },
 
