@@ -21,7 +21,7 @@
             <div class="price">
               <h3>{{ `Price: $${selectedHotel.price}` }}</h3>
               <!-- Router Link to Navigate to Chekout Page -->
-              <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="selectRoom" v-on:click="navigate">Select Room</button></router-link>  
+              <router-link :to="{name: 'checkout', params : {hotelId : this.hotelId}}" custom v-slot="{ navigate }"> <button class="roomoptionselectroombutton" @click="redirect()" v-on:click="navigate">Select Room</button></router-link>  
             </div>
             </div>
           <!-- room option popup -->
@@ -43,12 +43,6 @@
                       <font-awesome-icon :icon="['fas', 'circle-check']" style="color: green;"/>&nbsp;&nbsp;{{ facility }}
                     </div>
                   </div>
-                  <div class="facilities">
-                    <h3>Facilities</h3>
-                    <div v-for="(facility, index) in selectedRoom.roomFacilities" :key="index">
-                        <font-awesome-icon :icon="['fas', 'circle-check']" style="color: green;"/>&nbsp;&nbsp;{{ facility }}
-                      </div>
-                    </div>
                 </div>
               </div>
             </div>
