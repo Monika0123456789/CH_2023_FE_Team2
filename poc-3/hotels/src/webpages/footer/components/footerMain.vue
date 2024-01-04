@@ -155,7 +155,7 @@
       <hr />
 
       <!--  copyright text goes here  -->
-      <h3 id="footer_copyright_text">Copyright &copy; 2023 Booking. All rights reserved</h3>
+      <h3 id="footer_copyright_text">Copyright &copy; 2024 Booking. All rights reserved</h3>
     </footer>
   </div>
 </template>
