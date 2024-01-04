@@ -53,8 +53,7 @@
       </ul>
     </div>
 
-    <!-- <div class="toggleButtons"><button>1</button><button>2</button></div>
-  </div> -->
+    
 
     <div class="toggleButtons">
       <button class="pageButtons" @click="previousPage()">&lt;</button>

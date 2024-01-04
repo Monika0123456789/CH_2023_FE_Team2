@@ -1,4 +1,4 @@
-<!-- BottomButtonComponent.vue -->
+
 
 <template>
   <div>
@@ -14,13 +14,16 @@ export default {
   name: 'BottomButton',
   methods: {
     handleClearAllClick() {
-      // Reset all filters to their initial state
+      
       this.$emit('clearAllFilters');
+      
+     
+      this.$emit('clearAllCheckboxes');
     },
   },
 };
 </script>
 
 <style scoped>
-/* Add any necessary styles here */
+
 </style>

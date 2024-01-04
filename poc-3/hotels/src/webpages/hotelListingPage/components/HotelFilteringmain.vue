@@ -1,7 +1,6 @@
-<!-- Include the CustomerRating component and pass the selected rating to your filteredHotels computed property -->
 <template>
   <div>
-    <!-- Other existing components and code -->
+    
     <HotelTypeComponent
       :hotels="hotels"
       :selectedTypes="selectedTypes"
@@ -14,7 +13,7 @@
     />
     <PopularTypeComponent/>
     <CustomerRating @ratingChange="handleRatingChange" />
-    <!-- Include the component and listen to the 'ratingChange' event -->
+   
     <RatingStarComp/>
     <AmenitiesFilter :hotels="filteredHotels" :selectedAmenities="selectedAmenities" @amenitiesChange="handleAmenitiesChange" />
     <BottomButton @clearAllFilters="handleClearAllFilters" />
@@ -56,14 +55,13 @@ export default {
         min: 200,
         max: 1000,
       },
-      selectedRating: null, // New property to store the selected rating
+      selectedRating: null, 
     };
   },
   computed: {
     filteredHotels() {
       let filtered = this.hotels;
 
-      // Apply existing filters
       if (this.selectedTypes.length > 0) {
         filtered = filtered.filter((hotel) =>
           this.selectedTypes.includes(hotel.type)
@@ -84,7 +82,6 @@ export default {
           hotel.price <= this.priceRange.max
       );
 
-      // Apply the new rating filter
       if (this.selectedRating !== null) {
         filtered = filtered.filter(
           (hotel) => hotel.rating === this.selectedRating
@@ -120,11 +117,10 @@ export default {
       this.selectedRating = null;
     },
     handleRatingChange(selectedRating) {
-      this.selectedRating = selectedRating; // Update the selected rating when received from the CustomerRating component
-    },
+      this.selectedRating = selectedRating; 
+       },
     addHotelId(ids) {
       filteredHotel.filteredId = ids;
-      // console.log(filteredHotel.filteredId );
     },
   },
 };

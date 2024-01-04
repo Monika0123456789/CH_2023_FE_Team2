@@ -49,10 +49,8 @@ export default {
       let updatedSelectedTypes;
 
       if (type === 'All') {
-        // If "All" checkbox is checked, select all types
         updatedSelectedTypes = this.selectedTypes.length === this.uniqueTypes.length ? [] : [...this.uniqueTypes];
       } else {
-        // Toggle the selected type
         if (this.selectedTypes.includes(type)) {
           updatedSelectedTypes = this.selectedTypes.filter(selectedType => selectedType !== type);
         } else {
@@ -60,7 +58,6 @@ export default {
         }
       }
 
-      // Emit the updated selected types
       this.$emit('typeChange', updatedSelectedTypes);
     },
   },
@@ -68,5 +65,4 @@ export default {
 </script>
 
 <style scoped>
-/* Add your styling here */
 </style>
