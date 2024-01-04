@@ -21,15 +21,11 @@
     />
     <BottomButton @clearAllFilters="handleClearAllFilters" />
 
-    <div v-if="filteredHotels.length === 0">
-        <p>Sorry, hotels not found.</p>
-      </div>
-      
-      <div v-else>
+    
         <div v-for="hotel in filteredHotels" :key="hotel.id">
           <!-- Render your hotel content here -->
         </div>
-    </div>
+    
   </div>
 </template>
 

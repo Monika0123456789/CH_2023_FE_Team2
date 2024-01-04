@@ -51,6 +51,9 @@
           </div>
         </li>
       </ul>
+      <div v-if="displayedHotels.length === 0" class="no-hotels-alert">
+        <p>Sorry there are no hotels in the list for the selected filter</p>
+      </div>
     </div>
 
 
@@ -108,7 +111,14 @@ export default {
       const startIndex = (this.currentPage - 1) * this.hotelsPerPage;
       const endIndex = startIndex + this.hotelsPerPage;
 
-      return filteredHotels.slice(startIndex, endIndex);
+      const slicedHotels = filteredHotels.slice(startIndex, endIndex);
+
+      // Show alert if no hotels are found
+      if (filteredHotels.length > 0 && slicedHotels.length === 0) {
+        this.showNoHotelsAlert();
+      }
+
+      return slicedHotels;
     },
   },
   methods: {
