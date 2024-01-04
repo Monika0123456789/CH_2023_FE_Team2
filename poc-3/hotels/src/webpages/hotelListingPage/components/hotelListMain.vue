@@ -15,13 +15,11 @@
 
     <div class="hotelLists">
       <HotelList />
-      <div v-if="filteredHotels.length === 0" class="sorry-message">
-        <p>Sorry, no hotels match the selected criteria.</p>
-      </div>
       
     </div>
   </div>
 </template>
+
 
 <script>
 import HotelList from './hotelListCard.vue'
@@ -73,7 +71,7 @@ export default {
   width: 10%;
   position: absolute;
   right: 3%;
-  top: 10%;
+  top: 15%;
 }
 
 .popupOverlay {

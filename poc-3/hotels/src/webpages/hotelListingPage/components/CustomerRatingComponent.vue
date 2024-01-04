@@ -36,6 +36,8 @@ export default {
      
       this.$emit('ratingChange', newRating);
     },
+    
+    
     getRatingStyle(value) {
       return {
         textAlign: 'center',
