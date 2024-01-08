@@ -25,7 +25,7 @@ export default defineComponent({
     return {
       min: 200,
       max: 1000,
-      priceRange: [200, 800],
+      priceRange: [200, 1000],
 
       minRating: 1,
       maxRating: 5,
@@ -57,6 +57,11 @@ export default defineComponent({
         minRating: this.ratingRange[0],
         maxRating: this.ratingRange[1],
       });
+    },
+    resetFilter() {
+      
+      this.priceRange = [this.min, this.max];
+      this.handlePriceChange();
     },
   },
 });

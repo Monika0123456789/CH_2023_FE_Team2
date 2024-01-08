@@ -5,13 +5,14 @@
       :selectedTypes="selectedTypes"
       @typeChange="handleTypeChange"
     />
-    <PriceRangeFilter 
+    <PriceRangeFilter
+      ref="priceRangeFilterRef"
       :min="priceRange.min"
       :max="priceRange.max"
       @price-range-updated="handlePriceRangeChange" 
     />
     <PopularTypeComponent/>
-    <CustomerRating @ratingChange="handleRatingChange" />
+    <CustomerRating ref="customerRatingRef" @ratingChange="handleRatingChange" />
     <RatingStarComp/>
     <AmenitiesFilter
       ref="amenitiesFilterRef"
@@ -23,7 +24,7 @@
 
     
         <div v-for="hotel in filteredHotels" :key="hotel.id">
-          <!-- Render your hotel content here -->
+          
         </div>
     
   </div>
@@ -111,7 +112,7 @@ export default {
       this.priceRange.max = updatedRange.max;
     },
     handleClearAllFilters() {
-      // Clear all filters and checkboxes
+  
       this.selectedTypes = [];
       this.selectedAmenities = [];
       this.priceRange = {
@@ -119,8 +120,10 @@ export default {
         max: 1000,
       };
       this.selectedRating = null;
-
       
+
+      this.$refs.priceRangeFilterRef.resetFilter();
+      this.$refs.customerRatingRef.resetRatings();
       this.$refs.amenitiesFilterRef.clearAllCheckboxes();
       
     },
