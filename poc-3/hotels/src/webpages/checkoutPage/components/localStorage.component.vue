@@ -36,10 +36,9 @@
                 else{
                     // obtaining a random number of length 13 as bookingid
                     var bookingId =  Math.floor(Math.pow(10, 13 - 1) + Math.random() * (Math.pow(10, 13) - Math.pow(10, 13 - 1) - 1));
-                    alert(bookingId)
 
                     // storing the user credentials and bookingId in localStorage
-                    store.userData.push({ bookingId : bookingId ,name : store.name, email : store.email, phone : store.phone, dob : store.dob, gender : store.gender, checkin : store.checkin, checkout : store.checkout, travellerCount : store.travellerCount});
+                    store.userData.push({ bookingId : bookingId ,name : store.name, email : store.email, phone : store.phone, dob : store.dob, gender : store.gender, checkin : store.checkin, checkout : store.checkout, travellerCount : store.travellerCount, price : store.price});
                     localStorage.setItem("Data", JSON.stringify(store.userData));
                 }
 
