@@ -1,6 +1,6 @@
 <template>
   <!-- division to contain the form to collect user credentials -->
-    <div class="formContainer">
+    <form class="formContainer">
         <div class="colsFull">
           <label for="identityproof" class="form_label required">Upload your Id</label>
           <input type="file" class="idProof" id="identityproof"/>
@@ -49,7 +49,7 @@
         </div>
         <div class="colsHalf">
           <label for="dob" class="form_label required">Date of Birth</label>
-          <input class="form_inputs" id="dob" type="date" v-on:input="handleDob($event)" :value="store.dob"/>
+          <input class="form_inputs" id="dob" type="date" v-on:input="handleDob($event)" :value="store.dob" ref="dob"/>
         </div>
         <div class="colsHalf">
           <label for="gender" class="form_label required">Select Gender</label>
@@ -64,7 +64,7 @@
           <label for="addr" class="form_label">Address</label>
           <textarea id="addr" class="addressField" v-on:input="handleAddress($event)" :value="store.address"/>
         </div>
-    </div>
+    </form>
 </template>
 <script>
     import { store } from '../../../store.js';
@@ -93,6 +93,7 @@
 
                 if(new Date(event.target.value)>=presentDate){
                   alert("date of birth cannot be in the future or in the present");
+                  this.$refs.dob.value="";
                 }
                 else{
                   store.dob = event.target.value;

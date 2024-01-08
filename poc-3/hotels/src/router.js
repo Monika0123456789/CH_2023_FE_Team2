@@ -6,6 +6,7 @@ import HotelListing from './webpages/hotelListingPage/components/hotelListMain.v
 import Admin from './webpages/admin/components/adminLogin.vue'
 import AdminDashboard from "./webpages/admin/components/adminDashboard.vue";
 
+
 const routes = [
   {
     path: "/",
@@ -18,6 +19,7 @@ const routes = [
   },
   {
     path: "/hotellisting",
+    name:"hotellisting",
     component: HotelListing,
   },
   {

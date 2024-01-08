@@ -11,7 +11,7 @@
       </div>
       <div class="bookingDetails">
         <label for="amount" class="bookingLabels">Total Amount</label>
-        <h4 class="summaryImp" style="color:green">${{ store.price*store.rooms }}</h4>
+        <h4 class="summaryImp" style="color:green">${{ Number(store.price)*store.rooms }}</h4>
       </div>
     </div>
 </template>

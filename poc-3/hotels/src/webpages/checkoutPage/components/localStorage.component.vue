@@ -1,5 +1,6 @@
 <template>
     <button class="submitBtn" v-on:click="validateAndStoreData()">Proceed</button>
+    <!-- <router-link v-if="this.navigate" :to="{name: 'hotellisting'}" custom v-slot="{ navigate }"> <button class="submitBtn" @click="validateAndStoreData()" v-on:click="navigate">Proceed</button></router-link> -->
 </template>
 <script>
     import { store } from '../../../store.js';
@@ -53,6 +54,8 @@
                     store.checkinDate=null;
                     store.checkout=null;
                     store.checkoutDate=null;
+
+                   this.$router.push('/hotellisting');
 
                     alert("booking done successfully!");
 
