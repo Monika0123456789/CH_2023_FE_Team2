@@ -4,19 +4,20 @@
     <img src="/assets/images/logo.svg" alt="logo" class="logo" />
 
 
-    <div class="email_container">
-      <label htmlFor="email">Email</label>
-      <input type="email" id="email" v-model="email" name="email" class="email_field" ref="emailField"
-        @keyup.enter="moveToNextField" required />
-    </div>
+    <form @submit.prevent="checkAdminLogin">
+      <div class="email_container">
+        <label for="email">Email</label>
+        <input type="email" id="email" v-model="email" name="email" class="email_field" ref="emailField" required />
+      </div>
 
-    <div class="password_container">
-      <label htmlFor="password">Password</label>
-      <input type="password" id="password" v-model="password" name="password" ref="passwordRef" class="password_field"
-        @keyup.enter="handleEnterKey" required />
-    </div>
+      <div class="password_container">
+        <label for="password">Password</label>
+        <input required type="password" id="password" v-model="password" name="password" ref="passwordRef"
+          class="password_field" />
+      </div>
+      <button type="submit" class="submit_button">Sign In</button>
+    </form>
 
-    <button type="submit" class="submit_button" @click="checkAdminLogin">Sign In</button>
   </div>
 </template>
 <script>
@@ -31,12 +32,6 @@ export default {
     this.$refs.emailField.focus();
   },
   methods: {
-    moveToNextField() {
-      this.$refs.passwordRef.focus();
-    },
-    handleEnterKey() {
-      this.checkAdminLogin();
-    },
     checkAdminLogin() {
       // obtaining the object containing the admin email and password
       let dataObject = JSON.parse(localStorage.getItem("adminData"));
@@ -57,10 +52,6 @@ export default {
             this.password = ''
         }
       }
-      else {
-        alert("please fill all the credentials")
-      }
-
     }
 
   }
