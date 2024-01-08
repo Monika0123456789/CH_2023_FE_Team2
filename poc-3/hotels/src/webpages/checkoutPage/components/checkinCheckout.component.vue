@@ -3,11 +3,11 @@
     <div class="checkinCheckoutContainer">
         <div class="cols">
           <label class="required dateLabels">Check-in Date</label>
-          <input type="date" class="dateInputs" ref="checkinDate" v-on:input="handleCheckindate()" />
+          <input type="date" class="dateInputs" ref="checkinDate" v-on:input="handleCheckindate()" :value="store.checkin"/>
         </div>
         <div class="cols">
           <label class="required dateLabels">Check-out Date</label>
-          <input type="date" class="dateInputs" ref="checkoutDate" v-on:input="handleCheckoutdate()" />
+          <input type="date" class="dateInputs" ref="checkoutDate" v-on:input="handleCheckoutdate()" :value="store.checkout"/>
         </div>
     </div>
 </template>

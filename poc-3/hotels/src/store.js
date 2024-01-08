@@ -16,5 +16,6 @@ export const store = reactive({
     travellerDetailArr : [],
     travellerCount : 0,
     userData : [],
-    price : 0
+    price : 0,
+    hotelId : "",
 })

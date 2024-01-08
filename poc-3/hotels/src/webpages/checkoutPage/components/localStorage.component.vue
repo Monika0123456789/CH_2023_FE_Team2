@@ -40,6 +40,22 @@
                     // storing the user credentials and bookingId in localStorage
                     store.userData.push({ bookingId : bookingId ,name : store.name, email : store.email, phone : store.phone, dob : store.dob, gender : store.gender, checkin : store.checkin, checkout : store.checkout, travellerCount : store.travellerCount, price : store.price});
                     localStorage.setItem("Data", JSON.stringify(store.userData));
+
+                    store.name="";
+                    store.email="";
+                    store.mobile="";
+                    store.phone="";
+                    store.nationality="";
+                    store.dob="";
+                    store.gender="";
+                    store.address="";
+                    store.checkin=null;
+                    store.checkinDate=null;
+                    store.checkout=null;
+                    store.checkoutDate=null;
+
+                    alert("booking done successfully!");
+
                 }
 
             }

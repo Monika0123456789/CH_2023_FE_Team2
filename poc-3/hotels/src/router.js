@@ -12,7 +12,7 @@ const routes = [
     component: HomeComp,
   },
   {
-    path: "/checkoutPage/:hotelId",
+    path: "/checkoutPage/:roomId",
     name : "checkout",
     component: CheckoutComp,
   },
