@@ -68,7 +68,7 @@
 </template>
 <script>
     import { store } from "../../../store.js";
-    import jsonData from "../../../../public/assets/json/hotel-booking.json"
+    import jsonData from "../../../../public/assets/json/hotel-booking.json";
 
     export default{
         data(){

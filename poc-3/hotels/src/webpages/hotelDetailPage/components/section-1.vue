@@ -24,7 +24,7 @@
           </div>
           <div class="grid-content image-04">
             <img src="/assets/images/01(2).jpg" alt="hotel images" />
-            <a href="#" class="overlay-container" @click.prevent="viewAllImages"
+            <a href="#" class="overlay-container" @click="viewAllImages"
               >View all</a>
           </div>
         </div>
@@ -39,7 +39,7 @@
               style="font-size: 25px;margin-top: 25px;margin-right: 10px;"
                 :icon="['fas', 'xmark']"
                 class="close"
-                @click.prevent="closeMapPopup"
+                @click="closeMapPopup"
               />
             </div>
             <!-- Google Map Embed -->

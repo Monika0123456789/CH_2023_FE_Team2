@@ -3,7 +3,6 @@
       <div class="section1_parent-div">
         <h1>Find the top Hotels nearby.</h1>
         <p>We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
-        <br />
         <!-- Router Link to Hotel Listing Page -->
         <router-link to="/hotellisting">
         <button onclick="window.scrollTo(0, 0);" id="discoverbutton">Discover Now</button>

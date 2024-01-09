@@ -83,14 +83,6 @@
   left: -10%;
 }
 
-@keyframes image-rotation {
-  from {
-      transform: rotate(0);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}
 
 @media screen and (max-width: 760px) {
  .section1_parent-div {
