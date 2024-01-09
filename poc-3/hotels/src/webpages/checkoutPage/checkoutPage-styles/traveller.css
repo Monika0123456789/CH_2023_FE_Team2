@@ -1,3 +1,7 @@
+.travellerDetailContainer{
+  margin-top:30px;
+}
+
 /* styles for whole traveller details container */
 .travellerContainer{
     padding: 10px;
@@ -10,6 +14,7 @@
     color: white;
     background-color: rgba(43, 39, 241, 0.707);
     float: right;
+    margin-bottom: 20px;
   }
   
   /* Styles for traveller detail banner in traveller component */

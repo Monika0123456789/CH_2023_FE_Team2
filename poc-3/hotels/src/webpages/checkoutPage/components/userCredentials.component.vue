@@ -20,31 +20,7 @@
         <div class="colsHalf">
           <label for="nationality" class="form_label required">Nationality</label>
           <select class="form_inputs" id="nationality"  name="nationality" v-on:input="handleNationality($event)" ref="nationality" :value="store.nationality">
-            <option value="IND">India</option>
-            <option value="USA">United States</option>
-            <option value="CAN">Canada</option>
-            <option value="GBR">United Kingdom</option>
-            <option value="AUS">Australia</option>
-            <option value="GER">Germany</option>
-            <option value="FRA">France</option>
-            <option value="ITA">Italy</option>
-            <option value="JPN">Japan</option>
-            <option value="BRA">Brazil</option>
-            <option value="CHN">China</option>
-            <option value="RUS">Russia</option>
-            <option value="ZAF">South Africa</option>
-            <option value="ARG">Argentina</option>
-            <option value="MEX">Mexico</option>
-            <option value="ESP">Spain</option>
-            <option value="NLD">Netherlands</option>
-            <option value="SWE">Sweden</option>
-            <option value="NOR">Norway</option>
-            <option value="NZL">New Zealand</option>
-            <option value="SGP">Singapore</option>
-            <option value="KOR">South Korea</option>
-            <option value="EGY">Egypt</option>
-            <option value="NGA">Nigeria</option>
-            <option value="SAU">Saudi Arabia</option>
+            <option v-for="nation in nationArr" :value="nation.code">{{ nation.name }}</option>
           </select>
         </div>
         <div class="colsHalf">
@@ -71,7 +47,8 @@
     export default{
         data(){
             return{
-                store
+              store,
+              nationArr : [{code: "IND", name: "India"}, {code: "USA", name: "USA"}, {code: "CAN", name: "Canada"}, {code: "GBR", name: "UK"}, {code: "AUS", name: "Australia"}, {code : "GER", name: "Germany"},{code: "FRA", name : "France"}, {code : "ITA", name : "Italy"}, {code : "JPN", name : "Japan"}, {code : "BRA", name : "Brazil"}, {code : "CHN", name : "China"}, {code : "RUS", name : "Russia"}, {code : "ZAF", name : "South Africa"},{code: "ARG", name : "Argentina"}, {code:"MEX", name: "Mexico"}, {code : "ESP", name : "Spain"}, {code : "NED", name : "Netherlands"}, {code: "SWE", name: "Sweden"}, {code: "NOR", name: "Norway"}, {code: "NZL", name: "New Zealand"}, {code: "SGP", name: "Singapore"}, {code: "KOR", name: "South Korea"}, {code: "EGY", name: "Egypt"}, {code: "NGA", name: "Nigeria"}, {code: "SAU", name: "Saudi Arabia"}]
             }
         },
         methods: {

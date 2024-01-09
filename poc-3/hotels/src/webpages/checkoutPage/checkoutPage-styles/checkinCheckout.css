@@ -2,6 +2,7 @@
 .checkinCheckoutContainer {
     display: flex;
     flex-wrap: wrap;
+    margin-top:20px;
   }
   /* styles for every div under the container - flex grow , flex shrink and flex basis shorthand */
   .cols {
