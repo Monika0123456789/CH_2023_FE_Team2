@@ -6,18 +6,20 @@ import HotelListing from './webpages/hotelListingPage/components/hotelListMain.v
 import Admin from './webpages/admin/components/adminLogin.vue'
 import AdminDashboard from "./webpages/admin/components/adminDashboard.vue";
 
+
 const routes = [
   {
     path: "/",
     component: HomeComp,
   },
   {
-    path: "/checkoutPage/:hotelId",
+    path: "/checkoutPage/:roomId",
     name : "checkout",
     component: CheckoutComp,
   },
   {
     path: "/hotellisting",
+    name:"hotellisting",
     component: HotelListing,
   },
   {
