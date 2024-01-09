@@ -21,9 +21,9 @@
           </span>
           <span style="color:rgb(212, 209, 209); margin-top:10px">
             <font-awesome-icon style="color:rgb(212, 209, 209); margin-right: 10px" icon="fa-solid fa-user-shield" />
-            <router-link to="/adminLogin" onclick="window.scrollTo(0, 0)">
-              <a style=" cursor: pointer; textDecoration: none">Login as Admin</a>
-            </router-link>
+            <!-- <router-link to="/adminLogin" onclick="window.scrollTo(0, 0)"> -->
+              <a href="/adminLogin">Login as Admin</a>
+            <!-- </router-link> -->
           </span>
         </div>
 
