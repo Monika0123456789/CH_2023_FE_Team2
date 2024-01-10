@@ -1,0 +1,127 @@
+.section-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom:5%;
+  margin-top: 2%;
+}
+
+#discoverbutton {
+  color: blue;
+  background-color: rgb(220, 248, 248);
+  border-radius: 10px;
+  height: 8%;
+  width: 25%;
+  font-size: large;
+  border: 0px;
+}
+#discoverbutton:hover{
+  background-color: blue;
+  color: lightcyan;
+  box-shadow: 5px 5px 5px black;
+}
+
+#section1_image {
+  position: relative;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+.leaves-image{
+  position: absolute;
+  width: 50%;
+  right: 0;
+  bottom: 0;
+}
+.support{
+  position: absolute;
+  top: -3%;
+  right:-3%;
+  width: 23%;
+  max-height:fit-content;
+  border: 3px solid white;
+  padding: 3%;
+  text-align: center;
+  border-radius: 10%;
+  background-color:rgba(255, 255, 255, 0.6);
+  box-shadow: 2px 0px 10px rgba(156, 156, 220,0.5);
+}
+.support:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.support p,.support h2{
+  margin: 0;
+
+}
+.section1_parent-div {
+  width: 45%;
+  max-height: 100%;
+}
+.section1_parent-div>h1{
+  font-size: var(--primary-heading-web);
+}
+
+.section1-ParentImage {
+  position: relative;
+}
+.section1-innerimage > img {
+  position: absolute;
+  border: 2px solid white;
+}
+.section1-innerimage > img:nth-child(1) {
+  width: 10%;
+  height: 8%;
+  border-radius: 100%;
+  top: 10%;
+  left: -5%;
+}
+.section1-innerimage > img:nth-child(2) {
+  width: 20%;
+  height: 16%;
+  border-radius: 100%;
+  top: 25%;
+  left: -10%;
+}
+
+
+@media screen and (max-width: 760px) {
+ .section1_parent-div {
+      width: 100%;
+      margin-bottom:10%;
+  }
+
+  .section1-ParentImage {
+      width: 85%;
+      padding-left: 10%;
+  }
+
+  .section1_parent-div>h1{
+      font-size: var(--primary-heading-mobile);
+  }
+
+  .section1-innerimage > img:nth-child(1) {
+      top: 10%;
+      left: 5%;
+  }
+
+  .section1-innerimage > img:nth-child(2) {
+      top: 30%;
+      left: 1%;
+  }
+
+  #discoverbutton {
+      width: 30%;
+      font-size: larger;
+      border: 0px;
+      padding:2%;
+  }
+
+  .section-1 {
+      height: 100%;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+  }
+}

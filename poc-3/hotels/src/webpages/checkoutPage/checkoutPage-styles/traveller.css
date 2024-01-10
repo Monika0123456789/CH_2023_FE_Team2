@@ -1,0 +1,80 @@
+.travellerDetailContainer{
+  margin-top:30px;
+}
+
+/* styles for whole traveller details container */
+.travellerContainer{
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  /* styles for add traveller button */
+  .addTravellerBtn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(43, 39, 241, 0.707);
+    float: right;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for traveller detail banner in traveller component */
+  .travellerBanner{
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding:0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* styles for remove button in traveller banner  */
+  .removeTraveller{
+    color:rgba(43, 39, 241, 0.707);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* styles for container that contains the traveller details */
+  .travellerViewForm{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* styles for the fields inside traveller details container*/
+  .colsFull{
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+  
+  /* styles for labels in traveller details container */
+  .travellerLabel{
+    font-size: 16px;
+    margin: 10px 0;
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* styles for inputs in traveller details container */
+  .travellerInput{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10px;
+  }
+  /* styles for first input */
+  .travellerInput1{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  /* styles for second input */
+  .travellerInput2{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  /* styles for third input */
+  .travellerInput3{
+    width: 100%;
+    border-radius: 5px;
+  }

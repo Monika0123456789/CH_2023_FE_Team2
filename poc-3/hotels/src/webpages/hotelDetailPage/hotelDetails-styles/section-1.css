@@ -1,0 +1,160 @@
+/* Section 1 styling --------------------------Starts here -------------------- */
+
+/* defining grid layout */
+.image-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 250px);
+  grid-gap: 0.5em;
+}
+/* styles for every image inside class - .grid-content  */
+.grid-content > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+/* positioning images inside the grid */
+
+/* first image positioning in grid */
+.image-01 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* second image positioning in grid */
+.image-02 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+/*styles added - In order to achieve the overlay effect displaying option as viewall option */
+.image-04 {
+  position: relative;
+}
+.image-section img:hover {
+  opacity: 0.9;
+}
+/* adding an overlay over image to display text - view all - (no functionalities added for now) */
+.overlay-container {
+  display: flex;
+  position: absolute;
+  border-radius: 15px;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  opacity: 1;
+}
+.overlay-container:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+/* Map PopUP Starts here */
+.map-container1 {
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  overflow: auto;
+}
+
+.popup {
+  border: 1px solid #ccc;
+  border-radius: 2%;
+  background-color: white;
+  overflow: auto;
+  width: 40%;
+  height: fit-content;
+}
+.mapHeadingContainer{
+  display: flex;
+  justify-content: space-between;
+}
+#mapContainer{
+  height: 300px
+}
+.popup h2 {
+  margin-left: 10px;
+}
+.view-map {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  float: right;
+  margin-right: 5px;
+  color: white;
+  background-color: rgb(98, 98, 207);
+  text-align: center;
+}
+/* Map PopUP Ends here */
+
+@media screen and (max-width: 760px) {
+  .image-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 18rem);
+    grid-gap: 0.5em;
+  }
+
+  /* positioning first image in grid */
+  .image-01 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  /* positioning second image in grid */
+  .image-02 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  /* mobile responsive design for section  - containing options of rooms available  ---- */
+
+  /* changing flex direction of main container from row to column */
+  .hotel-detail-maincontainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Changing widths of content inside flex */
+  .hotel-detail-rightcontainer {
+    width: 100%;
+  }
+  .hotel-detail-leftcontainer{
+    width: 100%;
+  }
+  .container-image {
+    height: 300px;
+    width: 100%;
+  
+  }
+  .card{
+    left: 10%;
+    width: 80%;
+  }
+  .popup{
+    width: 80%;
+    height: fit-content;
+  }
+}

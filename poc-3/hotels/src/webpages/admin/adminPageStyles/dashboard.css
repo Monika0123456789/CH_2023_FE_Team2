@@ -1,0 +1,41 @@
+.logout_button{
+  background-color: #e5383b;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: azure;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+
+.customer_table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 5%;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 2%;
+}
+
+.heading_row {
+  background-color: #dddddd;
+}
+
+tr {
+  border-bottom: 1px solid rgb(189, 188, 188);
+}
+
+.amount {
+  color: #969393;
+}
+
+@media screen and (max-width: 760px) {
+  td,
+  th {
+    font-size: 2vw;
+  }
+}
