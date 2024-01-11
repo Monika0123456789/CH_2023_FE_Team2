@@ -1,0 +1,1 @@
+// hotel listing main content goes here

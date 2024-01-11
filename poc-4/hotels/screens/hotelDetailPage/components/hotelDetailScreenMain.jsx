@@ -1,0 +1,1 @@
+// hotel detail screen main content goes here

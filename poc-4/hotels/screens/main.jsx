@@ -1,0 +1,1 @@
+// component to render all the components
