@@ -1,4 +1,4 @@
-// import the css file
+ // import the css file
 import "../landing-page-styles/section4.css";
 
 // import the react icons
