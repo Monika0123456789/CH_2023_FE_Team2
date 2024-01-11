@@ -12,6 +12,5 @@ export default function App() {
         <HomeScreen />
       </View>
     </SafeAreaView>
-
   );
 }
