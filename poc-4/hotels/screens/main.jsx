@@ -1,15 +1,11 @@
-import React from 'react';
-import { View } from 'react-native';
-import HomePageMainComp from './homePage/components/homeScreenMain';
 
-const MainComp = () => {
-  return (
-    <View>
-      
-      <HomePageMainComp/>
-     
-    </View>
-  );
-};
+import { HomeScreenMain } from "./homePage/components/homeScreenMain"
 
-export default MainComp;
+export let Main = () => {
+    return(
+        <>
+            <HomeScreenMain/>
+        </>
+    )
+}
+
