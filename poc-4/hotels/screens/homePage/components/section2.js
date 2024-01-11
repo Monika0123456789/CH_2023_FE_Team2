@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   adImage: {
     position: "relative",
     width: "100%",
-    height: 500,
+    height: 300,
   },
 
   // styles for client ratings display. ---------start
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     width: 300,
     height: 110,
     left: 30,
-    top: 380,
+    top: 180,
     borderRadius: 10,
   },
 

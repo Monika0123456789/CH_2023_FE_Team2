@@ -1,5 +1,5 @@
 
-import { SafeAreaView, StatusBar, View } from "react-native";
+import { SafeAreaView, ScrollView, StatusBar, View } from "react-native";
 
 import HomeScreen from "./screens/homePage/components/homeScreenMain";
 
@@ -8,9 +8,9 @@ export default function App() {
   const statusBarHeight = StatusBar.currentHeight;
   return (
     <SafeAreaView>
-      <View style={{ marginTop: statusBarHeight }}>
+      <ScrollView style={{ marginTop: statusBarHeight }}>
         <HomeScreen />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
