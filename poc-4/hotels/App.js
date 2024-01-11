@@ -1,23 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MainComp from './screens/main';
+
+import { SafeAreaView, StatusBar, View } from "react-native";
+
+import HomeScreen from "./screens/homePage/components/homeScreenMain";
 
 
 export default function App() {
+  const statusBarHeight = StatusBar.currentHeight;
   return (
-    <View style={styles.container}>
-      <MainComp/>
-      {/* <Text>Open up App.js to start working on your app!</Text> */}
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <View style={{ marginTop: statusBarHeight }}>
+        <HomeScreen />
+      </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
