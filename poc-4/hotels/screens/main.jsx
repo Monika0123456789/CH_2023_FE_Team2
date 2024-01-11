@@ -1,1 +1,10 @@
-// component to render all the components
+import { HomeScreenMain } from "./homePage/components/homeScreenMain"
+
+export let Main = () => {
+    return(
+        <>
+            <HomeScreenMain/>
+        </>
+    )
+}
+
