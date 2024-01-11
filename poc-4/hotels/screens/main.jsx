@@ -1,4 +1,5 @@
-import HomeScreenMain from "./homePage/components/homeScreenMain"
+
+import  HomeScreenMain  from "./homePage/components/homeScreenMain"
 
 export let Main = () => {
     return (

@@ -5,7 +5,7 @@ import SectionOneComp from './sectionOneComp';
 import Section2 from "./section2.jsx";
 import { TestimonialMain } from "./testimonialMain";
 
-export default function HomeScreen() {
+export default HomeScreen = () => {
     return (
       <ScrollView>
         <SectionOneComp/>
