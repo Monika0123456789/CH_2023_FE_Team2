@@ -1,7 +1,9 @@
 <template>
     <button class="submitBtn" v-on:click="validateAndStoreData()">Proceed</button>
+    <!-- <router-link v-if="this.navigate" :to="{name: 'hotellisting'}" custom v-slot="{ navigate }"> <button class="submitBtn" @click="validateAndStoreData()" v-on:click="navigate">Proceed</button></router-link> -->
 </template>
 <script>
+
     import { store } from '../../../store.js';
     export default{
         data(){
@@ -36,15 +38,34 @@
                 else{
                     // obtaining a random number of length 13 as bookingid
                     var bookingId =  Math.floor(Math.pow(10, 13 - 1) + Math.random() * (Math.pow(10, 13) - Math.pow(10, 13 - 1) - 1));
-                    alert(bookingId)
 
                     // storing the user credentials and bookingId in localStorage
-                    store.userData.push({ bookingId : bookingId ,name : store.name, email : store.email, phone : store.phone, dob : store.dob, gender : store.gender, checkin : store.checkin, checkout : store.checkout, travellerCount : store.travellerCount});
+                    store.userData.push({ bookingId : bookingId ,name : store.name, email : store.email, phone : store.phone, dob : store.dob, gender : store.gender, checkin : store.checkin, checkout : store.checkout, travellerCount : store.travellerCount, price : store.price});
                     localStorage.setItem("Data", JSON.stringify(store.userData));
+
+                    store.name="";
+                    store.email="";
+                    store.mobile="";
+                    store.phone="";
+                    store.nationality="";
+                    store.dob="";
+                    store.gender="";
+                    store.address="";
+                    store.checkin=null;
+                    store.checkinDate=null;
+                    store.checkout=null;
+                    store.checkoutDate=null;
+
+                   this.$router.push('/hotellisting');
+
+                    alert("booking done successfully!");
+
                 }
 
             }
+
         }
     }
+
 </script>
 <style scoped src="../checkoutPage-styles/localStorage.css"></style>

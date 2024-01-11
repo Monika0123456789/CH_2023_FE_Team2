@@ -5,6 +5,7 @@
     background-color: rgba(192,192,192,0.4);
     border-radius: 5px;
     display: flex;
+    margin-top: 20px;
   }
   /* styles for labels in summary conatiner */
   .bookingLabels{

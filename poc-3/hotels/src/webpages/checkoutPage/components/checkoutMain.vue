@@ -10,23 +10,22 @@
 
         <!-- sub component to obtain user credentials -->
         <userCredentialsComp/>
-        <br>
+        
 
         <!-- sub component to obtain checkin and checkout dates from the user -->
         <checkinCheckoutComp/>
-        <br>
+       
 
         <!-- sub component to obtain details of additional travellers -->
         <travellerDetailMainComp/>
-        <br><br><br>
+        
 
         <!-- sub component to display checkin and checkout dates selected by the user and the price to be paid -->
         <summaryComp/>
-        <br>
+        
 
         <!-- sub component to obtain the user credentials and store it in local storage -->
         <localStorageComp/>
-        <br>
         
     </div>
     

@@ -16,6 +16,8 @@
 
                 <!-- name of the hotel -->
                 <h1>{{ this.hotelData.name }}</h1>
+                <!-- <h3>{{ this.hotelData.rooms[0].roomId }}</h3> -->
+                <h3>Room Number : {{ this.$route.params.roomId }}</h3>
 
                 <!-- hotel location -->
                 <p>
@@ -68,7 +70,7 @@
 </template>
 <script>
     import { store } from "../../../store.js";
-    import jsonData from "../../../../public/assets/json/hotel-booking.json"
+    import jsonData from "../../../../public/assets/json/hotel-booking.json";
 
     export default{
         data(){
@@ -79,7 +81,9 @@
         },
         created(){
           // obtaining the data of the particular hotel with given hotelid
-          this.hotelData = jsonData.items.find(item => item.id === Number(this.$route.params.hotelId));
+          this.hotelData = jsonData.items.find(item => item.id === Number(store.hotelId));
+          
+          // Number(this.$route.params.hotelId)
 
           // storing the hotel price in the store
           store.price = this.hotelData.price;

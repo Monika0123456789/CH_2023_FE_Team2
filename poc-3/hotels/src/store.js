@@ -14,7 +14,8 @@ export const store = reactive({
     checkinDate : null, // Sat Dec 30 2023 05:30:00 GMT+0530 (India Standard Time)
     checkoutDate : null,
     travellerDetailArr : [],
-    travellerCount : 0,
+    travellerCount : 1,
     userData : [],
-    price : 0
+    price : "",
+    hotelId : "",
 })
