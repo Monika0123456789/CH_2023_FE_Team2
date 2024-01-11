@@ -52,12 +52,7 @@ export default defineComponent({
         max: this.priceRange[1],
       });
     },
-    handleRatingChange() {
-      this.$emit('rating-range-updated', {
-        minRating: this.ratingRange[0],
-        maxRating: this.ratingRange[1],
-      });
-    },
+    
     resetFilter() {
       
       this.priceRange = [this.min, this.max];

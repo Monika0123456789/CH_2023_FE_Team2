@@ -71,7 +71,8 @@
     export default{
         data(){
             return{
-                store
+                store,
+                
             }
         },
         methods: {

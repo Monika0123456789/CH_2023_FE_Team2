@@ -6,7 +6,7 @@
 
         <!-- sub component to provide details of the room selected -->
         <roomDetailComp/>
-        <br>
+        
 
         <!-- sub component to obtain user credentials -->
         <userCredentialsComp/>

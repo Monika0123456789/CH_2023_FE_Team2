@@ -71,7 +71,7 @@ export default {
   width: 10%;
   position: absolute;
   right: 3%;
-  top: 15%;
+  top: 100px;
 }
 
 .popupOverlay {
@@ -85,6 +85,7 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: auto;
+  
 }
 
 .popupContent {
@@ -108,6 +109,7 @@ export default {
 }
 
 .filters {
+  margin-top:1%;
   width: 25%;
   /* overflow-y: auto;  */
   /* max-height: 80vh;  */
