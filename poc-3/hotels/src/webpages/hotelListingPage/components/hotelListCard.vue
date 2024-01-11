@@ -18,7 +18,7 @@
               <ul style="list-style-type: none;display: flex;padding: 0;flex-wrap: wrap;">
                 <li style="margin-right: 10px;" v-for="(facility, index) in item.Facilities.slice(0, 3)" :key="index">{{
                   facility }}</li>
-                <li style="cursor: pointer;"><a @click="openPopup(item)" href="#">More+</a></li>
+                <li ><a @click="openPopup(item)" href="#">More+</a></li>
               </ul>
               </p>
               <ul style="padding: 0;">

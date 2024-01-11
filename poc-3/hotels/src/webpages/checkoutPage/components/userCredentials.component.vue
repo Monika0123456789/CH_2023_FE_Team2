@@ -47,8 +47,10 @@
     export default{
         data(){
             return{
+
               store,
               nationArr : [{code: "IND", name: "India"}, {code: "USA", name: "USA"}, {code: "CAN", name: "Canada"}, {code: "GBR", name: "UK"}, {code: "AUS", name: "Australia"}, {code : "GER", name: "Germany"},{code: "FRA", name : "France"}, {code : "ITA", name : "Italy"}, {code : "JPN", name : "Japan"}, {code : "BRA", name : "Brazil"}, {code : "CHN", name : "China"}, {code : "RUS", name : "Russia"}, {code : "ZAF", name : "South Africa"},{code: "ARG", name : "Argentina"}, {code:"MEX", name: "Mexico"}, {code : "ESP", name : "Spain"}, {code : "NED", name : "Netherlands"}, {code: "SWE", name: "Sweden"}, {code: "NOR", name: "Norway"}, {code: "NZL", name: "New Zealand"}, {code: "SGP", name: "Singapore"}, {code: "KOR", name: "South Korea"}, {code: "EGY", name: "Egypt"}, {code: "NGA", name: "Nigeria"}, {code: "SAU", name: "Saudi Arabia"}]
+
             }
         },
         methods: {

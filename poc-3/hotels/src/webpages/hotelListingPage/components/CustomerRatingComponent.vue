@@ -1,6 +1,5 @@
-
 <template>
-  <div class="customer-rating" style="padding: 20px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);">
+  <div class="customer-rating" :style="customerRatingStyle">
     <h2 style="margin-top: 0;">Customer Rating</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
       <div v-for="rating in [3, 3.5, 4, 4.5]" :key="rating" @click="handleRatingClick(rating)" :style="getRatingStyle(rating)">
@@ -10,11 +9,9 @@
         </svg></p>
       </div>
     </div>
-    <div v-if="selectedRating !== null">
-    </div>
+    <div v-if="selectedRating !== null"></div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -25,19 +22,11 @@ export default {
     };
   },
   methods: {
-    
     handleRatingClick(rating) {
-     
       const newRating = this.selectedRating === rating ? null : rating;
-
-   
       this.selectedRating = newRating;
-
-     
       this.$emit('ratingChange', newRating);
     },
-    
-    
     getRatingStyle(value) {
       return {
         textAlign: 'center',
@@ -48,6 +37,21 @@ export default {
         boxSizing: 'content-box',
         backgroundColor: this.selectedRating === value ? '#ccc' : 'white',
         cursor: 'pointer',
+      };
+    },
+    resetRatings() {
+      
+      this.selectedRating = null;
+      
+    },
+  },
+  computed: {
+    customerRatingStyle() {
+      return {
+        padding: '20px',
+        border: '1px solid #ddd',
+        borderRadius: '5px',
+        boxShadow: '0 0 2px rgba(0, 0, 0, 0.1)',
       };
     },
   },
