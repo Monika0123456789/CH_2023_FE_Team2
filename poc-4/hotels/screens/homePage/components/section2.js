@@ -31,10 +31,11 @@ export const styles = StyleSheet.create({
   likesDisplay: {
     position: "absolute",
     backgroundColor: "rgba(240, 248, 255, 0.8)",
-    width: 300,
+    width: "90%",
     height: 110,
-    left: 30,
-    top: 180,
+    // left: 30,
+    top: 160,
+    margin:20,
     borderRadius: 10,
   },
 

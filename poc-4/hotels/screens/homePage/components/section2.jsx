@@ -48,7 +48,7 @@ export default function Section2() {
           <View>
             <Text style={styles.headding2}>
               4.5
-              <Star fill="yellow" />
+              <Star fill="#fff700" />
             </Text>
           </View>
         </View>
