@@ -1,13 +1,18 @@
+
 // home screen main content goes here
 
 import { Text, View } from "react-native";
+import SectionOneComp from './sectionOneComp';
 import Section2 from "./section2.jsx";
 
 export default function HomeScreen() {
-  return (
+    return (
     <View>
-      {/* <Text>home Screen</Text> */}
+      
+      <SectionOneComp/>
       <Section2/>
+     
     </View>
   );
+
 };

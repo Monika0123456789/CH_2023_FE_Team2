@@ -62,14 +62,10 @@
 
                 }
 
-                alert("Your booking is confirmed.")
-                // storing the user credentials and bookingId in localStorage
-                store.userData.push({ bookingId: bookingId, name: store.name, email: store.email, phone: store.phone, dob: store.dob, gender: store.gender, checkin: store.checkin, checkout: store.checkout, travellerCount: store.travellerCount, price: store.price });
-                localStorage.setItem("Data", JSON.stringify(store.userData));
             }
 
         }
     }
-}
+
 </script>
 <style scoped src="../checkoutPage-styles/localStorage.css"></style>
