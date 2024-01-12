@@ -1,11 +1,12 @@
 
-import  HomeScreenMain  from "./homePage/components/homeScreenMain"
+// import  HomeScreenMain  from "./homePage/components/homeScreenMain"
+import HotelListingComp from "./hotelListingScreen/components/hotelListingScreenMain";
 
 export let Main = () => {
     return (
       <>
-      <HomeScreenMain/>
-        
+      {/* <HomeScreenMain/> */}
+      <HotelListingComp />
       </>
     );
 }
