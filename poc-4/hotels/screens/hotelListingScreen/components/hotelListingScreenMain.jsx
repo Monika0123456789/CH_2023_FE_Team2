@@ -1,7 +1,7 @@
-// hotel listing main content goes here
-import React from 'react';
-import { ScrollView} from 'react-native';
-// import PriceSlider from './priceRange';
+
+import { ScrollView, Text } from "react-native"
+import HotelListingScreenCard from "./hotelListingScreenCard";
+import data from "../../../assets/json/hotel-booking.json";
 import HotelTypes from './hotelTypes';
 import Amenities from './Amenities';
 import PopularType from './popularType';
@@ -10,19 +10,24 @@ import RatingStar from './ratingStar';
 import BottomButton from './bottomButton';
 import DoubleRangeSlider from './priceRange';
 
-const HotelListingComp = () => {
-  return (
-    <ScrollView>
-      <HotelTypes/>
-      <DoubleRangeSlider/>
-      <CustomerRating/>
-      <RatingStar/>
-      <PopularType/>
-      <Amenities/>
-      <BottomButton/>
-      {/* <PriceSlider/> */}
-    </ScrollView>
-  );
-};
+export default HotelListingMain = () => {
+    return(
+        <>
+            <ScrollView>
+                <HotelTypes/>
+                <DoubleRangeSlider/>
+                <CustomerRating/>
+                <RatingStar/>
+                <PopularType/>
+                <Amenities/>
+                <BottomButton/>
+                {data.items.map((hotelListingObj, index) => (
+                    <HotelListingScreenCard key={index} hotelListingObj={hotelListingObj}/>
+                ))}
+            </ScrollView>
+            
+            
+        </>
+    )
+}
 
-export default HotelListingComp;
