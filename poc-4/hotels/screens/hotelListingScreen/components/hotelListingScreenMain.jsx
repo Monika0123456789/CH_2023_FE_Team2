@@ -1,9 +1,20 @@
+
 import { Alert, Button, Pressable, ScrollView, Text, View } from "react-native";
 import { styles } from "../hotelListingScreen-styles/hotelListingScreen";
-import HotelListingScreenCard from "./hotelListingScreenCard";
+
 import { ArrowLeftCircle, ArrowRightCircle, Presentation, Settings } from 'lucide-react-native';
 import data from "../../../assets/json/hotel-booking.json"
 import { useState } from "react";
+
+import HotelListingScreenCard from "./hotelListingScreenCard";
+import HotelTypes from './hotelTypes';
+import Amenities from './Amenities';
+import PopularType from './popularType';
+import CustomerRating from './customerRating';
+import RatingStar from './ratingStar';
+import BottomButton from './bottomButton';
+import DoubleRangeSlider from './priceRange';
+
 
 export default HotelListingMain = () => {
     const [button1Clicked, setButton1Clicked] = useState(true);
@@ -54,9 +65,18 @@ export default HotelListingMain = () => {
                         <ArrowRightCircle color="black" size="30"/>
                     </Pressable>
                 </View>
+                <HotelTypes/>
+                <DoubleRangeSlider/>
+                <CustomerRating/>
+                <RatingStar/>
+                <PopularType/>
+                <Amenities/>
+                <BottomButton/>
+
             </ScrollView>
             
             
         </>
     )
 }
+
