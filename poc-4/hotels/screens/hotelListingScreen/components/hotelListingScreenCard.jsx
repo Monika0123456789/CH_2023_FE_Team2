@@ -1,7 +1,6 @@
-
 import { styles } from "../hotelListingScreen-styles/hotelListingScreen";
 import { Image, Pressable, Text, View, Modal, Button, StyleSheet } from "react-native";
-import {  Star, StarHalf, MapPin, CheckCircle,  Dot } from 'lucide-react-native';
+import {  Star, StarHalf, MapPin, CheckCircle,  Dot, ArrowLeftCircle, ArrowRightCircle } from 'lucide-react-native';
 import { useState } from "react";
 
 export default HotelListingScreenCard = (props) => {
@@ -104,8 +103,7 @@ export default HotelListingScreenCard = (props) => {
                                 <Text style={styles.select_rooms_text}>select room</Text>
                             </Pressable>
                         </View>
-                        
-                    </View>
+                    </View>   
                 </View>
             </View>
         </>
