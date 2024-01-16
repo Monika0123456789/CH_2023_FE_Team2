@@ -4,20 +4,23 @@ export const styles = StyleSheet.create({
   //Common styles across roomOverview ------- start ------------------
   heading1: {
     fontSize: 32,
-    margin: 16,
+    margin: 8,
     fontWeight: "bold",
   },
   heading2: {
     fontSize: 28,
     margin: 12,
+    fontWeight: "bold",
   },
   heading3: {
     fontSize: 24,
     margin: 8,
+    fontWeight: "bold",
   },
   parah: {
     fontSize: 16,
     margin: 8,
+    textAlign : "justify"
   },
   //Common styles across roomOverview ------- end ------------------
 
@@ -54,14 +57,38 @@ export const styles = StyleSheet.create({
     margin: 5,
   },
 
+  iconsMainContainer: {
+    display: "flex",
+    flexDirection: "column",
+  },
   //styles for Icon Container
   iconsContainer: {
+    margin: 8,
     display: "flex",
     flexDirection: "row",
+    gap: 10,
   },
   icons: {
     color: "rgba(43,39,241,0.777)",
-    borderRadius: 2,
+    borderRadius: 5,
     backgroundColor: "rgba(192, 192, 192, 0.4)",
+  },
+
+  // styles for room quantity selector button
+  roomQuantitySelectorContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    backgroundColor: "rgba(43,39,241,0.777)",
+    padding: 5,
+    borderRadius : 5,
+    width : "99%"
+  },
+  roomSelectorButton: {
+    paddingLeft: 20,
+  },
+  quantityDisplay: {
+    paddingLeft: 20,
+    color: "white",
   },
 });

@@ -20,6 +20,23 @@ export default function RoomOverview() {
     // Changing the dimensions only for the clicked image
     setSelectedImageIndex(index);
   };
+
+  const [roomCount, setRoomCount] = useState(1);
+
+  const handleIncrement = () => {
+    if (roomCount + 1 > 9) {
+      alert("you reached the maximum booking allowed for an individual user");
+    } else {
+      setRoomCount((prevCount) => prevCount + 1);
+    }
+  };
+  const handleDecrement = () => {
+    if (roomCount - 1 <= 0) {
+      alert("you need to select at least one room");
+    } else {
+      setRoomCount((prevCount) => prevCount - 1);
+    }
+  };
   return (
     <View>
       <Text style={styles.heading1}>Booking Details</Text>
@@ -58,20 +75,41 @@ export default function RoomOverview() {
           Visvesvaraya Industrial and Technological Museum.
         </Text>
 
-        <View style={styles.iconsContainer}>
-          <Text>
+        <View style={styles.iconsMainContainer}>
+          <View style={styles.iconsContainer}>
             <BedDouble style={styles.icons} />
-            Type <Text style={{ fontWeight: "bold" }}>King</Text>
-          </Text>
-          <Text>
+            <Text>
+              Type <Text style={{ fontWeight: "bold" }}>King</Text>
+            </Text>
+          </View>
+          <View style={styles.iconsContainer}>
             <MoveLeft style={styles.icons} />
-            Side : <Text style={{ fontWeight: "bold" }}>Left Side</Text>
-          </Text>
-          <Text>
+            <Text>
+              Side : <Text style={{ fontWeight: "bold" }}>Left Side</Text>
+            </Text>
+          </View>
+          <View style={styles.iconsContainer}>
             <ListStart style={styles.icons} />
-            Floor :<Text style={{ fontWeight: "bold" }}> 3rd Floor(t5)</Text>
-          </Text>
+            <Text>
+              Floor :<Text style={{ fontWeight: "bold" }}> 3rd Floor(t5)</Text>
+            </Text>
+          </View>
         </View>
+      </View>
+      <View style={styles.roomQuantitySelectorContainer}>
+        <TouchableOpacity
+          style={styles.roomSelectorButton}
+          onPress={handleIncrement}
+        >
+          <Text style={{ color: "white" }}>+</Text>
+        </TouchableOpacity>
+        <Text style={styles.quantityDisplay}>{roomCount}</Text>
+        <TouchableOpacity
+          style={styles.roomSelectorButton}
+          onPress={handleDecrement}
+        >
+          <Text style={{ color: "white" }}>-</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
