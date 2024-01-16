@@ -1,8 +1,10 @@
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "../styles/userCredentials";
 import { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
-import { Upload } from "lucide-react-native";
+import DateTimePicker from "@react-native-community/datetimepicker";
+import * as DocumentPicker from "expo-document-picker";
+
 export default function UserCredentials() {
   const [userCredentials, setUserCredentials] = useState({
     idProof: null,
@@ -10,7 +12,7 @@ export default function UserCredentials() {
     email: "",
     phone: "",
     nationality: "IND",
-    dob: "",
+    dob: null,
     gender: "",
   });
 
@@ -58,26 +60,61 @@ export default function UserCredentials() {
     setUserCredentials({ ...userCredentials, nationality: value });
   };
 
-  // const handleDobChange = (text) => {
-  //   // Perform date validation as needed
-  //   setUserCredentials({ ...userCredentials, dob: text });
-  // };
-
   const handleGenderChange = (value) => {
     setUserCredentials({ ...userCredentials, gender: value });
   };
 
-  const handleUpload = () => {
-    alert("Uploading....")
-   
+  const [selectedDocument, setSelectedDocument] = useState(null);
+
+  const pickDocument = async () => {
+    try {
+      const result = await DocumentPicker.getDocumentAsync({});
+
+      if (result.type === "success") {
+        setSelectedDocument(result);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const renderSelectedDocumentInfo = () => {
+    if (selectedDocument) {
+      return (
+        <View>
+          <Text>Selected File:</Text>
+          <Text>Name: {selectedDocument.name}</Text>
+          <Text>Size: {selectedDocument.size} bytes</Text>
+        </View>
+      );
+    } else {
+      return <Text>No file selected</Text>;
+    }
+  };
+
+  const [date, setDate] = useState(new Date());
+  const [show, setShow] = useState(false);
+
+  const onChangeDate = (event, selectedDate) => {
+    setShow(false);
+    if (selectedDate) {
+      setDate(selectedDate);
+      setUserCredentials({ ...userCredentials, dob: selectedDate });
+    }
+  };
+  const showDatePicker = () => {
+    setShow(true);
   };
 
   return (
     <View style={styles.formContainer}>
       <View>
         <Text style={styles.formLabel}> Upload your Id</Text>
-        <TouchableOpacity onPress={handleUpload}>
-          <Text style={styles.idInput}>Upload</Text>
+        <TouchableOpacity onPress={pickDocument}>
+          <Text style={styles.textInput}>
+            <Text style={{fontWeight : "bold"}}> Select File :</Text>
+            {renderSelectedDocumentInfo()}
+          </Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -125,6 +162,22 @@ export default function UserCredentials() {
 
       <View>
         <Text style={styles.formLabel}>Date of Birth</Text>
+        <TouchableOpacity style={styles.textInput} onPress={showDatePicker}>
+          {userCredentials.dob ? (
+            <Text>{userCredentials.dob.toLocaleDateString()}</Text>
+          ) : (
+            <Text>Choose Date</Text>
+          )}
+        </TouchableOpacity>
+        {show && (
+          <DateTimePicker
+            value={date}
+            mode="date"
+            is24Hour={true}
+            display="default"
+            onChange={onChangeDate}
+          />
+        )}
       </View>
       <View>
         <Text style={styles.formLabel}>Select Gender</Text>
