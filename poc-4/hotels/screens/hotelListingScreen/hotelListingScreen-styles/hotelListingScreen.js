@@ -13,8 +13,10 @@ export const styles = StyleSheet.create({
     },
     hotel_list_imagecontainer:{
         marginTop:20,
-        marginLeft:20,
-        marginRight:20,
+        // marginLeft:20,
+        // marginRight:20,
+        alignItems:"center",
+        justifyContent:"center",
     },
     hotel_list_image:{
         borderRadius:10
@@ -35,10 +37,12 @@ export const styles = StyleSheet.create({
     location_section:{
         display:"flex",
         flexDirection:"row",
+        flexWrap:"wrap",
         gap:5
     },
     location:{
-        color:"rgb(117, 116, 116)"
+        color:"rgb(117, 116, 116)",
+        textAlign:"justify"
     },
     facilities_section:{
         marginTop:10,
@@ -104,4 +108,17 @@ export const styles = StyleSheet.create({
     additional_features_container:{
         marginBottom:10
     },
+    toggle_button_container:{
+        display:"flex",
+        flexDirection:"row",
+        flexWrap:"wrap",
+        justifyContent:'center',
+        margin:20,
+        gap:5
+    },
+    toggle_buttons:{
+        borderRadius:3,
+        padding:10,
+        backgroundColor:"rgb(216, 204, 189)",
+    }
 })
