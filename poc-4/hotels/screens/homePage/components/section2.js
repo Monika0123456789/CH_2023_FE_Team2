@@ -24,17 +24,18 @@ export const styles = StyleSheet.create({
   adImage: {
     position: "relative",
     width: "100%",
-    height: 500,
+    height: 300,
   },
 
   // styles for client ratings display. ---------start
   likesDisplay: {
     position: "absolute",
     backgroundColor: "rgba(240, 248, 255, 0.8)",
-    width: 300,
+    width: "90%",
     height: 110,
-    left: 30,
-    top: 380,
+    // left: 30,
+    top: 160,
+    margin:20,
     borderRadius: 10,
   },
 
