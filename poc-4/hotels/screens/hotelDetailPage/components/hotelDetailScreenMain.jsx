@@ -1,6 +1,5 @@
 
 import { ScrollView, Text, View } from "react-native";
-import  { DetailSectionOne } from "./detailSectionOne";
 
 export default DetailScreenMain = () => {
     return (
