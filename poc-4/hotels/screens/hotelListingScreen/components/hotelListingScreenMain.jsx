@@ -16,7 +16,7 @@ import BottomButton from './bottomButton';
 import DoubleRangeSlider from './priceRange';
 
 
-export default HotelListingMain = () => {
+export default HotelListingMain = ({navigation}) => {
     const [button1Clicked, setButton1Clicked] = useState(true);
     const [button2Clicked, setButton2Clicked] = useState(false);
 
@@ -31,13 +31,13 @@ export default HotelListingMain = () => {
                 {
                     button1Clicked===true && button2Clicked===false  ?
                     data.items.reverse().map((hotelListingObj, index) => (
-                        <HotelListingScreenCard key={index} hotelListingObj={hotelListingObj}/>
+                        <HotelListingScreenCard key={index} hotelListingObj={hotelListingObj} navigation={navigation}/>
                     )) : 
                     null
                     ||
                     button1Clicked===false && button2Clicked===true ?
                     data.items.reverse().map((hotelListingObj, index) => (
-                        <HotelListingScreenCard key={index} hotelListingObj={hotelListingObj}/>
+                        <HotelListingScreenCard key={index} hotelListingObj={hotelListingObj} navigation={navigation}/>
                     )) :
                     null
                 }
