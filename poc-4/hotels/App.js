@@ -1,4 +1,5 @@
 import { SafeAreaView, StatusBar, Text, View } from 'react-native';
+import { HeaderComp } from './screens/header/components/headerMain';
 
 import HomeScreen from "./screens/homePage/components/homeScreenMain";
 
