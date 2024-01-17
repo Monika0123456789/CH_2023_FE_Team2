@@ -6,10 +6,10 @@ import Section2 from "./section2.jsx";
 import { TestimonialMain } from "./testimonialMain";
 import ParentComponent from "./section3ParentComp";
 
-export default HomeScreen = () => {
+export default HomeScreen = ({navigation}) => {
     return (
       <ScrollView>
-        <SectionOneComp/>
+        <SectionOneComp navigation={navigation}/>
         <Section2/>
         <ParentComponent/>
         <TestimonialMain/>
