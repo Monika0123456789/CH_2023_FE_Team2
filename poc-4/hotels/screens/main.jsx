@@ -1,5 +1,6 @@
 
 import AdminLogin from "./admin/components/adminLogin";
+
 import  HomeScreenMain  from "./homePage/components/homeScreenMain";
 import HotelListingScreenMain from "./hotelListingScreen/components/hotelListingScreenMain";
 import {NavigationContainer} from '@react-navigation/native';
@@ -25,5 +26,6 @@ export let Main = () => {
         // </NavigationContainer>
 
     )
+
 }
 
