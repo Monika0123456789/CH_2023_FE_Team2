@@ -1,4 +1,5 @@
 
+import AdminLogin from "./admin/components/adminLogin";
 
 import  HomeScreenMain  from "./homePage/components/homeScreenMain";
 import HotelListingScreenMain from "./hotelListingScreen/components/hotelListingScreenMain";
@@ -12,7 +13,8 @@ export let Main = () => {
     return(
         <>
             {/* <HomeScreenMain/> */}
-            <HotelListingScreenMain/>
+            {/* <HotelListingScreenMain/> */}
+            {/* <AdminLogin/> */}
         </>
         
         
