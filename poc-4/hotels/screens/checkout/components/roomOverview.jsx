@@ -21,6 +21,7 @@ export default function RoomOverview() {
     setSelectedImageIndex(index);
   };
 
+  // handling room count where count cannot be greater than 9 or less than 1
   const [roomCount, setRoomCount] = useState(1);
 
   const handleIncrement = () => {
@@ -37,6 +38,15 @@ export default function RoomOverview() {
       setRoomCount((prevCount) => prevCount - 1);
     }
   };
+  // dummy state to store hotel details
+  const [hotelDetails, setHotelDetails] = useState({
+    hotelName: "Downtown Delight",
+    roomNumber: 2,
+    location: "5855 W Century Blvd, Los Angeles - 90045",
+    shortDescription:
+      "Offering garden views, Downtown Delight is an accommodation situated in Bangalore, 3.1 km from Chinnaswamy Stadium and 3.8 km from Visvesvaraya Industrial and Technological Museum.",
+    price: "",
+  });
   return (
     <View>
       <Text style={styles.heading1}>Booking Details</Text>
@@ -63,18 +73,17 @@ export default function RoomOverview() {
       </View>
       {/* hotel details such as name, rom number , location and short description -*/}
       <View>
-        <Text style={styles.heading1}>Downtown Delight</Text>
-        <Text style={styles.heading3}>Room Number : 2</Text>
+        <Text style={styles.heading1}>{hotelDetails.hotelName}</Text>
+        <Text style={styles.heading3}>
+          Room Number : {hotelDetails.roomNumber}
+        </Text>
         <Text style={styles.parah}>
           <MapPin color="black" />
-          5855 W Century Blvd, Los Angeles - 90045
+          {hotelDetails.location}
         </Text>
-        <Text style={styles.parah}>
-          Offering garden views, Downtown Delight is an accommodation situated
-          in Bangalore, 3.1 km from Chinnaswamy Stadium and 3.8 km from
-          Visvesvaraya Industrial and Technological Museum.
-        </Text>
+        <Text style={styles.parah}>{hotelDetails.shortDescription}</Text>
 
+        {/* icons container */}
         <View style={styles.iconsMainContainer}>
           <View style={styles.iconsContainer}>
             <BedDouble style={styles.icons} />
@@ -96,6 +105,7 @@ export default function RoomOverview() {
           </View>
         </View>
       </View>
+      {/* room quantity selector container */}
       <View style={styles.roomQuantitySelectorContainer}>
         <TouchableOpacity
           style={styles.roomSelectorButton}

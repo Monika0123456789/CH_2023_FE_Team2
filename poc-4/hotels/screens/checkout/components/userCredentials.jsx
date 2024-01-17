@@ -1,4 +1,4 @@
-import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "../styles/userCredentials";
 import { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
@@ -6,6 +6,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import * as DocumentPicker from "expo-document-picker";
 
 export default function UserCredentials() {
+  // local state to store user data
   const [userCredentials, setUserCredentials] = useState({
     idProof: null,
     name: "",
@@ -16,6 +17,7 @@ export default function UserCredentials() {
     gender: "",
   });
 
+  // nations array
   const nationArr = [
     { code: "IND", name: "India" },
     { code: "USA", name: "USA" },
@@ -43,7 +45,7 @@ export default function UserCredentials() {
     { code: "NGA", name: "Nigeria" },
     { code: "SAU", name: "Saudi Arabia" },
   ];
-
+  //functions to handle changes in textinputs
   const handleNameChange = (text) => {
     setUserCredentials({ ...userCredentials, name: text });
   };
@@ -64,6 +66,7 @@ export default function UserCredentials() {
     setUserCredentials({ ...userCredentials, gender: value });
   };
 
+  // allowing user to select document - upload document functionality
   const [selectedDocument, setSelectedDocument] = useState(null);
 
   const pickDocument = async () => {
@@ -78,6 +81,7 @@ export default function UserCredentials() {
     }
   };
 
+  // displaying uploaded document information to user
   const renderSelectedDocumentInfo = () => {
     if (selectedDocument) {
       return (
@@ -92,14 +96,21 @@ export default function UserCredentials() {
     }
   };
 
+  // to handle date of birth.
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState(false);
 
   const onChangeDate = (event, selectedDate) => {
     setShow(false);
-    if (selectedDate) {
+    const currentDate = new Date();
+    const minimumDate = new Date();
+    // Subtract 10 years from the current date -- setting minDate 10 years in past
+    minimumDate.setFullYear(currentDate.getFullYear() - 10);
+    if (selectedDate < minimumDate) {
       setDate(selectedDate);
       setUserCredentials({ ...userCredentials, dob: selectedDate });
+    } else {
+      Alert.alert("you must be at least 10 years old to register here");
     }
   };
   const showDatePicker = () => {
@@ -108,15 +119,17 @@ export default function UserCredentials() {
 
   return (
     <View style={styles.formContainer}>
+      {/* id container */}
       <View>
         <Text style={styles.formLabel}> Upload your Id</Text>
         <TouchableOpacity onPress={pickDocument}>
           <Text style={styles.textInput}>
-            <Text style={{fontWeight : "bold"}}> Select File :</Text>
+            <Text style={{ fontWeight: "bold" }}> Select File :</Text>
             {renderSelectedDocumentInfo()}
           </Text>
         </TouchableOpacity>
       </View>
+      {/* full name */}
       <View>
         <Text style={styles.formLabel}> Full Name</Text>
         <TextInput
@@ -125,6 +138,7 @@ export default function UserCredentials() {
           style={styles.textInput}
         ></TextInput>
       </View>
+      {/* email Container */}
       <View>
         <Text style={styles.formLabel}> Email Address</Text>
         <TextInput
@@ -133,6 +147,7 @@ export default function UserCredentials() {
           style={styles.textInput}
         ></TextInput>
       </View>
+      {/* mobile number Container */}
       <View>
         <Text style={styles.formLabel}>Mobile Number</Text>
         <TextInput
@@ -142,6 +157,7 @@ export default function UserCredentials() {
           style={styles.textInput}
         ></TextInput>
       </View>
+      {/* nationality container */}
       <View>
         <Text style={styles.formLabel}>Nationality</Text>
 
@@ -159,7 +175,7 @@ export default function UserCredentials() {
           ))}
         </Picker>
       </View>
-
+      {/* date of birth container */}
       <View>
         <Text style={styles.formLabel}>Date of Birth</Text>
         <TouchableOpacity style={styles.textInput} onPress={showDatePicker}>
@@ -179,6 +195,7 @@ export default function UserCredentials() {
           />
         )}
       </View>
+      {/* gender container */}
       <View>
         <Text style={styles.formLabel}>Select Gender</Text>
         <Picker
@@ -192,6 +209,7 @@ export default function UserCredentials() {
           <Picker.Item label="Other" value="other" />
         </Picker>
       </View>
+      {/* address container */}
       <View>
         <Text style={styles.formLabel}>Address</Text>
         <TextInput
