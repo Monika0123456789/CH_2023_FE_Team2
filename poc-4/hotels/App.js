@@ -14,11 +14,11 @@ export default function App() {
   const statusBarHeight = StatusBar.currentHeight;
   return (
     <NavigationContainer>
-    <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen}/>
-        <Stack.Screen name="HotelListing" component={HotelListingMain}/>
-        <Stack.Screen name="HotelDetail" component={hotelDetailScreenMain}/>
-    </Stack.Navigator>
-</NavigationContainer>
+      <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen}/>
+          <Stack.Screen name="HotelListing" component={HotelListingMain}/>
+          <Stack.Screen name="HotelDetail" component={hotelDetailScreenMain}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
