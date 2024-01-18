@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   // styles for remove button
   removeButton : {
-    marginLeft : "85%",
+    marginLeft : "80%",
     marginTop : 5
   },
   // styles fro label
@@ -25,6 +25,6 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     marginLeft: 10,
     marginBottom: 10,
-    width: 350,
+    width: "95%",
   },
 });

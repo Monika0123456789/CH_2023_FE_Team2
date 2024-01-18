@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   addTravellerButton: {
     padding: 8,
     backgroundColor: "rgba(43,39,241,0.777)",
-    width : "40%",
+    width : "50%",
     borderRadius : 5,
     borderWidth : 2,
     display :"flex",

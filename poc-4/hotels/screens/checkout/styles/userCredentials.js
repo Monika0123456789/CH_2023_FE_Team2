@@ -7,6 +7,11 @@ export const styles = StyleSheet.create({
     flexWrap: "wrap",
     marginTop: 10,
     width: "100%",
+    // borderWidth : 2,
+  },
+  // styles for form fields containers
+  fieldContainer : {
+    width : "100%"
   },
   // styles for labels
   formLabel: {
@@ -22,16 +27,14 @@ export const styles = StyleSheet.create({
     backgroundColor: "rgba(43, 39, 241, 0.707)",
     textAlign: "center",
     borderRadius: 5,
-    marginLeft: 60,
-    width: 100,
+    width: "100%",
   },
   // styles for text input
   textInput: {
     borderWidth: 2,
     padding: 8,
     borderRadius: 5,
-    marginLeft: 10,
     marginBottom: 10,
-    width: 350,
+    width: "100%",
   },
 });

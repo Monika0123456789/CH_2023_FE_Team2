@@ -120,7 +120,7 @@ export default function UserCredentials() {
   return (
     <View style={styles.formContainer}>
       {/* id container */}
-      <View>
+      <View style={styles.fieldContainer}>
         <Text style={styles.formLabel}> Upload your Id</Text>
         <TouchableOpacity onPress={pickDocument}>
           <Text style={styles.textInput}>

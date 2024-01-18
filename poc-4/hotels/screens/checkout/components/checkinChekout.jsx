@@ -53,7 +53,7 @@ export default function CheckinCheckout() {
   return (
     <View style={styles.checkinCheckoutContainer}>
       {/* checkin container */}
-      <View>
+      <View style={{ width: "50%" }}>
         <Text style={styles.formLabel}>Check-in Date</Text>
         <TouchableOpacity
           style={styles.textInput}
@@ -77,7 +77,7 @@ export default function CheckinCheckout() {
       </View>
 
       {/* checkout container */}
-      <View>
+      <View style={{ width: "50%" }}>
         <Text style={styles.formLabel}>Check-out Date</Text>
         <TouchableOpacity
           style={styles.textInput}

@@ -1,13 +1,12 @@
 
-import { ScrollView, Text, View } from "react-native";
-import  {DetailSectionOne}  from "./detailSectionOne";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import  DetailSectionOne  from "./detailSectionOne";
 
-export default DetailScreenMain = () => {
-    return (
-      <ScrollView>
-        <DetailSectionOne/>
-        {/* <Text>Hello</Text> */}
-      </ScrollView>
+export default DetailScreenMain = ({ navigation }) => {
+  return (
+    <ScrollView>
+      <DetailSectionOne navigation={navigation} />
+      {/* <Text>Hello</Text> */}
+    </ScrollView>
   );
-
 };

@@ -1,10 +1,16 @@
 import React from 'react';
-import { ScrollView, Text, View, Image } from 'react-native';
+import { ScrollView, Text, View, Image, TouchableOpacity } from 'react-native';
 import { FontAwesome as FaIcon } from '@expo/vector-icons';
 
-const DetailSectionOne = ({ hotelName }) => {
+const DetailSectionOne = ({ hotelName, navigation }) => {
+  const handlepress = () => {
+    navigation.navigate("Checkout");
+  };
   return (
     <ScrollView>
+      <TouchableOpacity onPress={handlepress}>
+        <Text>Navigate to checkout</Text>
+      </TouchableOpacity>
       <View>
         <View style={styles.imgSection}>
           <Text>{hotelName}</Text>
@@ -19,16 +25,28 @@ const DetailSectionOne = ({ hotelName }) => {
 
           <View style={styles.imageSection}>
             <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/16.jpg')} style={styles.image} />
+              <Image
+                source={require("../../../assets/images/16.jpg")}
+                style={styles.image}
+              />
             </View>
             <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/13.jpg')} style={styles.image} />
+              <Image
+                source={require("../../../assets/images/13.jpg")}
+                style={styles.image}
+              />
             </View>
             <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/12(1).jpg')} style={styles.image} />
+              <Image
+                source={require("../../../assets/images/12(1).jpg")}
+                style={styles.image}
+              />
             </View>
             <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/01(2).jpg')} style={styles.image} />
+              <Image
+                source={require("../../../assets/images/01(2).jpg")}
+                style={styles.image}
+              />
               <Text style={styles.overlayContainer}>View all</Text>
             </View>
           </View>

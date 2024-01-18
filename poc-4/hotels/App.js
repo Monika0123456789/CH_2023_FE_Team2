@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HotelListingMain from "./screens/hotelListingScreen/components/hotelListingScreenMain";
 import hotelDetailScreenMain from './screens/hotelDetailPage/components/hotelDetailScreenMain';
-import CheckoutMain from "./checkout/components/checkoutMain";
+import CheckoutMain from './screens/checkout/components/checkoutMain';
 
 
 const Stack = createStackNavigator();
