@@ -8,6 +8,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HotelListingMain from "./screens/hotelListingScreen/components/hotelListingScreenMain";
 import hotelDetailScreenMain from './screens/hotelDetailPage/components/hotelDetailScreenMain';
+import CheckoutMain from "./checkout/components/checkoutMain";
+
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -15,9 +17,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen}/>
-          <Stack.Screen name="HotelListing" component={HotelListingMain}/>
-          <Stack.Screen name="HotelDetail" component={hotelDetailScreenMain}/>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="HotelListing" component={HotelListingMain} />
+        <Stack.Screen name="HotelDetail" component={hotelDetailScreenMain} />
+        <Stack.Screen name="Checkout" component={CheckoutMain} />
       </Stack.Navigator>
     </NavigationContainer>
   );
