@@ -1,9 +1,18 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../styles/roomOverview";
 import { BedDouble, ListStart, MapPin, MoveLeft } from "lucide-react-native";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import {
+  increaseCount,
+  decreaseCount,
+} from "../redux/actions/roomQuantity.actions";
 
 export default function RoomOverview() {
+  const rooms = useSelector((store) => store.roomCount);
+  const dispatch = useDispatch();
+  // console.log(rooms);
+
   // paths of images used in this component
   const imagePaths = [
     require("../../../assets/images/room1.jpeg"),
@@ -22,20 +31,21 @@ export default function RoomOverview() {
   };
 
   // handling room count where count cannot be greater than 9 or less than 1
-  const [roomCount, setRoomCount] = useState(1);
 
   const handleIncrement = () => {
-    if (roomCount + 1 > 9) {
+    if (rooms + 1 > 9) {
       alert("you reached the maximum booking allowed for an individual user");
     } else {
-      setRoomCount((prevCount) => prevCount + 1);
+      // setRoomCount((prevCount) => prevCount + 1);
+      dispatch(increaseCount());
     }
   };
   const handleDecrement = () => {
-    if (roomCount - 1 <= 0) {
+    if (rooms - 1 <= 0) {
       alert("you need to select at least one room");
     } else {
-      setRoomCount((prevCount) => prevCount - 1);
+      // setRoomCount((prevCount) => prevCount - 1);
+      dispatch(decreaseCount());
     }
   };
   // dummy state to store hotel details
@@ -113,7 +123,7 @@ export default function RoomOverview() {
         >
           <Text style={{ color: "white" }}>+</Text>
         </TouchableOpacity>
-        <Text style={styles.quantityDisplay}>{roomCount}</Text>
+        <Text style={styles.quantityDisplay}>{rooms}</Text>
         <TouchableOpacity
           style={styles.roomSelectorButton}
           onPress={handleDecrement}

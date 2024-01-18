@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   // styles for enlarged image
   enlargedImageStyles: {
     borderRadius: 20,
-    width: 360,
+    width: "95%",
     height: 360,
   },
 
@@ -82,7 +82,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "rgba(43,39,241,0.777)",
     padding: 5,
     borderRadius : 5,
-    width : "99%"
+    width : "100%"
   },
   roomSelectorButton: {
     paddingLeft: 20,

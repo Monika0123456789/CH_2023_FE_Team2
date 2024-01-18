@@ -4,18 +4,22 @@ import { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import * as DocumentPicker from "expo-document-picker";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/actions/roomQuantity.actions";
 
 export default function UserCredentials() {
+  const dispatch = useDispatch();
   // local state to store user data
   const [userCredentials, setUserCredentials] = useState({
-    idProof: null,
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
+    mobileNumber: "",
     nationality: "IND",
-    dob: null,
-    gender: "",
+    dateOfBirth: null,
+    gender: "male",
+    address: "",
   });
+  // console.log(userCredentials)
 
   // nations array
   const nationArr = [
@@ -47,7 +51,7 @@ export default function UserCredentials() {
   ];
   //functions to handle changes in textinputs
   const handleNameChange = (text) => {
-    setUserCredentials({ ...userCredentials, name: text });
+    setUserCredentials({ ...userCredentials, fullName: text });
   };
 
   const handleEmailChange = (text) => {
@@ -55,7 +59,7 @@ export default function UserCredentials() {
   };
 
   const handlePhoneChange = (text) => {
-    setUserCredentials({ ...userCredentials, phone: text });
+    setUserCredentials({ ...userCredentials, mobileNumber: text });
   };
 
   const handleNationalityChange = (value) => {
@@ -64,6 +68,9 @@ export default function UserCredentials() {
 
   const handleGenderChange = (value) => {
     setUserCredentials({ ...userCredentials, gender: value });
+  };
+  const handleAddressChange = (value) => {
+    setUserCredentials({ ...userCredentials, address: value });
   };
 
   // allowing user to select document - upload document functionality
@@ -108,7 +115,7 @@ export default function UserCredentials() {
     minimumDate.setFullYear(currentDate.getFullYear() - 10);
     if (selectedDate < minimumDate) {
       setDate(selectedDate);
-      setUserCredentials({ ...userCredentials, dob: selectedDate });
+      setUserCredentials({ ...userCredentials, dateOfBirth: selectedDate });
     } else {
       Alert.alert("you must be at least 10 years old to register here");
     }
@@ -117,10 +124,11 @@ export default function UserCredentials() {
     setShow(true);
   };
 
+  dispatch(addUser(userCredentials));
   return (
     <View style={styles.formContainer}>
       {/* id container */}
-      <View>
+      <View style={styles.fieldContainer}>
         <Text style={styles.formLabel}> Upload your Id</Text>
         <TouchableOpacity onPress={pickDocument}>
           <Text style={styles.textInput}>
@@ -213,6 +221,8 @@ export default function UserCredentials() {
       <View>
         <Text style={styles.formLabel}>Address</Text>
         <TextInput
+          onChangeText={handleAddressChange}
+          value={userCredentials.address}
           style={[styles.textInput, { height: 100, borderWidth: 1 }]}
         ></TextInput>
       </View>

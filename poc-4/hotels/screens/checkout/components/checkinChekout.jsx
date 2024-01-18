@@ -2,8 +2,12 @@ import { useState } from "react";
 import { Alert, Text, TouchableOpacity, View } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { styles } from "../styles/checkinCheckout";
+import { useDispatch } from "react-redux";
+import { addBookingDetails } from "../redux/actions/roomQuantity.actions";
+
 
 export default function CheckinCheckout() {
+  const dispatch = useDispatch();
   // local state to store checkin and checkout -- that are displayed as value in date input
   const [bookingDates, setBookingDates] = useState({
     checkin: null,
@@ -18,7 +22,7 @@ export default function CheckinCheckout() {
   const [showCheckoutPicker, setShowCheckoutPicker] = useState(false);
 
   const currentDate = new Date();
-  currentDate.setUTCHours(23,59,59,999)
+  currentDate.setUTCHours(23, 59, 59, 999);
   // funtion to handle checkin date
   const onCheckinDate = (event, selectedCheckinDate) => {
     setShowCheckinPicker(false);
@@ -50,10 +54,12 @@ export default function CheckinCheckout() {
   const showCheckoutDatePicker = () => {
     setShowCheckoutPicker(true);
   };
+  // storing data to store
+  dispatch(addBookingDetails(bookingDates));
   return (
     <View style={styles.checkinCheckoutContainer}>
       {/* checkin container */}
-      <View>
+      <View style={{ width: "50%" }}>
         <Text style={styles.formLabel}>Check-in Date</Text>
         <TouchableOpacity
           style={styles.textInput}
@@ -77,7 +83,7 @@ export default function CheckinCheckout() {
       </View>
 
       {/* checkout container */}
-      <View>
+      <View style={{ width: "50%" }}>
         <Text style={styles.formLabel}>Check-out Date</Text>
         <TouchableOpacity
           style={styles.textInput}

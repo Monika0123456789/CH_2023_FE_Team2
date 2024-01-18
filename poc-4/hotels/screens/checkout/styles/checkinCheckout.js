@@ -17,8 +17,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8,
     borderRadius: 5,
-    marginLeft: 10,
     marginBottom: 10,
-    width: 170,
+    width : "95%"
   },
 });
