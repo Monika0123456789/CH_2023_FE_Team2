@@ -19,16 +19,16 @@ const DetailSectionOne = ({ hotelName }) => {
 
           <View style={styles.imageSection}>
             <View style={styles.gridContent}>
-              <Image source={require('./assets/images/16.jpg')} style={styles.image} />
+              <Image source={require('../../../assets/images/16.jpg')} style={styles.image} />
             </View>
             <View style={styles.gridContent}>
-              <Image source={require('./assets/images/13.jpg')} style={styles.image} />
+              <Image source={require('../../../assets/images/13.jpg')} style={styles.image} />
             </View>
             <View style={styles.gridContent}>
-              <Image source={require('./assets/images/12(1).jpg')} style={styles.image} />
+              <Image source={require('../../../assets/images/12(1).jpg')} style={styles.image} />
             </View>
             <View style={styles.gridContent}>
-              <Image source={require('./assets/images/01(2).jpg')} style={styles.image} />
+              <Image source={require('../../../assets/images/01(2).jpg')} style={styles.image} />
               <Text style={styles.overlayContainer}>View all</Text>
             </View>
           </View>
