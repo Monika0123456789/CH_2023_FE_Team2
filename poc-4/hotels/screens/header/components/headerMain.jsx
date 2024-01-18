@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 
-export const HeaderComp = () => {
+export default HeaderComp = () => {
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingVertical: 8 }}>
       <Image

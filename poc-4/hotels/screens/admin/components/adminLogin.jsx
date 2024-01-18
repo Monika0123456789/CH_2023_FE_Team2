@@ -1,12 +1,19 @@
-import { Alert, Button, Image, KeyboardAvoidingView, Pressable, ScrollView, Text, TextInput, View} from "react-native";
+import { Alert, Switch, Image, KeyboardAvoidingView, Pressable, ScrollView, Text, TextInput, View} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import {styles} from "../admin-styles/admin.js";
 import { useEffect, useState } from "react";
+import Footer from "../../footer/components/footer.jsx";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-export default AdminLogin = () => {
+export default AdminLogin = ({navigation}) => {
     // setState to store the chaning email and password
     let [ adminCredentials, setAdminCredentials ] = useState({ email : "", password : "" });
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const [isEnabled, setIsEnabled] = useState(false);
+    
 
     useEffect(() => {
         var adminData = {
@@ -16,7 +23,7 @@ export default AdminLogin = () => {
         AsyncStorage.setItem(
             'adminData',
             JSON.stringify(adminData),
-        );
+        ); 
         console.log('data inserted successfully', JSON.stringify(adminData));
     })
 
@@ -33,7 +40,8 @@ export default AdminLogin = () => {
             if(adminCredentials.email.length!==0 && adminCredentials.password.length!==0){
                 if(dataObject.email === adminCredentials.email && dataObject.password === adminCredentials.password ){
                     setAdminCredentials({ email : "", password : "" });
-                    console.log("logged in successfully")
+                    console.log("logged in successfully");
+                    navigation.navigate('AdminLanding');
                 }
                 else{
                     Alert.alert('Error', 'you have entered wrong credentials!',
@@ -64,6 +72,10 @@ export default AdminLogin = () => {
         setAdminCredentials({...adminCredentials, password : data});
     }
 
+    const toggleShowPassword = () => {
+        setShowPassword (!showPassword);
+    };
+
     return(
         <>
             <ScrollView>
@@ -71,19 +83,28 @@ export default AdminLogin = () => {
                     <Image source={require('../../../assets/images/logo.png')} style={styles.logo}/>
 
                     <View style={styles.email_container}>
-                        <TextInput placeholder="email" style={styles.input_field} value={adminCredentials.email} onChangeText={handleEmailChange}/>
+                        <TextInput placeholder="email" style={styles.email_field} value={adminCredentials.email} onChangeText={handleEmailChange}/>
                     </View>
 
                     <View style={styles.password_container}>
-                        <TextInput placeholder="password" style={styles.input_field} value={adminCredentials.password} onChangeText={handlePasswordChange}/>
+                        <TextInput secureTextEntry= {!showPassword} placeholder="password" value={adminCredentials.password} onChangeText={handlePasswordChange}/>
+                        <MaterialCommunityIcons
+                            name= {showPassword ? 'eye-off' : 'eye'}
+                            size= {20}
+                            color="#aaa"
+                            style= {styles.icon}
+                            onPress= {toggleShowPassword}
+                        />
                     </View>
+
+                
 
                     <Pressable style={styles.submit_button} onPress={submitHandler}>
                         <Text style={styles.submit_button_text}>Log in</Text>
                     </Pressable>
                 </KeyboardAvoidingView>
             </ScrollView>
-
+            <Footer navigation={navigation}/>
         </>
     )
 }
