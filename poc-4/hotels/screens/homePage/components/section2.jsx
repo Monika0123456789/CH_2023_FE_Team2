@@ -48,7 +48,7 @@ export default function Section2() {
           <View>
             <Text style={styles.headding2}>
               4.5
-              <Star fill="#fff700" />
+              <Star fill="yellow" />
             </Text>
           </View>
         </View>
@@ -116,7 +116,7 @@ export default function Section2() {
                 styles.iconContainer,
               ]}
             >
-              <Zap color="rgb(48, 253, 185)" />
+              <Zap fill="rgb(48, 253, 185)" />
             </View>
             <Text style={styles.headding3}> 24 Hours Alert</Text>
           </View>
