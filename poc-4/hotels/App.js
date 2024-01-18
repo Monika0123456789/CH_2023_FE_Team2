@@ -9,19 +9,23 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HotelListingMain from "./screens/hotelListingScreen/components/hotelListingScreenMain";
 import hotelDetailScreenMain from './screens/hotelDetailPage/components/hotelDetailScreenMain';
 import CheckoutMain from './screens/checkout/components/checkoutMain';
+import { Provider } from 'react-redux';
+import dataStore from './screens/checkout/store/index';
 
 
 const Stack = createStackNavigator();
 export default function App() {
   const statusBarHeight = StatusBar.currentHeight;
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="HotelListing" component={HotelListingMain} />
-        <Stack.Screen name="HotelDetail" component={hotelDetailScreenMain} />
-        <Stack.Screen name="Checkout" component={CheckoutMain} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={dataStore}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="HotelListing" component={HotelListingMain} />
+          <Stack.Screen name="HotelDetail" component={hotelDetailScreenMain} />
+          <Stack.Screen name="Checkout" component={CheckoutMain} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
