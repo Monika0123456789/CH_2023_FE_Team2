@@ -1,36 +1,40 @@
 import React from 'react';
-import { ScrollView, Text, View, Image } from 'react-native';
+import { ScrollView, Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome as FaIcon } from '@expo/vector-icons';
 
-const DetailSectionOne = ({ hotelName }) => {
+const DetailSectionOne = ({ hotelName, navigation }) => {
+  const handlepress = () => {
+    navigation.navigate("Checkout");
+  };
   return (
     <ScrollView>
-      <View>
-        <View style={styles.imgSection}>
-          <Text>{hotelName}</Text>
+      <TouchableOpacity onPress={handlepress}>
+          <Text>Navigate to checkout</Text>
+        </TouchableOpacity>
+      <View style={styles.imgSection}>
+        <Text>{hotelName}</Text>
 
-          <View style={styles.locationContainer}>
-            <FaIcon name="location-dot" size={20} />
-            <Text>
-              <FaIcon name="eye" size={20} />
-              &nbsp;View On Map
-            </Text>
+        <View style={styles.locationContainer}>
+        
+          <Text>
+            <FaIcon name="eye" size={20} />
+            &nbsp;View On Map
+          </Text>
+        </View>
+
+        <View style={styles.imageSection}>
+          <View style={styles.gridContent}>
+            <Image source={require("../../../assets/images/16.jpg")} style={styles.image} />
           </View>
-
-          <View style={styles.imageSection}>
-            <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/16.jpg')} style={styles.image} />
-            </View>
-            <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/13.jpg')} style={styles.image} />
-            </View>
-            <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/12(1).jpg')} style={styles.image} />
-            </View>
-            <View style={styles.gridContent}>
-              <Image source={require('../../../assets/images/01(2).jpg')} style={styles.image} />
-              <Text style={styles.overlayContainer}>View all</Text>
-            </View>
+          <View style={styles.gridContent}>
+            <Image source={require('../../../assets/images/13.jpg')} style={styles.image} />
+          </View>
+          <View style={styles.gridContent}>
+            <Image source={require('../../../assets/images/12(1).jpg')} style={styles.image} />
+          </View>
+          <View style={styles.gridContent}>
+            <Image source={require('../../../assets/images/01(2).jpg')} style={styles.image} />
+            <Text style={styles.overlayContainer}>View all</Text>   
           </View>
         </View>
       </View>
@@ -39,25 +43,39 @@ const DetailSectionOne = ({ hotelName }) => {
 };
 
 // Add your styles here
-const styles = {
+const styles = StyleSheet.create({
   imgSection: {
-    // Add your styles for the img-section container
-  },
-  locationContainer: {
-    // Add your styles for the location container
+    padding: 10,
+    alignItems: 'center',
   },
   imageSection: {
-    // Add your styles for the image section container
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginTop: "1%",
   },
   gridContent: {
-    // Add your styles for the grid content container
+    width: '48%', // Adjust as needed
+    marginBottom: 10,
   },
   image: {
-    // Add your styles for the image
+    width: '100%',
+    height: 120, // Adjust as needed
+    borderRadius: 8,
+    marginBottom: 5,
   },
   overlayContainer: {
-    // Add your styles for the overlay container
+    position: 'absolute',
+    bottom: 5,
+    right: 0,
+    left: 0,
+    top: 0,
+    textAlign : "center",
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 60,
+    color: 'white',
+    borderRadius: 5,
   },
-};
+});
 
 export default DetailSectionOne;
