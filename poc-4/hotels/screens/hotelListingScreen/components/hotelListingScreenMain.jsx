@@ -7,6 +7,7 @@ import data from "../../../assets/json/hotel-booking.json"
 import { useState } from "react";
 
 import HotelListingScreenCard from "./hotelListingScreenCard";
+import Footer from "../../footer/components/footer.jsx";
 import HotelTypes from './hotelTypes';
 import Amenities from './Amenities';
 import PopularType from './popularType';
@@ -75,7 +76,7 @@ export default HotelListingMain = ({navigation}) => {
 
             </ScrollView>
             
-            
+            <Footer navigation={navigation}/>
         </>
     )
 }
