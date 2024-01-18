@@ -1,4 +1,5 @@
 
+
 import { ScrollView, Text, View } from "react-native";
 import  DetailSectionOne  from "./DetailsectionOne";
 import DetailSectionTwo from "./DetailSectionTwo";
@@ -13,5 +14,4 @@ export default DetailScreenMain = () => {
         {/* <Text>Hello</Text> */}
       </ScrollView>
   );
-
 };

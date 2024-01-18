@@ -1,10 +1,16 @@
 import React from 'react';
-import { ScrollView, Text, View, Image, StyleSheet } from 'react-native';
+import { ScrollView, Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome as FaIcon } from '@expo/vector-icons';
 
-const DetailSectionOne = ({ hotelName }) => {
+const DetailSectionOne = ({ hotelName, navigation }) => {
+  const handlepress = () => {
+    navigation.navigate("Checkout");
+  };
   return (
     <ScrollView>
+      <TouchableOpacity onPress={handlepress}>
+          <Text>Navigate to checkout</Text>
+        </TouchableOpacity>
       <View style={styles.imgSection}>
         <Text>{hotelName}</Text>
 
@@ -28,7 +34,7 @@ const DetailSectionOne = ({ hotelName }) => {
           </View>
           <View style={styles.gridContent}>
             <Image source={require('../../../assets/images/01(2).jpg')} style={styles.image} />
-            <Text style={styles.overlayContainer}>View all</Text>
+            <Text style={styles.overlayContainer}>View all</Text>   
           </View>
         </View>
       </View>
