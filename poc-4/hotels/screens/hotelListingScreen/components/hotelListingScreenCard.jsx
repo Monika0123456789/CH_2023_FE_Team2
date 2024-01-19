@@ -1,11 +1,14 @@
 import { styles } from "../hotelListingScreen-styles/hotelListingScreen";
-import { Image, Pressable, Text, View, Modal, Button, StyleSheet } from "react-native";
-import {  Star, StarHalf, MapPin, CheckCircle,  Dot } from 'lucide-react-native';
+import { Image, Pressable, Text, View, Modal, Button, StyleSheet, TouchableOpacity } from "react-native";
+import {  Star, StarHalf, MapPin, CheckCircle,  Dot, ArrowLeftCircle, ArrowRightCircle } from 'lucide-react-native';
 import { useState } from "react";
 
 export default HotelListingScreenCard = (props) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const handleModal = () => setIsModalVisible(() => !isModalVisible);
+    const handleDetail=()=>{
+        props.navigation.navigate('HotelDetail');
+      }
     return(
         <>
             {/* main container of the card */}
@@ -99,12 +102,11 @@ export default HotelListingScreenCard = (props) => {
                                 <Text style={styles.hotel_price_text}>Rs {props.hotelListingObj.price}</Text>
                                 <Text style={{textDecorationLine:'line-through', textDecorationStyle:'solid', color:"rgb(117, 116, 116)"}}>10000</Text>
                             </View>
-                            <Pressable style={styles.select_rooms_button}>
+                            <TouchableOpacity style={styles.select_rooms_button} onPress={handleDetail}>
                                 <Text style={styles.select_rooms_text}>select room</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
-                        
-                    </View>
+                    </View>   
                 </View>
             </View>
         </>

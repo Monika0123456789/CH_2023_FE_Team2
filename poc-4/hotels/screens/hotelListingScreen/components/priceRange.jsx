@@ -17,7 +17,6 @@ const PriceSlider = ({ onPriceChange }) => {
     const defaultValues = [0, 10000];
     setValues(defaultValues);
     onPriceChange(defaultValues);
-    // setPriceRange(defaultValues);
   };
 
   return (

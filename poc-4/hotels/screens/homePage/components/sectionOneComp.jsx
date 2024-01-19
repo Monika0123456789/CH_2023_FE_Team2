@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import {styles} from "./sectionOnestyle"
-const SectionOneComp = () => {
+import { Navigation } from 'lucide-react-native';
+const SectionOneComp = ({navigation}) => {
+  const handleListing=()=>{
+    navigation.navigate('HotelListing');
+  }
   return (
     <ScrollView>
       <ImageBackground
@@ -13,7 +17,7 @@ const SectionOneComp = () => {
           <Text style={styles.description}>
             We bring you not only a stay option, but an experience in your budget to enjoy the luxury.
           </Text>
-          <TouchableOpacity style={styles.discoverButton}>
+          <TouchableOpacity style={styles.discoverButton} onPress={handleListing}>
             <Text style={styles.buttonText}>Discover Now</Text>
           </TouchableOpacity>
         </View>
