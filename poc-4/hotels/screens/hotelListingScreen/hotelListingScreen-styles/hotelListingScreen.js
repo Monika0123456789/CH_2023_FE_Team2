@@ -120,5 +120,24 @@ export const styles = StyleSheet.create({
         borderRadius:3,
         padding:10,
         backgroundColor:"rgb(216, 204, 189)",
-    }
+    },
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'end',
+      },
+      textContainer: {
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderBottomWidth: 1,
+        borderBottomColor: 'lightgray',
+        borderRadius: 45, 
+        backgroundColor:'grey',
+        padding:10, 
+        color:'white',
+      },
+      overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      },
 })

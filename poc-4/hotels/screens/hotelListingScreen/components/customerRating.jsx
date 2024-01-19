@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
 const CustomerRating = ({ onRatingChange }) => {
   const [selectedRating, setSelectedRating] = useState(null);
@@ -8,11 +9,19 @@ const CustomerRating = ({ onRatingChange }) => {
     // Toggle the rating if clicked again
     const newRating = selectedRating === rating ? null : rating;
 
-    // Update the state
+    // Update the state locally
     setSelectedRating(newRating);
 
-    // Notify the parent component about the selected rating if onRatingChange is provided
+    // Notify the parent component about the selected rating
     onRatingChange && onRatingChange(newRating);
+  };
+
+  const handleClearAll = () => {
+    // Clear the locally stored rating
+    setSelectedRating(null);
+
+    // Notify the parent component about the cleared rating
+    onRatingChange && onRatingChange(null);
   };
 
   return (
@@ -28,6 +37,7 @@ const CustomerRating = ({ onRatingChange }) => {
           />
         ))}
       </View>
+      <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer}/>
     </View>
   );
 };
@@ -40,19 +50,13 @@ const RatingBox = ({ value, onClick, isSelected }) => (
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#ddd',
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 5,
-    width: 300,
-    justifyContent: 'center',
-    alignSelf: 'center',
+    backgroundColor: 'white',
+    borderColor: 'black',
+    width: '100%',
   },
   heading: {
-    marginTop: 0,
+    marginTop: 5,
+    marginLeft: 10,
     fontWeight: 'bold',
     fontSize: 18,
   },
@@ -79,6 +83,10 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontSize: 16,
     color: 'black',
+  },
+  buttonContainer: {
+    marginTop: '30%',
+    marginLeft: 10,
   },
 });
 
