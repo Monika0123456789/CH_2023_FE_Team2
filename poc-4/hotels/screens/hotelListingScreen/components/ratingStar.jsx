@@ -25,19 +25,14 @@ const RatingStar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#ddd',
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 5,
-    width: 300,
-    justifyContent: 'center',
-    alignSelf: 'center',
+    // borderWidth: 1,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    width: '100%',
   },
   heading: {
-    marginTop: 0,
+    marginTop: 5,
+    marginLeft:10,
     fontWeight: 'bold',
     fontSize: 18,
   },

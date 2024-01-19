@@ -1,4 +1,3 @@
-
 import { styles } from "../hotelListingScreen-styles/hotelListingScreen";
 import { Image, Pressable, Text, View, Modal, Button, StyleSheet } from "react-native";
 import {  Star, StarHalf, MapPin, CheckCircle,  Dot } from 'lucide-react-native';

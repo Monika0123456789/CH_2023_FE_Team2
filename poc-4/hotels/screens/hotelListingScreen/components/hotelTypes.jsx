@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 
-const HotelTypes = () => {
+
+const HotelTypes = ({ onChange }) => {
   const [checkedItems, setCheckedItems] = useState({
     All: false,
     Hotel: false,
@@ -11,66 +12,58 @@ const HotelTypes = () => {
     Villa: false,
   });
 
+  useEffect(() => {
+    const updatedSelectedTypes = Object.keys(checkedItems).filter((key) => checkedItems[key]);
+  
+    onChange(updatedSelectedTypes);
+  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkedItems]);
+  
   const handleCheckboxChange = (item) => {
     setCheckedItems((prevCheckedItems) => {
       let updatedCheckedItems;
-  
+
       if (item === 'All') {
-        const allChecked = !prevCheckedItems.All;
-        updatedCheckedItems = {
-          All: allChecked,
-          Hotel: allChecked,
-          Apartment: allChecked,
-          Resort: allChecked,
-          Villa: allChecked,
-        };
+        updatedCheckedItems = Object.keys(prevCheckedItems).reduce((acc, key) => {
+          acc[key] = !prevCheckedItems.All;
+          return acc;
+        }, {});
       } else {
         updatedCheckedItems = { ...prevCheckedItems, [item]: !prevCheckedItems[item] };
         updatedCheckedItems.All = Object.values(updatedCheckedItems).every((value) => value);
       }
-  
+
       return updatedCheckedItems;
     });
   };
-  
+
+  const handleClearAll = () => {
+    setCheckedItems({
+      All: false,
+      Hotel: false,
+      Apartment: false,
+      Resort: false,
+      Villa: false,
+    });
+  };
+
 
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Hotel Type</Text>
-      <View style={styles.checkboxContainer}>
-        <CheckBox
-          title="All"
-          checked={checkedItems.All}
-          onPress={() => handleCheckboxChange('All')}
-        />
-      </View>
-      <View style={styles.checkboxContainer}>
-        <CheckBox
-          title="Hotel"
-          checked={checkedItems.Hotel}
-          onPress={() => handleCheckboxChange('Hotel')}
-        />
-      </View>
-      <View style={styles.checkboxContainer}>
-        <CheckBox
-          title="Apartment"
-          checked={checkedItems.Apartment}
-          onPress={() => handleCheckboxChange('Apartment')}
-        />
-      </View>
-      <View style={styles.checkboxContainer}>
-        <CheckBox
-          title="Resort"
-          checked={checkedItems.Resort}
-          onPress={() => handleCheckboxChange('Resort')}
-        />
-      </View>
-      <View style={styles.checkboxContainer}>
-        <CheckBox
-          title="Villa"
-          checked={checkedItems.Villa}
-          onPress={() => handleCheckboxChange('Villa')}
-        />
+      {Object.keys(checkedItems).map((item) => (
+        <View key={item} style={styles.checkboxContainer}>
+          <CheckBox
+            title={item}
+            checked={checkedItems[item]}
+            onPress={() => handleCheckboxChange(item)}
+            containerStyle={styles.checkboxStyle}
+          />
+        </View>
+      ))}
+      <View style={styles.buttonContainer}>
+        <Button title="Clear All" onPress={handleClearAll} />
       </View>
     </View>
   );
@@ -78,25 +71,28 @@ const HotelTypes = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#ddd',
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 5,
-    width: 300,
-    justifyContent:'center',
-    alignSelf:'center'
-},
+    backgroundColor: 'white',
+    borderColor: 'black',
+    width: '100%',
+  },
   heading: {
-    marginTop: 0,
+    marginTop: 5,
+    marginLeft: 10,
     fontWeight: 'bold',
     fontSize: 18,
   },
   checkboxContainer: {
-    marginTop: 10
+    marginTop: 10,
+  },
+  checkboxStyle: {
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+  },
+  buttonContainer: {
+    marginTop: 10,
+    marginLeft: 10,
   },
 });
 
 export default HotelTypes;
+

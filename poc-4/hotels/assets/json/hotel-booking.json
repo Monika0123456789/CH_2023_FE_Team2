@@ -22,7 +22,7 @@
 				"images": ["https://via.placeholder.com/980x360", "https://via.placeholder.com/980x360"]
 				
 			}],
-			"Facilities":["Free Wifi", "Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
+			"Facilities":["Free Wifi","Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
 			"longDesc": " Located in Bangalore, close to UB City Mall, Commercial Street and Brigade Road, The Ritz - Carlton, Bangalore is a picturesque property with a 24-hour front desk and free Wi-Fi throughout the property. Filling the hotel’s entire fifth floor, The Ritz-Carlton Spa, Bangalore offers luxury treatments drawing from Indian and Eastern healing traditions, a salon and swimming pool. Twelve treatment rooms include a VIP suite and two express service rooms."
          },
          {
@@ -46,7 +46,7 @@
 				"images": ["https://via.placeholder.com/980x360", "https://via.placeholder.com/980x360"]
 				
 			}],
-			"Facilities":["Free Wifi","Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
+			"Facilities":["Free Wifi", "Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
 			"longDesc": "This property encourages guests to embrace nature with its eco-friendly arrangements. This apartment features air-conditioned accommodations with a balcony. The apartment also provides free Wifi, free private parking, and facilities for disabled guests."
          },
          {
@@ -70,7 +70,7 @@
 				"images": ["https://via.placeholder.com/980x360", "https://via.placeholder.com/980x360"]
 				
 			}],
-			"Facilities":["Free Wifi", "Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
+			"Facilities":["Free Wifi","Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
 			"longDesc": "This property offers access to a balcony, free private parking, and free Wifi. Commercial Street is 6.9 miles from the apartment, and Chinnaswamy Stadium is 6.9 miles away."
          },
          {
@@ -94,7 +94,7 @@
 				"images": ["https://via.placeholder.com/980x360", "https://via.placeholder.com/980x360"]
 				
 			}],
-			"Facilities":["Free Wifi", "Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
+			"Facilities":["Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry","Bar" ],
 			"longDesc": "The property overlooks the golf course and offers free private parking, an outdoor swimming pool and a fully equipped fitness center. The property has a pool bar, shared lounge as well as a garden. The accommodations provides a 24-hour front desk, room service and currency exchange."
          },
          {
@@ -118,7 +118,7 @@
 				"images": ["https://via.placeholder.com/980x360", "https://via.placeholder.com/980x360"]
 				
 			}],
-			"Facilities":["Free Wifi", "Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
+			"Facilities":["Balcony", "24-hour security", "Air conditioning", "Non-smoking rooms", "24-hour front desk", "Concierge service", "Ironing service", "Family rooms", "Laundry" ],
 			"longDesc": "This property offers access to a terrace, free private parking, and free Wifi. The accommodation offers full-day security and a concierge service for guests.This villa includes 6 bedrooms, 2 living rooms and a TV, an equipped kitchen with a dining area, and 7 bathrooms with a shower and a washing machine. The villa offers bed linen, towels, and daily room service."
          }
       ]
