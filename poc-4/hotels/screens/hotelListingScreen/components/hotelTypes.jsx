@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { CheckBox } from 'react-native-elements';
-
+import { useHotelContext } from '../components/hotelcontext'; 
 
 const HotelTypes = ({ onChange }) => {
-  const [checkedItems, setCheckedItems] = useState({
-    All: false,
-    Hotel: false,
-    Apartment: false,
-    Resort: false,
-    Villa: false,
-  });
+  const { hotelTypesCheckedItems, setHotelTypesCheckedItems } = useHotelContext();
 
   useEffect(() => {
-    const updatedSelectedTypes = Object.keys(checkedItems).filter((key) => checkedItems[key]);
-  
+    const updatedSelectedTypes = Object.keys(hotelTypesCheckedItems).filter((key) => hotelTypesCheckedItems[key]);
     onChange(updatedSelectedTypes);
-  
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checkedItems]);
-  
+  }, [hotelTypesCheckedItems]);
+
   const handleCheckboxChange = (item) => {
-    setCheckedItems((prevCheckedItems) => {
+    setHotelTypesCheckedItems((prevCheckedItems) => {
       let updatedCheckedItems;
 
       if (item === 'All') {
@@ -39,24 +30,23 @@ const HotelTypes = ({ onChange }) => {
   };
 
   const handleClearAll = () => {
-    setCheckedItems({
-      All: false,
-      Hotel: false,
-      Apartment: false,
-      Resort: false,
-      Villa: false,
-    });
-  };
+    const updatedCheckedItems = { ...hotelTypesCheckedItems };
 
+    Object.keys(updatedCheckedItems).forEach((key) => {
+      updatedCheckedItems[key] = false;
+    });
+
+    setHotelTypesCheckedItems(updatedCheckedItems);
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Hotel Type</Text>
-      {Object.keys(checkedItems).map((item) => (
+      {Object.keys(hotelTypesCheckedItems).map((item) => (
         <View key={item} style={styles.checkboxContainer}>
           <CheckBox
             title={item}
-            checked={checkedItems[item]}
+            checked={hotelTypesCheckedItems[item]}
             onPress={() => handleCheckboxChange(item)}
             containerStyle={styles.checkboxStyle}
           />
@@ -95,4 +85,3 @@ const styles = StyleSheet.create({
 });
 
 export default HotelTypes;
-

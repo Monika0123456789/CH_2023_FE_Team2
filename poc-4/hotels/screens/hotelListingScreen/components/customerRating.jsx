@@ -1,27 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
+import { useHotelContext } from '../components/hotelcontext'; 
 
 const CustomerRating = ({ onRatingChange }) => {
-  const [selectedRating, setSelectedRating] = useState(null);
+  const { selectedRating, setSelectedRatingState } = useHotelContext();
+  const [localRating, setLocalRating] = useState(selectedRating);
+
+  useEffect(() => {
+    setLocalRating(selectedRating);
+  }, [selectedRating]);
 
   const handleRatingClick = (rating) => {
     // Toggle the rating if clicked again
-    const newRating = selectedRating === rating ? null : rating;
+    const newRating = localRating === rating ? null : rating;
 
-    // Update the state locally
-    setSelectedRating(newRating);
+    // Update the local state
+    setLocalRating(newRating);
 
     // Notify the parent component about the selected rating
     onRatingChange && onRatingChange(newRating);
+
+    // Update the context state
+    setSelectedRatingState(newRating);
   };
 
   const handleClearAll = () => {
     // Clear the locally stored rating
-    setSelectedRating(null);
+    setLocalRating(null);
 
     // Notify the parent component about the cleared rating
     onRatingChange && onRatingChange(null);
+
+    // Clear the context state
+    setSelectedRatingState(null);
   };
 
   return (
@@ -33,11 +45,11 @@ const CustomerRating = ({ onRatingChange }) => {
             key={rating}
             value={rating}
             onClick={() => handleRatingClick(rating)}
-            isSelected={selectedRating === rating}
+            isSelected={localRating === rating}
           />
         ))}
       </View>
-      <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer}/>
+      <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer} />
     </View>
   );
 };

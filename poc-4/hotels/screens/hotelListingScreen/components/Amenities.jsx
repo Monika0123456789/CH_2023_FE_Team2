@@ -2,67 +2,59 @@ import React, { useEffect, useState, useRef } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { CheckBox, Button } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useHotelContext } from '../components/hotelcontext';
 
 const Amenities = ({ onAmenitiesChange }) => {
-  const [checkedItems, setCheckedItems] = useState({
-    'All': false,
-    'Air conditioning': false,
-    'Business Services': false,
-    'Non-smoking rooms': false,
-    'Ironing service': false,
-    '24-hour front desk': false,
-    'Caretaker': false,
-    'Concierge service': false,
-    'Laundry': false,
-    'Family rooms': false,
-    '24-hour security': false,
-    'Balcony': false,
-    'Free Wifi': false,
-  });
+  const { selectedAmenities, setSelectedAmenitiesState } = useHotelContext();
+
   const [showMore, setShowMore] = useState(false);
 
-  const prevCheckedItemsRef = useRef();
+  const prevCheckedItemsRef = useRef(); 
 
   useEffect(() => {
-    prevCheckedItemsRef.current = checkedItems;
-  }, [checkedItems]);
+    prevCheckedItemsRef.current = selectedAmenities;
+  }, [selectedAmenities]);
 
   const prevCheckedItems = prevCheckedItemsRef.current || {};
 
   useEffect(() => {
-    const selectedAmenities = Object.keys(checkedItems).filter((key) => checkedItems[key]);
-    const prevSelectedAmenities = Object.keys(prevCheckedItems).filter((key) => prevCheckedItems[key]);
+    if (selectedAmenities) {
+      const selectedAmenitiesKeys = Object.keys(selectedAmenities).filter((key) => selectedAmenities[key]);
+      const prevSelectedAmenities = Object.keys(prevCheckedItems).filter((key) => prevCheckedItems[key]);
 
-    // Check if the selected amenities have changed before calling onAmenitiesChange
-    if (JSON.stringify(selectedAmenities) !== JSON.stringify(prevSelectedAmenities)) {
-      onAmenitiesChange(selectedAmenities);
+      if (JSON.stringify(selectedAmenitiesKeys) !== JSON.stringify(prevSelectedAmenities)) {
+        onAmenitiesChange(selectedAmenitiesKeys);
+      }
     }
-  }, [checkedItems, onAmenitiesChange]);
+  }, [selectedAmenities, onAmenitiesChange]);
 
   const handleCheckboxChange = (item) => {
-    setCheckedItems((prevCheckedItems) => {
+    console.log('Checkbox changed:', item);
+    setSelectedAmenitiesState((prevCheckedItems) => {
       let updatedCheckedItems;
 
       if (item === 'All') {
-        updatedCheckedItems = { ...prevCheckedItems, All: !prevCheckedItems.All };
-        Object.keys(updatedCheckedItems).forEach((key) => {
-          updatedCheckedItems[key] = updatedCheckedItems.All;
-        });
+        updatedCheckedItems = Object.fromEntries(
+          Object.entries(prevCheckedItems).map(([key, value]) => [key, !prevCheckedItems.All])
+        );
       } else {
         updatedCheckedItems = { ...prevCheckedItems, [item]: !prevCheckedItems[item] };
-        updatedCheckedItems.All = Object.values(updatedCheckedItems).every((value) => value);
+        updatedCheckedItems.All = Object.values(updatedCheckedItems).every(
+          (value) => value && value !== updatedCheckedItems.All
+        );
       }
-
       return updatedCheckedItems;
     });
   };
 
   const handleClearAll = () => {
-    setCheckedItems((prevCheckedItems) => {
+    console.log('Clear All clicked');
+    setSelectedAmenitiesState((prevCheckedItems) => {
       const clearedItems = { ...prevCheckedItems };
       Object.keys(clearedItems).forEach((key) => {
         clearedItems[key] = false;
       });
+      setSelectedAmenitiesState(clearedItems);
       return clearedItems;
     });
   };
@@ -71,19 +63,15 @@ const Amenities = ({ onAmenitiesChange }) => {
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <ScrollView>
         <Text style={styles.heading}>Amenities</Text>
-        {Object.entries(checkedItems).map(([key, value]) => (
+        {Object.entries(selectedAmenities).map(([key, value]) => (
           <View key={key} style={styles.checkboxContainer}>
-            <CheckBox title={key} checked={value} onPress={() => handleCheckboxChange(key)} />
+            <CheckBox title={key} checked={selectedAmenities[key]} onPress={() => handleCheckboxChange(key)} />
           </View>
         ))}
-        {Object.keys(checkedItems).length > 5 && (
+        {Object.keys(selectedAmenities).length > 5 && (
           <TouchableOpacity style={styles.seeMoreContainer} onPress={() => setShowMore(!showMore)}>
             <Text>{showMore ? 'See less' : 'See more'}</Text>
-            <MaterialIcons
-              name={showMore ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
-              size={24}
-              color="black"
-            />
+            <MaterialIcons name={showMore ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={24} color="black" />
           </TouchableOpacity>
         )}
         <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer} />
@@ -91,6 +79,7 @@ const Amenities = ({ onAmenitiesChange }) => {
     </KeyboardAvoidingView>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',

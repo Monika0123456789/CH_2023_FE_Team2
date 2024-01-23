@@ -2,7 +2,7 @@ import React from 'react';
 import { View,Text} from 'react-native';
 import FeaturedHotels from './featuredHotels'; 
 
-const ParentComponent = () => {
+const ParentComponent = ({navigation}) => {
   // Hotel data
   const hotels = [
     {
@@ -38,7 +38,7 @@ const ParentComponent = () => {
   return (
     <View>
       <Text style={{fontSize:30,textAlign:'center'}}>Featured Hotels</Text>
-      <FeaturedHotels hotels={hotels} />
+      <FeaturedHotels hotels={hotels} navigation={navigation} />
     </View>
   );
 };

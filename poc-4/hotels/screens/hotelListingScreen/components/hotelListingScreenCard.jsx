@@ -2,6 +2,7 @@ import { styles } from "../hotelListingScreen-styles/hotelListingScreen";
 import { Image, Pressable, Text, View, Modal, Button, StyleSheet, TouchableOpacity } from "react-native";
 import {  Star, StarHalf, MapPin, CheckCircle,  Dot, ArrowLeftCircle, ArrowRightCircle } from 'lucide-react-native';
 import { useState } from "react";
+import RatingComponent from "./ratingComp";
 
 export default HotelListingScreenCard = (props) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -25,11 +26,7 @@ export default HotelListingScreenCard = (props) => {
 
                         {/* user ratings */}
                         <View style={styles.user_ratings}>
-                            <Star  fill="#fdcc0d" size="20"/>
-                            <Star  fill="#fdcc0d" size="20"/>
-                            <Star  fill="#fdcc0d" size="20"/>
-                            <Star  fill="#fdcc0d" size="20"/>
-                            <StarHalf fill="#fdcc0d" size="20"/>
+                            <RatingComponent rating={props.hotelListingObj.rating}/>
                         </View>
 
                         {/* hotel name and location */}

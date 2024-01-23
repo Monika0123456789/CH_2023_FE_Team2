@@ -2,21 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import { Button } from 'react-native-elements';
+import { useHotelContext } from '../components/hotelcontext';
 
 const PriceSlider = ({ onPriceChange }) => {
-  const [values, setValues] = useState([0,10000]);
+  const { doubleRangeSliderState, setDoubleRangeSliderState } = useHotelContext();
+
 
   const formatPrice = (value) => `$${value}`;
 
   const handleChange = (newValues) => {
-    setValues(newValues);
-    onPriceChange(newValues); 
+    setDoubleRangeSliderState(newValues);
+    onPriceChange(newValues);
+    // setPriceRangeCheckedItems(newValues);
   };
 
   const handleClearAll = () => {
     const defaultValues = [0, 10000];
-    setValues(defaultValues);
+    setDoubleRangeSliderState(defaultValues);
     onPriceChange(defaultValues);
+    // setPriceRangeCheckedItems(defaultValues);
   };
 
   return (
@@ -24,7 +28,7 @@ const PriceSlider = ({ onPriceChange }) => {
       <Text style={styles.heading}>Price Range</Text>
       <View style={styles.sliderContainer}>
         <MultiSlider
-          values={values}
+          values={doubleRangeSliderState}
           onValuesChange={handleChange}
           min={0}
           max={10000}
@@ -35,8 +39,8 @@ const PriceSlider = ({ onPriceChange }) => {
         />
       </View>
       <View>
-        <Text>Price Range: {formatPrice(values[0])} to {formatPrice(values[1])}</Text>
-        <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer}/>
+        <Text>Price Range: {formatPrice(doubleRangeSliderState[0])} to {formatPrice(doubleRangeSliderState[1])}</Text>
+        <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer} />
       </View>
     </View>
   );
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   sliderContainer: {
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   buttonContainer: {
     marginTop: 10,

@@ -13,7 +13,7 @@ export default HomeScreen = ({navigation}) => {
         <ScrollView>
           <SectionOneComp navigation={navigation}/>
           <Section2/>
-          <ParentComponent/>
+          <ParentComponent navigation={navigation}/>
           <TestimonialMain/>
         </ScrollView>
         <Footer navigation={navigation}/>
