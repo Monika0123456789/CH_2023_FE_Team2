@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect,useState} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { CheckBox, Button } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -9,27 +9,12 @@ const Amenities = ({ onAmenitiesChange }) => {
 
   const [showMore, setShowMore] = useState(false);
 
-  const prevCheckedItemsRef = useRef(); 
-
   useEffect(() => {
-    prevCheckedItemsRef.current = selectedAmenities;
+    const updatedSelectedAmenities = Object.keys(selectedAmenities).filter((key) => selectedAmenities[key]);
+    onAmenitiesChange(updatedSelectedAmenities);
   }, [selectedAmenities]);
 
-  const prevCheckedItems = prevCheckedItemsRef.current || {};
-
-  useEffect(() => {
-    if (selectedAmenities) {
-      const selectedAmenitiesKeys = Object.keys(selectedAmenities).filter((key) => selectedAmenities[key]);
-      const prevSelectedAmenities = Object.keys(prevCheckedItems).filter((key) => prevCheckedItems[key]);
-
-      if (JSON.stringify(selectedAmenitiesKeys) !== JSON.stringify(prevSelectedAmenities)) {
-        onAmenitiesChange(selectedAmenitiesKeys);
-      }
-    }
-  }, [selectedAmenities, onAmenitiesChange]);
-
   const handleCheckboxChange = (item) => {
-    console.log('Checkbox changed:', item);
     setSelectedAmenitiesState((prevCheckedItems) => {
       let updatedCheckedItems;
 
@@ -39,16 +24,13 @@ const Amenities = ({ onAmenitiesChange }) => {
         );
       } else {
         updatedCheckedItems = { ...prevCheckedItems, [item]: !prevCheckedItems[item] };
-        updatedCheckedItems.All = Object.values(updatedCheckedItems).every(
-          (value) => value && value !== updatedCheckedItems.All
-        );
+        updatedCheckedItems.All = Object.values(updatedCheckedItems).every((value) => value);
       }
       return updatedCheckedItems;
     });
   };
 
   const handleClearAll = () => {
-    console.log('Clear All clicked');
     setSelectedAmenitiesState((prevCheckedItems) => {
       const clearedItems = { ...prevCheckedItems };
       Object.keys(clearedItems).forEach((key) => {
@@ -63,17 +45,20 @@ const Amenities = ({ onAmenitiesChange }) => {
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <ScrollView>
         <Text style={styles.heading}>Amenities</Text>
+
         {Object.entries(selectedAmenities).map(([key, value]) => (
           <View key={key} style={styles.checkboxContainer}>
             <CheckBox title={key} checked={selectedAmenities[key]} onPress={() => handleCheckboxChange(key)} />
           </View>
         ))}
+
         {Object.keys(selectedAmenities).length > 5 && (
           <TouchableOpacity style={styles.seeMoreContainer} onPress={() => setShowMore(!showMore)}>
             <Text>{showMore ? 'See less' : 'See more'}</Text>
             <MaterialIcons name={showMore ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={24} color="black" />
           </TouchableOpacity>
         )}
+
         <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer} />
       </ScrollView>
     </KeyboardAvoidingView>

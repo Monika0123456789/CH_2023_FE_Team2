@@ -7,25 +7,24 @@ import { useHotelContext } from '../components/hotelcontext';
 const PriceSlider = ({ onPriceChange }) => {
   const { doubleRangeSliderState, setDoubleRangeSliderState } = useHotelContext();
 
-
-  const formatPrice = (value) => `$${value}`;
+  const formatPrice = (value) => `Rs ${value}`;
 
   const handleChange = (newValues) => {
     setDoubleRangeSliderState(newValues);
     onPriceChange(newValues);
-    // setPriceRangeCheckedItems(newValues);
   };
 
   const handleClearAll = () => {
     const defaultValues = [0, 10000];
     setDoubleRangeSliderState(defaultValues);
     onPriceChange(defaultValues);
-    // setPriceRangeCheckedItems(defaultValues);
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Price Range</Text>
+
+      {/* Slider container */}
       <View style={styles.sliderContainer}>
         <MultiSlider
           values={doubleRangeSliderState}
@@ -38,10 +37,10 @@ const PriceSlider = ({ onPriceChange }) => {
           selectedStyle={{ backgroundColor: 'green' }}
         />
       </View>
-      <View>
-        <Text>Price Range: {formatPrice(doubleRangeSliderState[0])} to {formatPrice(doubleRangeSliderState[1])}</Text>
-        <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer} />
-      </View>
+
+      {/* Displaying selected price range and Clear All button */}
+      <Text>Price Range: {formatPrice(doubleRangeSliderState[0])} to {formatPrice(doubleRangeSliderState[1])}</Text>
+      <Button title="Clear All" onPress={handleClearAll}  />
     </View>
   );
 };
@@ -64,10 +63,7 @@ const styles = StyleSheet.create({
   sliderContainer: {
     alignItems: 'center',
   },
-  buttonContainer: {
-    marginTop: 10,
-    marginLeft: 10,
-  },
+ 
 });
 
 export default PriceSlider;

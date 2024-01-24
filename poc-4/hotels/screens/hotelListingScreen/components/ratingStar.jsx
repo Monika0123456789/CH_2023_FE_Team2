@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-// import {   Star } from 'lucide-react-native';
 
 const RatingStar = () => {
+  // Individual Rating Box component
   const RatingBox = ({ rating }) => (
     <View style={styles.ratingBox}>
+       {/* Display the rating and star icon */}
       <Text style={styles.ratingText}>{rating}<Ionicons name="star" size={20} color="#fdcc0d" /></Text>
     </View>
   );
@@ -13,6 +14,7 @@ const RatingStar = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Rating Star</Text>
+      {/* Container for displaying multiple RatingBoxes */}
       <View style={styles.ratingContainer}>
         <RatingBox rating="3" />
         <RatingBox rating="3.5" />
@@ -25,7 +27,6 @@ const RatingStar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 1,
     backgroundColor: 'white',
     borderColor: 'black',
     width: '100%',
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: '#ccc',
-    // backgroundColor: '#ccc',
   },
   ratingText: {
     margin: 0,

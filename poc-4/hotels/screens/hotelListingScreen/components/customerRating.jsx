@@ -7,9 +7,6 @@ const CustomerRating = ({ onRatingChange }) => {
   const { selectedRating, setSelectedRatingState } = useHotelContext();
   const [localRating, setLocalRating] = useState(selectedRating);
 
-  useEffect(() => {
-    setLocalRating(selectedRating);
-  }, [selectedRating]);
 
   const handleRatingClick = (rating) => {
     // Toggle the rating if clicked again
@@ -49,11 +46,14 @@ const CustomerRating = ({ onRatingChange }) => {
           />
         ))}
       </View>
-      <Button title="Clear All" onPress={handleClearAll} style={styles.buttonContainer} />
+      <View style={{marginTop:20}}>
+           <Button title="Clear All" onPress={handleClearAll} />
+      </View>
     </View>
   );
 };
 
+// RatingBox component for each rating option
 const RatingBox = ({ value, onClick, isSelected }) => (
   <TouchableOpacity onPress={onClick} style={[styles.ratingBox, isSelected && styles.selectedBox]}>
     <Text style={styles.ratingText}>{value}</Text>
@@ -96,10 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'black',
   },
-  buttonContainer: {
-    marginTop: '30%',
-    marginLeft: 10,
-  },
+  
 });
 
 export default CustomerRating;

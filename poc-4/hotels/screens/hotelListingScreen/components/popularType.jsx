@@ -9,6 +9,7 @@ const PopularType = () => {
     'Free Cancellation Available': false,
   });
 
+  // function for checkbox change
   const handleCheckboxChange = (item) => {
     setCheckedItems((prevCheckedItems) => ({
       ...prevCheckedItems,
