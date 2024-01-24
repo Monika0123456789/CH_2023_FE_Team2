@@ -53,7 +53,7 @@ const CustomerRating = ({ onRatingChange }) => {
   );
 };
 
-// RatingBox component for each rating option
+// RatingBox component for each rating options
 const RatingBox = ({ value, onClick, isSelected }) => (
   <TouchableOpacity onPress={onClick} style={[styles.ratingBox, isSelected && styles.selectedBox]}>
     <Text style={styles.ratingText}>{value}</Text>
