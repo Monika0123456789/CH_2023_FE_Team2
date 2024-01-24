@@ -128,7 +128,7 @@
             { key: 'Amenities', text: 'Amenities' },
             { key: 'ClearAll', text: 'Clear All' },
           ];
-        // render the modal content based on the selected category
+        // render the modal content based on the selected categorysss
         const renderPopup = () => {
           switch (modalVisible) {
             case 'HotelTypes':
